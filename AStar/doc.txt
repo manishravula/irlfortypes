@@ -1,0 +1,118 @@
+
+"""
+Implementing the A* algorithm.
+
+The algorithm and the visualization have to be seperate
+
+INPUT
+
+args:
+    grid matrix - MbyM matrix with 1 for obstacle and 0 for traversible boxes-locations
+    start position - tuple of the start point
+    goal position - tuple of goal point
+    ask_for_obstacles - Do you want to ask user to draw them on the plot?
+    interactive - Visualization?
+
+
+kwargs:
+    movement_directions: 4 or 8 (NSEW, or NSEW and diagonal movements)
+    distance_metric: manhattan, euclidean or other. (currently only euclidean is supported)
+
+
+OUTPUT:
+    path: numpy array of positions to traverse, in order.
+
+    Types of runs
+         Interactive: Animates while running.
+    Non-interactive:
+         Just return the path.
+
+Algorithmic details:
+    Init
+        create class defintion for each node with the following attributes:
+            a) Location
+            b) Parent
+            c) g - distance from start
+            d) h - distance to goal
+            e) f
+            g) is_obstacle
+        and the following methods:
+            a) update f
+
+        Calculate h for all locations and set the parent
+
+        Represent the board with a list of list of node objects
+
+
+        start_node = object representing the start.
+        goal_node = object representing the goal.
+        current_node = object represeting the curr_position = start_position
+
+        Two lists
+            a) Openlist - start_position
+            b) Closedlist - empty
+
+        VISSTUFF:
+            color start as Purple
+            color end as purple
+
+    Loop:
+        State
+            Represented by the two lists.
+
+        Transition
+            Init:
+                retrieve curr_node
+          (224,255,255)      VISSTUFF:
+                    color curr_node's position as blue
+                Pop current_node off open list
+                Add current_node to the closed list.
+                and remove
+
+            Explore:
+                Select all not-closed-children to explore according to movement_directions
+                Add them(original object) to the open-list
+                VISSTUFF:
+                    color all the children's positions as yellow
+
+                Copy(object wise) them to a new curr_children list.
+                Set their(copied objects) parent to current_position
+                Update their(copied objects) f values
+
+            Control:
+                for children in the curr_children:
+                    if the child is the goal:
+                        set original child object's parent to goal.
+                        set curr_node as goal.
+                        Terminate.
+                    if the child is in OPEN list:
+                        if the g value of the child is greater than it's original in OPEN list:
+                            discard
+                        else
+                            reassign child's parent as the current_node, and update the f (g and h)
+                            Similarize the child-object in the curr_children list and the original object.
+                            And then add the original child-object to the open-list
+            Next step:
+                VISSTUFF:
+                    change children's colors to green.
+                    change curr_node's color to red
+
+                if open_list is empty:
+                    curr_node = NULL
+                    break
+                else:
+                    Find min_f object in the open_list
+                    set curr_obj = min_f object
+
+
+
+    Finish:
+        If curr_pos == NULL
+            path not found. Print that and return NULL
+        else:
+            starting from goal, retrace to beginning, and return an ordered list of positions.
+
+"""
+
+
+
