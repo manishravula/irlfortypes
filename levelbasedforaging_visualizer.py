@@ -69,7 +69,6 @@ class LVDvisualizer():
         self.agents_positions = agents_positions
         self.agents_orientations = agents_orientations
         self.food_matrix = food_matrix
-        print('Vis called')
         self.screen.fill((255,255,255))
         self.draw()
         # time.sleep(1)
@@ -93,8 +92,10 @@ class LVDvisualizer():
         nonzero_locs = np.array(np.where(self.food_matrix!=0)).T
         for loc in nonzero_locs:
             [x,y] = loc*self.box_size
-            text = self.font.render(str('{:02.2f}'.format(self.food_matrix[loc[0],loc[1]])),True,(0,128,0))
-            self.screen.blit(text,(y+self.box_size//2 - text.get_width()//2, x+self.box_size//2 -text.get_height()//2 ))
+            item_weight = self.food_matrix[loc[0],loc[1]]
+            if item_weight!=1:
+                text = self.font.render(str('{:02.2f}').format(item_weight),True,(0,128,0))
+                self.screen.blit(text,(y+self.box_size//2 - text.get_width()//2, x+self.box_size//2 -text.get_height()//2 ))
         pygame.display.flip()
 
 
@@ -171,7 +172,6 @@ class LVDvisualizer():
 
     def wait_on_event(self):
         while not self.done:
-            print("in While")
             event = pygame.event.wait()
             if event.type == pygame.QUIT:
                 self.done = True
@@ -179,7 +179,6 @@ class LVDvisualizer():
                 pygame.quit()
                 break
             elif event.type == self.update_event_type:
-                print("event recogn")
                 self.visualize(event.food_matrix,event.agents_positions,event.agents_orientations)
     def snapshot(self,name):
 

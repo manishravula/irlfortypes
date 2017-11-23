@@ -1,9 +1,12 @@
 import numpy as np
+import types
+# import time
 import threading
 import matplotlib.pyplot as plt
 from copy import copy
+from copy import deepcopy
+import pdb
 import levelbasedforaging_visualizer as lvlvis
-
 
 """
 ITEM should also be an object. with position and capacity.
@@ -71,6 +74,8 @@ class item():
     def __init__(self,position,weight):
         self.position = position
         self.weight = weight
+    def copy(self):
+        return item(copy.deepcopy(self.position),copy.deepcopy(self.weight))
 
 
 class arena():
@@ -80,9 +85,7 @@ class arena():
         self.items = []
         self.visualize = visualize
         self.create_objectitems()
-
-
-
+        self.consumed_items = []
 
     def get_item_posarray(self):
         posarray = []
@@ -107,6 +110,8 @@ class arena():
         #Add agent objects once they are created.
         self.agents = agents_list
         self.no_agents = len(self.agents)
+        for agent in self.agents:
+            self.grid_matrix[agent.curr_position[0],agent.curr_position[1]]=1
         if self.visualize:
             agent_parameters = [agent.params for agent in self.agents]
             self.visualizer = lvlvis.LVDvisualizer(self.grid_matrix,agent_parameters)
@@ -115,15 +120,52 @@ class arena():
 
 
     def create_objectitems(self):
-        items_loc = np.argwhere(self.grid_matrix>0)
+        items_loc = np.argwhere(np.logical_and(self.grid_matrix>0,self.grid_matrix<1)) #agents' positions are identified by ones
         for loc in items_loc:
             item_obj = item(loc,self.grid_matrix[loc[0],loc[1]])
             self.items.append(item_obj)
         self.no_items = len(self.items)
         self.get_item_posarray()
 
-
     def update(self):
+        agent_actions = []
+
+        #retrieve what the agent wants to do
+        for agent in self.agents:
+            #Check what the agent wants to do
+            agent_action = agent.behave()
+
+            agent_actions.append(agent_action)
+
+            #Approve the agent's action. This way, if agent moves further and is in
+            #collision path with another agent, then this is not going to be aproble
+            #as the other agent will plan accordingly.
+            agent.execute_action(agent_action)
+
+
+        #See if there is any load operation.
+        if np.any([agent.load for agent in self.agents]):
+            self.update_foodconsumption()
+
+        if self.visualize:
+            self.update_vis()
+        return
+
+    def experiment(self):
+
+        for i in range(1):
+            self.update()
+            print(self.no_items)
+            if i==5:
+                pdb.set_trace()
+            # time.sleep(.4)
+        print()
+        return
+
+
+
+
+    def update_foodconsumption(self):
         agents_around = []
 
         #Check how far each agent is from each item by a numpy array manipulation.
@@ -131,11 +173,12 @@ class arena():
         agents_relative_distances = np.linalg.norm(agents_relative_positions,axis=2)
 
         #no_of agents surrounding each item
-        is_agent_adjacent = agents_relative_distances<=np.sqrt(2)
+        is_agent_adjacent = agents_relative_distances<=1
         no_surrounding_agents = np.sum(is_agent_adjacent,axis=0)
         is_consumable = no_surrounding_agents>0
 
         #Fixme
+
         potentially_consumable_items = [[self.items[i],i] for consumable,i in zip(is_consumable,range(self.no_items)) if consumable]#List of items and their indexes that
 
         #are consumable
@@ -157,7 +200,11 @@ class arena():
         for item,i in items_to_consume:
             item_loc = item.position
             self.grid_matrix[item_loc[0],item_loc[1]] = 0
+            self.consumed_items.append([item,item_loc])
             self.items.remove(item)
+            self.no_items-=1
+            self.get_item_posarray()
+            print("item_consumed")
         return
 
     def update_vis(self):
@@ -165,6 +212,67 @@ class arena():
         orientations = np.array([agent.curr_orientation for agent in self.agents])
         self.update_event = lvlvis.pygame.event.Event(self.visualizer.update_event_type,{'food_matrix': self.grid_matrix,'agents_positions':self.agent_pos_array,'agents_orientations':orientations})
         lvlvis.pygame.event.post(self.update_event)
+        # self.visualizer.snapshot(str(time.time()))
+
+    def copy(self):
+        """
+        Copy the existing arena and return a new object with exactly the same state. (It should be replaceable)
+        :return: A new arena object."""
+
+        # all_attrs = self.__dict__.keys()
+
+        # def is_variable(item):
+        #     t = type(item)
+        #     if t is np.ndarray
+        #     is types.IntType or is types.BooleanType or is types.LongType or is types.FloatType:
+        #         return True
+        #     else:
+        #         return False
+
+        cpd = deepcopy
+        gm_c = cpd(self.grid_matrix)
+        # self.update_mod_gridmatrx()
+        # modgm_c = cpd(self.mod_gridmatrix)
+        iposarray_c = cpd(self.item_pos_array)
+        # aposarray_c = cpd(self.agent_pos_array)
+        nagents_c = cpd(self.no_agents)
+        nitems_c = cpd(self.no_items)
+
+
+        #Removing methods:
+        # all_variables = [attr for attr in all_attrs if is_variable(self.__dict__[attr])]
+        # all_variables.remove('visualizer')
+        # all_variables.remove('agents')
+        # all_variables.remove('items')
+
+
+
+        # new_dict_variables = {variable_name:copy.deepcopy(self.__dict__[variable_name]) for variable_name in all_variables}
+        # ndv = new_dict_variables
+        new_arena = arena(gm_c,True)
+        new_arena.no_items = nitems_c
+        new_arena.no_agents = nagents_c
+        # new_arena.mod_gridmatrix = modgm_c
+        # new_arena.agent_pos_array = aposarray_c
+        new_arena.item_pos_array = iposarray_c
+
+        agents_new_objects = [agent.copy(new_arena) for agent in self.agents]
+        new_arena.add_agents(agents_new_objects)
+
+
+        #important:
+        #1) Agents' state is preserved
+        #2) Grid_matrix is preservered
+        #3) Visualization need not be carried
+        #4)
+        # new_arena.__dict__.update(new_dict_variables)
+
+        return new_arena
+
+
+
+
+
 
 
 

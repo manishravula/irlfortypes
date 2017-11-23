@@ -56,7 +56,7 @@ class astar():
         self.movement_directions = kwargs.get('movement_directions',4)
         self.distance_metric = kwargs.get('distance_metric', 'euclidean')
         self.interactive = interactive
-        self.manual_obstacles = manual_obstacles
+        # self.manual_obstacles = manual_obstacles
         self.obstacle_pos = np.array(np.where(self.grid_value_matrix!=0)).T
 
 
@@ -237,7 +237,7 @@ class astar():
         path = []
         curr_node = self.curr_node
         while curr_node!=self.start_node:
-            path.insert(0,curr_node)
+            path.insert(0,curr_node.loc)
             curr_node = curr_node.parent
         return path
 
@@ -252,35 +252,35 @@ class astar():
             return self.retrace_path()
 
 #
-#
-# if __name__ == "__main__":
-#
-#     # grid_matrix = np.zeros((10,10))
-#     # grid_matrix[1,1] = 1
-#     grid_matrix = np.eye(10)
-#     for i in range(3):
-#         grid_matrix[i,i]=0
-#
-#
-#     start_position = np.array([8,0])
-#     goal_position = np.array([0,8])
-#     ask_for_obstacles = False
-#     interactive = True
-#     time_array = []
-#     for i in range(1):
-#         start_position = np.array([8,np.random.randint(0,7)])
-#         end_position = np.array([np.random.randint(0,7),8])
-#
-#         begin_time = time.time()
-#         a = astar(grid_matrix,start_position,goal_position,False,True)
-#         sol = a.find_minimumpath()
-#         time_array.append(time.time()-begin_time)
-#     #plt.waitforbuttonpress()
-#     for ele in sol:
-#         print ele
-#     print np.mean(np.array(time_array))
-#
-#
+
+if __name__ == "__main__":
+
+    # grid_matrix = np.zeros((10,10))
+    # grid_matrix[1,1] = 1
+    grid_matrix = np.eye(10)
+    for i in range(3):
+        grid_matrix[i,i]=0
+
+
+    start_position = np.array([8,0])
+    goal_position = np.array([0,8])
+    ask_for_obstacles = False
+    interactive = True
+    time_array = []
+    for i in range(1):
+        start_position = np.array([8,np.random.randint(0,7)])
+        end_position = np.array([np.random.randint(0,7),8])
+
+        begin_time = time.time()
+        a = astar(grid_matrix,start_position,goal_position,True)
+        sol = a.find_minimumpath()
+        time_array.append(time.time()-begin_time)
+    #plt.waitforbuttonpress()
+    for ele in sol:
+        print ele
+    print np.mean(np.array(time_array))
+
+
 
 
 
