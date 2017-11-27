@@ -87,6 +87,10 @@ class arena():
         self.create_objectitems()
         self.consumed_items = []
 
+        self.dict_actionIndex = {'u':0,'d':1,'l':2,'r':3,'a':4}
+        self.action_hashes =  [action for action in self.dict_actionIndex.iterkeys()]
+        self.actions = np.arange(5)
+
     def get_item_posarray(self):
         posarray = []
         for item in self.items:
@@ -107,9 +111,12 @@ class arena():
 
 
     def add_agents(self,agents_list):
+
         #Add agent objects once they are created.
+        #The last agent added is a dummy agent, used for MCTS
         self.agents = agents_list
         self.no_agents = len(self.agents)
+        self.mcts_agent = self.agents[-1]
         for agent in self.agents:
             self.grid_matrix[agent.curr_position[0],agent.curr_position[1]]=1
         if self.visualize:
@@ -133,7 +140,10 @@ class arena():
         #retrieve what the agent wants to do
         for agent in self.agents:
             #Check what the agent wants to do
-            agent_action = agent.behave()
+            action_probs = agent.behave()
+
+            #retrieve the action.
+            agent_action = agent.behave_act(action_probs)
 
             agent_actions.append(agent_action)
 
@@ -260,7 +270,6 @@ class arena():
         new_arena.add_agents(agents_new_objects)
 
 
-        #important:
         #1) Agents' state is preserved
         #2) Grid_matrix is preservered
         #3) Visualization need not be carried
@@ -268,6 +277,143 @@ class arena():
         # new_arena.__dict__.update(new_dict_variables)
 
         return new_arena
+
+    def hash_action(self,action):
+        """
+        :action: n_agents length array of actions.
+
+        possible actions for each agent are:
+        1) move up - u
+        2) move down - d
+        3) move right -r
+        4) move left - l
+        5) load - a
+
+        :return: no_agents sized string.
+        """
+        hash_action= ''
+        for act in action:
+            hash_action+=self.action_hashes[act]
+        return hash_action
+
+    def unhash_action(self,hashed_action):
+        """
+
+        :param hashed_action: str of hashed actions
+        :return: vector of actions
+        """
+
+        action_vector = []
+        for char in hashed_action:
+            action_vector.append(self.dict_actionIndex[char])
+        return np.array(action_vector)
+
+    def react(self,action):
+        real_action = self.unhash_action(action)
+        real_action = real_action[-1] #actionprob of the last MCTS agent.
+
+        action_probs = np.zeros(5)
+        action_probs[real_action]=1
+
+        action_and_consequence = self.mcts_agent.behave_act(action_probs)
+        self.mcts_agent.execute_action(action_and_consequence)
+
+        pre_length = len(self.items)
+
+        if np.any([agent.load for agent in self.agents]):
+            self.update_foodconsumption()
+        reward = len(self.items)-pre_length
+        self.check_for_termination()
+
+        if self.visualize:
+            self.update_vis()
+
+        #we return action itself because we assume a unique action-state relationship.
+        #and it seems pointless to hash a state and unhash it
+        return reward, action
+
+    def act(self):
+        agent_actions = []
+
+        # retrieve what the agent wants to do
+        for agent in self.agents:
+            # Check what the agent wants to do
+            action_probs = agent.behave()
+
+            # retrieve the action.
+            agent_action = agent.behave_act(action_probs)
+
+            agent_actions.append(agent_action)
+
+            # Approve the agent's action. This way, if agent moves further and is in
+            # collision path with another agent, then this is not going to be aproble
+            # as the other agent will plan accordingly.
+            agent.execute_action(agent_action)
+
+        pre_length = len(self.items)
+        # See if there is any load operation.
+        if np.any([agent.load for agent in self.agents]):
+            self.update_foodconsumption()
+
+        self.check_for_termination()
+
+        reward = len(self.items) - pre_length
+        if self.visualize:
+            self.update_vis()
+
+        #state just needs to be something unique.
+        return reward, str(reward)
+
+
+    def act_external(self,action):
+
+        n_agents = len(self.agents)-1
+        real_action = self.unhash_action(action)
+        for i in range(n_agents):
+            # Check what the agent wants to d
+            agent = self.agents[i]
+            action_probs = np.ones(5)
+            action_probs[real_action[i]]=1
+
+            # retrieve the action.
+            agent_action = agent.behave_act(action_probs)
+
+            agent_actions.append(agent_action)
+
+            # Approve the agent's action. This way, if agent moves further and is in
+            # collision path with another agent, then this is not going to be aproble
+            # as the other agent will plan accordingly.
+            agent.execute_action(agent_action)
+
+        pre_length = len(self.items)
+        # See if there is any load operation.
+        if np.any([agent.load for agent in self.agents]):
+            self.update_foodconsumption()
+
+        self.check_for_termination()
+
+        reward = len(self.items) - pre_length
+        if self.visualize:
+            self.update_vis()
+
+        # state just needs to be something unique.
+        return reward, str(reward)
+
+    def check_for_termination(self):
+        if len(self.items)==0:
+            self.__isterminal = True
+        else:
+            self.__isterminal = False
+        return
+
+
+
+
+
+
+
+
+
 
 
 

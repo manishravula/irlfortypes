@@ -104,6 +104,10 @@ class agent():
 
 
     def behave(self):
+        """
+
+        :return: actionprobabilites to sample the action from.
+        """
         #sets the probabilities of actions after every loop of 'behaving'
         #Is an implementation of the behavior part of the type
         self.curr_position = np.array(self.curr_position)
@@ -122,43 +126,9 @@ class agent():
         #assign action probabilities
         if self.curr_destination is None:
             self.load=False
-            #Pick random, safe actions
-            # #Check if in any corner
-            # if self.curr_position[0]==0:
-            #     if self.curr_position[1]==0:
-            #         #Is stuck in the top-left corner, can only go down or right.
-            #         self.action_probability = [0,.5,.5,0]
-            #     elif self.curr_position[1]==9:
-            #         #is stuck in the top right corner, can only go down or left
-            #         self.action_probability = [0,.5,0,.5]
-            #     else:
-            #         #is stuck on top can go any side other than top
-            #         self.action_probability = [0,1/3.0,1/3.0,1/3.0]
-            # elif self.curr_position[0]==9:
-            #     if self.curr_position[1]==0:
-            #         #Is stuck in the bottom-left corner. Can only go up or right.
-            #         self.action_probability = [.5,0,.5,0]
-            #     elif self.curr_position[1]==9:
-            #         #is stuck in the bottom-right corner. Can only go up or left.
-            #         self.action_probability = [.5,0,0,.5]
-            #     else:
-            #         #is stuck on bottom, can go any other than down.
-            #         self.action_probability = [1/3.0,0,1/3.0,1/3.0]
-            # else:
-            #     #is somewhere in the middle
-            #     if self.curr_position[1] == 0:
-            #         #is stuck on the left can go right up down
-            #         self.action_probability = [1/3.0, 1/3.0, 1/3.0,0]
-            #     elif self.curr_position[1] == 9:
-            #         #is stuck on the right, can go left, up, down.
-            #         self.action_probability = [1/3.0, 1/3.0, 0, 1/3.0]
-            #     else:
-            #         self.action_probability = [.25, .25, .25, .25]
-            # self.action_probability = np.hstack((np.array(self.action_probability),0))
             self.action_probability = self.valid_randActionProb()
         else:
             if ((self.arena.grid_matrix[self.curr_destination[0],self.curr_destination[1]]) and (np.linalg.norm(self.curr_position-self.curr_destination) <= 1)):
-                self.load = True
                 self.action_probability = np.hstack((np.zeros(4),1))
             else:
                 #we need to make a copy grid matrix to pass to astar
@@ -178,10 +148,18 @@ class agent():
                     action_probabilites = self.valid_randActionProb()
                 else:
                     to_move = path[0]-self.curr_position
-                    action_probabilites = self.dict_moves_actionsProbs[str(to_move[0])+str(to_move[1])]
-                    self.action_probability = np.hstack((action_probabilites,0))
+                    action_probs = self.dict_moves_actionsProbs[str(to_move[0])+str(to_move[1])]
+                    self.action_probability = np.hstack((action_probs,0))
         print('For agent with '+str(self.capacity)+' the destination is '+str(self.curr_destination))
-        final_action = np.random.choice(self.actions,1,p=self.action_probability)[0]
+        return action_probs
+
+    def behave_act(self,action_probs):
+        """
+        The method picks up an action from the action probabilites and executes the action.
+        :param action_probs:  action probabilities to behave according to
+        :return action_and_consequence: the selected action and consequence of such an action.
+        """
+        final_action = np.random.choice(self.actions,1,p=action_probs)[0]
         final_movement = self.action_to_movements[final_action]
         final_nextposition = self.curr_position+final_movement
         action_and_consequence = [final_action,final_movement,final_nextposition]
@@ -205,11 +183,6 @@ class agent():
         return valid_actionProb
 
 
-
-
-
-
-
     def execute_action(self,action_and_consequence):
         #The action is approved by the arena, and is being executed by the agent.
         #We can only move if it is not a load action.
@@ -222,6 +195,7 @@ class agent():
         else:
             #if this is a load action, this is probably already taken care of, by the arena.
             #Turn towards the item
+            self.load = True
             to_move = self.curr_destination-self.curr_position
             action_index = self.dict_actiontoIndices[str(to_move[0])+str(to_move[1])]
             orientation = self.action_to_orientations[action_index]
@@ -401,9 +375,24 @@ class agent():
 
         return new_agent
 
+    def get_legalActions(self):
+        validrand_actionprob = self.valid_randActionProb()
+
+        #load action too
+        validrand_actionprob[-1]=1
+
+        #normalize probability.
+        no_validactinons = np.sum(validrand_actionprob!=0)
+        validrand_actionprob[np.where(validrand_actionprob!=0)]=1.0/no_validactinons
+        return validrand_actionprob
+
+
+
+
 
 
 
 
         #Removing methods:
+
 
