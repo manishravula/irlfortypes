@@ -245,10 +245,10 @@ class astar():
     def find_minimumpath(self):
         sol = self.solve()
         if sol is None:
-            print("No path to goal found")
+            # print("No path to goal found")
             return []
         else:
-            print("Path to goal found")
+            # print("Path to goal found")
             return self.retrace_path()
 
 #

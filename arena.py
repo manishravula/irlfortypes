@@ -7,6 +7,7 @@ from copy import copy
 from copy import deepcopy
 import pdb
 import levelbasedforaging_visualizer as lvlvis
+import itertools
 
 """
 ITEM should also be an object. with position and capacity.
@@ -90,6 +91,7 @@ class arena():
         self.dict_actionIndex = {'u':0,'d':1,'l':2,'r':3,'a':4}
         self.action_hashes =  [action for action in self.dict_actionIndex.iterkeys()]
         self.actions = np.arange(5)
+        self.isterminal = False
 
     def get_item_posarray(self):
         posarray = []
@@ -136,6 +138,7 @@ class arena():
 
     def update(self):
         agent_actions = []
+        agent_probs = []
 
         #retrieve what the agent wants to do
         for agent in self.agents:
@@ -145,7 +148,9 @@ class arena():
             #retrieve the action.
             agent_action = agent.behave_act(action_probs)
 
+
             agent_actions.append(agent_action)
+            agent_probs.append(action_probs)
 
             #Approve the agent's action. This way, if agent moves further and is in
             #collision path with another agent, then this is not going to be aproble
@@ -159,7 +164,7 @@ class arena():
 
         if self.visualize:
             self.update_vis()
-        return
+        return agent_actions,agent_probs
 
     def experiment(self):
 
@@ -259,7 +264,7 @@ class arena():
 
         # new_dict_variables = {variable_name:copy.deepcopy(self.__dict__[variable_name]) for variable_name in all_variables}
         # ndv = new_dict_variables
-        new_arena = arena(gm_c,True)
+        new_arena = arena(gm_c,False)
         new_arena.no_items = nitems_c
         new_arena.no_agents = nagents_c
         # new_arena.mod_gridmatrix = modgm_c
@@ -369,6 +374,7 @@ class arena():
 
         n_agents = len(self.agents)-1
         real_action = self.unhash_action(action)
+        agent_actions = []
         for i in range(n_agents):
             # Check what the agent wants to d
             agent = self.agents[i]
@@ -401,10 +407,88 @@ class arena():
 
     def check_for_termination(self):
         if len(self.items)==0:
-            self.__isterminal = True
+            self.isterminal = True
         else:
-            self.__isterminal = False
+            self.isterminal = False
         return
+
+    def get_legalActions(self,turn):
+
+        if turn is False: #universe's turn
+            validactionString_list = []
+            for agent in self.agents[0:-1]: #exclude MCTS agent
+                validactionProb = agent.get_legalActionProbs()
+                valid_actions = np.argwhere(validactionProb!=0).reshape(-1)
+                validAction_string = ''
+                for action in valid_actions:
+                    validAction_string+=self.action_hashes[action]
+                validactionList.append(validAction_string)
+            validactionString_list.append('n')
+            all_actionStringVectors = itertools.product(*validactionString_list)
+            for i in range(len(validactionString_list)):
+                validactionString_list[i]=''.join(validactionString_list[i])
+            return validactionString_list
+        else:
+            validactionString_list=[]
+            default_string = ''.join(['n' for i in range(self.no_items - 1)])
+            validactionProb = self.mcts_agent.get_legalActionProbs()
+            valid_actions = np.argwhere(validactionProb!=0).reshape(-1)
+            for action in valid_actions:
+                validactionString_list.append(default_string+self.action_hashes[action])
+
+            return validactionString_list
+
+        ##Yet to finish
+
+    def get_legalActions_N(self,turn):
+
+        if turn in False: #universe's turn
+            tot_actions = 1
+            for agent in self.agents[0:-1]:
+                validactionProb = agent.get_legalActionProbs()
+                n_actions = np.sum(validactionProb!=0)
+                tot_actions*=n_actions
+            return tot_actions
+
+        else:
+            agent = self.agents[-1]
+            return np.sum(agent.get_legalActionProbs()!=0)
+
+    def get_legalAction_random(self,turn):
+
+        action_string =''
+        if turn is False: #universe's turn
+            for agent in self.agents[0:-1]:
+                validactionProb = agent.get_legalActionProbs()
+                randomaction = np.random.choice(np.where(validactionProb!=0)[0])
+                action_string+=self.action_hashes[randomaction]
+            action_string+='n'
+        else:
+            action_string+=sum(['n' for i in range(self.no_agents-1)])
+            validactionProb=self.mcts_agent.get_legalActionProbs()
+            randomaction = np.random.choice(np.where(validactionProb!=0)[0])
+            action_string+=self.action_hashes[randomaction]
+        return action_string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

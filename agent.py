@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from AStar import astar as ast
 from copy import copy
 from copy import deepcopy
+import math
 #Ref doc:
 """
 Input to the agent class:
@@ -54,30 +55,33 @@ DEBUG TEST:
 """
 
 
-class agent():
-    def __init__(self,capacity,view_radius,view_angle,type,curr_pos,curr_heading,foraging_arena):
-        # type: (object, object, object, object, object, object, object) -> object
+class Agent():
+    def __init__(self,capacity_param,viewRadius_param,viewAngle_param,type,curr_pos,foraging_arena):
         """
 
-        :param capacity:  The capacity of the agent
-        :param view_radius: View radius of the agent in pixels
-        :param view_angle: View angle of the agent in pixels
-        :param foraging_arena: The foraging arena object, to know where the food and other agents are.
+        :param capacity_param:  Paramter indicating capacity of the agent
+        :param viewRadius_param: Parameter related to view radius - [0.1 - 1]*grid_size = viewradius
+        :param viewAngle_param: Parameter related to view angel - [0.1 -1]*2pi = viewangle
+        :param type:
+        :param curr_pos:
+        :param curr_heading:
+        :param foraging_arena:
         """
-        self.capacity = capacity
-        self.view_radius = view_radius
-        self.view_angle = view_angle
-        self.params = [self.capacity,self.view_radius,self.view_angle]
+        self.param_vector = np.array([capacity_param,viewRadius_param,viewAngle_param,type])
+        self.capacity = capacity_param
+        self.view_angle = viewAngle_param*np.pi*2
         self.load = False
         self.type = type
         self.arena = foraging_arena
-        # self.grid_matrix = self.arena.grid_matrix
+        self.grid_matrix_size = np.shape(self.arena.grid_matrix)[0] #assuming it is a square
+        self.view_radius = viewRadius_param*self.grid_matrix_size
         self.curr_destination = None
         self.curr_position = np.array(curr_pos)
         self.curr_position_realaxis = (-1,1)*self.curr_position
         self.memory = self.curr_position
-        self.curr_orientation = curr_heading
+        self.curr_orientation = np.random.random()*np.pi*2
 
+        self.params = [self.capacity,self.view_radius,self.view_angle]
         self.visible_agents = []
         self.visible_items = []
         self.action_probability = .25*np.ones(4)
@@ -96,6 +100,21 @@ class agent():
 
         #need to init curr_position by reading from the foraging_arena's grid
         #action probabilities are [up,down,left,right]
+        self.pad_grid_matrix = np.zeros_like(self.arena.grid_matrix)
+        self.pad_grid_matrix = np.lib.pad(self.pad_grid_matrix, 1, 'constant', constant_values=1)
+
+
+    @classmethod
+    def create_from_param_vector(cls,param_vector,curr_pos,arena):
+        """
+
+        :param param_vector: capacity, radius, angle, type
+        :param curr_pos: position
+        :param arena: arena
+        :return:  agent object
+        """
+        param_vector = np.array(param_vector)
+        return cls(param_vector[0],param_vector[1],param_vector[2],param_vector[3],curr_pos,arena)
 
 
     def get_outerandinnerAngles(self):
@@ -126,10 +145,10 @@ class agent():
         #assign action probabilities
         if self.curr_destination is None:
             self.load=False
-            self.action_probability = self.valid_randActionProb()
+            self.action_probability = self.valid_randMoveActionProb()
         else:
             if ((self.arena.grid_matrix[self.curr_destination[0],self.curr_destination[1]]) and (np.linalg.norm(self.curr_position-self.curr_destination) <= 1)):
-                self.action_probability = np.hstack((np.zeros(4),1))
+                self.action_probability = np.hstack((np.zeros(4),1.0)).astype('float')
             else:
                 #we need to make a copy grid matrix to pass to astar
 
@@ -145,13 +164,33 @@ class agent():
                 if len(path) is 0:
                     #Meaning the astar algorithm didn't find the path. Then just move about randomly.
                     # action_probabilites=np.array([1,1,1,1,0])/4.0
-                    action_probabilites = self.valid_randActionProb()
+                    action_probabilites = self.valid_randMoveActionProb()
                 else:
                     to_move = path[0]-self.curr_position
                     action_probs = self.dict_moves_actionsProbs[str(to_move[0])+str(to_move[1])]
-                    self.action_probability = np.hstack((action_probs,0))
-        print('For agent with '+str(self.capacity)+' the destination is '+str(self.curr_destination))
-        return action_probs
+                    self.action_probability = np.hstack((action_probs,0.0)).astype('float')
+
+            #no 'valid'(actions that don't push the agent into boundaries) should be left with zero-probability.
+
+            #first find all the valid actions, and check if any of these has zero probability in the action_prob vector we
+            #currently have.
+
+        legal_action_prob = self.get_legalActionProbs()
+
+        #optimize
+        for i in range(len(self.action_probability)):
+            if legal_action_prob[i] and not self.action_probability[i]:
+                #means if the action is valid, but is assigned zero probability in action_probability,
+                self.action_probability[i]+=.01 #then assign it a minute non-zero probability
+
+        self.action_probability /= np.sum(self.action_probability)
+        # if self.action_probability[4]==0:
+        #     pass
+        # ap = copy(self.action_probability)
+        # if ap[4]==0:
+        #     pass
+
+        return copy(self.action_probability)
 
     def behave_act(self,action_probs):
         """
@@ -165,21 +204,23 @@ class agent():
         action_and_consequence = [final_action,final_movement,final_nextposition]
         return(action_and_consequence)
 
-    def valid_randActionProb(self):
+    def valid_randMoveActionProb(self):
         #Can optimize by replacing this with single array operations
-        mod_grid_matrix = np.copy(self.arena.grid_matrix)
-        mod_grid_matrix = np.lib.pad(mod_grid_matrix,1,'constant',constant_values=1)
+
         valid_actionProb = []
         currloc = self.curr_position
+        #optimize
         for diff in self.action_to_movements:
-            new_loc = currloc+diff+np.array([1,1])
+            curr_loc_diff = currloc+diff
+            new_loc = curr_loc_diff+np.array([1,1])
+
             #Good thing about this is that the load action will always get zero prob
             #which is what we want when we are selecting random movements.
-            if mod_grid_matrix[new_loc[0],new_loc[1]]:
+            if self.pad_grid_matrix[new_loc[0],new_loc[1]] or self.arena.grid_matrix[curr_loc_diff[0],curr_loc_diff[1]]:
                 valid_actionProb.append(0)
             else:
                 valid_actionProb.append(1.0)
-        valid_actionProb = np.array(valid_actionProb)/np.sum(valid_actionProb)
+        valid_actionProb = np.array(valid_actionProb)/math.fsum(valid_actionProb)
         return valid_actionProb
 
 
@@ -196,10 +237,12 @@ class agent():
             #if this is a load action, this is probably already taken care of, by the arena.
             #Turn towards the item
             self.load = True
-            to_move = self.curr_destination-self.curr_position
-            action_index = self.dict_actiontoIndices[str(to_move[0])+str(to_move[1])]
-            orientation = self.action_to_orientations[action_index]
-            self.curr_orientation = orientation
+            if np.any(self.curr_destination):
+                to_move = (self.curr_destination-self.curr_position)
+                if np.sum(np.abs(to_move))<2: #Only align orientation if the item is near by.
+                    action_index = self.dict_actiontoIndices[str(to_move[0])+str(to_move[1])]
+                    orientation = self.action_to_orientations[action_index]
+                    self.curr_orientation = orientation
             # self.load = False
         return
 
@@ -375,8 +418,8 @@ class agent():
 
         return new_agent
 
-    def get_legalActions(self):
-        validrand_actionprob = self.valid_randActionProb()
+    def get_legalActionProbs(self):
+        validrand_actionprob = self.valid_randMoveActionProb()
 
         #load action too
         validrand_actionprob[-1]=1

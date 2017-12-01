@@ -260,23 +260,25 @@ class mcts():
         :return: Nothing. It just plays to learn.
         """
 
-
-
         backprop_info= []
+        reward_info=[]
+
 
         world = curr_env.copy()
 
         begin_state = self.curr_state
 
         curr_state = deepcopy(begin_state)
-        curr_stateIndex = self.curr_stateVertex.get_index()
+        curr_stateIndex = self.curr_stateIndex
         begin_stateIndex = deepcopy(curr_stateIndex)
 
         backprop_info.append(curr_stateIndex)
 
 
-        expandable_nodeIndex, bp_info = self.select_expandableNode(curr_stateIndex,world)
+        expandable_nodeIndex, bp_info, rw_info = self.select_expandableNode(curr_stateIndex,world)
+
         backprop_info+=bp_info
+        reward_info+=rw_info
 
         #now select a new-node for expansion.
         legalactions = world.get_legalActions(self.graph.vp.turn_whose[expandable_nodeIndex])
@@ -306,6 +308,8 @@ class mcts():
             reward, new_state = world.act_external(explorable_action)
 
 
+
+
         newstate_vertex = self.addVertex(new_state,UNIVERSE)
         newstateIndex = self.graph.vertex_index[newstate_vertex]
         e = self.graph.add_edge(curr_stateIndex,newstateIndex)
@@ -317,49 +321,62 @@ class mcts():
         curr_stateVertex = newstate_vertex
 
         # backprop_info.append(curr_stateIndex)
+        reward_info+=reward
 
 
         #simulation stage. Go until you reach the terminal state
-        reward_list = []
-        reward_list.append(reward) #reward gained from expansion node
-        while not world.__isterminal:
-            turn_whose = self.graph.vp.turn_whose[curr_stateIndex]
-            if turn_whose is AIAGENT:
-                random_action = random.choice(world.get_legalActions())
-                r,next_state = world.react(random_action)
-                reward_list.append(r)
-            else:
-                _ = world.act()
+
+        rewardList_sim = []
+        if not world.isterminal:
+            #the expansion node is not terminal
+            while not world.isterminal:
+                turn_whose = self.graph.vp.turn_whose[curr_stateIndex]
+                if turn_whose is AIAGENT:
+                    random_action = world.get_legalAction_random()
+                    r,next_state = world.react(random_action)
+                    rewardList_sim.append(r)
+                    turn_whose = UNIVERSE
+                else:
+                    r,next_state = world.act()
+                    turn_whose = AIAGENT
 
 
-        totalReward_simulation = 0
-        rewardList_sim = reward_list[1::]
-        sim_length = len(rewardList_sim)
-        for i in range(sim_length):
-            totalReward_simulation +=np.power(self.discount,i)*np.array(rewardList_sim[sim_length-i-1])
+            totalReward_simulation = 0
+            sim_length = len(rewardList_sim)
+            for i in range(sim_length):
+                totalReward_simulation +=np.power(self.discount,i)*np.array(rewardList_sim[sim_length-i-1])
 
+            #update the UCT of the expanded node.
+            self.update_UCT(newstate_vertex,totalReward_simulation)
+        else:
+            #we don't want any simluation forward on the terminal node.
+            totalReward_simulation = 100000
+            self.update_UCT(newstate_vertex,totalReward_simulation)
 
 
         #backprop
 
-        self.update_UCT(newstate_vertex,totalReward_simulation)
         #we backprop only over the pre-expansion part.
-        backprop_length = len(backprop_info)
 
-
-        #backprop list in the order newnode-->root
+        #backprop list in the order root-->newnode - hence we need to reverse it.
         backpropList = backprop_info.reverse()
 
-        totalReward_rollout = reward_list[0]+self.discount*totalReward_simulation
+        #rewards from newnode---r[-1]--->expandablenode----->2ndRoot-->r[0]-->root - hence we need to reverse it.
+        rewardList = reward_info.reverse()
+
 
         discount = 1
-        for nodeIndex,i in zip(backpropList,range(backprop_length)):
-            self.update_UCT(nodeIndex,totalReward_rollout*discount)
-            discount*=self.discount
+        value_of_child = totalReward_simulation #this is the value of the child node of the expandable node,
+        #where we start our backprop
+        for nodeIndex,reward in zip(backpropList,rewardList):
+            value_of_child+=(reward+self.discount*value_of_child)
+            self.update_UCT(nodeIndex,value_of_child)
 
         #resetting the state
         self.curr_state = begin_state
         self.curr_stateIndex = begin_stateIndex
+
+        return
 
 
 
@@ -385,18 +402,20 @@ class mcts():
         :param world: The world object which we are using for current workout.
         :return exp_index: The index of the node which is expandable (i.e. whose children are not yet explored)
         :return backprop_info: list of indices travelled to reach the expandable node.
+        :return reward_info: rewards obtained through each of the above transitions.
         """
 
         backprop_info=[]
+        reward_info=[]
         EXPANDABLE = False
         currIndex = deepcopy(rootIndex)
         while not EXPANDABLE:
             #Check if the number of children node = number of legal actions.
-            n_children = self.graph.get_out_degrees(currIndex)
+            n_children = self.graph.get_out_degrees([currIndex])[0]
 
             turn_whose = self.graph.vp.turn_whose[currIndex]
 
-            n_actions = len(world.get_legalActions(turn_whose))
+            n_actions = world.get_legalActions_N(turn_whose)
 
             if n_children!=n_actions:
                 EXPANDABLE = True
@@ -412,14 +431,15 @@ class mcts():
                 # action_real = world.unhash(action)
 
                 if turn_whose is AIAGENT:
-                    _ =self.world.react(action)
+                    reward,_ =self.world.react(action)
                 else:
-                    _ = self.world.act_external(action) ##
+                    reward,_ = self.world.act_external(action) ##
                 #todo:we can check if the action reward returned matches with ours at the edge.
 
                 backprop_info.append(currIndex)
+                reward_info.append(reward)
 
-        return currIndex, backprop_info
+        return currIndex, backprop_info, reward_info
 
 
 

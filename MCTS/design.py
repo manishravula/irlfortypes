@@ -1,6 +1,6 @@
 class world():
     def __init__(self):
-        self.__isterminal = False #Flag goes True if we are in the terminal state.
+        self.isterminal = False #Flag goes True if we are in the terminal state.
 
     def get_legalActions(self,turn):
         """

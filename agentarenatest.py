@@ -1,18 +1,20 @@
 import numpy as np
 from arena import arena
-from agent import agent
+from agent import Agent
 import time
 import pdb
 import copy
+from MCTS import mcts_unique as mu
+from agent_param import Agent_lh
 
-
+#
 # #
 # grid_matrix = np.random.random((10,10))
 # #
 # #
-# #
-# g = grid_matrix.flatten()
-# g[[np.random.choice(np.arange(100),90,replace=False)]]=0
+#
+# g = grid_matri#x.flatten()
+# g[[np.random.choice(np.arange(100),93,replace=False)]]=0
 # grid_matrix = g.reshape((10,10))
 # grid_matrix[3,4]=0
 # grid_matrix[5,5]=0
@@ -25,57 +27,111 @@ grid_matrix/=2.0
 g2 = copy.deepcopy(grid_matrix)
 
 
-are = arena(grid_matrix,True)
-a1 = agent(0.5,4,.25,0,np.array([3,4]),1,are)
+are = arena(grid_matrix,False)
+a1 = Agent(0.5,4,.25,0,np.array([3,4]),1,are)
 a1.load = True
 
-a2 = agent(0.2,3,4,3,np.array([5,5]),2,are)
-a2.load = True
+# a2 = Agent(0.2,3,4,3,np.array([5,5]),2,are)
+# a2.load = True
 
-a3 = agent(.4,5,.5,2,np.array([6,7]),.5,are)
-a3.load = True
-
-
-a4 = agent(.1,4,.6,0,np.array([7,7]),.9,are)
+# a3 = Agent(.4,5,.5,2,np.array([6,7]),.5,are)
+# a3.load = True
+#
+a4 = Agent(.1,4,.6,0,np.array([7,7]),.9,are)
 a4.load = False
 
-are.add_agents([a1,a2,a3,a4])
+ad = Agent_lh(.1,4,.6,0,np.array([7,7]),.9,are)
+ad.load = False
+
+ad2 = Agent_lh(.1,4,.6,0,np.array([7,7]),.9,are)
+ad2.load = False
+
+# are.add_agents([a4,a2,a3,a1])
+are.add_agents([a4,a1])
 g1= are.grid_matrix
 
 gm=[]
-for i in range(80):
+time_array = []
+i=0
+prob_lh = []
+prob_lh2 = []
+prob_ori = []
+while not are.isterminal:
     print("iter "+str(i))
-    gm1 = copy.deepcopy(are.grid_matrix)
-    gm.append(gm1)
-    are.update()
+    i+=1
+
+    start = time.time()
+    # print ad.curr_position, ad.curr_orientation
+    # print a4.curr_position, a4.curr_orientation
+
+    lh_action_probs = ad.behave()
+    lh_a2 = ad2.behave()
+    # if lh_action_probs[4]==0:
+    #     pass
+
+    # prob_array.append(lh_action_probs)
+    agent_actions_list,action_probs = are.update()
+
+    ad.imitate_action(agent_actions_list[0])
+    ad2.imitate_action(agent_actions_list[0])
+
+    prob_lh.append(lh_action_probs[agent_actions_list[0][0]])
+    prob_lh2.append(lh_a2[agent_actions_list[0][0]])
+
+    prob_ori.append(a4.action_probability[agent_actions_list[0][0]])
+
+    # if lh_action_probs[agent_actions_list[0][0]]==0:
+    #     print("This happens when "+str(agent_actions_list[0][0]))
+    #     raise Exception("This ignoring legal actions")
+    #     pass
+
+
+    # prob.append(action_probs)
+    # for agent in are.agents:
+    #     print agent.action_probability
+    # print(are.isterminal)
+    # print (are.no_items)
+    are.check_for_termination()
+    # print (are.isterminal)
+    time_array.append(time.time()-start)
     are.get_agent_posarray()
-    print (np.linalg.norm(are.grid_matrix-gm1))
-    aposar = are.agent_pos_array
-    ap1 = np.sum(np.linalg.norm(aposar-aposar[0],axis=1)==0) > 1
-    ap2 = np.sum(np.linalg.norm(aposar-aposar[1],axis=1)==0) > 1
-    ap3 = np.all(np.linalg.norm(aposar-aposar[2],axis=1)==0) > 1
-    ap4 = np.all(np.linalg.norm(aposar-aposar[3],axis=1)==0) > 1
-    if ap1 and ap2 and ap3 and ap4:
-        pdb.set_trace()
-        raise Exception("CROSSING PATHS!")
 
     are.get_item_posarray()
     ipos = are.item_pos_array
     final = False
-    for agent_loc in aposar:
-        for item_loc in ipos:
-            if np.linalg.norm(item_loc-agent_loc) ==0:
-                raise Exception("ITEM AND AGENT IN SAME PALCE")
-                pass
-    time.sleep(.4)
+    # print(np.mean(np.array(time_array)))
+
+# print time_array
+prob_lh = np.array(prob_lh).astype('float32')
+prob_ori = np.array(prob_ori)
 
 
+print np.where(prob_lh==0)
+print(np.product(prob_lh))
+print(np.sum(np.log(prob_lh)))
+print(np.sum(np.log(prob_lh2)))
+if np.all(prob_lh):
+    print('All set')
+else:
+    print("This is not right")
+
+if np.all(prob_ori):
+    print('All set here too')
+else:
+    print("this is not right either.")
+
+# print prob_array
+# print prob3
+# print prob_array_2
+# m = mu.mcts(visualize=False)
+#
+#
+# m.addVertex('root',False)
+# m.curr_stateIndex = 0
+# m.curr_state = 'root'
+# m.rollout(are,0)
 
 
-    if final:
-        raise Exception("Items fucked up")
-
-    c1 = aposar[0]
     # time.sleep(.2)
 # are.update_vis()
 # time.sleep(1)
@@ -101,10 +157,10 @@ for i in range(80):
 
 
 # are.experiment()
-
 # are.update()
 # time.sleep(1)
 # are.update_vis()
 # g2=are.grid_matrix
+
 
 
