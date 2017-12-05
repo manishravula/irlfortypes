@@ -6,6 +6,9 @@ from AStar import astar as ast
 from copy import copy
 from copy import deepcopy
 import math
+import config_experiment as config
+import time
+import pdb
 #Ref doc:
 """
 Input to the agent class:
@@ -88,14 +91,15 @@ class Agent():
         #up,down,right,left
 
 
-        self.dict_moves_actionsProbs = {'-10':[1,0,0,0],'10':[0,1,0,0],'01':[0,0,1,0],'0-1':[0,0,0,1]} #If the key is the difference between dest and curr,
+        self.dict_moves_actionsProbs = {'-10':[1,0,0,0,0],'10':[0,1,0,0,0],'01':[0,0,1,0,0],'0-1':[0,0,0,1,0],'00':[0,0,0,0,1]} #If the key is the difference between dest and curr,
         #The list returns the action probs.
         self.actions = np.arange(5)
-        self.dict_actiontoIndices = {'-10':0,'10':1,'01':2,'0-1':3} #Get the action index given the desired movement.
+        self.dict_actiontoIndices = {'-10':0,'10':1,'01':2,'0-1':3,'00':4} #Get the action index given the desired movement.
+        self.dict_indicestoActions = {0:'-10',1:'10',2:'01',3:'0-1',4:'00'}
 
         self.action_to_movements = np.array([[-1,0],[1,0],[0,1],[0,-1],[0,0]]) #Given an action index, this array gives us the vector
         # to add to current states to get the result
-        self.action_to_orientations = np.array([np.pi/2,1.5*np.pi,0,np.pi]) #Given an action index, this array gives us the
+        self.action_to_orientations = np.array([np.pi/2,1.5*np.pi,0,np.pi,self.curr_orientation]) #Given an action index, this array gives us the
         # what the orientation should be.
 
         #need to init curr_position by reading from the foraging_arena's grid
@@ -117,12 +121,21 @@ class Agent():
         return cls(param_vector[0],param_vector[1],param_vector[2],param_vector[3],curr_pos,arena)
 
 
-    def get_outerandinnerAngles(self):
-        self.outerangles = (self.curr_orientation+(self.view_angle/2))%(2*np.pi)
-        self.innerangles = (self.curr_orientation-(self.view_angle/2))%(2*np.pi)
+    def calc_path(self):
+        mod_grid_matrix = deepcopy(self.arena.grid_matrix)
+        for a in self.arena.agents:
+            #This is for the agents to be treated as hard-obstacles
+            mod_grid_matrix[a.curr_position[0],a.curr_position[1]]=1
+        mod_grid_matrix[self.curr_destination[0],self.curr_destination[1]]=0
+        mod_grid_matrix[self.curr_position[0],self.curr_position[1]]=0
+        self.astar = ast.astar(mod_grid_matrix,self.curr_position,self.curr_destination,False)
+        del(mod_grid_matrix)
+        path = self.astar.find_minimumpath()
+        self.arena.astar_computed_dest.append(self.curr_destination)
+        self.arena.astar_computed_path.append(path)
+        return path
 
-
-    def behave(self):
+    def behave(self,is_dummy):
         """
 
         :return: actionprobabilites to sample the action from.
@@ -133,7 +146,7 @@ class Agent():
         loc = self.curr_position
         self.curr_destination = None
 
-        if self.memory!=None and np.any(self.curr_position!=self.memory):
+        if self.memory is not None and np.any(self.curr_position!=self.memory):
             self.curr_destination = self.memory
         else:
             visible_entities = self.get_visibleAgentsAndItems()
@@ -143,43 +156,66 @@ class Agent():
         self.memory = self.curr_destination
 
         #assign action probabilities
-        if self.curr_destination is None:
-            self.load=False
-            self.action_probability = self.valid_randMoveActionProb()
-        else:
-            if ((self.arena.grid_matrix[self.curr_destination[0],self.curr_destination[1]]) and (np.linalg.norm(self.curr_position-self.curr_destination) <= 1)):
-                self.action_probability = np.hstack((np.zeros(4),1.0)).astype('float')
-            else:
-                #we need to make a copy grid matrix to pass to astar
+        legal_actionProbs_withLoad,legal_actionProbs_withoutLoad,valid_movesMask = self.valid_randMoveActionProb()
 
-                mod_grid_matrix = deepcopy(self.arena.grid_matrix)
-                for a in self.arena.agents:
-                    #This is for the agents to be treated as hard-obstacles
-                    mod_grid_matrix[a.curr_position[0],a.curr_position[1]]=1
-                mod_grid_matrix[self.curr_destination[0],self.curr_destination[1]]=0
-                mod_grid_matrix[self.curr_position[0],self.curr_position[1]]=0
-                self.astar = ast.astar(mod_grid_matrix,self.curr_position,self.curr_destination,False)
-                del(mod_grid_matrix)
-                path = self.astar.find_minimumpath()
-                if len(path) is 0:
-                    #Meaning the astar algorithm didn't find the path. Then just move about randomly.
-                    # action_probabilites=np.array([1,1,1,1,0])/4.0
-                    action_probabilites = self.valid_randMoveActionProb()
-                else:
-                    to_move = path[0]-self.curr_position
-                    action_probs = self.dict_moves_actionsProbs[str(to_move[0])+str(to_move[1])]
-                    self.action_probability = np.hstack((action_probs,0.0)).astype('float')
+        if self.curr_destination is None:
+            #random actions
+            self.action_probability = legal_actionProbs_withLoad
+        else:
+
+            # legal_action_prob = self.get_legalActionProbs() #all possible legal actions will have non-zero probabilites in the expression.
+            if ((self.arena.grid_matrix[self.curr_destination[0],self.curr_destination[1]]) and (np.linalg.norm(self.curr_position-self.curr_destination) <= 1)):
+                #just load - no movement
+                self.action_probability = self.dict_moves_actionsProbs['00'] #load action has 00 movement, so.
+            else:
+                #Chose an action that takes you towards your goal.
+
+                resulting_pos = self.curr_position+self.action_to_movements
+                # if resulting_pos>self.grid_matrix_size:
+                    # print("UEYES______")
+                resulting_distances = np.linalg.norm(self.curr_destination-resulting_pos,axis=1)
+                resulting_distances[np.logical_not(valid_movesMask)] = np.inf #Make chosing invalid actions impossible.
+
+                actionProb = self.dict_moves_actionsProbs[self.dict_indicestoActions[np.argmin(resulting_distances)]]
+                self.action_probability = actionProb
+
+
+                #resulting_dist = np.linalg.norm(resulting_pos,0)
+                #resulting_dist_possible = np.logical_and(resulting_dist,legal_action_prob) #If a block is stopped,
+
+                #we need to find the next step to take.
+                #we need to make a copy grid matrix to pass to astar
+                # if is_dummy:
+                #     try:
+                #         pathIdx = self.arena.astar_computed_dest.index(self.curr_destination) #the path exists in memory
+                #         path = self.arena.astar_computed_path[pathIdx]
+                #     except ValueError:
+                #         # the path doesnt exist in memory
+                #         path = self.calc_path()
+                # else:
+                #     # this is not a dummy agent.
+                #     path=self.calc_path()
+                #
+                # #
+                # if len(path) is 0:
+                #     #Meaning the astar algorithm didn't find the path. Then just move about randomly.
+                #     # action_probabilites=np.array([1,1,1,1,0])/4.0
+                #     action_probabilites = self.valid_randMoveActionProb(False)
+                # else:
+                #     to_move = path[0]-self.curr_position
+                #     action_probs = self.dict_moves_actionsProbs[str(to_move[0])+str(to_move[1])]
+                #     self.action_probability = np.hstack((action_probs,0.0)).astype('float')
 
             #no 'valid'(actions that don't push the agent into boundaries) should be left with zero-probability.
 
             #first find all the valid actions, and check if any of these has zero probability in the action_prob vector we
             #currently have.
 
-        legal_action_prob = self.get_legalActionProbs()
 
+        # legal_action_prob=self.get_legalActionProbs()
         #optimize
         for i in range(len(self.action_probability)):
-            if legal_action_prob[i] and not self.action_probability[i]:
+            if legal_actionProbs_withLoad[i] and not self.action_probability[i]:
                 #means if the action is valid, but is assigned zero probability in action_probability,
                 self.action_probability[i]+=.01 #then assign it a minute non-zero probability
 
@@ -204,24 +240,69 @@ class Agent():
         action_and_consequence = [final_action,final_movement,final_nextposition]
         return(action_and_consequence)
 
-    def valid_randMoveActionProb(self):
+    def valid_randMoveActionProb(self,debug=False):
         #Can optimize by replacing this with single array operations
 
-        valid_actionProb = []
-        currloc = self.curr_position
-        #optimize
-        for diff in self.action_to_movements:
-            curr_loc_diff = currloc+diff
-            new_loc = curr_loc_diff+np.array([1,1])
+        # valid_actionProb = []
 
-            #Good thing about this is that the load action will always get zero prob
-            #which is what we want when we are selecting random movements.
-            if self.pad_grid_matrix[new_loc[0],new_loc[1]] or self.arena.grid_matrix[curr_loc_diff[0],curr_loc_diff[1]]:
-                valid_actionProb.append(0)
-            else:
-                valid_actionProb.append(1.0)
-        valid_actionProb = np.array(valid_actionProb)/math.fsum(valid_actionProb)
-        return valid_actionProb
+        # currloc = self.curr_position
+        if debug:
+            pdb.set_trace()
+        #optimize
+        final_pos = self.curr_position+self.action_to_movements
+
+        # start_time = time.time()
+        mask1_1 = np.all(final_pos>=0,axis=1) #boundary condition check.
+        mask1_2 = np.all(final_pos<self.grid_matrix_size,axis=1) #right and bottom boundary check
+
+
+        mask1 = np.logical_and(mask1_1,mask1_2)
+
+        final_pos[np.logical_not(mask1)]=0 #now checking cordinates that are inside bounds if they have an agent or item in them
+        mask2 = self.arena.grid_matrix[final_pos.T[0],final_pos.T[1]]==0 #no agent or item in the target position. The load action also gets nullified.
+        valid_actions_mask = np.logical_and(mask1,mask2)
+
+
+        valid_actions_mask = valid_actions_mask.astype('float')
+        # if valid_actions_mask[-1]==0:
+        #     pass
+        valid_actions_prob_without_load = valid_actions_mask/math.fsum(valid_actions_mask)
+
+        valid_actions_mask[-1] =1 #to consider load action too.
+        valid_actions_prob_withLoad = valid_actions_mask/math.fsum(valid_actions_mask)
+
+        valid_actions_mask[-1] = 0 #again to return valid movements only
+
+        # time1 = time.time()
+
+        # valid_actionProb=[]
+        # currloc = self.curr_position
+        # for diff in self.action_to_movements:
+        #     curr_loc_diff = currloc+diff
+        #     new_loc = curr_loc_diff+np.array([1,1])
+        #
+        #     #Good thing about this is that the load action will always get zero prob
+        #     #which is what we want when we are selecting random movements.
+        #     if self.pad_grid_matrix[new_loc[0],new_loc[1]] or self.arena.grid_matrix[curr_loc_diff[0],curr_loc_diff[1]]:
+        #         valid_actionProb.append(0)
+        #     else:
+        #         valid_actionProb.append(1.0)
+        # valid_actionProb = np.array(valid_actionProb)/math.fsum(valid_actionProb)
+        #
+        # time2 = time.time()
+        # if np.all(valid_actions_prob_without_load==valid_actionProb):
+        #     pass
+        #     t1 = time1-start_time
+        #     t2 = time2-time1
+        #     # print(t2)
+        #     # print(t1)
+        #     # print("speed up achieved is "+str(t2/t1))
+        # else:
+        #     # print(valid_actions_prob_without_load)
+        #     # print(valid_actionProb)
+        #     print('Method failed')
+
+        return valid_actions_prob_withLoad,valid_actions_prob_without_load, valid_actions_mask
 
 
     def execute_action(self,action_and_consequence):
@@ -229,10 +310,15 @@ class Agent():
         #We can only move if it is not a load action.
         [final_action,final_movement,final_nextposition]=action_and_consequence
         if final_action!=4:
+            self.load=False
             self.curr_orientation = self.action_to_orientations[final_action]
             self.arena.grid_matrix[self.curr_position[0],self.curr_position[1]]=0
             self.curr_position = final_nextposition
-            self.arena.grid_matrix[self.curr_position[0],self.curr_position[1]]=1
+            try:
+                self.arena.grid_matrix[self.curr_position[0],self.curr_position[1]]=1
+            except IndexError:
+                print("Tried to exceed boundaries")
+
         else:
             #if this is a load action, this is probably already taken care of, by the arena.
             #Turn towards the item
@@ -258,24 +344,57 @@ class Agent():
 
         items_locarray = np.array([item.position for item in items_list])
         items_is_visible = self.is_visible(items_locarray)
-        items_visible = [item for (item,is_in) in zip(items_list,items_is_visible) if is_in]
+        self.visible_items = [item for (item,is_in) in zip(items_list,items_is_visible) if is_in]
 
         agents_locarray = np.array([agent.curr_position for agent in agents_list])
         agents_is_visible = self.is_visible(agents_locarray)
-        agents_visible = [agent for (agent,is_in) in zip(agents_list,agents_is_visible) if is_in]
+        self.visible_agents = [agent for (agent,is_in) in zip(agents_list,agents_is_visible) if is_in]
 
-        return [agents_visible, items_visible]
+        return [self.visible_agents,self.visible_items]
 
 
     def is_visible(self,loc_array):
         distance_list = np.linalg.norm(loc_array-self.curr_position, axis=1)
+        distance_list[distance_list==0]=np.inf
         direction_vectors = loc_array-self.curr_position
         angle_vectors = np.arctan2(0-direction_vectors[:,0],direction_vectors[:,1])%(2*np.pi) #Compensate for numpy and real axis diff
 
         constraint1 = distance_list<self.view_radius
         self.get_outerandinnerAngles()
-        constraint2 = np.all((angle_vectors<self.outerangles,angle_vectors>self.innerangles),axis=0)
+        loc_array_real = np.fliplr(loc_array)
+        loc_array_real[:,1]*=-1 #y axis is inverted.
+        constraint2 = np.array([self.is_withinSector(loc) for loc in loc_array_real])
         return np.all((constraint1,constraint2),axis=0)
+
+    def is_withinSector(self,target_loc):
+        target_vector = np.array(target_loc-self.curr_position_realaxis)
+
+        #Is the angle subtended between target and left most boundary, clockwise < 180?
+        #is the angle subtended between target and right most boundary, anticlockwise < 180?
+        left_normal_vector = np.array([0-target_vector[1],target_vector[0]])
+        right_normal_vector = -1*left_normal_vector
+        if self.view_angle<=np.pi:
+            if (np.dot(self.left_boundary_vector,left_normal_vector)>=0 and np.dot(self.right_boundary_vector,right_normal_vector)>=0):
+                return True
+            else:
+                return False
+        else:
+            if (np.dot(self.right_boundary_vector, left_normal_vector) >= 0 and np.dot(self.left_boundary_vector,right_normal_vector) >= 0):
+                return False
+            else:
+                return True
+
+
+
+    def get_outerandinnerAngles(self):
+        self.outerangle = (self.curr_orientation+(self.view_angle/2))%(2*np.pi)
+        self.innerangle = (self.curr_orientation-(self.view_angle/2))%(2*np.pi)
+
+        self.curr_position_realaxis = np.array([self.curr_position[1],-self.curr_position[0]])
+        self.right_boundary_vector = np.array([np.cos(self.innerangle),np.sin(self.innerangle)])
+        self.left_boundary_vector = np.array([np.cos(self.outerangle),np.sin(self.outerangle)])
+
+
 
 
     def choosetarget(self,visible_entities):
@@ -346,6 +465,8 @@ class Agent():
                 return dest.curr_position
             else:
                 return None
+        else:
+            raise Exception("NO TYPE FOUND")
 
     def get_furthestItem(self,visible_items):
         #According to type 1's furthest item
@@ -419,14 +540,14 @@ class Agent():
         return new_agent
 
     def get_legalActionProbs(self):
-        validrand_actionprob = self.valid_randMoveActionProb()
+        validrand_actionprob = self.valid_randMoveActionProb(True)
 
         #load action too
-        validrand_actionprob[-1]=1
-
-        #normalize probability.
-        no_validactinons = np.sum(validrand_actionprob!=0)
-        validrand_actionprob[np.where(validrand_actionprob!=0)]=1.0/no_validactinons
+        # validrand_actionprob[-1]=1
+        #
+        # normalize probability.
+        # no_validactinons = np.sum(validrand_actionprob!=0)
+        # validrand_actionprob[np.where(validrand_actionprob!=0)]=1.0/no_validactinons
         return validrand_actionprob
 
 

@@ -30,10 +30,10 @@ from agent import Agent
 import numpy as np
 
 class Agent_lh(Agent):
-    def __init__(self,param_vector,curr_pos,foraging_arena):
+    def __init__(self,param_vector,tp,curr_pos,foraging_arena):
 
-        Agent.__init__(self,param_vector[0],param_vector[1],param_vector[2],type,curr_pos,foraging_arena)
-        self.likelihood = 1 #INIT
+        Agent.__init__(self,param_vector[0],param_vector[1],param_vector[2],tp,curr_pos,foraging_arena)
+        self.likelihood_total = 1 #INIT
         self.likelihood_array = []
 
     # def imitate_action(self,action_and_consequence):
@@ -94,7 +94,7 @@ class Agent_lh(Agent):
         Dummy function to calcualte probs
         :return:
         """
-        self.behave()
+        self.behave(True)
         self.action_probs_are_fresh = True
 
     def calc_likelihood(self,action_and_consequence):

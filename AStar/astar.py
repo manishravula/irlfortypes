@@ -93,12 +93,12 @@ class astar():
 
     def createObjectGrid(self):
         objectgrid = []
-        for row,i in zip(self.grid_value_matrix,range(self.grid_size)):
-            row_list = []
-            for is_obstacle,j in zip(row,range(self.grid_size)):
+        for row_vals,i in zip(self.grid_value_matrix,range(self.grid_size)):
+            rowObj_list = []
+            for is_obstacle,j in zip(row_vals,range(self.grid_size)):
                 obj = pos_node((i,j),0,0,None,is_obstacle)
-                row_list.append(obj)
-            objectgrid.append(row_list)
+                rowObj_list.append(obj)
+            objectgrid.append(rowObj_list)
         return objectgrid
 
     def init_hValues(self):
@@ -107,10 +107,22 @@ class astar():
         Currently uses Euclidean heuristic. Planned support for Manhattan and other types.
         :return:
         """
+        new_h_values = np.indices((self.grid_size,self.grid_size))
+        new_h_values[0]-=self.goal_pos[0]
+        new_h_values[1]-=self.goal_pos[1]
+        new_h_values = np.linalg.norm(new_h_values,axis=0)
+
+        final_truth = True
         for row in self.grid_matrix:
             for node in row:
-                node.h = np.linalg.norm(node.loc-self.goal_pos)
+                # node.h = np.linalg.norm(node.loc-self.goal_pos)
+                node.h=new_h_values[node.loc[0],node.loc[1]]
+                    # final_truth = final_truth and True
+                # else:
+                #     final_truth = final_truth and False
                 node.update_f()
+        # print("--------------****************___________")
+        # print final_truth
         return
 
     def select_children(self,node):
@@ -119,6 +131,8 @@ class astar():
         movement_directions
         :return: list of copied (new-objects) children.
         """
+
+        #optimize
         if self.movement_directions==8:
             diffs_x = np.array([-1,-1,-1,0,0,1,1,1])
             diffs_y = np.array([-1,0,1,-1,1,-1,0,1])

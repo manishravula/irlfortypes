@@ -7,13 +7,13 @@ import copy
 from MCTS import mcts_unique as mu
 from agent_param import Agent_lh
 
-#
+
 # #
 # grid_matrix = np.random.random((10,10))
 # #
 # #
 #
-# g = grid_matri#x.flatten()
+# g = grid_matrix.flatten()
 # g[[np.random.choice(np.arange(100),93,replace=False)]]=0
 # grid_matrix = g.reshape((10,10))
 # grid_matrix[3,4]=0
@@ -28,26 +28,23 @@ g2 = copy.deepcopy(grid_matrix)
 
 
 are = arena(grid_matrix,False)
-a1 = Agent(0.5,4,.25,0,np.array([3,4]),1,are)
-a1.load = True
+
+
+are = arena(grid_matrix,True)
+a1 = Agent(0.42,.46,.25,0,np.array([3,4]),are)
+a1.load = False
 
 # a2 = Agent(0.2,3,4,3,np.array([5,5]),2,are)
 # a2.load = True
 
-# a3 = Agent(.4,5,.5,2,np.array([6,7]),.5,are)
-# a3.load = True
-#
-a4 = Agent(.1,4,.6,0,np.array([7,7]),.9,are)
-a4.load = False
+a3 = Agent(.49,.2,.2,2,np.array([6,7]),are)
+a3.load = False
 
-ad = Agent_lh(.1,4,.6,0,np.array([7,7]),.9,are)
-ad.load = False
-
-ad2 = Agent_lh(.1,4,.6,0,np.array([7,7]),.9,are)
-ad2.load = False
+a2 = Agent(.3,.25,.3,0,np.array([7,7]),are)
+a2.load = False
 
 # are.add_agents([a4,a2,a3,a1])
-are.add_agents([a4,a1])
+are.add_agents([a1,a2,a3])
 g1= are.grid_matrix
 
 gm=[]
@@ -64,28 +61,28 @@ while not are.isterminal:
     # print ad.curr_position, ad.curr_orientation
     # print a4.curr_position, a4.curr_orientation
 
-    lh_action_probs = ad.behave()
-    lh_a2 = ad2.behave()
+    # lh_action_probs = ad.behave()
+    # lh_a2 = ad2.behave()
     # if lh_action_probs[4]==0:
     #     pass
 
     # prob_array.append(lh_action_probs)
     agent_actions_list,action_probs = are.update()
 
-    ad.imitate_action(agent_actions_list[0])
-    ad2.imitate_action(agent_actions_list[0])
+    # ad.imitate_action(agent_actions_list[0])
+    # ad2.imitate_action(agent_actions_list[0])
 
-    prob_lh.append(lh_action_probs[agent_actions_list[0][0]])
-    prob_lh2.append(lh_a2[agent_actions_list[0][0]])
+    # prob_lh.append(lh_action_probs[agent_actions_list[0][0]])
+    # prob_lh2.append(lh_a2[agent_actions_list[0][0]])
 
-    prob_ori.append(a4.action_probability[agent_actions_list[0][0]])
+    # prob_ori.append(a4.action_probability[agent_actions_list[0][0]])
 
     # if lh_action_probs[agent_actions_list[0][0]]==0:
     #     print("This happens when "+str(agent_actions_list[0][0]))
     #     raise Exception("This ignoring legal actions")
     #     pass
 
-
+    # are.update()
     # prob.append(action_probs)
     # for agent in are.agents:
     #     print agent.action_probability
@@ -99,6 +96,7 @@ while not are.isterminal:
     are.get_item_posarray()
     ipos = are.item_pos_array
     final = False
+    time.sleep(.2)
     # print(np.mean(np.array(time_array)))
 
 # print time_array

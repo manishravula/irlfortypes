@@ -11,15 +11,21 @@ from sklearn.linear_model import LinearRegression
 import polynomial_integrals as pintegral
 from scipy import stats
 from scipy import optimize as sopt
+import numpy.polynomial.polynomial as poly
+import matplotlib.pyplot as plt
 
+
+epsilon = np.power(10,-10)
 
 class ABU():
+    #class to facilitate Approximate Bayesian Updates.
     def __init__(self,mimicking_agent,arena_obj):
-        self.arena_obj = arena_obj
-        self.mim_agent = mimicking_agent
+        self.arena_obj = arena_obj #the arena we are basing everything on.
+        self.mim_agent = mimicking_agent #the agent whose parameter-variations we are going to work on.
         self.target_pos = self.mim_agent.curr_position
         self.radius_range = [.1,1]
-        self.viewangle_range = [.1,1]
+        self.viewangle_range = [.1,.49]
+
         self.capacity_range_max = np.max(self.arena_obj.grid_matrix)
         self.capacity_range = [.1,self.capacity_range_max]
         self.types = [0,1,2,3]
@@ -27,68 +33,83 @@ class ABU():
 
 
         self.resolution = 9
-        self.refit_density = 20 #No of division in each dimension p to sample to calculate posterior.
+        self.refit_density = 200 #No of division in each dimension p to sample to calculate posterior.
 
         self.lh_agents = [] #list of type-set-agents with different paremeter settings used to calculate likelihood
-        self.create_lh_objects()
+
+        self.likelihood_polyCoeff_list = []
+        self.posterior_polyCoeff_list = []
+
+        self.param_curr = 1 #should be one or two - view radius or view angle
+        self.create_lh_objects(self.param_curr)
 
         self.degree_likelihoodPolynomial = 20
+
+        #prior and posterior need to be same.
         self.degree_posteriorPolynomial = 6
         self.degree_priorPolynomial = 6
 
-        self.likelihood_polyTransform = PolynomialFeatures(self.degree_likelihoodPolynomial)
-        self.likelihood_polyTransform_paramConfigXval=  self.likelihood_polyTransform.fit_transform(self.parameter_set)
-        self.likelihood_polyTransform_paramConfig_denseUniformXval = self.likelihood_polyTransform.fit_transform(self.paramConfig_denseUniform)
+        self.fit_initialPrior()
 
-        self.likelihood_polyCoeffRegressor_list = [] #list to hold LinearRegression objects for polynomial coefficients
-        self.likelihood_polyCoeffRegressor_weightsList= [] #list to hold polynomial co-efficients
-
-
-        self.prior_polyTransform=PolynomialFeatures(self.degree_priorPolynomial)
-        self.prior_polyTransfrom_paramConfig_denseUniformXval = self.prior_polyTransform.fit_transform(self.paramConfig_denseUniform)
-        self.prior_polyCoeffRegressorList= [] #list to hold the priors over p at each step
-
-        self.posterior_polyTransfrom = PolynomialFeatures(self.degree_posteriorPolynomial)
-        self.posterior_polyTransfrom_paramConfig_denseUniformXval = self.posterior_polyTransfrom.fit_transform(self.paramConfig_denseUniform)
-        self.posterior_polyCoeffRegressorList= [] #list to hold the posteriors over p at each step.
-
-
-        self.currPrior_polyCoeffRegressor = self.get_initialPrior()
-        self.prior_polyCoeffRegressorList.append(self.currPrior_polyCoeffRegressor)
-
-        self.parameter_estimates = []
+        self.posteriorEstimate_sample=[]
+        self.posteriorEstimate_maximum=[]
 
 
 
-
-
-    def get_initialPrior(self):
-        x_val = self.parameter_set
-        n_parameterset = len(self.parameter_set)*1.0
+    def fit_initialPrior(self):
+        x_val = self.x_points
+        n_parameterset = len(self.x_points)*1.0
         y_val =  np.ones(n_parameterset)/n_parameterset
 
-        xval_poly = self.prior_polyTransform.fit_transform(x_val)
-        l = LinearRegression()
-        l.fit(xval_poly,y_val)
-        return l
+        priorPoly_coeffs = np.polyfit(x_val,y_val,deg=self.degree_priorPolynomial)
+
+        self.currPrior_polyCoeff = priorPoly_coeffs
 
 
 
-    def create_lh_objects(self):
-        self.radius_points = np.linspace(self.radius_range[0],self.radius_range[1],self.resolution)
-        self.angle_points = np.linspace(self.viewangle_range[0],self.viewangle_range[1],self.resolution)
-        self.capacity_points = np.linspace(self.capacity_range[0],self.capacity_range[1],self.resolution)
-        self.types_points =np.linspace(0,3,4)
 
-        rp_dense = np.linspace(self.radius_range[0],self.radius_range[1],self.refit_density)
-        ap_dense = np.linspace(self.viewangle_range[0],self.viewangle_range[1],self.refit_density)
-        cp_dense = np.linspace(self.capacity_range[0],self.capacity_range[1],self.refit_density)
+    def create_lh_objects(self,param_index):
+        #only vary one parameter.
+        #As capacity leads little information about the actions, so never consider that as a parameter.
+
+        self.capacity_points = self.mim_agent.capacity*np.ones(self.resolution)
+        self.capacity_pointsDense =  self.mim_agent.capacity*np.ones(self.refit_density)
+
+
+
+
+        if param_index == 0:
+            #choose view radius to estimate
+            self.radius_points = np.linspace(self.radius_range[0],self.radius_range[1],self.resolution)
+            self.x_points = self.radius_points #Xaxis points for fitting polynomial
+
+            self.radius_pointsDense = np.linspace(self.radius_range[0],self.radius_range[1],self.refit_density)
+            self.x_pointsDense = self.radius_pointsDense
+
+            self.xrange = self.radius_range
+
+            self.angle_points = self.mim_agent.view_angle*np.ones(self.resolution)
+            self.angle_pointsDense = self.mim_agent.view_angle*np.ones(self.refit_density)
+        else:
+            self.radius_points = self.mim_agent.view_radius*np.ones(self.resolution)
+            self.radius_pointsDense = self.mim_agent.view_radius*np.ones(self.refit_density)
+
+            self.angle_points = np.linspace(self.viewangle_range[0],self.viewangle_range[1],self.resolution)
+            self.x_points = self.angle_points
+
+            self.xrange = self.viewangle_range
+
+            self.angle_pointsDense =np.linspace(self.viewangle_range[0],self.viewangle_range[1],self.refit_density)
+            self.x_pointsDense = self.angle_pointsDense
+
+        self.types_points =np.linspace(0,3,4).astype('int')
+
 
         parameter_set = []
-        self.parameter_set = np.array(np.meshgrid(self.capacity_points,self.radius_points,self.angle_points)).T.reshape(-1,3) #generates a list of coords with
+        self.parameter_set = np.vstack((self.capacity_points,self.radius_points,self.angle_points)).T #generates a list of coords with
 
         #a denser parameter set for using during refit-sampling
-        self.paramConfig_denseUniform = np.array(np.meshgrid(cp_dense,rp_dense,ap_dense)).T.reshape(-1,3)
+        self.paramConfig_denseUniform = np.vstack((self.capacity_pointsDense,self.radius_pointsDense,self.angle_pointsDense)).T
 
         self.n_parameter_configs = np.shape(self.parameter_set)[0]
 
@@ -103,6 +124,7 @@ class ABU():
             type_lh_agent_list = []
             for param_config in type_param_set:
                 lh_agent = Agent_lh(param_config,tp,self.target_pos,self.arena_obj)
+                lh_agent.curr_orientation = self.mim_agent.curr_orientation
                 type_lh_agent_list.append(lh_agent)
             self.lh_agents.append(type_lh_agent_list)
 
@@ -111,7 +133,11 @@ class ABU():
         "Batch behave for all parameter configurations"
         for type_list in self.lh_agents:
             for agent_parameterconf in type_list:
+                if agent_parameterconf.view_angle>np.pi:
+                    pass
                 agent_parameterconf.behave_dummy()
+                print agent_parameterconf.curr_orientation
+            pass
 
     def all_agents_imitate(self,action_and_consequence):
         "Batch imitate actions for all parameter configurations"
@@ -125,7 +151,8 @@ class ABU():
         for type_list in self.lh_agents:
             for agent_parameterconf in type_list:
                 agent_parameterconf.calc_likelihood(action_and_consequence)
-
+            pass
+        pass
 
     def fit_polynomialForLikelihood(self,action_and_consequence,tp):
         """
@@ -142,22 +169,17 @@ class ABU():
         """
         agents_set = self.lh_agents[tp]
 
-        x_val = self.likelihood_polyTransform_paramConfigXval
+        x_val = self.x_points
         y_val = [agent.likelihood_curr for agent in agents_set]
         y = np.array(y_val)
 
         if np.all(y==np.sort(y)):
             print("FUCK")
 
-        self.polynomial_fit = PolynomialFeatures(self.degree_likelihoodPolynomial)
+        polyFit_coeffs = np.polyfit(x_val,y_val,deg=self.degree_likelihoodPolynomial)
         # self.polynomialTransform_list.append(self.polynomial_fit)
 
-
-        l = LinearRegression()
-        l.fit(self.likelihood_polyTransform_paramConfigXval,y_val)
-
-        self.likelihood_polyCoeffRegressor_list.append(l)
-        self.likelihood_polyCoeffRegressor_weightsList.append(l.coef_)
+        self.likelihood_polyCoeff_list.append(polyFit_coeffs)
 
 
     def estimate_parameter(self,tp):
@@ -165,50 +187,70 @@ class ABU():
         #posterior --> downdegree to get back to normal polynomial
         #prior == posterior
 
-        prior_func = self.currPrior_polyCoeffRegressor
-        likelihood_func = self.likelihood_polyCoeffRegressor_list[-1] #latest
+        priorPoly_coeffs = self.currPrior_polyCoeff
+        likelihoodPoly_coeffs = self.likelihood_polyCoeff_list[-1] #latest
 
         #OPTIMIZE
+        prior_values = np.polyval(priorPoly_coeffs,self.x_pointsDense)
+        likelihood_values = np.polyval(likelihoodPoly_coeffs,self.x_pointsDense)
 
-        prior_values = prior_func.predict(self.prior_polyTransfrom_paramConfig_denseUniformXval)
-        likelihood_values = likelihood_func.predict(self.likelihood_polyTransform_paramConfig_denseUniformXval)
+        #find the posterior probability as a product of prior and likelihood
+        posteriorProb_polyCoeffs = np.polymul(priorPoly_coeffs,likelihoodPoly_coeffs)
 
-        posteriorProbFunc_yvals = np.multiply(prior_values,likelihood_values)
-
-        #now fit polynomial to posterior.
-        l = LinearRegression(fit_intercept=False)
-        l.fit(self.posterior_polyTransfrom_paramConfig_denseUniformXval,posteriorProbFunc_yvals)
+        #Densely sample from the polynomial to do a refit to lower degree, actual posterior polynomial
+        posteriorVals = np.abs(np.polyval(posteriorProb_polyCoeffs,self.x_pointsDense))#ABs because it can become negative in the multiplication
+        # plt.plot(posteriorVals)
+        # plt.show()
+        posteriorProb_polyCoeffs_refit = np.polyfit(self.x_pointsDense,posteriorVals,self.degree_posteriorPolynomial)
 
         #integrate the posterior to get normalization
-        integral_coeffs = pintegral.calculate_integral_multipliers(self.parameter_range,self.degree_posteriorPolynomial)
+        posterior_integral = np.polyint(posteriorProb_polyCoeffs_refit)
+        posterior_normalization = np.diff(np.polyval(posterior_integral,self.xrange))[0]
 
-        poly_coeffs = l.coef_
-        poly_coeffs = np.array(poly_coeffs).reshape(-1,1)
+        posteriorPoly_coeffs = posteriorProb_polyCoeffs_refit/posterior_normalization
 
-        polyIntegral_coeffs = np.hstack((poly_coeffs,integral_coeffs))
-        polyIntegral = np.sum(np.prod(polyIntegral_coeffs,axis=1))
+        posteriorPoly_coeffs[posteriorPoly_coeffs<epsilon]=0 #stabilize
 
-        #normalizing the posterior probability by dividing it with the integral
-        l.coef_/=polyIntegral
-        l.intercept_/=polyIntegral
+        #sample from posterior
+        class posteriorGen(stats.rv_continuous):
+            #sampler for posterior
+            def _pdf(self, x, *args):
+                return np.polyval(posteriorPoly_coeffs,x)
+
+        posterior_samples = posteriorGen(a=self.xrange[0],b=self.xrange[1]).rvs(size=10)
+
+        posterior_estimate_sample = np.mean(posterior_samples)
+        posterior_estimate_maximum, maxprob = self.poly_findMaximum(posteriorPoly_coeffs)
+
+        self.currPrior_polyCoeff = posteriorPoly_coeffs
+        self.posteriorEstimate_sample.append(posterior_estimate_sample)
+        self.posteriorEstimate_maximum.append(posterior_estimate_maximum)
+        print("The posterior estimates are"+str(posterior_estimate_maximum)+' '+str(posterior_estimate_sample))
 
 
-        #resample from posterior
-        self.get_MAPestimate(l,self.posterior_polyTransfrom)
-        # class posterior_dist(stats.rv_continuous):
-        #     def _pdf(self, param):
-        #         l.predict(param)
-        #
-        # distribution = posterior_dist()
-        #
-        # n_samples = 10
-        # resampled_parameters =[]
-        # for i in range(n_samples):
-        #     resampled_parameters.append(distribution.rvs())
-        # parameter_estimate = np.mean(resampled_parameters,axis=1)
-        # self.parameter_estimates.append(parameter_estimate)
 
-        self.currPrior_polyCoeffRegressor = l
+
+    def poly_findMaximum(self,polyCoeffs):
+        derivative = np.polyder(polyCoeffs,1)
+        inflexion_points = poly.polyroots(derivative)
+
+        inflexion_points_inrange = inflexion_points[np.logical_and(inflexion_points<self.xrange[1],inflexion_points>self.xrange[0])]
+        flex_ypoints = np.polyval(polyCoeffs,inflexion_points_inrange)
+
+        #if there are no inflexion points in range, then this is a monotonic function. The extremum is on of the edges.
+
+        if len(inflexion_points_inrange)==0:
+            edge_1 = np.polyval(polyCoeffs,self.xrange[0])
+            edge_2 = np.polyval(polyCoeffs, self.xrange[1])
+            if edge_1<edge_2:
+                return self.xrange[1],edge_2
+            else:
+                return self.xrange[0],edge_1
+
+        maximum_xpoint = inflexion_points_inrange[np.argmax(flex_ypoints)]
+        maximum_ypoint = flex_ypoints[maximum_xpoint]
+
+        return maximum_xpoint,maximum_ypoint
 
     def get_MAPestimate(self,distribution,polyTransform):
 
@@ -325,7 +367,7 @@ j=0
 prob_lh = []
 prob_lh2 = []
 prob_ori = []
-while i<10:
+while not are.isterminal:
     print("iter "+str(i))
     print("fail "+str(j))
     i+=1
@@ -342,13 +384,6 @@ while i<10:
 
 
 
-    print("--------------------------------")
-    n_fuck =np.sum(all_dest==[None for l in range(9*9*9*4)])
-    print(n_fuck)
-
-    if n_fuck==9*9*9*4:
-        j+=1
-    print("--------------------------------")
 
     # a1 = abu.lh_agents[0][35]
     # a2 = abu.lh_agents[1][450]
@@ -367,7 +402,7 @@ while i<10:
     abu.all_agents_imitate(agent_actions_list[0]) #zero because we are following the first agent.
 
     abu.all_agents_calc_likelihood(agent_actions_list[0])
-    abu.fit_polynomialForLikelihood(agent_actions_list[0][0],2)
+    abu.fit_polynomialForLikelihood(agent_actions_list[0][0],0)
     abu.estimate_parameter(0)
 
     are.check_for_termination()

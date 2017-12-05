@@ -8,6 +8,7 @@ from copy import deepcopy
 import pdb
 import levelbasedforaging_visualizer as lvlvis
 import itertools
+import config_experiment as config
 
 """
 ITEM should also be an object. with position and capacity.
@@ -26,10 +27,6 @@ WORLD:
 2) MCTS Wrapper:
     a) How does MCTS connect to everything else?
     b) MCTS sub-simulation of the entire world. So each MCTS run utilizes a new WORLD instance to run forward.
- 
-
-
-
 
 """
 
@@ -92,6 +89,8 @@ class arena():
         self.action_hashes =  [action for action in self.dict_actionIndex.iterkeys()]
         self.actions = np.arange(5)
         self.isterminal = False
+        self.astar_computed_dest = []
+        self.astar_computed_path = []
 
     def get_item_posarray(self):
         posarray = []
@@ -143,7 +142,7 @@ class arena():
         #retrieve what the agent wants to do
         for agent in self.agents:
             #Check what the agent wants to do
-            action_probs = agent.behave()
+            action_probs = agent.behave(False)
 
             #retrieve the action.
             agent_action = agent.behave_act(action_probs)
@@ -164,6 +163,9 @@ class arena():
 
         if self.visualize:
             self.update_vis()
+
+        self.astar_computed_path=[]
+        self.astar_computed_dest=[]
         return agent_actions,agent_probs
 
     def experiment(self):
@@ -299,7 +301,7 @@ class arena():
         hash_action= ''
         for act in action:
             hash_action+=self.action_hashes[act]
-        return hash_action
+        return hash_actio
 
     def unhash_action(self,hashed_action):
         """
@@ -441,7 +443,6 @@ class arena():
         ##Yet to finish
 
     def get_legalActions_N(self,turn):
-
         if turn in False: #universe's turn
             tot_actions = 1
             for agent in self.agents[0:-1]:
@@ -454,8 +455,8 @@ class arena():
             agent = self.agents[-1]
             return np.sum(agent.get_legalActionProbs()!=0)
 
-    def get_legalAction_random(self,turn):
 
+    def get_legalAction_random(self,turn):
         action_string =''
         if turn is False: #universe's turn
             for agent in self.agents[0:-1]:
@@ -469,40 +470,4 @@ class arena():
             randomaction = np.random.choice(np.where(validactionProb!=0)[0])
             action_string+=self.action_hashes[randomaction]
         return action_string
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
