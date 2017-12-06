@@ -112,6 +112,9 @@ class Agent():
         self.pad_grid_matrix = np.zeros_like(self.arena.grid_matrix)
         self.pad_grid_matrix = np.lib.pad(self.pad_grid_matrix, 1, 'constant', constant_values=1)
 
+        self.stagnant_count = 0
+        self.maximum_stagnation = 5
+
 
     @classmethod
     def create_from_param_vector(cls,param_vector,curr_pos,arena):
@@ -170,9 +173,15 @@ class Agent():
         else:
 
             # legal_action_prob = self.get_legalActionProbs() #all possible legal actions will have non-zero probabilites in the expression.
+            # if False and self.stagnant_count>self.maximum_stagnation:
+            #     self.action_probability = legal_actionProbs_withoutLoad #If the agent has been stagnant for this long,then just give it random values to move around.
+
             if ((self.arena.grid_matrix[self.curr_destination[0],self.curr_destination[1]]) and (np.linalg.norm(self.curr_position-self.curr_destination) <= 1)):
                 #just load - no movement
-                self.action_probability = self.dict_moves_actionsProbs['00'] #load action has 00 movement, so.
+                self.action_probability = self.dict_moves_actionsProbs['00']#load action has 00 movement, so.
+                # action_probability += 1.0 #giving chance to other actions.
+                # action_probability/=np.sum(action_probability)
+                # self.action_probability = np.copy(action_probability)
             else:
                 #Chose an action that takes you towards your goal.
 
@@ -186,31 +195,6 @@ class Agent():
                 self.action_probability = actionProb
 
 
-                #resulting_dist = np.linalg.norm(resulting_pos,0)
-                #resulting_dist_possible = np.logical_and(resulting_dist,legal_action_prob) #If a block is stopped,
-
-                #we need to find the next step to take.
-                #we need to make a copy grid matrix to pass to astar
-                # if is_dummy:
-                #     try:
-                #         pathIdx = self.arena.astar_computed_dest.index(self.curr_destination) #the path exists in memory
-                #         path = self.arena.astar_computed_path[pathIdx]
-                #     except ValueError:
-                #         # the path doesnt exist in memory
-                #         path = self.calc_path()
-                # else:
-                #     # this is not a dummy agent.
-                #     path=self.calc_path()
-                #
-                # #
-                # if len(path) is 0:
-                #     #Meaning the astar algorithm didn't find the path. Then just move about randomly.
-                #     # action_probabilites=np.array([1,1,1,1,0])/4.0
-                #     action_probabilites = self.valid_randMoveActionProb(False)
-                # else:
-                #     to_move = path[0]-self.curr_position
-                #     action_probs = self.dict_moves_actionsProbs[str(to_move[0])+str(to_move[1])]
-                #     self.action_probability = np.hstack((action_probs,0.0)).astype('float')
 
             #no 'valid'(actions that don't push the agent into boundaries) should be left with zero-probability.
 
@@ -240,7 +224,10 @@ class Agent():
         :param action_probs:  action probabilities to behave according to
         :return action_and_consequence: the selected action and consequence of such an action.
         """
-        final_action = np.random.choice(self.actions,1,p=action_probs)[0]
+        try:
+            final_action = np.random.choice(self.actions,1,p=action_probs)[0]
+        except ValueError:
+            pass
         final_movement = self.action_to_movements[final_action]
         final_nextposition = self.curr_position+final_movement
         action_and_consequence = [final_action,final_movement,final_nextposition]
@@ -270,43 +257,12 @@ class Agent():
 
 
         valid_actions_mask = valid_actions_mask.astype('float')
-        # if valid_actions_mask[-1]==0:
-        #     pass
         valid_actions_prob_without_load = valid_actions_mask/math.fsum(valid_actions_mask)
 
         valid_actions_mask[-1] =1 #to consider load action too.
         valid_actions_prob_withLoad = valid_actions_mask/math.fsum(valid_actions_mask)
 
         valid_actions_mask[-1] = 0 #again to return valid movements only
-
-        # time1 = time.time()
-
-        # valid_actionProb=[]
-        # currloc = self.curr_position
-        # for diff in self.action_to_movements:
-        #     curr_loc_diff = currloc+diff
-        #     new_loc = curr_loc_diff+np.array([1,1])
-        #
-        #     #Good thing about this is that the load action will always get zero prob
-        #     #which is what we want when we are selecting random movements.
-        #     if self.pad_grid_matrix[new_loc[0],new_loc[1]] or self.arena.grid_matrix[curr_loc_diff[0],curr_loc_diff[1]]:
-        #         valid_actionProb.append(0)
-        #     else:
-        #         valid_actionProb.append(1.0)
-        # valid_actionProb = np.array(valid_actionProb)/math.fsum(valid_actionProb)
-        #
-        # time2 = time.time()
-        # if np.all(valid_actions_prob_without_load==valid_actionProb):
-        #     pass
-        #     t1 = time1-start_time
-        #     t2 = time2-time1
-        #     # print(t2)
-        #     # print(t1)
-        #     # print("speed up achieved is "+str(t2/t1))
-        # else:
-        #     # print(valid_actions_prob_without_load)
-        #     # print(valid_actionProb)
-        #     print('Method failed')
 
         return valid_actions_prob_withLoad,valid_actions_prob_without_load, valid_actions_mask
 
@@ -315,11 +271,13 @@ class Agent():
         #The action is approved by the arena, and is being executed by the agent.
         #We can only move if it is not a load action.
         [final_action,final_movement,final_nextposition]=action_and_consequence
+        curr_position = self.curr_position.copy()
         if final_action!=4:
             self.load=False
             self.curr_orientation = self.action_to_orientations[final_action]
             self.arena.grid_matrix[self.curr_position[0],self.curr_position[1]]=0
             self.curr_position = final_nextposition
+
             try:
                 self.arena.grid_matrix[self.curr_position[0],self.curr_position[1]]=1
             except IndexError:
@@ -336,6 +294,11 @@ class Agent():
                     orientation = self.action_to_orientations[action_index]
                     self.curr_orientation = orientation
             # self.load = False
+        if np.sum(self.curr_position-curr_position)==0:
+            self.stagnant_count+=1
+        else:
+            self.stagnant_count=0
+
         return
 
     def get_position(self):

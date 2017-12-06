@@ -146,6 +146,9 @@ class arena():
 
             #retrieve the action.
             agent_action = agent.behave_act(action_probs)
+            if np.any(agent_action[2]>9):
+                pass
+
 
 
             agent_actions.append(agent_action)

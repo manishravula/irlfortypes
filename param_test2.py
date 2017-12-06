@@ -13,13 +13,14 @@ from scipy import stats
 from scipy import optimize as sopt
 import numpy.polynomial.polynomial as poly
 import matplotlib.pyplot as plt
+import rejection_sampler as rs
 
 
 epsilon = np.power(10,-10)
 
 class ABU():
     #class to facilitate Approximate Bayesian Updates.
-    def __init__(self,mimicking_agent,arena_obj):
+    def __init__(self,mimicking_agent,arena_obj,visualize=False):
         self.arena_obj = arena_obj #the arena we are basing everything on.
         self.mim_agent = mimicking_agent #the agent whose parameter-variations we are going to work on.
         self.target_pos = self.mim_agent.curr_position
@@ -53,6 +54,7 @@ class ABU():
 
         self.posteriorEstimate_sample=[]
         self.posteriorEstimate_maximum=[]
+        self. visualize = visualize
 
 
 
@@ -138,7 +140,7 @@ class ABU():
                     ag = agent_parameterconf
                     vilocs = [item.position for item in ag.visible_items]
                     valocs = [agent.curr_position for agent in ag.visible_agents]
-                    print('In position {}, with visible items {}, agents {} and destination {}'.format(ag.curr_position,vilocs,valocs,ag.curr_destination))
+                    # print('In position {}, with visible items {}, agents {} and destination {}'.format(ag.curr_position,vilocs,valocs,ag.curr_destination))
             if agent_parameterconf.type==0:
                 print('----------')
             pass
@@ -157,8 +159,8 @@ class ABU():
             for agent_parameterconf in type_list:
                 agent_parameterconf.calc_likelihood(action_and_consequence)
                 ag = agent_parameterconf
-            pass
-            print('----------')
+            # pass
+            # print('----------')
         pass
 
     def fit_polynomialForLikelihood(self,action_and_consequence,tp):
@@ -183,10 +185,11 @@ class ABU():
 
         polyFit_coeffs = np.polyfit(x_val,y_val,deg=self.degree_likelihoodPolynomial)
         # self.polynomialTransform_list.append(self.polynomial_fit)
-        plt.plot(x_val,y)
-        plt.plot(x_val,np.polyval(polyFit_coeffs,x_val))
-        plt.title("Likelihood fit vs real values, action taken is {} and destination is {}".format(action_and_consequence[0],self.mim_agent.curr_destination))
-        plt.show()
+        if self.visualize:
+            plt.plot(x_val,y)
+            plt.plot(x_val,np.polyval(polyFit_coeffs,x_val))
+            plt.title("Likelihood fit vs real values, action taken is {} and destination is {}".format(action_and_consequence[0],self.mim_agent.curr_destination))
+            plt.show()
 
 
         self.likelihood_polyCoeff_list.append(polyFit_coeffs)
@@ -205,21 +208,25 @@ class ABU():
 
 
         likelihood_values = np.abs(np.polyval(likelihoodPoly_coeffs,self.x_pointsDense))
-        plt.plot(self.x_pointsDense,likelihood_values,label='likelihood original values')
-        plt.plot(self.x_points,np.polyval(likelihoodPoly_coeffs,self.x_points),label='likelihood poly gen vals')
-        plt.title('Lieklihood fit for sparse vs dense values')
+        if self.visualize:
+            plt.plot(self.x_pointsDense,likelihood_values,label='likelihood original values')
+            plt.plot(self.x_points,np.polyval(likelihoodPoly_coeffs,self.x_points),label='likelihood poly gen vals')
+            plt.title('Lieklihood fit for sparse vs dense values')
 
         #find the posterior probability as a product of prior and likelihood
         posteriorProb_polyCoeffs = np.polymul(priorPoly_coeffs,likelihoodPoly_coeffs)
 
         #Densely sample from the polynomial to do a refit to lower degree, actual posterior polynomial
         posteriorVals = np.abs(np.polyval(posteriorProb_polyCoeffs,self.x_pointsDense))#ABs because it can become negative in the multiplication
-        plt.plot(self.x_pointsDense,posteriorVals,label='multiplied posterior poly gen values')
+        if self.visualize:
+            plt.plot(self.x_pointsDense,posteriorVals,label='multiplied posterior poly gen values')
 
         # plt.plot(posteriorVals)
         # plt.show()
         posteriorProb_polyCoeffs_refit = np.polyfit(self.x_pointsDense,posteriorVals,self.degree_posteriorPolynomial)
-        plt.plot(self.x_pointsDense,np.polyval(posteriorProb_polyCoeffs_refit,self.x_pointsDense),label='multiplied rft post pgen vals')
+
+        if self.visualize:
+            plt.plot(self.x_pointsDense,np.polyval(posteriorProb_polyCoeffs_refit,self.x_pointsDense),label='multiplied rft post pgen vals')
 
         #integrate the posterior to get normalization
         posterior_integral = np.polyint(posteriorProb_polyCoeffs_refit)
@@ -228,17 +235,15 @@ class ABU():
         posteriorProb_polyCoeffs_normalized = posteriorProb_polyCoeffs_refit/posterior_normalization
 
         posteriorProb_polyCoeffs_normalized[np.abs(posteriorProb_polyCoeffs_normalized)<epsilon]=0 #stabilize
-        # plt.plot(self.x_pointsDense,np.polyval(posteriorProb_polyCoeffs_normalized,self.x_pointsDense), label='normalized posterior poly gen values')
-        plt.legend()
-        plt.show()
+        if self.visualize:
+            # plt.plot(self.x_pointsDense,np.polyval(posteriorProb_polyCoeffs_normalized,self.x_pointsDense), label='normalized posterior poly gen values')
+            plt.legend()
+            plt.show()
 
-        #sample from posterior
-        class posteriorGen(stats.rv_continuous):
-            #sampler for posterior
-            def _pdf(self, x, *args):
-                return np.polyval(posteriorProb_polyCoeffs_normalized,x)
-
-        posterior_samples = posteriorGen(a=self.xrange[0],b=self.xrange[1]).rvs(size=10)
+        def pdf_func(p):
+            return np.polyval(posteriorProb_polyCoeffs_normalized,p)
+        pdfmax = np.max(posteriorVals)/posterior_normalization
+        posterior_samples = rs.rejection_sample(pdf_func,self.xrange[0],self.xrange[1],pdfmax+2,100)
 
         posterior_estimate_sample = np.mean(posterior_samples)
         posterior_estimate_maximum, maxprob = self.poly_findMaximum(posteriorProb_polyCoeffs_normalized)
@@ -290,21 +295,24 @@ class ABU():
 
 
 
+
+
+#
+grid_matrix = np.random.random((8,8))
 #
 #
-# #
-# grid_matrix = np.random.random((10,10))
-# #
-# #
-#
-# g = grid_matrix.flatten()
-# g[[np.random.choice(np.arange(100),83,replace=False)]]=0
-# grid_matrix = g.reshape((10,10))
-# grid_matrix[3,4]=0
-# # grid_matrix[5,5]=0
-# grid_matrix[6,7]=0
-# grid_matrix[7,7]=0
-# np.save('grid.npy',grid_matrix)
+
+g = grid_matrix.flatten()
+g[[np.random.choice(np.arange(64),50,replace=False)]]=0
+grid_matrix = g.reshape((8,8))
+grid_matrix = np.lib.pad(grid_matrix,(1,1),'constant',constant_values=(0,0))
+
+
+grid_matrix[3,4]=0
+# grid_matrix[5,5]=0
+grid_matrix[6,7]=0
+grid_matrix[7,7]=0
+np.save('grid.npy',grid_matrix)
 
 
 
@@ -336,7 +344,7 @@ a2.load = False
 
 # are.add_agents([a4,a2,a3,a1])
 are.add_agents([a1,a2,a3])
-abu = ABU(a1,are)
+abu = ABU(a1,are,False)
 
 
 g1= are.grid_matrix
