@@ -208,6 +208,8 @@ class Agent():
             if legal_actionProbs_withLoad[i] and not self.action_probability[i]:
                 #means if the action is valid, but is assigned zero probability in action_probability,
                 self.action_probability[i]+=.01 #then assign it a minute non-zero probability
+            if self.action_probability[i] and not legal_actionProbs_withLoad[i]:
+                self.action_probability[i]=0
 
         self.action_probability /= np.sum(self.action_probability)
         # if self.action_probability[4]==0:
