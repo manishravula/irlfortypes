@@ -71,13 +71,18 @@ class Agent():
         :param foraging_arena:
         """
         self.param_vector = np.array([capacity_param,viewRadius_param,viewAngle_param,type])
-        self.capacity = capacity_param
-        self.view_angle = viewAngle_param*np.pi*2
+        self.capacity_param = capacity_param
+        self.capacity = self.capacity_param
+
+        self.viewAngle_param = viewAngle_param
+        self.view_angle = self.viewAngle_param*np.pi*2
         self.load = False
         self.type = type
         self.arena = foraging_arena
         self.grid_matrix_size = np.shape(self.arena.grid_matrix)[0] #assuming it is a square
-        self.view_radius = viewRadius_param*self.grid_matrix_size
+
+        self.viewRadius_param = viewRadius_param
+        self.view_radius = self.viewRadius_param*self.grid_matrix_size
         self.curr_destination = None
         self.curr_position = np.array(curr_pos)
         self.curr_position_realaxis = (-1,1)*self.curr_position
@@ -146,7 +151,8 @@ class Agent():
         loc = self.curr_position
         self.curr_destination = None
 
-        if self.memory is not None and np.any(self.curr_position!=self.memory):
+        if self.memory is not None and np.any(self.curr_position!=self.memory) and self.arena.grid_matrix[self.memory[0],self.memory[1]]:
+            #we need to have something in memory, it shouldn't be where we are, and it should have something there.
             self.curr_destination = self.memory
         else:
             visible_entities = self.get_visibleAgentsAndItems()
@@ -246,8 +252,8 @@ class Agent():
         # valid_actionProb = []
 
         # currloc = self.curr_position
-        if debug:
-            pdb.set_trace()
+        # if debug:
+        #     pdb.set_trace()
         #optimize
         final_pos = self.curr_position+self.action_to_movements
 
@@ -338,32 +344,57 @@ class Agent():
     def get_params(self):
         return copy(self.params)
 
-    def get_visibleAgentsAndItems(self):
+    def get_visibleAgentsAndItems(self,debug=False):
+
         items_list = self.arena.items
         agents_list = self.arena.agents
 
         items_locarray = np.array([item.position for item in items_list])
+        # if debug:
+        #     print self.curr_position
+        #     print (items_locarray)
+        #
+        # if debug:
         items_is_visible = self.is_visible(items_locarray)
+        # else:
+        #     items_is_visible = self.is_visible(items_locarray,False)
+
         self.visible_items = [item for (item,is_in) in zip(items_list,items_is_visible) if is_in]
 
         agents_locarray = np.array([agent.curr_position for agent in agents_list])
+
         agents_is_visible = self.is_visible(agents_locarray)
+        # if debug:
+        #     print agents_is_visible
         self.visible_agents = [agent for (agent,is_in) in zip(agents_list,agents_is_visible) if is_in]
 
         return [self.visible_agents,self.visible_items]
 
 
     def is_visible(self,loc_array):
+
+
         distance_list = np.linalg.norm(loc_array-self.curr_position, axis=1)
         distance_list[distance_list==0]=np.inf
+
+
         direction_vectors = loc_array-self.curr_position
         angle_vectors = np.arctan2(0-direction_vectors[:,0],direction_vectors[:,1])%(2*np.pi) #Compensate for numpy and real axis diff
+        # if debug:
+        #     print('In is_visible')
+        #     print direction_vectors,angle_vectors
 
         constraint1 = distance_list<self.view_radius
         self.get_outerandinnerAngles()
         loc_array_real = np.fliplr(loc_array)
         loc_array_real[:,1]*=-1 #y axis is inverted.
+        # if debug:
+            # print loc_array_real
+
         constraint2 = np.array([self.is_withinSector(loc) for loc in loc_array_real])
+        # if debug:
+        #     print constraint2
+        #     print ("out of is_visible")
         return np.all((constraint1,constraint2),axis=0)
 
     def is_withinSector(self,target_loc):
@@ -371,8 +402,23 @@ class Agent():
 
         #Is the angle subtended between target and left most boundary, clockwise < 180?
         #is the angle subtended between target and right most boundary, anticlockwise < 180?
+
         left_normal_vector = np.array([0-target_vector[1],target_vector[0]])
         right_normal_vector = -1*left_normal_vector
+
+        # if debug:
+        #     print ("in is_withinSector")
+        #     print target_vector
+        #     print left_normal_vector
+        #     print right_normal_vector
+        #
+        # if debug:
+        #     print np.dot(self.left_boundary_vector,left_normal_vector)
+        #     print np.dot(self.right_boundary_vector,right_normal_vector)
+        #     print np.dot(self.right_boundary_vector, left_normal_vector)
+        #     print np.dot(self.left_boundary_vector,right_normal_vector)
+        #     print ("out of is_withinSector")
+
         if self.view_angle<=np.pi:
             if (np.dot(self.left_boundary_vector,left_normal_vector)>=0 and np.dot(self.right_boundary_vector,right_normal_vector)>=0):
                 return True

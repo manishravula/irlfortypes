@@ -32,7 +32,7 @@ class ABU():
         self.parameter_range = [self.capacity_range,self.radius_range,self.viewangle_range] #standard order
 
 
-        self.resolution = 9
+        self.resolution = 5
         self.refit_density = 200 #No of division in each dimension p to sample to calculate posterior.
 
         self.lh_agents = [] #list of type-set-agents with different paremeter settings used to calculate likelihood
@@ -43,11 +43,11 @@ class ABU():
         self.param_curr = 1 #should be one or two - view radius or view angle
         self.create_lh_objects(self.param_curr)
 
-        self.degree_likelihoodPolynomial = 20
+        self.degree_likelihoodPolynomial = 4
 
         #prior and posterior need to be same.
-        self.degree_posteriorPolynomial = 6
-        self.degree_priorPolynomial = 6
+        self.degree_posteriorPolynomial = 4
+        self.degree_priorPolynomial = 4
 
         self.fit_initialPrior()
 
@@ -88,11 +88,11 @@ class ABU():
 
             self.xrange = self.radius_range
 
-            self.angle_points = self.mim_agent.view_angle*np.ones(self.resolution)
-            self.angle_pointsDense = self.mim_agent.view_angle*np.ones(self.refit_density)
+            self.angle_points = self.mim_agent.viewAngle_param*np.ones(self.resolution)
+            self.angle_pointsDense = self.mim_agent.viewAngle_param*np.ones(self.refit_density)
         else:
-            self.radius_points = self.mim_agent.view_radius*np.ones(self.resolution)
-            self.radius_pointsDense = self.mim_agent.view_radius*np.ones(self.refit_density)
+            self.radius_points = self.mim_agent.viewRadius_param*np.ones(self.resolution)
+            self.radius_pointsDense = self.mim_agent.viewRadius_param*np.ones(self.refit_density)
 
             self.angle_points = np.linspace(self.viewangle_range[0],self.viewangle_range[1],self.resolution)
             self.x_points = self.angle_points
@@ -133,10 +133,14 @@ class ABU():
         "Batch behave for all parameter configurations"
         for type_list in self.lh_agents:
             for agent_parameterconf in type_list:
-                if agent_parameterconf.view_angle>np.pi:
-                    pass
                 agent_parameterconf.behave_dummy()
-                print agent_parameterconf.curr_orientation
+                if agent_parameterconf.type==0:
+                    ag = agent_parameterconf
+                    vilocs = [item.position for item in ag.visible_items]
+                    valocs = [agent.curr_position for agent in ag.visible_agents]
+                    print('In position {}, with visible items {}, agents {} and destination {}'.format(ag.curr_position,vilocs,valocs,ag.curr_destination))
+            if agent_parameterconf.type==0:
+                print('----------')
             pass
 
     def all_agents_imitate(self,action_and_consequence):
@@ -149,9 +153,12 @@ class ABU():
     def all_agents_calc_likelihood(self,action_and_consequence):
         "Batch calculate likelihood of all parameter configurations"
         for type_list in self.lh_agents:
+
             for agent_parameterconf in type_list:
                 agent_parameterconf.calc_likelihood(action_and_consequence)
+                ag = agent_parameterconf
             pass
+            print('----------')
         pass
 
     def fit_polynomialForLikelihood(self,action_and_consequence,tp):
@@ -173,11 +180,14 @@ class ABU():
         y_val = [agent.likelihood_curr for agent in agents_set]
         y = np.array(y_val)
 
-        if np.all(y==np.sort(y)):
-            print("FUCK")
 
         polyFit_coeffs = np.polyfit(x_val,y_val,deg=self.degree_likelihoodPolynomial)
         # self.polynomialTransform_list.append(self.polynomial_fit)
+        plt.plot(x_val,y)
+        plt.plot(x_val,np.polyval(polyFit_coeffs,x_val))
+        plt.title("Likelihood fit vs real values, action taken is {} and destination is {}".format(action_and_consequence[0],self.mim_agent.curr_destination))
+        plt.show()
+
 
         self.likelihood_polyCoeff_list.append(polyFit_coeffs)
 
@@ -191,38 +201,49 @@ class ABU():
         likelihoodPoly_coeffs = self.likelihood_polyCoeff_list[-1] #latest
 
         #OPTIMIZE
-        prior_values = np.polyval(priorPoly_coeffs,self.x_pointsDense)
-        likelihood_values = np.polyval(likelihoodPoly_coeffs,self.x_pointsDense)
+        prior_values = np.abs(np.polyval(priorPoly_coeffs,self.x_pointsDense))
+
+
+        likelihood_values = np.abs(np.polyval(likelihoodPoly_coeffs,self.x_pointsDense))
+        plt.plot(self.x_pointsDense,likelihood_values,label='likelihood original values')
+        plt.plot(self.x_points,np.polyval(likelihoodPoly_coeffs,self.x_points),label='likelihood poly gen vals')
+        plt.title('Lieklihood fit for sparse vs dense values')
 
         #find the posterior probability as a product of prior and likelihood
         posteriorProb_polyCoeffs = np.polymul(priorPoly_coeffs,likelihoodPoly_coeffs)
 
         #Densely sample from the polynomial to do a refit to lower degree, actual posterior polynomial
         posteriorVals = np.abs(np.polyval(posteriorProb_polyCoeffs,self.x_pointsDense))#ABs because it can become negative in the multiplication
+        plt.plot(self.x_pointsDense,posteriorVals,label='multiplied posterior poly gen values')
+
         # plt.plot(posteriorVals)
         # plt.show()
         posteriorProb_polyCoeffs_refit = np.polyfit(self.x_pointsDense,posteriorVals,self.degree_posteriorPolynomial)
+        plt.plot(self.x_pointsDense,np.polyval(posteriorProb_polyCoeffs_refit,self.x_pointsDense),label='multiplied rft post pgen vals')
 
         #integrate the posterior to get normalization
         posterior_integral = np.polyint(posteriorProb_polyCoeffs_refit)
         posterior_normalization = np.diff(np.polyval(posterior_integral,self.xrange))[0]
 
-        posteriorPoly_coeffs = posteriorProb_polyCoeffs_refit/posterior_normalization
+        posteriorProb_polyCoeffs_normalized = posteriorProb_polyCoeffs_refit/posterior_normalization
 
-        posteriorPoly_coeffs[posteriorPoly_coeffs<epsilon]=0 #stabilize
+        posteriorProb_polyCoeffs_normalized[np.abs(posteriorProb_polyCoeffs_normalized)<epsilon]=0 #stabilize
+        # plt.plot(self.x_pointsDense,np.polyval(posteriorProb_polyCoeffs_normalized,self.x_pointsDense), label='normalized posterior poly gen values')
+        plt.legend()
+        plt.show()
 
         #sample from posterior
         class posteriorGen(stats.rv_continuous):
             #sampler for posterior
             def _pdf(self, x, *args):
-                return np.polyval(posteriorPoly_coeffs,x)
+                return np.polyval(posteriorProb_polyCoeffs_normalized,x)
 
         posterior_samples = posteriorGen(a=self.xrange[0],b=self.xrange[1]).rvs(size=10)
 
         posterior_estimate_sample = np.mean(posterior_samples)
-        posterior_estimate_maximum, maxprob = self.poly_findMaximum(posteriorPoly_coeffs)
+        posterior_estimate_maximum, maxprob = self.poly_findMaximum(posteriorProb_polyCoeffs_normalized)
 
-        self.currPrior_polyCoeff = posteriorPoly_coeffs
+        self.currPrior_polyCoeff = posteriorProb_polyCoeffs_normalized
         self.posteriorEstimate_sample.append(posterior_estimate_sample)
         self.posteriorEstimate_maximum.append(posterior_estimate_maximum)
         print("The posterior estimates are"+str(posterior_estimate_maximum)+' '+str(posterior_estimate_sample))
@@ -238,7 +259,6 @@ class ABU():
         flex_ypoints = np.polyval(polyCoeffs,inflexion_points_inrange)
 
         #if there are no inflexion points in range, then this is a monotonic function. The extremum is on of the edges.
-
         if len(inflexion_points_inrange)==0:
             edge_1 = np.polyval(polyCoeffs,self.xrange[0])
             edge_2 = np.polyval(polyCoeffs, self.xrange[1])
@@ -249,54 +269,7 @@ class ABU():
 
         maximum_xpoint = inflexion_points_inrange[np.argmax(flex_ypoints)]
         maximum_ypoint = flex_ypoints[maximum_xpoint]
-
         return maximum_xpoint,maximum_ypoint
-
-    def get_MAPestimate(self,distribution,polyTransform):
-
-        def f(scaled_param):
-            new_param = np.multiply(scaled_param,range_array)+min_array
-            print new_param.shape
-            val = distribution.predict(polyTransform.fit_transform([new_param]))
-            pass
-            return 0-val[0]
-
-        #capacity, radius, view_angle
-
-        #preopt - scaling.
-        range_1 = self.capacity_range[1]-self.capacity_range[0]
-        range_2 = self.radius_range[1]-self.radius_range[0]
-        range_3 = self.viewangle_range[1]-self.viewangle_range[0]
-
-        range_array=np.array([range_1,range_2,range_3])
-        min_array = np.array([self.capacity_range[0],self.radius_range[0],self.viewangle_range[0]])
-
-        initial_guess = np.array([.5,.5,.5]).reshape(1,-1)
-        bound = np.array([[0,1],[0,1],[0,1]]).reshape((3,2))
-        # opt = sopt.fmin_l_bfgs_b(f,x0=initial_guess,bounds=bound)
-        start=time.time()
-        opt = sopt.differential_evolution(f,[[0,1],[0,1],[0,1]])
-        print(time.time()-start)
-        print("the parameter estimate is "+str(np.multiply(opt['x'],range_array)+min_array))
-
-    def get_likelihoodForParam(self,time_step,param_vector):
-        """
-        Calculate the likelihood for action at timestep if the agent had param_vector params
-        :param timestep: index of timestep, this automagically fixes action
-        :param param_vector: param_vector in the universal param format
-        :return:
-        """
-        #optimize
-        return self.regressor_list[time_step].predict(self.polynomial_fit.fit_transform([param_vector]))
-
-
-
-
-
-
-
-
-
 
 
     def get_agentFromParamConfig(self,param_config,tp):
@@ -317,13 +290,21 @@ class ABU():
 
 
 
-
-
-
-
-
-
-
+#
+#
+# #
+# grid_matrix = np.random.random((10,10))
+# #
+# #
+#
+# g = grid_matrix.flatten()
+# g[[np.random.choice(np.arange(100),83,replace=False)]]=0
+# grid_matrix = g.reshape((10,10))
+# grid_matrix[3,4]=0
+# # grid_matrix[5,5]=0
+# grid_matrix[6,7]=0
+# grid_matrix[7,7]=0
+# np.save('grid.npy',grid_matrix)
 
 
 
@@ -367,6 +348,7 @@ j=0
 prob_lh = []
 prob_lh2 = []
 prob_ori = []
+are.visualize=False #we want to update ourselves
 while not are.isterminal:
     print("iter "+str(i))
     print("fail "+str(j))
@@ -402,8 +384,10 @@ while not are.isterminal:
     abu.all_agents_imitate(agent_actions_list[0]) #zero because we are following the first agent.
 
     abu.all_agents_calc_likelihood(agent_actions_list[0])
-    abu.fit_polynomialForLikelihood(agent_actions_list[0][0],0)
+    abu.fit_polynomialForLikelihood(agent_actions_list[0],0)
     abu.estimate_parameter(0)
+
+    are.update_vis() #now we want to see what happened
 
     are.check_for_termination()
 

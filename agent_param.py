@@ -94,7 +94,7 @@ class Agent_lh(Agent):
         Dummy function to calcualte probs
         :return:
         """
-        self.behave(True)
+        self.behave(False)
         self.action_probs_are_fresh = True
 
     def calc_likelihood(self,action_and_consequence):

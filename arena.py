@@ -164,8 +164,6 @@ class arena():
         if self.visualize:
             self.update_vis()
 
-        self.astar_computed_path=[]
-        self.astar_computed_dest=[]
         return agent_actions,agent_probs
 
     def experiment(self):
