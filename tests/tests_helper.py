@@ -39,13 +39,13 @@ def test_for_normalization(polycoeffs,xrange):
             sum = np.diff(poly.polyval(xrange,integral))[0]
             diff_from_one = np.abs(sum - 1)
 
-            ndivs = 100000
-            x = np.linspace(xrange[0],xrange[1],ndivs)
-            sum2 = np.sum(poly.polyval(x,polycoeffs))*(xrange[1]-xrange[0])/ndivs
+            # ndivs = 100000
+            # x = np.linspace(xrange[0],xrange[1],ndivs)
+            # sum2 = np.sum(poly.polyval(x,polycoeffs))*(xrange[1]-xrange[0])/ndivs
 
-            diff_from_one_2 = np.abs(sum2-1)
-            assert diff_from_one_2<epsilon, 'Not normalized poly with error 2 {}, {}'.format(diff_from_one_2, diff_from_one)
-            assert diff_from_one<epsilon, 'Not normalized polynomial with error {}, {}'.format(diff_from_one, diff_from_one_2)
+            # diff_from_one_2 = np.abs(sum2-1)
+            # assert diff_from_one_2<epsilon, 'Not normalized polynomial with error 2 {}, {}'.format(diff_from_one_2, diff_from_one)
+            assert diff_from_one<epsilon, 'Not normalized polynomial with error {} and actual sum {}'.format(diff_from_one, sum)
     return
 
 

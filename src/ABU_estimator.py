@@ -29,10 +29,7 @@ def polynomial_normalize(polycoeffs,xrange):
     # print(sum)
     # polynomial_normalize(normalized_polynomial,xrange)
 
-    try:
-        Tests.test_for_normalization(normalized_polynomial,xrange)
-    except AssertionError:
-        print("Thest")
+    Tests.test_for_normalization(normalized_polynomial,xrange)
 
     # try:
     #     #See if it is normalized yet.
