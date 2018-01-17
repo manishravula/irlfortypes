@@ -28,7 +28,18 @@ def polynomial_normalize(polycoeffs,xrange):
     normalized_polynomial = polycoeffs/sum
     # print(sum)
     # polynomial_normalize(normalized_polynomial,xrange)
-    Tests.test_for_normalization(normalized_polynomial,xrange)
+
+    try:
+        Tests.test_for_normalization(normalized_polynomial,xrange)
+    except AssertionError:
+        print("Thest")
+
+    # try:
+    #     #See if it is normalized yet.
+    #     Tests.test_for_normalization(normalized_polynomial,xrange)
+    # except AssertionError:
+    #     #IF it isn't, call itself again.
+    #     polynomial_normalize(normalized_polynomial,xrange)
     return normalized_polynomial, sum
 
 epsilon = np.power(10,-10)
@@ -158,7 +169,11 @@ class ABU():
 
     def poly_findMaximum(self, polyCoeffs):
         derivative = poly.polyder(polyCoeffs, 1)
-        inflexion_points = poly.polyroots(derivative)
+        inflexion_points_complex = poly.polyroots(derivative)
+
+        #Only need real roots.
+        inflexion_points = inflexion_points_complex[np.abs(inflexion_points_complex)==inflexion_points_complex.real]
+        inflexion_points = inflexion_points.real
 
         inflexion_points_inrange = inflexion_points[
             np.logical_and(inflexion_points < self.xrange[1], inflexion_points > self.xrange[0])]
@@ -289,7 +304,7 @@ class ABU():
             plt.plot(self.x_pointsDense,poly.polyval(self.x_pointsDense,posteriorProb_polyCoeffs_refit),label='multiplied rft post pgen vals')
 
         #integrate the posterior to get normalization
-        posteriorProb_polyCoeffs_normalized, posterior_normalization =polynomial_normalize(posteriorProb_polyCoeffs,self.xrange)
+        posteriorProb_polyCoeffs_normalized, posterior_normalization =polynomial_normalize(posteriorProb_polyCoeffs_refit,self.xrange)
 
 
         # posteriorProb_polyCoeffs_normalized[np.abs(posteriorProb_polyCoeffs_normalized)<epsilon]=0 #stabilize
@@ -329,6 +344,7 @@ class ABU():
                 prior_polyCoeffs = self.inital_prior[tp]
             else:
                 prior_polyCoeffs = self.posterior_polyCoeff_typesList[i-1][tp]
+            print("Requesting to estimate type {}".format(tp))
             updated_posterioirPoly,pestim_sample,pestim_max = self.estimate_parameter(likelihood_polyCoeffs,prior_polyCoeffs)
             posterioir_list.append(updated_posterioirPoly)
             estimates_list.append([pestim_sample,pestim_max])
