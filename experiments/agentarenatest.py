@@ -1,26 +1,24 @@
 import numpy as np
-from arena import arena
-from agent import Agent
+from src.arena import arena
+from src.agent import Agent
 import time
-import pdb
 import copy
-from MCTS import mcts_unique as mu
-from agent_param import Agent_lh
+# from MCTS import mcts_unique as mu
 
 
-# #
-# grid_matrix = np.random.random((10,10))
-# #
-# #
 #
-# g = grid_matrix.flatten()
-# g[[np.random.choice(np.arange(100),93,replace=False)]]=0
-# grid_matrix = g.reshape((10,10))
-# grid_matrix[3,4]=0
-# grid_matrix[5,5]=0
-# grid_matrix[6,7]=0
-# grid_matrix[7,7]=0
-# np.save('grid.npy',grid_matrix)
+grid_matrix = np.random.random((10,10))
+#
+#
+
+g = grid_matrix.flatten()
+g[[np.random.choice(np.arange(100),83,replace=False)]]=0
+grid_matrix = g.reshape((10,10))
+grid_matrix[3,4]=0
+grid_matrix[5,5]=0
+grid_matrix[6,7]=0
+grid_matrix[7,7]=0
+np.save('grid.npy',grid_matrix)
 
 grid_matrix = np.load('grid.npy')
 grid_matrix/=2.0
@@ -30,7 +28,7 @@ g2 = copy.deepcopy(grid_matrix)
 are = arena(grid_matrix,False)
 
 
-are = arena(grid_matrix,True)
+# are = arena(grid_matrix,True)
 a1 = Agent(0.42,.46,.25,0,np.array([3,4]),are)
 a1.load = False
 

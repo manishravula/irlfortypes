@@ -10,5 +10,5 @@ class Gaussian_fitter:
         for action in actions:
             lh = lh * norm.pdf(action, self.mean, self.sigma)
 
-        return (lh, self.sigma)
+        return (math.log(lh), self.sigma)
     

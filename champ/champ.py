@@ -4,13 +4,20 @@ from Queue import Queue
 import math
 from random import randint
 from numpy.random import normal
+from sampling import *
 
 class Config:
-    def __init__(self, model_fitters, length_mean = 20.0, length_sigma = 10.0, length_min = 5):
+    def __init__(self, model_fitters, length_mean = 20.0, length_sigma = 10.0, length_min = 5, max_particles = -1, resamp_particles = -1):
         self.model_fitters = model_fitters
         self.seg_length_mean = length_mean
         self.seg_length_sigma = length_sigma
         self.seg_length_min = length_min
+
+        #when num of particles exceed max_particles, do resampling
+        self.max_particles = max_particles
+
+        #after resampling, num of particles is at least resamp_particles
+        self.resamp_particles = resamp_particles
 
 class Champ:
     def __init__(self, config):
@@ -18,8 +25,8 @@ class Champ:
         self.seg_length_mean = config.seg_length_mean
         self.seg_length_sigma = config.seg_length_sigma
         self.seg_length_min = config.seg_length_min
-        #self.max_particles = config.max_particles
-        #self.resamp_particles = config.resamp_particles
+        self.max_particles = config.max_particles
+        self.resamp_particles = config.resamp_particles
 
         self.states = []
         self.actions = []
@@ -45,6 +52,8 @@ class Champ:
         else:
             self.prev_particle.append(None)
             self.prev_param.append(None)
+        if(self.max_particles > 0):
+            self.particles = resample_particles(self.particles, self.max_particles, self.resamp_particles)
         self.step = self.step + 1
 
     def create_particles(self):
@@ -59,12 +68,13 @@ class Champ:
         max_param = None
         for p in self.particles:
             fitter = self.model_fitters[p.model_index]
-            lh, theta = fitter.fit(self.states[p.pos:self.step], self.actions[p.pos:self.step])
+            lh, theta = fitter(self.states[p.pos], self.states[self.step])
             g = self.compute_g(self.step - p.pos + 1)
-            if(lh == 0.0 or g == 0.0):
+            if(math.isnan(lh) or g == 0.0):
                 MAP = -float('inf')
             else:
-                MAP = math.log(lh) + p.prev_MAP + self.pi + math.log(g)
+                MAP = lh + p.prev_MAP + self.pi + math.log(g)
+            p.update_MAP(MAP)
             if MAP > max_MAP:
                 max_MAP = MAP
                 max_particle = p
@@ -84,7 +94,7 @@ class Champ:
         params = []
         while(index >= 0 and self.prev_particle[index] != None):
             prev_particle = self.prev_particle[index]
-            print("prev changepoint at: " + str(prev_particle.pos))
+            print("prev changepoint at: " + str(prev_particle.pos) + " and type is: " + str(prev_particle.model_index))
             model_indices.append(prev_particle.model_index)
             params.append(self.prev_param[index])
             index = prev_particle.pos - 1
@@ -96,6 +106,12 @@ class Particle:
         self.pos = pos
         self.prev_MAP = prev_MAP
         self.model_index = model_index
+
+    def update_MAP(self,MAP):
+        self.MAP = MAP
+
+    def update_NMAP(self,NMAP):
+        self.NMAP = NMAP
         
 if __name__ == "__main__":
     from fitter import Gaussian_fitter
@@ -104,7 +120,7 @@ if __name__ == "__main__":
     fitters = []
     for sigma in sigmas:
         fitters.append(Gaussian_fitter(sigma))
-    config = Config(fitters, length_min = 5, length_mean = 20.0, length_sigma = 10.0)
+    config = Config(fitters, length_min = 10, length_mean = 40.0, length_sigma = 100.0, max_particles = 1000, resamp_particles = 1000)
 
     champ = Champ(config)
 

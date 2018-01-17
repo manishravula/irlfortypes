@@ -115,6 +115,13 @@ class Agent():
         self.stagnant_count = 0
         self.maximum_stagnation = 5
 
+        # if np.sum(np.shape(self.arena.grid_matrix)%2) == 0:
+        #     raise Exception("The grid matrix size is an even number")
+        # else:
+        #     self.center_point = np.shape(self.arena.grid_matrix)/2
+
+
+
 
     @classmethod
     def create_from_param_vector(cls,param_vector,curr_pos,arena):
@@ -169,7 +176,9 @@ class Agent():
 
         if self.curr_destination is None:
             #random actions
-            self.action_probability = legal_actionProbs_withLoad
+            self.action_probability = np.copy(legal_actionProbs_withLoad)
+            self.action_probability[self.type]+=1 #biasing random movement probabilites when moving around
+            self.action_probability/=np.sum(self.action_probability)
         else:
 
             # legal_action_prob = self.get_legalActionProbs() #all possible legal actions will have non-zero probabilites in the expression.
@@ -350,16 +359,17 @@ class Agent():
         #     print direction_vectors,angle_vectors
 
         constraint1 = distance_list<self.view_radius
-        self.get_outerandinnerAngles()
-        loc_array_real = np.fliplr(loc_array)
-        loc_array_real[:,1]*=-1 #y axis is inverted.
-        # if debug:
-            # print loc_array_real
-
-        constraint2 = np.array([self.is_withinSector(loc) for loc in loc_array_real])
-        # if debug:
-        #     print constraint2
+        # self.get_outerandinnerAngles()
+        # loc_array_real = np.fliplr(loc_array)
+        # loc_array_real[:,1]*=-1 #y axis is inverted.
+        # # if debug:
+        #     # print loc_array_real
+        #
+        # constraint2 = np.array([self.is_withinSector(loc) for loc in loc_array_real])
+        # # if debug:
+        # #     print constraint2
         #     print ("out of is_visible")
+        constraint2 = np.ones(len(loc_array)).astype('bool')
         return np.all((constraint1,constraint2),axis=0)
 
     def is_withinSector(self,target_loc):
@@ -420,88 +430,143 @@ class Agent():
 
         if self.type==0:
             if self.visible_items:
-                return (self.get_furthestItem(self.visible_items)).position
+                self.typeVisible_item = self.get_furthestItem(np.copy(self.visible_items),self.type)
+                if self.typeVisible_item:
+                    return self.typeVisible_item.position
+                else:
+                    return None
             else:
                 return None
+
         elif self.type==1:
             if self.visible_items:
-                return (self.get_highestItemBelowSelf(self.visible_items)).position
+                self.typeVisible_item = self.get_furthestItem(np.copy(self.visible_items), self.type)
+                if self.typeVisible_item:
+                    return self.typeVisible_item.position
+                else:
+                    return None
             else:
                 return None
+
         elif self.type==2:
             if self.visible_agents:
-                furthest_agent = self.get_furthestAgent(self.visible_agents)
-                if self.visible_items:
-                    #Saving
-                    curr_position = copy(self.curr_position)
-                    curr_type = copy(self.type)
-
-                    #transitioning
-                    self.curr_position = furthest_agent.curr_position
-                    self.type = 0
-                    dest = self.choosetarget(visible_entities)
-
-                    #restoring
-                    self.curr_position = copy(curr_position)
-                    self.type = curr_type
-                    return dest
+                self.typeVisible_agent = self.get_furthestAgent(np.copy(self.visible_agents),self.type)
+                if self.typeVisible_agent:
+                    return self.typeVisible_agent.curr_position
                 else:
-                    return furthest_agent.curr_position
+                    return None
             else:
                return None
+
         elif self.type==3:
             if self.visible_agents:
-                highest_agent = self.get_highestAgentBelowSelf(self.visible_agents)
-                if highest_agent:
-                    dest = highest_agent
+                self.typeVisible_agent = self.get_furthestAgent(np.copy(self.visible_agents),self.type)
+                if self.typeVisible_agent:
+                    return self.typeVisible_agent.curr_position
                 else:
-                    dest = self.get_furthestAgent(self.visible_agents)
-
-                if self.visible_items:
-                    #saving
-                    curr_position = copy(self.curr_position)
-                    curr_type = copy(self.type)
-
-                    #transitioning
-                    self.curr_position = copy(dest.curr_position)
-                    self.type = 1
-                    dest = self.choosetarget(visible_entities)
-
-                    #Restoring
-                    self.curr_position = copy(curr_position)
-                    self.type = curr_type
-
-                    return dest
-
-                return dest.curr_position
+                    return None
             else:
-                return None
+               return None
         else:
             raise Exception("NO TYPE FOUND")
 
-    def get_furthestItem(self,visible_items):
+    def get_furthestItem(self,visible_items,quadrant):
         #According to type 1's furthest item
-        distances = np.array([np.linalg.norm(item.position-self.curr_position) for item in visible_items])
-        farthest_item = visible_items[np.argmax(distances)]
-        return farthest_item
+        if len(visible_items) ==0:
+            raise Exception("Passed an empty list of visible items")
+
+        if quadrant not in range(4):
+            raise Exception("Passed an unknown quadrant value")
 
 
-    def get_highestItemBelowSelf(self,visible_items):
-        #According to type 2's highest item def
-        item_capacities = np.array([item.weight for item in visible_items])
-        if np.any(item_capacities<self.capacity):
-            lighter_item_index = np.where(item_capacities==np.max(item_capacities[item_capacities<self.capacity]))
-            return visible_items[lighter_item_index[0]]
+        try:
+            visible_items[0].position
+        except AttributeError:
+            raise ("passed agent instead of item")
+
+        curr_position_real = np.array([self.curr_position[1], -self.curr_position[0]])
+        curr_position_x = curr_position_real[0]
+        curr_position_y = curr_position_real[1]
+
+        itemsLocs_centered_real =  np.array([[item.position[1]-curr_position_x,-item.position[0]-curr_position_y] for item in visible_items])
+        itemLocs_prod = np.product(itemsLocs_centered_real,axis=1)
+        if quadrant==0:
+            mask1 = itemLocs_prod>0 #both have same degree
+            mask2 = np.all(itemsLocs_centered_real>0,axis=1) #positive cordinates
+            mask = np.logical_and(mask1,mask2)
+        elif quadrant==1:
+            mask1 = itemLocs_prod<0 #both have different signs
+            mask2 = itemsLocs_centered_real[:,0]<0 #negative x-axis
+            mask = np.logical_and(mask1,mask2)
+        elif quadrant==2:
+            mask1 = itemLocs_prod>0 #both have same signs
+            mask2 = np.all(itemsLocs_centered_real<0,axis=1) #positive cordinates
+            mask = np.logical_and(mask1,mask2)
+        elif quadrant==3:
+            mask1 = itemLocs_prod<0 #both have different signs
+            mask2 = itemsLocs_centered_real[:,0]>0 #positive x-axis
+            mask = np.logical_and(mask1,mask2)
         else:
-            return visible_items[np.argmax(item_capacities)]
+            raise Exception("Mistake in the algorithm")
+
+        if mask.size ==0:
+            return None
+        else:
+            visible_typeitems = visible_items[mask]
+            if len(visible_typeitems)==0:
+                return None
+            visible_distances = np.linalg.norm(itemsLocs_centered_real[mask],axis=1)
+            furthestvisibleitem = visible_typeitems[np.argmax(visible_distances)]
+            return furthestvisibleitem
 
 
-    def get_furthestAgent(self,visible_agents):
-        positions_list = np.array([agent.curr_position for agent in visible_agents])
-        distances = np.linalg.norm(positions_list-self.curr_position,axis=1)
-        farthest_agent = visible_agents[np.argmax(distances)]
-        return farthest_agent
+    def get_furthestAgent(self, visible_agents, quadrant):
+        # According to type 1's furthest agent
+        if len(visible_agents) == 0:
+            raise Exception("Passed an empty list of visible agents")
 
+        if quadrant not in range(4):
+            raise Exception("Passed an unknown quadrant value")
+
+        curr_position_real = np.array([self.curr_position[1], -self.curr_position[0]])
+        curr_position_x = curr_position_real[0]
+        curr_position_y = curr_position_real[1]
+
+        try:
+            _ = visible_agents[0].curr_position
+        except AttributeError:
+            raise Exception("Passed item instead of agent?")
+
+        agentsLocs_centered_real = np.array([[agent.curr_position[1] - curr_position_x, -agent.curr_position[0] - curr_position_y] for agent in visible_agents])
+        agentLocs_prod = np.product(agentsLocs_centered_real, axis=1)
+        if quadrant == 0:
+            mask1 = agentLocs_prod > 0  # both have same degree
+            mask2 = np.all(agentsLocs_centered_real > 0, axis=1)  # positive cordinates
+            mask = np.logical_and(mask1, mask2)
+        elif quadrant == 1:
+            mask1 = agentLocs_prod < 0  # both have different signs
+            mask2 = agentsLocs_centered_real[:, 0] < 0  # negative x-axis
+            mask = np.logical_and(mask1, mask2)
+        elif quadrant == 2:
+            mask1 = agentLocs_prod > 0  # both have same signs
+            mask2 = np.all(agentsLocs_centered_real < 0, axis=1)  # positive cordinates
+            mask = np.logical_and(mask1, mask2)
+        elif quadrant == 3:
+            mask1 = agentLocs_prod < 0  # both have different signs
+            mask2 = agentsLocs_centered_real[:, 0] > 0  # positive x-axis
+            mask = np.logical_and(mask1, mask2)
+        else:
+            raise Exception("Mistake in the algorithm")
+
+        if mask.size == 0:
+            return None
+        else:
+            visible_typeagents = visible_agents[mask]
+            if len(visible_typeagents) is 0:
+                return None
+            visible_distances = np.linalg.norm(agentsLocs_centered_real[mask], axis=1)
+            furthestvisibleagent = visible_typeagents[np.argmax(visible_distances)]
+            return furthestvisibleagent
 
     def get_highestAgentBelowSelf(self,visible_agents):
         agent_capacities = np.array([agent.capacity for agent in visible_agents])

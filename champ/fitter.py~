@@ -5,7 +5,7 @@ class Gaussian_fitter:
         self.mean = 0.0
         self.sigma = sigma
 
-    def fit(states, actions):
+    def fit(self, states, actions):
         lh = 1.0
         for action in actions:
             lh = lh * norm.pdf(action, self.mean, self.sigma)

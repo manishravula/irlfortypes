@@ -1,11 +1,6 @@
 import numpy as np
-from arena import arena
-from agent import Agent
-import time
-import pdb
-import copy
-from MCTS import mcts_unique as mu
-from agent_param import Agent_lh
+from src.arena import arena
+from src.agent import Agent
 
 grid_matrix = np.random.random((10,10))
 
