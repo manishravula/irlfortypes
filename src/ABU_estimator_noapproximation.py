@@ -383,7 +383,14 @@ class ABU():
         pdf_func = interp1d(self.x_points,posterior_points_normalized)
 
         pdfmax = np.max(posterior_points_normalized)
-        posterior_samples = rs.rejection_sample(pdf_func,self.xrange[0],self.xrange[1],pdfmax+2,100)
+
+        num_samples = 100
+        posterior_samples = rs.rejection_sample(pdf_func,self.xrange[0],self.xrange[1],pdfmax+.2,num_samples)
+
+        while(len(posterior_samples)<20):
+            num_samples = num_samples*10
+            posterior_samples = rs.rejection_sample(pdf_func,self.xrange[0],self.xrange[1],pdfmax+.2,num_samples)
+
         posterior_estimate_sample = np.mean(posterior_samples)
 
         if self.visualize:
