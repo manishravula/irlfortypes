@@ -26,7 +26,7 @@ really affect the gridmatrix.
 """
 
 
-from agent import Agent
+from agent_originaltypes import Agent
 import numpy as np
 
 class Agent_lh(Agent):
