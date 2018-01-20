@@ -43,7 +43,7 @@ epsilon = np.power(10,-10)
 
 class ABU():
     #class to facilitate Approximate Bayesian Updates.
-    def __init__(self,mimicking_agent,arena_obj,kwargs,visualize=False):
+    def __init__(self,mimicking_agent,arena_obj,kwargs):
         self.arena_obj = arena_obj #the arena we are basing everything on.
         self.mim_agent = mimicking_agent #the agent whose parameter-variations we are going to work on.
         self.target_pos = self.mim_agent.curr_position
@@ -77,17 +77,21 @@ class ABU():
         self.posterior_polyCoeff_typesList = []
         self.prior_polyCoeff_typesList=[]
 
-        self.param_curr = 1 #should be one or two - view radius or view angle
+        self.param_curr = 0 #should be one or two - view radius or view angle
         self.create_lh_objects(self.param_curr)
 
         self.fit_initialPrior()
 
         self.posteriorEstimates_sample=[]
         self.posteriorEstimates_maximum=[]
-        self.visualize = visualize
+        self.visualize = kwargs.get('visualize',False)
+        self.saveplots = kwargs.get('saveplots',False)
 
         self.total_simSteps = 0
         self.model_evidence = []
+
+        self.fitstats_ll= []
+        self.fitstats_po = []
 
 
 
@@ -248,13 +252,19 @@ class ABU():
         y = np.array(y_val)
 
 
-        polyFit_coeffs = poly.polyfit(x_val,y_val,deg=self.degree_likelihoodPolynomial)
+        polyFit_coeffs,stats = poly.polyfit(x_val,y_val,deg=self.degree_likelihoodPolynomial,full=True)
+        self.fitstats_ll.append(stats)
         # self.polynomialTransform_list.append(self.polynomial_fit)
         if self.visualize:
-            plt.plot(x_val,y)
-            plt.plot(x_val,poly.polyval(x_val,polyFit_coeffs))
+            plt.plot(x_val,y,'-g1')
+            plt.plot(x_val,poly.polyval(x_val,polyFit_coeffs),'-rs')
             plt.title("Likelihood fit vs real values, action taken is {} and destination is {}".format(action_and_consequence[0],self.mim_agent.curr_destination))
-            plt.show()
+            if self.saveplots:
+                plt.savefig('../results/ll-{}-{}.png'.format(tp,time.asctime()))
+                plt.close()
+            else:
+                plt.show()
+                plt.close()
 
         return polyFit_coeffs
 
@@ -267,7 +277,7 @@ class ABU():
 
 
 
-    def estimate_parameter(self,likelihoodPoly_coeffs,priorPoly_coeffs):
+    def estimate_parameter(self,likelihoodPoly_coeffs,priorPoly_coeffs,tp):
         #prior(as a polynomial)*likelihood(as a polynomial) = posterioir(double degree polynomial)
         #posterior --> downdegree to get back to normal polynomial
         #prior == posterior
@@ -281,9 +291,10 @@ class ABU():
 
         likelihood_values = np.abs(poly.polyval(self.x_pointsDense,likelihoodPoly_coeffs))
         if self.visualize:
-            plt.plot(self.x_pointsDense,likelihood_values,label='likelihood original values')
-            plt.plot(self.x_points,poly.polyval(self.x_points,likelihoodPoly_coeffs),label='likelihood poly gen vals')
-            plt.title('Lieklihood fit for sparse vs dense values')
+            plt.plot(self.x_pointsDense,likelihood_values,'-r1',label='likelihood poly for dense values')
+            plt.plot(self.x_points,poly.polyval(self.x_points,likelihoodPoly_coeffs),'-go',label='likelihood poly for orig vals')
+            plt.plot(self.x_pointsDense,prior_values,'-kx',label='Prior dense vals')
+            plt.title('Likelihood fit for sparse vs dense values')
 
         #find the posterior probability as a product of prior and likelihood
         posteriorProb_polyCoeffs = poly.polymul(priorPoly_coeffs,likelihoodPoly_coeffs)
@@ -291,14 +302,15 @@ class ABU():
         #Densely sample from the polynomial to do a refit to lower degree, actual posterior polynomial
         posteriorVals = np.abs(poly.polyval(self.x_pointsDense,posteriorProb_polyCoeffs))#ABs because it can become negative in the multiplication
         if self.visualize:
-            plt.plot(self.x_pointsDense,posteriorVals,label='multiplied posterior poly gen values')
+            plt.plot(self.x_pointsDense,posteriorVals,'-bs',label='multiplied posterior poly gen values')
 
         # plt.plot(posteriorVals)
         # plt.show()
-        posteriorProb_polyCoeffs_refit = poly.polyfit(self.x_pointsDense,posteriorVals,self.degree_posteriorPolynomial)
+        posteriorProb_polyCoeffs_refit,stats= poly.polyfit(self.x_pointsDense,posteriorVals,self.degree_posteriorPolynomial,full=True)
+        self.fitstats_po.append(stats)
 
         if self.visualize:
-            plt.plot(self.x_pointsDense,poly.polyval(self.x_pointsDense,posteriorProb_polyCoeffs_refit),label='multiplied rft post pgen vals')
+            plt.plot(self.x_pointsDense,poly.polyval(self.x_pointsDense,posteriorProb_polyCoeffs_refit),'-cH',label='multiplied rft post pgen vals')
 
         #integrate the posterior to get normalization
         posteriorProb_polyCoeffs_normalized, posterior_normalization =polynomial_normalize(posteriorProb_polyCoeffs_refit,self.xrange)
@@ -308,7 +320,12 @@ class ABU():
         if self.visualize:
             # plt.plot(self.x_pointsDense,poly.polyval(posteriorProb_polyCoeffs_normalized,self.x_pointsDense), label='normalized posterior poly gen values')
             plt.legend()
-            plt.show()
+            if self.saveplots:
+                plt.savefig('../results/poll-compa-{}-{}.png'.format(tp,time.asctime()))
+                plt.close()
+            else:
+                plt.show()
+                plt.close()
 
         def pdf_func(p):
             return poly.polyval(p,posteriorProb_polyCoeffs_normalized)
@@ -342,7 +359,7 @@ class ABU():
             else:
                 prior_polyCoeffs = self.posterior_polyCoeff_typesList[i-1][tp]
             print("Requesting to estimate type {}".format(tp))
-            updated_posterioirPoly,pestim_sample,pestim_max = self.estimate_parameter(likelihood_polyCoeffs,prior_polyCoeffs)
+            updated_posterioirPoly,pestim_sample,pestim_max = self.estimate_parameter(likelihood_polyCoeffs,prior_polyCoeffs,tp)
             posterioir_list.append(updated_posterioirPoly)
             estimates_list.append([pestim_sample,pestim_max])
         self.posterior_polyCoeff_typesList.append(posterioir_list)

@@ -1,13 +1,14 @@
 
 import matplotlib.pyplot as plt
 from src.arena import arena
-from src.agent import Agent
+from src.agent_originaltypes import Agent
 from src.ABU_estimator import ABU
 import numpy as np
 import copy
 import time
 import numpy.polynomial.polynomial as poly
 from matplotlib.animation import FuncAnimation
+from tests import tests_helper as Tests
 
 grid_matrix = np.random.random((8,8))
 #
@@ -50,14 +51,16 @@ a2.load = False
 # ad2.load = False
 
 # are.add_agents([a4,a2,a3,a1])
-are.add_agents([a1,a2,a3])
+are.add_agents([a3,a1,a2])
 abu_param_dict = {'resolution':9,
               'refit_density':20,
-              'likelihood_polyDegree':5,
-              'posterior_polyDegree':4,
-              'prior_polyDegree':4}
+              'likelihood_polyDegree':15,
+              'posterior_polyDegree':15,
+              'prior_polyDegree':15,
+              'visualize':True,
+              'saveplots':True}
 
-abu = ABU(a1,are,abu_param_dict)
+abu = ABU(a3,are,abu_param_dict)
 g1= are.grid_matrix
 gm=[]
 i=0
@@ -178,7 +181,7 @@ est_stuff = True
 if est_stuff:
     est_array = np.array(estimates_array)
     for tp in abu.types:
-        plt.plot(est_array[:, tp][0], label='for type {}'.format(tp))
+        plt.plot(est_array[:, tp,0], label='for type {}'.format(tp))
     # plt.axvline(changepoint_time)
     plt.legend()
     plt.title("Evolution of estimates by ABU")
@@ -209,25 +212,50 @@ if logl_stuff:
 anim_stuff = True
 n_iterations = copy.deepcopy(i)
 if anim_stuff:
-    def animateLikelihood_individualType(tp):
+    def animatePosterior_individualType(tp):
         fig, ax = plt.subplots()
         fig.set_tight_layout(True)
         x = abu.x_pointsDense
         line, = ax.plot(x,poly.polyval(x,abu.posterior_polyCoeff_typesList[0][tp]))
         def update(i):
             label = 'timestep {0}'.format(i)
+            Tests.test_for_normalization(abu.posterior_polyCoeff_typesList[i][tp],abu.xrange)
             line.set_ydata(poly.polyval(x,abu.posterior_polyCoeff_typesList[i][tp]))
             ax.set_xlabel(label)
             return line,ax
         anim = FuncAnimation(fig,update,frames=n_iterations,interval=10)
-        save=False
+        save=True
         if save:
             anim.save('posterior_type_{}.gif'.format(tp),dpi=100,writer='imagemagick')
         else:
             plt.show()
     for tp in range(len(abu.types)):
-        animateLikelihood_individualType(tp)
+        animatePosterior_individualType(tp)
 
+
+
+anim_stuff = True
+n_iterations = copy.deepcopy(i)
+if anim_stuff:
+    def animateLikelihood_individualType(tp):
+        fig, ax = plt.subplots()
+        fig.set_tight_layout(True)
+        x = abu.x_pointsDense
+        line, = ax.plot(x,poly.polyval(x,abu.likelihood_polyCoeff_typesList[0][tp]))
+        def update(i):
+            label = 'timestep {0}'.format(i)
+            # Tests.test_for_normalization(abu.likelihood_polyCoeff_typesList[i][tp],abu.xrange)
+            line.set_ydata(poly.polyval(x,abu.likelihood_polyCoeff_typesList[i][tp]))
+            ax.set_xlabel(label)
+            return line,ax
+        anim = FuncAnimation(fig,update,frames=n_iterations,interval=10)
+        save=True
+        if save:
+            anim.save('likelihood_type_{}.gif'.format(tp),dpi=100,writer='imagemagick')
+        else:
+            plt.show()
+    for tp in range(len(abu.types)):
+        animateLikelihood_individualType(tp)
 
 
 
