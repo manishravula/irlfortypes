@@ -24,9 +24,10 @@ Similarities between older agent and the new agent are:
 Only difference lies in the execution policy. We note the execution of the agent shouldn't
 really affect the gridmatrix.
 """
+from experiments import config_experiment as config
+Agent = config.AGENT_CURR
 
 
-from agent_originaltypes import Agent
 import numpy as np
 
 class Agent_lh(Agent):

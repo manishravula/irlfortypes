@@ -1,0 +1,42 @@
+2018-01-29 19:47:55,203 [INFO] __main__: Logging configuration of the file
+2018-01-29 19:47:55,206 [INFO] __main__: LOGGING_CONFIG
+2018-01-29 19:47:55,210 [INFO] generate_init: Initializing new configuration
+2018-01-29 19:47:55,212 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 0, capacity 0.419202930206, view_radius 0.848893451105, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,213 [INFO] src.agent_originaltypes: Created an agent with location [4 8], type 0, capacity 0.369786078423, view_radius 0.473920215561, view_angle 0.652170037926 in standard ranges
+2018-01-29 19:47:55,214 [INFO] src.agent_originaltypes: Created an agent with location [8 5], type 1, capacity 0.277266424164, view_radius 0.58217370354, view_angle 0.779669203105 in standard ranges
+2018-01-29 19:47:55,390 [INFO] generate_init: Finished creating arena and agents. One item consumed due to overlap. Current item count is 18
+2018-01-29 19:47:55,390 [INFO] __main__: Generated new inital parameters
+2018-01-29 19:47:55,390 [INFO] src.ABU_estimator_noapproximation: Calling parent ABU via inheritance. This is ABU_noapproximation
+2018-01-29 19:47:55,391 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 0, capacity 0.419202930206, view_radius 0.1, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,392 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 0, capacity 0.419202930206, view_radius 0.325, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,392 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 0, capacity 0.419202930206, view_radius 0.55, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,393 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 0, capacity 0.419202930206, view_radius 0.775, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,393 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 0, capacity 0.419202930206, view_radius 1.0, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,394 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 1, capacity 0.419202930206, view_radius 0.1, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,394 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 1, capacity 0.419202930206, view_radius 0.325, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,394 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 1, capacity 0.419202930206, view_radius 0.55, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,395 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 1, capacity 0.419202930206, view_radius 0.775, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,395 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 1, capacity 0.419202930206, view_radius 1.0, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,396 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 2, capacity 0.419202930206, view_radius 0.1, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,396 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 2, capacity 0.419202930206, view_radius 0.325, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,397 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 2, capacity 0.419202930206, view_radius 0.55, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,397 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 2, capacity 0.419202930206, view_radius 0.775, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,397 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 2, capacity 0.419202930206, view_radius 1.0, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,398 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 3, capacity 0.419202930206, view_radius 0.1, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,398 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 3, capacity 0.419202930206, view_radius 0.325, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,399 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 3, capacity 0.419202930206, view_radius 0.55, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,399 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 3, capacity 0.419202930206, view_radius 0.775, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,400 [INFO] src.agent_originaltypes: Created an agent with location [9 1], type 3, capacity 0.419202930206, view_radius 1.0, view_angle 0.684589725827 in standard ranges
+2018-01-29 19:47:55,401 [INFO] src.ABU_estimator: ABU Estimator class initialized with 5 agents and working on estimating parameter view_radius with a resolution of 5
+2018-01-29 19:47:55,401 [INFO] src.ABU_estimator: ABU polynomial info: resolution: 5, llpoly_degree: 9, priorpoly_degree: 9, postpoly_degree: 9, refitdensity: 20
+2018-01-29 19:47:55,401 [INFO] src.champ: Initialized CHAMP with the following config
+2018-01-29 19:47:55,402 [INFO] src.champ: seg_length_mean: 20
+2018-01-29 19:47:55,402 [INFO] src.champ: seg_length_sigma: 10.0
+2018-01-29 19:47:55,402 [INFO] src.champ: seg_length_min: 5
+2018-01-29 19:47:55,402 [INFO] src.champ: max_particles: 1000
+2018-01-29 19:47:55,402 [INFO] src.champ: resamp_particles: 1000
+2018-01-29 19:47:55,720 [INFO] __main__: Item consumed at time step 6
+2018-01-29 19:48:14,122 [INFO] src.champ: Backtracking in CHAMP
+2018-01-29 19:48:14,122 [INFO] src.champ: prev changepoint at: 34 and type is: 2
+2018-01-29 19:48:14,122 [INFO] src.champ: prev changepoint at: 0 and type is: 0
+2018-01-29 19:48:14,123 [INFO] __main__: Results from CHAMP: ([2, 0], [0.8085489836641155, 0.8370970922813312], [34, 0])

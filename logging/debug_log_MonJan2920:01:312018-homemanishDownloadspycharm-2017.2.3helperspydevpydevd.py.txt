@@ -1,0 +1,50 @@
+2018-01-29 20:01:31,978 [INFO] __main__: Logging configuration of the file
+2018-01-29 20:01:31,981 [INFO] __main__: LOGGING_CONFIG
+2018-01-29 20:01:31,985 [INFO] generate_init: Initializing new configuration
+2018-01-29 20:01:31,989 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 1, capacity 0.262692551808, view_radius 0.665762385269, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:31,989 [INFO] src.agent_originaltypes: Created an agent with location [2 1], type 2, capacity 0.25198656363, view_radius 0.457200368503, view_angle 0.265096040063 in standard ranges
+2018-01-29 20:01:31,990 [INFO] src.agent_originaltypes: Created an agent with location [0 5], type 0, capacity 0.350218628642, view_radius 0.300017905292, view_angle 0.548886465941 in standard ranges
+2018-01-29 20:01:32,134 [INFO] generate_init: Finished creating arena and agents. One item consumed due to overlap. Current item count is 19
+2018-01-29 20:01:32,134 [INFO] __main__: Generated new inital parameters
+2018-01-29 20:01:32,135 [INFO] src.ABU_estimator_noapproximation: Calling parent ABU via inheritance. This is ABU_noapproximation
+2018-01-29 20:01:32,136 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 0, capacity 0.262692551808, view_radius 0.1, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,136 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 0, capacity 0.262692551808, view_radius 0.325, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,137 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 0, capacity 0.262692551808, view_radius 0.55, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,137 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 0, capacity 0.262692551808, view_radius 0.775, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,137 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 0, capacity 0.262692551808, view_radius 1.0, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,138 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 1, capacity 0.262692551808, view_radius 0.1, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,138 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 1, capacity 0.262692551808, view_radius 0.325, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,139 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 1, capacity 0.262692551808, view_radius 0.55, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,139 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 1, capacity 0.262692551808, view_radius 0.775, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,140 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 1, capacity 0.262692551808, view_radius 1.0, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,140 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 2, capacity 0.262692551808, view_radius 0.1, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,141 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 2, capacity 0.262692551808, view_radius 0.325, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,141 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 2, capacity 0.262692551808, view_radius 0.55, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,142 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 2, capacity 0.262692551808, view_radius 0.775, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,142 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 2, capacity 0.262692551808, view_radius 1.0, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,143 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 3, capacity 0.262692551808, view_radius 0.1, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,143 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 3, capacity 0.262692551808, view_radius 0.325, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,144 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 3, capacity 0.262692551808, view_radius 0.55, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,144 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 3, capacity 0.262692551808, view_radius 0.775, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,145 [INFO] src.agent_originaltypes: Created an agent with location [8 7], type 3, capacity 0.262692551808, view_radius 1.0, view_angle 0.820059207172 in standard ranges
+2018-01-29 20:01:32,147 [INFO] src.ABU_estimator: ABU Estimator class initialized with 5 agents and working on estimating parameter view_radius with a resolution of 5
+2018-01-29 20:01:32,147 [INFO] src.ABU_estimator: ABU polynomial info: resolution: 5, llpoly_degree: 9, priorpoly_degree: 9, postpoly_degree: 9, refitdensity: 20
+2018-01-29 20:01:32,147 [INFO] src.champ: Initialized CHAMP with the following config
+2018-01-29 20:01:32,148 [INFO] src.champ: seg_length_mean: 20
+2018-01-29 20:01:32,148 [INFO] src.champ: seg_length_sigma: 10.0
+2018-01-29 20:01:32,148 [INFO] src.champ: seg_length_min: 5
+2018-01-29 20:01:32,148 [INFO] src.champ: max_particles: 1000
+2018-01-29 20:01:32,148 [INFO] src.champ: resamp_particles: 1000
+2018-01-29 20:01:32,205 [INFO] __main__: Item consumed at time step 1
+2018-01-29 20:01:37,586 [INFO] __main__: Item consumed at time step 34
+2018-01-29 20:01:47,145 [INFO] __main__: Changepoint occured at 34 and agent 1 changed from type 1 to type 2 
+2018-01-29 20:01:49,027 [INFO] __main__: Item consumed at time step 38
+2018-01-29 20:01:51,542 [INFO] __main__: Item consumed at time step 42
+2018-01-29 20:01:53,693 [INFO] __main__: Item consumed at time step 45
+2018-01-29 20:01:55,239 [INFO] __main__: Item consumed at time step 47
+2018-01-29 20:01:56,946 [INFO] __main__: Item consumed at time step 49
+2018-01-29 20:01:56,947 [INFO] src.champ: Backtracking in CHAMP
+2018-01-29 20:01:56,947 [INFO] src.champ: prev changepoint at: 35 and type is: 0
+2018-01-29 20:01:56,947 [INFO] src.champ: prev changepoint at: 0 and type is: 3
+2018-01-29 20:01:56,947 [INFO] __main__: Results from CHAMP: ([0, 3], [0.17432820822906545, 0.675242249718925], [35, 0])
+2018-01-29 20:01:56,947 [INFO] __main__: Main reported changepoint at 34 from type 1 to 2

@@ -2,47 +2,57 @@
 import matplotlib.pyplot as plt
 from src.arena import arena
 from src.agent_originaltypes import Agent
-from src.ABU_estimator import ABU
+from src.legacy.ABU_estimator_noapproximation import ABU
 import numpy as np
 import copy
 import time
 import numpy.polynomial.polynomial as poly
 from matplotlib.animation import FuncAnimation
 from tests import tests_helper as Tests
+import config_experiment as config
+import generate_init as genInit
+import seaborn as sns
+sns.set()
+import logging
+import logging.config
+
+logging.config.dictConfig(config.LOGGING_CONFIG)
+logger = logging.getLogger(__name__)
+
 
 grid_matrix = np.random.random((8,8))
 #
 #
+#
+# g = grid_matrix.flatten()
+# g[[np.random.choice(np.arange(64),50,replace=False)]]=0
+# grid_matrix = g.reshape((8,8))
+# grid_matrix = np.lib.pad(grid_matrix,(1,1),'constant',constant_values=(0,0))
+#
+#
+# grid_matrix[3,4]=0
+# # grid_matrix[5,5]=0
+# grid_matrix[6,7]=0
+# grid_matrix[7,7]=0
+#
+#
+# # grid_matrix = np.load('grid.npy')
+# grid_matrix/=2.0
+# g2 = copy.deepcopy(grid_matrix)
 
-g = grid_matrix.flatten()
-g[[np.random.choice(np.arange(64),50,replace=False)]]=0
-grid_matrix = g.reshape((8,8))
-grid_matrix = np.lib.pad(grid_matrix,(1,1),'constant',constant_values=(0,0))
-
-
-grid_matrix[3,4]=0
-# grid_matrix[5,5]=0
-grid_matrix[6,7]=0
-grid_matrix[7,7]=0
-
-
-# grid_matrix = np.load('grid.npy')
-grid_matrix/=2.0
-g2 = copy.deepcopy(grid_matrix)
-
-
-are = arena(grid_matrix,True)
-a1 = Agent(0.42,.46,.25,0,np.array([3,4]),are)
-a1.load = False
-
-# a2 = Agent(0.2,3,4,3,np.array([5,5]),2,are)
-# a2.load = True
-
-a3 = Agent(.49,.2,.2,2,np.array([6,7]),are)
-a3.load = False
-
-a2 = Agent(.3,.25,.3,0,np.array([7,7]),are)
-a2.load = False
+#
+# are = arena(grid_matrix,True)
+# a1 = Agent(0.42,.46,.25,0,np.array([3,4]),are)
+# a1.load = False
+#
+# # a2 = Agent(0.2,3,4,3,np.array([5,5]),2,are)
+# # a2.load = True
+#
+# a3 = Agent(.49,.2,.2,2,np.array([6,7]),are)
+# a3.load = False
+#
+# a2 = Agent(.3,.25,.3,0,np.array([7,7]),are)
+# a2.load = False
 
 # ad = Agent_lh(.1,4,.6,0,np.array([7,7]),are)
 # ad.load = False
@@ -51,16 +61,25 @@ a2.load = False
 # ad2.load = False
 
 # are.add_agents([a4,a2,a3,a1])
-are.add_agents([a3,a1,a2])
-abu_param_dict = {'resolution':9,
-              'refit_density':20,
-              'likelihood_polyDegree':15,
-              'posterior_polyDegree':15,
-              'prior_polyDegree':15,
-              'visualize':True,
-              'saveplots':True}
+# are.add_agents([a3,a1,a2])
 
-abu = ABU(a3,are,abu_param_dict)
+if config.INIT_TYPE == config.FROM_MEMORY:
+    are, [a1,a2,a3] = genInit.generate_reload(3)
+else:
+    are, [a1,a2,a3] = genInit.generate_all(10,20,3)
+
+abu_param_dict = {
+              'radius_range': [.1,1],
+              'angle_range':[.1,1],
+              'resolution':10,
+              'refit_density':20,
+              'likelihood_polyDegree':9,
+              'posterior_polyDegree':9,
+              'prior_polyDegree':9,
+              'visualize':config.VISUALIZE_ESTIMATION,
+              'saveplots':config.VISUALIZE_ESTIMATION_SAVE}
+
+abu = ABU(a1,are,abu_param_dict)
 g1= are.grid_matrix
 gm=[]
 i=0
@@ -77,6 +96,7 @@ estimates_array = []
 itemconsumed_time = []
 nitems = len(are.items)
 time_array = []
+mse_list = []
 
 
 
@@ -167,11 +187,11 @@ if mev_stuff:
     abu.model_evidence = np.array(abu.model_evidence)
     for tp in abu.types:
         plt.plot(np.cumsum(abu.model_evidence[:, tp]), label='Evidence of model {}'.format(tp))
-        plt.ylim(0, 30)
+        # plt.ylim(0, 30)
 
     # plt.axvline(changepoint_time)
     plt.legend()
-    plt.title("Model Evidence across time")
+    plt.title("Model Evidence across time with true model {}".format(are.agents[0].type))
     image_name = '_mevidence.png'
     plt.savefig(image_name)
     plt.close()
@@ -181,10 +201,16 @@ est_stuff = True
 if est_stuff:
     est_array = np.array(estimates_array)
     for tp in abu.types:
-        plt.plot(est_array[:, tp,0], label='for type {}'.format(tp))
+        if tp==are.agents[0].type:
+            plt.plot(est_array[:,tp,0], label='for type {}'.format(tp))
     # plt.axvline(changepoint_time)
     plt.legend()
-    plt.title("Evolution of estimates by ABU")
+    if abu.estimating_parameter=='view_radius':
+        plt.title("ABU estim-evolution parameter {} with tv {} ".format(abu.estimating_parameter,are.agents[0].viewRadius_param))
+        plt.axhline(linewidth=2,y=are.agents[0].viewRadius_param)
+    else:
+        plt.title("ABU estim-evolution parameter {} with tv {} ".format(abu.estimating_parameter,are.agents[0].viewAngle_param))
+        plt.axhline(linewidth=2,y=are.agents[0].viewAngle_param)
     image_name = '_estimates.png'
     plt.savefig(image_name)
     plt.close()

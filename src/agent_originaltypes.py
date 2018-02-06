@@ -1,15 +1,11 @@
 import numpy as np
-import types
-import matplotlib.pyplot as plt
 # from Algorithms.AStar import astar as astar_nav
 from AStar import astar as ast
 from copy import copy
 from copy import deepcopy
 import math
-import config_experiment as config
-import time
-import pdb
 
+import logging
 # Ref doc:
 """
 Input to the agent class:
@@ -58,6 +54,7 @@ DEBUG TEST:
               ii) See if it works well enough at each state.
 """
 
+logger = logging.getLogger(__name__)
 
 class Agent():
     def __init__(self, capacity_param, viewRadius_param, viewAngle_param, type, curr_pos, foraging_arena):
@@ -119,6 +116,8 @@ class Agent():
 
         self.stagnant_count = 0
         self.maximum_stagnation = 5
+        logger.info('Created an agent with location {}, type {}, capacity {}, view_radius {}, view_angle {} in standard ranges'.format(self.curr_position, self.type, self.capacity_param,self.viewRadius_param,self.viewAngle_param))
+
 
     @classmethod
     def create_from_param_vector(cls, param_vector, curr_pos, arena):
@@ -481,7 +480,12 @@ class Agent():
         item_capacities = np.array([item.weight for item in visible_items])
         if np.any(item_capacities < self.capacity):
             lighter_item_index = np.where(item_capacities == np.max(item_capacities[item_capacities < self.capacity]))
-            return visible_items[lighter_item_index[0]]
+            try:
+                return visible_items[lighter_item_index[0]]
+            except TypeError:
+                #Happens sometimes. From Numpy version upgrade.
+                return visible_items[lighter_item_index[0][0]]
+
         else:
             return visible_items[np.argmax(item_capacities)]
 
@@ -495,7 +499,10 @@ class Agent():
         agent_capacities = np.array([agent.capacity for agent in visible_agents])
         if np.any(agent_capacities > self.capacity):
             desired_index = np.where(agent_capacities == np.max(agent_capacities[agent_capacities > self.capacity]))
-            return visible_agents[desired_index[0]]
+            try:
+                return visible_agents[desired_index[0]]
+            except TypeError:
+                return visible_agents[desired_index[0][0]]
         else:
             return None
 

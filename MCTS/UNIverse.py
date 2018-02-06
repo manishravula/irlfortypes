@@ -192,3 +192,181 @@ class universe():
             actionlist_good.append(actionlist_new)
         self.actionlist_good = actionlist_good
 
+
+    def hash_action(self,action):
+        """
+        :action: n_agents length array of actions.
+
+        possible actions for each agent are:
+        1) move up - u
+        2) move down - d
+        3) move right -r
+        4) move left - l
+        5) load - a
+
+        :return: no_agents sized string.
+        """
+        hash_action= ''
+        for act in action:
+            hash_action+=self.action_hashes[act]
+        return hash_actio
+
+    def unhash_action(self,hashed_action):
+        """
+
+        :param hashed_action: str of hashed actions
+        :return: vector of actions
+        """
+
+        action_vector = []
+        for char in hashed_action:
+            action_vector.append(self.dict_actionIndex[char])
+        return np.array(action_vector)
+
+    def react(self,action):
+        real_action = self.unhash_action(action)
+        real_action = real_action[-1] #actionprob of the last MCTS agent.
+
+        action_probs = np.zeros(5)
+        action_probs[real_action]=1
+
+        action_and_consequence = self.mcts_agent.behave_act(action_probs)
+        self.mcts_agent.execute_action(action_and_consequence)
+
+        pre_length = len(self.items)
+
+        if np.any([agent.load for agent in self.agents]):
+            self.update_foodconsumption()
+        reward = len(self.items)-pre_length
+        self.check_for_termination()
+
+        if self.visualize:
+            self.update_vis()
+
+        #we return action itself because we assume a unique action-state relationship.
+        #and it seems pointless to hash a state and unhash it
+        return reward, action
+
+    def act(self):
+        agent_actions = []
+
+        # retrieve what the agent wants to do
+        for agent in self.agents:
+            # Check what the agent wants to do
+            action_probs = agent.behave()
+
+            # retrieve the action.
+            agent_action = agent.behave_act(action_probs)
+
+            agent_actions.append(agent_action)
+
+            # Approve the agent's action. This way, if agent moves further and is in
+            # collision path with another agent, then this is not going to be aproble
+            # as the other agent will plan accordingly.
+            agent.execute_action(agent_action)
+
+        pre_length = len(self.items)
+        # See if there is any load operation.
+        if np.any([agent.load for agent in self.agents]):
+            self.update_foodconsumption()
+
+        self.check_for_termination()
+
+        reward = len(self.items) - pre_length
+        if self.visualize:
+            self.update_vis()
+
+        #state just needs to be something unique.
+        return reward, str(reward)
+
+
+    def act_external(self,action):
+
+        n_agents = len(self.agents)-1
+        real_action = self.unhash_action(action)
+        agent_actions = []
+        for i in range(n_agents):
+            # Check what the agent wants to d
+            agent = self.agents[i]
+            action_probs = np.ones(5)
+            action_probs[real_action[i]]=1
+
+            # retrieve the action.
+            agent_action = agent.behave_act(action_probs)
+
+            agent_actions.append(agent_action)
+
+            # Approve the agent's action. This way, if agent moves further and is in
+            # collision path with another agent, then this is not going to be aproble
+            # as the other agent will plan accordingly.
+            agent.execute_action(agent_action)
+
+        pre_length = len(self.items)
+        # See if there is any load operation.
+        if np.any([agent.load for agent in self.agents]):
+            self.update_foodconsumption()
+
+        self.check_for_termination()
+
+        reward = len(self.items) - pre_length
+        if self.visualize:
+            self.update_vis()
+
+        # state just needs to be something unique.
+        return reward, str(reward)
+
+    def get_legalActions(self, turn):
+
+        if turn is False:  # universe's turn
+            validactionString_list = []
+            for agent in self.agents[0:-1]:  # exclude MCTS agent
+                validactionProb = agent.get_legalActionProbs()
+                valid_actions = np.argwhere(validactionProb != 0).reshape(-1)
+                validAction_string = ''
+                for action in valid_actions:
+                    validAction_string += self.action_hashes[action]
+                validactionList.append(validAction_string)
+            validactionString_list.append('n')
+            all_actionStringVectors = itertools.product(*validactionString_list)
+            for i in range(len(validactionString_list)):
+                validactionString_list[i] = ''.join(validactionString_list[i])
+            return validactionString_list
+        else:
+            validactionString_list = []
+            default_string = ''.join(['n' for i in range(self.no_items - 1)])
+            validactionProb = self.mcts_agent.get_legalActionProbs()
+            valid_actions = np.argwhere(validactionProb != 0).reshape(-1)
+            for action in valid_actions:
+                validactionString_list.append(default_string + self.action_hashes[action])
+
+            return validactionString_list
+
+        ##Yet to finish
+
+    def get_legalActions_N(self, turn):
+        if turn in False:  # universe's turn
+            tot_actions = 1
+            for agent in self.agents[0:-1]:
+                validactionProb = agent.get_legalActionProbs()
+                n_actions = np.sum(validactionProb != 0)
+                tot_actions *= n_actions
+            return tot_actions
+
+        else:
+            agent = self.agents[-1]
+            return np.sum(agent.get_legalActionProbs() != 0)
+
+    def get_legalAction_random(self, turn):
+        action_string = ''
+        if turn is False:  # universe's turn
+            for agent in self.agents[0:-1]:
+                validactionProb = agent.get_legalActionProbs()
+                randomaction = np.random.choice(np.where(validactionProb != 0)[0])
+                action_string += self.action_hashes[randomaction]
+            action_string += 'n'
+        else:
+            action_string += sum(['n' for i in range(self.no_agents - 1)])
+            validactionProb = self.mcts_agent.get_legalActionProbs()
+            randomaction = np.random.choice(np.where(validactionProb != 0)[0])
+            action_string += self.action_hashes[randomaction]
+        return action_string

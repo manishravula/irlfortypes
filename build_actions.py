@@ -1,5 +1,6 @@
 import numpy as np
-import config_experiment as config
+from experiments import config_experiment as config
+
 n_movs = config.NO_MOVEMENTS
 
 action_probability = .25 * np.ones(n_movs+1)

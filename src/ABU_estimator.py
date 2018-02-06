@@ -1,20 +1,16 @@
 import numpy as np
-from arena import arena
-from agent import Agent
 import time
-import pdb
-import copy
-from MCTS import mcts_unique as mu
 from agent_param import Agent_lh
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
-from scipy import stats
-from scipy import optimize as sopt
 import rejection_sampler as rs
 import numpy.polynomial.polynomial as poly
 import matplotlib.pyplot as plt
 from tests import tests_helper as Tests
-# import seaborn
+from scipy.interpolate import interp1d
+import seaborn as sns
+sns.set()
+import logging
+
+logger = logging.getLogger(__name__)
 
 def polynomial_normalize(polycoeffs,xrange):
     '''
@@ -39,7 +35,7 @@ def polynomial_normalize(polycoeffs,xrange):
     #     polynomial_normalize(normalized_polynomial,xrange)
     return normalized_polynomial, sum
 
-epsilon = np.power(10,-10)
+epsilon = np.power(10.0,-10)
 
 class ABU():
     #class to facilitate Approximate Bayesian Updates.
@@ -47,8 +43,8 @@ class ABU():
         self.arena_obj = arena_obj #the arena we are basing everything on.
         self.mim_agent = mimicking_agent #the agent whose parameter-variations we are going to work on.
         self.target_pos = self.mim_agent.curr_position
-        self.radius_range = [.1,1]
-        self.viewangle_range = [.1,1]
+        self.radius_range = kwargs.get('radius_range',[.1,1])
+        self.viewangle_range = kwargs.get('angle_range',[.1,1])
 
         self.capacity_range_max = np.max(self.arena_obj.grid_matrix)
         self.capacity_range = [.1,self.capacity_range_max]
@@ -56,22 +52,16 @@ class ABU():
         self.parameter_range = [self.capacity_range,self.radius_range,self.viewangle_range] #standard order
 
 
-        self.resolution = kwargs.get('resolution',9)
+        self.resolution = kwargs.get('resolution',100)
         self.refit_density = kwargs.get('refit_density',20) #No of division in each dimension p to sample to calculate posterior.
 
         self.lh_agents = [] #list of type-set-agents with different paremeter settings used to calculate likelihood
-        self.create_lh_objects(0)
+        # self.create_lh_objects(0)
 
         self.degree_likelihoodPolynomial = kwargs.get('likelihood_polyDegree',5)
         self.degree_posteriorPolynomial = kwargs.get('posterior_polyDegree',4)
         self.degree_priorPolynomial = kwargs.get('prior_polyDegree',4)
 
-        self.likelihood_polyTransform = PolynomialFeatures(self.degree_likelihoodPolynomial)
-        self.likelihood_polyTransform_paramConfigXval=  self.likelihood_polyTransform.fit_transform(self.parameter_set)
-        self.likelihood_polyTransform_paramConfig_denseUniformXval = self.likelihood_polyTransform.fit_transform(self.paramConfig_denseUniform)
-
-        self.likelihood_polyCoeffRegressor_list = [] #list to hold LinearRegression objects for polynomial coefficients
-        self.likelihood_polyCoeffRegressor_weightsList= [] #list to hold polynomial co-efficients
 
         self.likelihood_polyCoeff_typesList = []
         self.posterior_polyCoeff_typesList = []
@@ -93,12 +83,26 @@ class ABU():
         self.fitstats_ll= []
         self.fitstats_po = []
 
+        if self.param_curr == 0:
+            self.estimating_parameter = 'view_radius'
+        else:
+            self.estimating_parameter = 'view_angle'
+
+
+
+        logger.info('ABU Estimator class initialized with {} agents and working on estimating parameter {} with a resolution of {}'.format(
+                len(self.lh_agents[0]), self.estimating_parameter, self.resolution))
+        logger.info('ABU polynomial info: resolution: {}, llpoly_degree: {}, priorpoly_degree: {}, postpoly_degree: {}, refitdensity: {}'.format(
+                self.resolution, self.degree_likelihoodPolynomial, self.degree_priorPolynomial,
+                self.degree_posteriorPolynomial, self.refit_density))
+
+
 
 
     def fit_initialPrior(self):
         x_val = self.x_points
-        n_parameterset = len(self.x_points)*1.0
-        y_val =  np.ones(n_parameterset)/n_parameterset
+        n_parameterset = len(self.x_points)
+        y_val =  np.ones(n_parameterset)*1.0/n_parameterset
 
         priorPoly_coeffs = poly.polyfit(x_val,y_val,deg=self.degree_priorPolynomial)
 
@@ -144,7 +148,7 @@ class ABU():
 
         self.types_points =np.linspace(0,3,4).astype('int')
 
-
+        self.xdiff = self.x_points[1]-self.x_points[0]
         parameter_set = []
         self.parameter_set = np.vstack((self.capacity_points,self.radius_points,self.angle_points)).T #generates a list of coords with
 
@@ -221,6 +225,12 @@ class ABU():
                 agent_parameterconf.calc_likelihood(action_and_consequence)
                 ag = agent_parameterconf
 
+    def calculate_differenceInProbability(self):
+        mse_list = []
+        for agent in self.lh_agents[self.mim_agent.type]:
+            mse_list.append(np.linalg.norm(self.mim_agent.action_probability-agent.action_probability))
+        return np.array(mse_list)
+
     def calculate_modelEvidence(self,i):
          mevd=[]
 
@@ -229,7 +239,7 @@ class ABU():
              polyintegral = poly.polyint(likelihood_poly)
              integral = np.diff([poly.polyval(self.xrange,polyintegral)])[0]
              mevd.append(integral)
-         self.model_evidence.append(mevd)
+         self.model_evidence.append(np.log(mevd))
 
 
     def fit_polynomialForLikelihood(self,action_and_consequence,tp):
@@ -278,6 +288,7 @@ class ABU():
 
 
     def estimate_parameter(self,likelihoodPoly_coeffs,priorPoly_coeffs,tp):
+        logger.debug("Polynomial estimator called for type {}".format(tp))
         #prior(as a polynomial)*likelihood(as a polynomial) = posterioir(double degree polynomial)
         #posterior --> downdegree to get back to normal polynomial
         #prior == posterior
@@ -300,7 +311,12 @@ class ABU():
         posteriorProb_polyCoeffs = poly.polymul(priorPoly_coeffs,likelihoodPoly_coeffs)
 
         #Densely sample from the polynomial to do a refit to lower degree, actual posterior polynomial
-        posteriorVals = np.abs(poly.polyval(self.x_pointsDense,posteriorProb_polyCoeffs))#ABs because it can become negative in the multiplication
+        # posteriorVals = np.abs(poly.polyval(self.x_pointsDense,posteriorProb_polyCoeffs))#ABs because it can become negative in the multiplication
+
+        #testing a different stability mechanism
+        posteriorVals = (poly.polyval(self.x_pointsDense,posteriorProb_polyCoeffs)) #ABs because it can become negative in the multiplication
+        posteriorVals[posteriorVals<0] = 0
+
         if self.visualize:
             plt.plot(self.x_pointsDense,posteriorVals,'-bs',label='multiplied posterior poly gen values')
 
@@ -358,7 +374,6 @@ class ABU():
                 prior_polyCoeffs = self.inital_prior[tp]
             else:
                 prior_polyCoeffs = self.posterior_polyCoeff_typesList[i-1][tp]
-            print("Requesting to estimate type {}".format(tp))
             updated_posterioirPoly,pestim_sample,pestim_max = self.estimate_parameter(likelihood_polyCoeffs,prior_polyCoeffs,tp)
             posterioir_list.append(updated_posterioirPoly)
             estimates_list.append([pestim_sample,pestim_max])
@@ -367,20 +382,9 @@ class ABU():
         self.posteriorEstimates_sample.append([estimate[0] for estimate in estimates_list])
         return estimates_list,posterioir_list
 
-    def estimate_singleType_forChamp(self,i,tp):
-        if tp>4:
-            raise Exception('Wrong type requested')
+    def estimate_singleType_segment_forChamp(self,i,j,tp):
+        logger.debug("Polynmoial based CHAMP single type estimator called for type {}".format(tp))
 
-        likelihood_polyCoeffs = self.likelihood_polyCoeff_typesList[i][tp]
-        if i == 0:
-            prior_polyCoeffs = self.inital_prior[tp]
-        else:
-            prior_polyCoeffs = self.posterior_polyCoeff_typesList[i - 1][tp]
-        _, pestim_sample, pestim_max = self.estimate_parameter(likelihood_polyCoeffs, prior_polyCoeffs)
-        return pestim_sample, pestim_max
-
-
-    def estimate_segmentForChamp_type0(self,i,j):
         if j<i:
             raise Exception('Reverse time requested')
         if j>self.total_simSteps-1:
@@ -388,73 +392,40 @@ class ABU():
         if i<0:
             raise Exception('Negative time asked')
 
-        tp = 0
+
+        if tp>4:
+            raise Exception('Wrong type requested')
+
+        likelihood_polyCoeffs = self.likelihood_polyCoeff_typesList[i][tp]
 
         estimate_list = []
-        for t in range(i,j+1):
-            estimates = self.estimate_singleType_forChamp(t,tp)
-            estimate_list.append(estimates)
+        mev_list = []
+        prior_poly = self.inital_prior[tp]
 
-        final_estimate = estimate_list[-1][0]
-        likelihood_total = np.sum(np.log([poly.polyval([final_estimate],self.likelihood_polyCoeff_typesList[i][tp])[0]]))
+        for t in range(i+1, j+1):
+            likelihood_poly = self.likelihood_polyCoeff_typesList[i][tp]
+            posterior_poly, pestim_sample, pestim_max = self.estimate_parameter(likelihood_poly, prior_poly, tp)
+            prior_poly = posterior_poly
+            mevidence_integral = poly.polyint(likelihood_poly)
+            mevidence = np.diff(poly.polyval(self.xrange,mevidence_integral))[0]
+            mev_list.append(mevidence)
+            estimate_list.append(pestim_sample)
+
+
+        final_estimate = estimate_list[-1]
+        likelihood_total = np.sum(np.log(mev_list))
         return likelihood_total, final_estimate
+
+
+
+    def estimate_segmentForChamp_type0(self,i,j):
+        return self.estimate_singleType_segment_forChamp(i,j,0)
 
     def estimate_segmentForChamp_type1(self, i, j):
-        if j < i:
-            raise Exception('Reverse time requested')
-        if j > self.total_simSteps - 1:
-            raise Exception("Simulation not reached until there")
-        if i < 0:
-            raise Exception('Negative time asked')
-
-        tp = 1
-
-        estimate_list = []
-        for t in range(i, j + 1):
-            estimates = self.estimate_singleType_forChamp(t, tp)
-            estimate_list.append(estimates)
-
-        final_estimate = estimate_list[-1][0]
-        likelihood_total = np.sum(np.log([poly.polyval([final_estimate],self.likelihood_polyCoeff_typesList[i][tp])[0]]))
-        return likelihood_total, final_estimate
-
+        return self.estimate_singleType_segment_forChamp(i,j,1)
 
     def estimate_segmentForChamp_type2(self, i, j):
-        if j < i:
-            raise Exception('Reverse time requested')
-        if j > self.total_simSteps - 1:
-            raise Exception("Simulation not reached until there")
-        if i < 0:
-            raise Exception('Negative time asked')
-
-        tp = 2
-
-        estimate_list = []
-        for t in range(i, j + 1):
-            estimates = self.estimate_singleType_forChamp(t, tp)
-            estimate_list.append(estimates)
-
-        final_estimate = estimate_list[-1][0]
-        likelihood_total = np.sum(np.log([poly.polyval([final_estimate],self.likelihood_polyCoeff_typesList[i][tp])[0]]))
-        return likelihood_total, final_estimate
-
+        return self.estimate_singleType_segment_forChamp(i,j,2)
 
     def estimate_segmentForChamp_type3(self, i, j):
-        if j < i:
-            raise Exception('Reverse time requested')
-        if j > self.total_simSteps - 1:
-            raise Exception("Simulation not reached until there")
-        if i < 0:
-            raise Exception('Negative time asked')
-
-        tp = 3
-
-        estimate_list = []
-        for t in range(i, j + 1):
-            estimates = self.estimate_singleType_forChamp(t, tp)
-            estimate_list.append(estimates)
-
-        final_estimate = estimate_list[-1][0]
-        likelihood_total = np.sum(np.log([poly.polyval([final_estimate],self.likelihood_polyCoeff_typesList[i][tp])[0]]))
-        return likelihood_total, final_estimate
-
+        return self.estimate_singleType_segment_forChamp(i,j,3)

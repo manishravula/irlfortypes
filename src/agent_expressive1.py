@@ -1,14 +1,10 @@
 import numpy as np
-import types
-import matplotlib.pyplot as plt
 #from Algorithms.AStar import astar as astar_nav
 from AStar import astar as ast
 from copy import copy
 from copy import deepcopy
 import math
-import config_experiment as config
-import time
-import pdb
+
 #Ref doc:
 """
 Input to the agent class:
@@ -56,7 +52,8 @@ DEBUG TEST:
               i) Create a function for MCTS visualization. See what the tree state at each point is. 
               ii) See if it works well enough at each state.
 """
-
+import logging
+logger = logging.getLogger(__name__)
 
 class Agent():
     def __init__(self,capacity_param,viewRadius_param,viewAngle_param,type,curr_pos,foraging_arena):
@@ -119,7 +116,7 @@ class Agent():
         #     raise Exception("The grid matrix size is an even number")
         # else:
         #     self.center_point = np.shape(self.arena.grid_matrix)/2
-
+        logger.info('Created an agent with location {}, type {}, capacity {}, view_radius {}, view_angle {} in standard ranges'.format(self.curr_position, self.type, self.capacity_param,self.viewRadius_param,self.viewAngle_param))
 
 
 

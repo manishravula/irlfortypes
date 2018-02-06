@@ -1,0 +1,8 @@
+2018-01-29 13:46:20,156 [INFO] __main__: Logging configuration of the file
+2018-01-29 13:46:33,131 [INFO] __main__: Logging configuration of the file
+2018-01-29 13:48:10,128 [INFO] __main__: LOGGING_CONFIG
+2018-01-29 13:48:20,093 [INFO] generate_init: Initializing new configuration
+2018-01-29 13:48:20,108 [INFO] src.agent_originaltypes: Created an agent with location [5 7], type 1, capacity 0.281963808746, view_radius 0.436363173716, view_angle 0.392973990046 in standard ranges
+2018-01-29 13:48:20,110 [INFO] src.agent_originaltypes: Created an agent with location [1 1], type 1, capacity 0.401068480293, view_radius 0.6961567831, view_angle 0.314416637383 in standard ranges
+2018-01-29 13:48:20,112 [INFO] src.agent_originaltypes: Created an agent with location [9 9], type 0, capacity 0.17264122236, view_radius 0.467875506657, view_angle 0.307744186946 in standard ranges
+2018-01-29 13:48:20,225 [INFO] generate_init: Finished creating arena and agents. One item consumed due to overlap. Current item count is 20
