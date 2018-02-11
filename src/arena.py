@@ -124,6 +124,7 @@ class arena():
         #     _ = agent.get_visibleAgentsAndItems() #Setting state through init.
 
     def init_build_itemObjects(self):
+        self.items=[]
         items_loc = np.argwhere(
             np.logical_and(self.grid_matrix > 0, self.grid_matrix < 1))  # agents' positions are identified by ones
         for loc in items_loc:
@@ -217,7 +218,7 @@ class arena():
             self.grid_matrix[item_loc[0],item_loc[1]] = 0
             self.items.remove(item)
             self.no_items-=1
-            print("item_consumed")
+            print("item_consumed at {}".format(item.position))
         return
 
     def update_vis(self):
@@ -238,6 +239,7 @@ class arena():
 
     def __setstate__(self, state):
         self.__dict__.update(state)
+        self.init_build_itemObjects() #Required when agent uses arena.items to check its surroundings.
 
 
 
