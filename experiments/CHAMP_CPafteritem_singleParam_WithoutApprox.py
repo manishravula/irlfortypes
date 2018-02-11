@@ -11,7 +11,7 @@ import numpy.polynomial.polynomial as poly
 from matplotlib.animation import FuncAnimation
 from tests import tests_helper as Tests
 import config_experiment as config
-import generate_init as genInit
+from src import generate_init as genInit
 import seaborn as sns
 sns.set()
 import logging.config
@@ -170,8 +170,8 @@ if entropy_stuff:
     plt.legend()
     plt.axvline(changepoint_time)
     plt.title("Changepoint at {} from type 0 to type {}".format(changepoint_time, a1.type))
-    image_name = '_entropy.png'
-    plt.savefig(image_name, dpi=config.DPI)
+    image_name = './results/_entropy.png'
+    plt.savefig(image_name,dpi=config.DPI)
     plt.close()
 
 # MODEL EVIDENCE STUFF
@@ -185,7 +185,9 @@ if mev_stuff:
     plt.axvline(changepoint_time)
     plt.legend()
     plt.title("Model Evidence across time with true model {} and changed to {}".format(curr_type,are.agents[0].type))
-    image_name = '_mevidence.png'
+
+    image_name = './results/_mevidence.png'
+
     plt.savefig(image_name, dpi=config.DPI)
     plt.close()
 
@@ -206,8 +208,10 @@ if est_stuff:
     else:
         plt.title("ABU estim-evolution parameter {} with tv {} ".format(abu.estimating_parameter,are.agents[0].viewAngle_param))
         plt.axhline(linewidth=2,y=are.agents[0].viewAngle_param)
-    image_name = '_estimates.png'
+    image_name = './results/_estimates.png'
+
     plt.savefig(image_name, dpi=config.DPI)
+
     plt.close()
 
 # LOGL across time for estimates:
@@ -225,7 +229,9 @@ if logl_stuff:
     plt.axvline(changepoint_time)
     plt.legend()
     plt.title("Evolution of estimated parameter's loglikelihood with changepoint from {} to {}".format(curr_type,a1.type))
-    image_name = '_likelihood.png'
+
+    image_name = './results/_likelihood.png'
+
     plt.savefig(image_name,dpi=config.DPI)
     plt.close()
 
@@ -247,7 +253,7 @@ if anim_stuff:
         anim = FuncAnimation(fig,update,frames=n_iterations,interval=10)
         save=True
         if save:
-            anim.save('posterior_type_{}.gif'.format(tp),dpi=100,writer='imagemagick')
+            anim.save('./results/posterior_type_{}.gif'.format(tp),dpi=100,writer='imagemagick')
         else:
             plt.show()
     for tp in range(len(abu.types)):
@@ -272,7 +278,7 @@ if anim_stuff:
         anim = FuncAnimation(fig,update,frames=n_iterations,interval=10)
         save=True
         if save:
-            anim.save('likelihood_type_{}.gif'.format(tp),dpi=100,writer='imagemagick')
+            anim.save('./results/likelihood_type_{}.gif'.format(tp),dpi=100,writer='imagemagick')
         else:
             plt.show()
     for tp in range(len(abu.types)):

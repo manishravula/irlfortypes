@@ -1,0 +1,405 @@
+2018-02-09 21:25:58,591 [INFO] __main__: Logging configuration of the file
+2018-02-09 21:25:58,594 [INFO] __main__: LOGGING_CONFIG
+2018-02-09 21:25:58,596 [INFO] generate_init: Initializing old configuration for grid and agents
+2018-02-09 21:25:58,597 [DEBUG] generate_init: creating arena object with grid_matrix [[0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.47986369
+  0.         0.         0.19289129 0.        ]
+ [0.         0.         0.         0.         0.         0.41578884
+  0.         0.         0.         0.        ]
+ [0.         0.25535226 0.         0.         0.         0.33101156
+  0.22598987 0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.26430396
+  0.         0.         0.1231086  0.        ]
+ [0.         0.         0.         0.0607705  0.         0.
+  0.         0.         0.37792623 0.        ]
+ [0.         0.09893835 0.24282728 0.         0.         0.26333421
+  0.         0.         0.07318104 0.        ]
+ [0.         0.         0.10854079 0.         0.         0.
+  0.30150698 0.20892911 0.         0.        ]
+ [0.         0.         0.47285442 0.         0.         0.
+  0.         0.42201632 0.28909144 0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]]
+2018-02-09 21:25:58,598 [DEBUG] generate_init: creating agent with capacity 0.161644586344 vradius 0.512316385518 vangle 0.50687683917 type 1 loc [4 1]
+2018-02-09 21:25:58,599 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.512316385518, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,599 [DEBUG] generate_init: creating agent with capacity 0.17911266639 vradius 0.836770768958 vangle 0.41860146025 type 2 loc [4 1]
+2018-02-09 21:25:58,599 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.17911266639, view_radius 0.836770768958, view_angle 0.41860146025 in standard ranges
+2018-02-09 21:25:58,600 [DEBUG] generate_init: creating agent with capacity 0.181896070149 vradius 0.405699255351 vangle 0.341128249979 type 0 loc [8 2]
+2018-02-09 21:25:58,600 [INFO] src.agent_originaltypes: Created an agent with location [8 2], type 0, capacity 0.181896070149, view_radius 0.405699255351, view_angle 0.341128249979 in standard ranges
+2018-02-09 21:25:58,695 [DEBUG] generate_init: Arena created with objects added and new grid_matrix [[0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.47986369
+  0.         0.         0.19289129 0.        ]
+ [0.         0.         0.         0.         0.         0.41578884
+  0.         0.         0.         0.        ]
+ [0.         0.25535226 0.         0.         0.         0.33101156
+  0.22598987 0.         0.         0.        ]
+ [0.         1.         0.         0.         0.         0.26430396
+  0.         0.         0.1231086  0.        ]
+ [0.         0.         0.         0.0607705  0.         0.
+  0.         0.         0.37792623 0.        ]
+ [0.         0.09893835 0.24282728 0.         0.         0.26333421
+  0.         0.         0.07318104 0.        ]
+ [0.         0.         0.10854079 0.         0.         0.
+  0.30150698 0.20892911 0.         0.        ]
+ [0.         0.         1.         0.         0.         0.
+  0.         0.42201632 0.28909144 0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]]
+2018-02-09 21:25:58,695 [INFO] generate_init: Finished creating arena and agents. One item consumed due to overlap. Current item count is 19
+2018-02-09 21:25:58,695 [INFO] src.ABU_estimator_noapproximation: Calling parent ABU via inheritance. This is ABU_noapproximation
+2018-02-09 21:25:58,696 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.1, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,696 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.131034482759, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,696 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.162068965517, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,696 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.193103448276, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,696 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.224137931034, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,697 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.255172413793, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,697 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.286206896552, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,697 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.31724137931, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,698 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.348275862069, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,698 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.379310344828, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,698 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.410344827586, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,698 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.441379310345, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,699 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.472413793103, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,699 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.503448275862, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,699 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.534482758621, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,699 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.565517241379, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,699 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.596551724138, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,700 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.627586206897, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,700 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.658620689655, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,700 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.689655172414, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,700 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.720689655172, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,701 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.751724137931, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,701 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.78275862069, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,701 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.813793103448, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,701 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.844827586207, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,701 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.875862068966, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,702 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.906896551724, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,702 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.937931034483, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,702 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.968965517241, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,702 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 1.0, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,703 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.1, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,703 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.131034482759, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,703 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.162068965517, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,703 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.193103448276, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,703 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.224137931034, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,704 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.255172413793, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,704 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.286206896552, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,704 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.31724137931, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,704 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.348275862069, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,705 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.379310344828, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,705 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.410344827586, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,705 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.441379310345, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,705 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.472413793103, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,705 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.503448275862, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,706 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.534482758621, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,706 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.565517241379, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,706 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.596551724138, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,707 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.627586206897, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,707 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.658620689655, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,707 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.689655172414, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,707 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.720689655172, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,707 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.751724137931, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,708 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.78275862069, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,708 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.813793103448, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,708 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.844827586207, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,708 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.875862068966, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,709 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.906896551724, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,709 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.937931034483, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,709 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.968965517241, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,709 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 1.0, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,709 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.1, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,710 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.131034482759, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,710 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.162068965517, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,710 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.193103448276, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,710 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.224137931034, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,710 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.255172413793, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,711 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.286206896552, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,711 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.31724137931, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,711 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.348275862069, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,711 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.379310344828, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,712 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.410344827586, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,712 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.441379310345, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,712 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.472413793103, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,712 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.503448275862, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,712 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.534482758621, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,713 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.565517241379, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,713 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.596551724138, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,713 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.627586206897, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,713 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.658620689655, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,714 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.689655172414, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,714 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.720689655172, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,714 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.751724137931, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,714 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.78275862069, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,715 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.813793103448, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,715 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.844827586207, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,715 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.875862068966, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,715 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.906896551724, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,715 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.937931034483, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,716 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.968965517241, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,716 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 1.0, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,716 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.1, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,716 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.131034482759, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,717 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.162068965517, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,717 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.193103448276, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,717 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.224137931034, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,717 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.255172413793, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,718 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.286206896552, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,718 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.31724137931, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,718 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.348275862069, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,718 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.379310344828, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,719 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.410344827586, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,719 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.441379310345, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,719 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.472413793103, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,719 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.503448275862, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,719 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.534482758621, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,720 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.565517241379, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,720 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.596551724138, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,720 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.627586206897, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,720 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.658620689655, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,721 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.689655172414, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,721 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.720689655172, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,721 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.751724137931, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,721 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.78275862069, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,721 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.813793103448, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,722 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.844827586207, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,722 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.875862068966, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,722 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.906896551724, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,723 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.937931034483, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,723 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.968965517241, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,723 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 1.0, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:58,724 [INFO] src.ABU_estimator: ABU Estimator class initialized with 30 agents and working on estimating parameter view_radius with a resolution of 30
+2018-02-09 21:25:58,724 [INFO] src.ABU_estimator: ABU polynomial info: resolution: 30, llpoly_degree: 5, priorpoly_degree: 5, postpoly_degree: 5, refitdensity: 20
+2018-02-09 21:25:58,724 [INFO] __main__: Initial states are : {'load': False, 'view_radius': 5.123163855181626, 'curr_position': array([4, 1]), 'action_probability': array([0.25, 0.25, 0.25, 0.25]), 'curr_position_realaxis': array([-4,  1]), 'viewAngle_param': 0.5068768391700075, 'curr_orientation': 1.7098380072750756, 'capacity_param': 0.16164458634376877, 'memory': array([4, 1]), 'view_angle': 3.1848011084226213, 'viewRadius_param': 0.5123163855181626, 'type': 1, 'curr_destination': None}
+2018-02-09 21:25:58,724 [INFO] __main__: Initial states are : {'load': False, 'view_radius': 8.367707689577115, 'curr_position': array([4, 1]), 'action_probability': array([0.25, 0.25, 0.25, 0.25]), 'curr_position_realaxis': array([-4,  1]), 'viewAngle_param': 0.4186014602501946, 'curr_orientation': 4.291110431666266, 'capacity_param': 0.17911266638985887, 'memory': array([4, 1]), 'view_angle': 2.6301505446079423, 'viewRadius_param': 0.8367707689577115, 'type': 2, 'curr_destination': None}
+2018-02-09 21:25:58,725 [INFO] __main__: Initial states are : {'load': False, 'view_radius': 4.056992553507528, 'curr_position': array([8, 2]), 'action_probability': array([0.25, 0.25, 0.25, 0.25]), 'curr_position_realaxis': array([-8,  2]), 'viewAngle_param': 0.3411282499792071, 'curr_orientation': 0.4057409323606443, 'capacity_param': 0.18189607014893844, 'memory': array([8, 2]), 'view_angle': 2.1433720081332392, 'viewRadius_param': 0.4056992553507528, 'type': 0, 'curr_destination': None}
+2018-02-09 21:25:58,770 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:58,771 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:58,771 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:58,772 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:58,773 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:58,773 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:58,773 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:58,774 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:58,816 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:58,817 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:58,819 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:58,821 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:58,823 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:58,824 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:58,824 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:58,825 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:58,859 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:58,861 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:58,863 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:58,864 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:58,866 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:58,866 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:58,867 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:58,868 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:58,899 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:58,901 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:58,905 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:58,907 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:58,909 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:58,909 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:58,909 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:58,910 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:58,950 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:58,953 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:58,956 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:58,957 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:58,958 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:58,959 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:58,960 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:58,960 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:58,997 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:58,998 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,000 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,001 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,005 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,006 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,006 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,007 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,042 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,043 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,045 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,050 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,051 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,052 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,053 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,053 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,087 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,088 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,093 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,095 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,096 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,097 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,097 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,097 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,130 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,131 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,136 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,137 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,139 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,139 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,140 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,141 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,174 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,179 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,180 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,182 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,183 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,184 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,184 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,185 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,218 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,222 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,223 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,225 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,226 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,227 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,227 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,227 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,253 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,256 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,257 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,259 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,260 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,261 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,261 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,262 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,290 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,292 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,293 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,294 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,296 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,297 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,299 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,299 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,330 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,331 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,335 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,336 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,338 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,338 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,338 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,339 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,369 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,370 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,372 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,373 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,374 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,374 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,376 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,378 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,414 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,415 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,417 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,418 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,419 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,423 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,424 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,424 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,458 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,460 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,461 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,465 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,467 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,467 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,468 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,468 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,499 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,501 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,503 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,504 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,505 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,506 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,506 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,507 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,543 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,546 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,548 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,549 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,551 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,552 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,552 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,553 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,592 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,594 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,595 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,596 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,599 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,601 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,601 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,602 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,651 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-09 21:25:59,652 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-09 21:25:59,654 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-09 21:25:59,655 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-09 21:25:59,656 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-09 21:25:59,656 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-09 21:25:59,657 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-09 21:25:59,657 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-09 21:25:59,658 [INFO] __main__: Initiaed copying
+2018-02-09 21:25:59,660 [INFO] __main__: Passing state info: [{'load': True, 'view_radius': 5.123163855181626, 'curr_position': array([1, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'curr_position_realaxis': array([ 1, -4]), 'viewAngle_param': 0.5068768391700075, 'curr_orientation': 0.0, 'capacity_param': 0.16164458634376877, 'memory': array([1, 5]), 'view_angle': 3.1848011084226213, 'viewRadius_param': 0.5123163855181626, 'type': 1, 'curr_destination': array([1, 5])}, {'load': True, 'view_radius': 8.367707689577115, 'curr_position': array([8, 9]), 'action_probability': array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), 'curr_position_realaxis': array([ 1, -5]), 'viewAngle_param': 0.4186014602501946, 'curr_orientation': 3.141592653589793, 'capacity_param': 0.17911266638985887, 'memory': array([8, 8]), 'view_angle': 2.6301505446079423, 'viewRadius_param': 0.8367707689577115, 'type': 2, 'curr_destination': array([8, 8])}, {'load': True, 'view_radius': 4.056992553507528, 'curr_position': array([6, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'curr_position_realaxis': array([ 2, -8]), 'viewAngle_param': 0.3411282499792071, 'curr_orientation': 0.0, 'capacity_param': 0.18189607014893844, 'memory': array([6, 5]), 'view_angle': 2.1433720081332392, 'viewRadius_param': 0.4056992553507528, 'type': 0, 'curr_destination': array([6, 5])}]
+2018-02-09 21:25:59,661 [DEBUG] src.arena: Cloning from state {'load': True, 'view_radius': 5.123163855181626, 'curr_position': array([1, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'curr_position_realaxis': array([ 1, -4]), 'viewAngle_param': 0.5068768391700075, 'curr_orientation': 0.0, 'capacity_param': 0.16164458634376877, 'memory': array([1, 5]), 'view_angle': 3.1848011084226213, 'viewRadius_param': 0.5123163855181626, 'type': 1, 'curr_destination': array([1, 5])} to state {'load': True, 'view_radius': 5.123163855181626, 'curr_position': array([1, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'curr_position_realaxis': array([ 1, -4]), 'viewAngle_param': 0.5068768391700075, 'curr_orientation': 0.0, 'capacity_param': 0.16164458634376877, 'memory': array([1, 5]), 'view_angle': 3.1848011084226213, 'viewRadius_param': 0.5123163855181626, 'type': 1, 'curr_destination': array([1, 5])}
+2018-02-09 21:25:59,661 [INFO] src.agent_originaltypes: Created an agent with location [1 4], type 1, capacity 0.161644586344, view_radius 0.512316385518, view_angle 0.50687683917 in standard ranges
+2018-02-09 21:25:59,662 [INFO] src.agent_originaltypes: Cloned agent with params {'load': True, 'view_radius': 5.123163855181626, 'curr_position': array([1, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'curr_position_realaxis': array([ 1, -4]), 'viewAngle_param': 0.5068768391700075, 'curr_orientation': 0.0, 'capacity_param': 0.16164458634376877, 'memory': array([1, 5]), 'view_angle': 3.1848011084226213, 'viewRadius_param': 0.5123163855181626, 'type': 1, 'curr_destination': array([1, 5])}
+2018-02-09 21:25:59,662 [DEBUG] src.arena: Cloning from state {'load': True, 'view_radius': 8.367707689577115, 'curr_position': array([8, 9]), 'action_probability': array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), 'curr_position_realaxis': array([ 1, -5]), 'viewAngle_param': 0.4186014602501946, 'curr_orientation': 3.141592653589793, 'capacity_param': 0.17911266638985887, 'memory': array([8, 8]), 'view_angle': 2.6301505446079423, 'viewRadius_param': 0.8367707689577115, 'type': 2, 'curr_destination': array([8, 8])} to state {'load': True, 'view_radius': 8.367707689577115, 'curr_position': array([8, 9]), 'action_probability': array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), 'curr_position_realaxis': array([ 1, -5]), 'viewAngle_param': 0.4186014602501946, 'curr_orientation': 3.141592653589793, 'capacity_param': 0.17911266638985887, 'memory': array([8, 8]), 'view_angle': 2.6301505446079423, 'viewRadius_param': 0.8367707689577115, 'type': 2, 'curr_destination': array([8, 8])}
+2018-02-09 21:25:59,663 [INFO] src.agent_originaltypes: Created an agent with location [8 9], type 2, capacity 0.17911266639, view_radius 0.836770768958, view_angle 0.41860146025 in standard ranges
+2018-02-09 21:25:59,667 [INFO] src.agent_originaltypes: Cloned agent with params {'load': True, 'view_radius': 8.367707689577115, 'curr_position': array([8, 9]), 'action_probability': array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), 'curr_position_realaxis': array([ 1, -5]), 'viewAngle_param': 0.4186014602501946, 'curr_orientation': 3.141592653589793, 'capacity_param': 0.17911266638985887, 'memory': array([8, 8]), 'view_angle': 2.6301505446079423, 'viewRadius_param': 0.8367707689577115, 'type': 2, 'curr_destination': array([8, 8])}
+2018-02-09 21:25:59,668 [DEBUG] src.arena: Cloning from state {'load': True, 'view_radius': 4.056992553507528, 'curr_position': array([6, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'curr_position_realaxis': array([ 2, -8]), 'viewAngle_param': 0.3411282499792071, 'curr_orientation': 0.0, 'capacity_param': 0.18189607014893844, 'memory': array([6, 5]), 'view_angle': 2.1433720081332392, 'viewRadius_param': 0.4056992553507528, 'type': 0, 'curr_destination': array([6, 5])} to state {'load': True, 'view_radius': 4.056992553507528, 'curr_position': array([6, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'curr_position_realaxis': array([ 2, -8]), 'viewAngle_param': 0.3411282499792071, 'curr_orientation': 0.0, 'capacity_param': 0.18189607014893844, 'memory': array([6, 5]), 'view_angle': 2.1433720081332392, 'viewRadius_param': 0.4056992553507528, 'type': 0, 'curr_destination': array([6, 5])}
+2018-02-09 21:25:59,668 [INFO] src.agent_originaltypes: Created an agent with location [6 4], type 0, capacity 0.181896070149, view_radius 0.405699255351, view_angle 0.341128249979 in standard ranges
+2018-02-09 21:25:59,669 [INFO] src.agent_originaltypes: Cloned agent with params {'load': True, 'view_radius': 4.056992553507528, 'curr_position': array([6, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'curr_position_realaxis': array([ 2, -8]), 'viewAngle_param': 0.3411282499792071, 'curr_orientation': 0.0, 'capacity_param': 0.18189607014893844, 'memory': array([6, 5]), 'view_angle': 2.1433720081332392, 'viewRadius_param': 0.4056992553507528, 'type': 0, 'curr_destination': array([6, 5])}
+2018-02-09 21:25:59,672 [DEBUG] src.arena: Cloned arena and agents with states {'no_agents': 3, 'no_items': 17, 'grid_matrix': array([[0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ],
+       [0.        , 0.        , 0.        , 0.        , 1.        ,
+        0.47986369, 0.        , 0.        , 0.19289129, 0.        ],
+       [0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.41578884, 0.        , 0.        , 0.        , 0.        ],
+       [0.        , 0.25535226, 0.        , 0.        , 0.        ,
+        0.33101156, 0.22598987, 0.        , 0.        , 0.        ],
+       [0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.26430396, 0.        , 0.        , 0.1231086 , 0.        ],
+       [0.        , 0.        , 0.        , 0.0607705 , 0.        ,
+        0.        , 0.        , 0.        , 0.37792623, 0.        ],
+       [0.        , 0.        , 0.24282728, 0.        , 1.        ,
+        0.26333421, 0.        , 0.        , 0.        , 0.        ],
+       [0.        , 0.        , 0.10854079, 0.        , 0.        ,
+        0.        , 0.30150698, 0.20892911, 0.        , 0.        ],
+       [0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.42201632, 0.28909144, 1.        ],
+       [0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ]])} [{'load': True, 'view_radius': 5.123163855181626, 'curr_position': array([1, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'curr_position_realaxis': array([ 1, -4]), 'viewAngle_param': 0.5068768391700075, 'curr_orientation': 0.0, 'capacity_param': 0.16164458634376877, 'memory': array([1, 5]), 'view_angle': 3.1848011084226213, 'viewRadius_param': 0.5123163855181626, 'type': 1, 'curr_destination': array([1, 5])}, {'load': True, 'view_radius': 8.367707689577115, 'curr_position': array([8, 9]), 'action_probability': array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), 'curr_position_realaxis': array([ 1, -5]), 'viewAngle_param': 0.4186014602501946, 'curr_orientation': 3.141592653589793, 'capacity_param': 0.17911266638985887, 'memory': array([8, 8]), 'view_angle': 2.6301505446079423, 'viewRadius_param': 0.8367707689577115, 'type': 2, 'curr_destination': array([8, 8])}, {'load': True, 'view_radius': 4.056992553507528, 'curr_position': array([6, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'curr_position_realaxis': array([ 2, -8]), 'viewAngle_param': 0.3411282499792071, 'curr_orientation': 0.0, 'capacity_param': 0.18189607014893844, 'memory': array([6, 5]), 'view_angle': 2.1433720081332392, 'viewRadius_param': 0.4056992553507528, 'type': 0, 'curr_destination': array([6, 5])}]
+2018-02-09 21:25:59,672 [DEBUG] src.arena: Comparision request between <src.arena.arena instance at 0x7f33f73ad518> and <src.arena.arena instance at 0x7f33fcd57440> 
+
+2018-02-09 21:25:59,672 [DEBUG] src.arena: Comparision of consumed_items is False 
+
+2018-02-09 21:25:59,672 [DEBUG] src.arena: Comparision of items is True 
+
+2018-02-09 21:25:59,672 [DEBUG] src.arena: Comparision of isterminal is True 
+
+2018-02-09 21:25:59,672 [DEBUG] src.arena: Comparision of astar_computed_dest is True 
+
+2018-02-09 21:25:59,672 [DEBUG] src.arena: Comparision of actions is [ True  True  True  True  True] 
+
+2018-02-09 21:25:59,672 [DEBUG] src.arena: Comparision of astar_computed_path is True 
+
+2018-02-09 21:25:59,673 [DEBUG] src.arena: Comparision of grid_matrix is [[ True  True  True  True  True  True  True  True  True  True]
+ [ True  True  True  True  True  True  True  True  True  True]
+ [ True  True  True  True  True  True  True  True  True  True]
+ [ True  True  True  True  True  True  True  True  True  True]
+ [ True  True  True  True  True  True  True  True  True  True]
+ [ True  True  True  True  True  True  True  True  True  True]
+ [ True  True  True  True  True  True  True  True  True  True]
+ [ True  True  True  True  True  True  True  True  True  True]
+ [ True  True  True  True  True  True  True  True  True  True]
+ [ True  True  True  True  True  True  True  True  True  True]] 
+
+2018-02-09 21:25:59,673 [DEBUG] src.arena: Comparision of no_items is True 
+
+2018-02-09 21:25:59,673 [DEBUG] src.arena: Comparision of no_agents is True 
+
+2018-02-09 21:25:59,673 [DEBUG] src.arena: Overall comaprision result is False

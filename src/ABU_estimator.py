@@ -167,10 +167,21 @@ class ABU():
         for type_param_set,tp in zip(self.types_parameterSet_array,self.types_points):
             type_lh_agent_list = []
             for param_config in type_param_set:
-                lh_agent = Agent_lh(param_config,tp,self.target_pos,self.arena_obj)
-                lh_agent.curr_orientation = self.mim_agent.curr_orientation
+                lh_agent = Agent_lh(param_config,tp,np.copy(self.target_pos),self.arena_obj)
+                lh_agent.curr_orientation = np.copy(self.mim_agent.curr_orientation)
                 type_lh_agent_list.append(lh_agent)
             self.lh_agents.append(type_lh_agent_list)
+
+    def updateNewArena(self,newarenaobject):
+        """
+        Method to update arena wherever it is used, when we want to replace the existing arena with a new one.
+        :param newarenaobject: The new arena object to replace the old one with.
+        :return:
+        """
+        for tp_set in self.lh_agents:
+            for lhagent in tp_set:
+                lhagent.arena = newarenaobject
+
 
     def poly_findMaximum(self, polyCoeffs):
         derivative = poly.polyder(polyCoeffs, 1)
@@ -202,14 +213,6 @@ class ABU():
         for type_list in self.lh_agents:
             for agent_parameterconf in type_list:
                 agent_parameterconf.behave_dummy()
-                if agent_parameterconf.type==0:
-                    ag = agent_parameterconf
-                    vilocs = [item.position for item in ag.visible_items]
-                    valocs = [agent.curr_position for agent in ag.visible_agents]
-                    # print('In position {}, with visible items {}, agents {} and destination {}'.format(ag.curr_position,vilocs,valocs,ag.curr_destination))
-            # if agent_parameterconf.type==0:
-            #     print('----------')
-            # pass
 
     def all_agents_imitate(self,action_and_consequence):
         "Batch imitate actions for all parameter configurations"

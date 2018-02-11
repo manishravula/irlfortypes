@@ -4,9 +4,11 @@ import threading
 from copy import copy
 from copy import deepcopy
 import pdb
-import levelbasedforaging_visualizer as lvlvis
+from . import levelbasedforaging_visualizer as lvlvis
 import itertools
 import seaborn as sns
+import logging
+logger = logging.getLogger(__name__)
 
 
 """
@@ -65,6 +67,8 @@ Methods:
 
 """
 
+ACTION2INDEX = {'u':0,'d':1,'l':2,'r':3,'a':4}
+ACTIONHASHES =  [action for action in ACTION2INDEX.iterkeys()]
 
 
 class item():
@@ -72,7 +76,17 @@ class item():
         self.position = position
         self.weight = weight
     def copy(self):
-        return item(copy.deepcopy(self.position),copy.deepcopy(self.weight))
+        return item(deepcopy(self.position),deepcopy(self.weight))
+    def __eq__(self, other):
+        try:
+            if np.all(self.position == other.position) and self.weight == other.weight:
+                return True
+            else:
+                return False
+        except KeyError:
+            #Means some wrong object was passed.
+            logger.debug("Requested an equality comparision of {} with an item-instance".format(other))
+            return False
 
 
 class arena():
@@ -81,35 +95,14 @@ class arena():
         self.agents = []
         self.items = []
         self.visualize = visualize
-        self.consumed_items = []
 
-        self.dict_actionIndex = {'u':0,'d':1,'l':2,'r':3,'a':4}
-        self.action_hashes =  [action for action in self.dict_actionIndex.iterkeys()]
         self.actions = np.arange(5)
         self.isterminal = False
         self.astar_computed_dest = []
         self.astar_computed_path = []
 
-    def get_item_posarray(self):
-        posarray = []
-        for item in self.items:
-            posarray.append(item.position)
-        self.item_pos_array = np.array(posarray)
 
-    def get_agent_posarray(self):
-        posarray = []
-        for agent in self.agents:
-            posarray.append(agent.curr_position)
-        self.agent_pos_array = np.array(posarray)
-
-    def update_mod_gridmatrx(self):
-        #Regular grid matrix with ones in the place of agents to make MCTS work.
-        self.mod_gridmatrix = np.copy(self.grid_matrix)
-        self.mod_gridmatrix[self.agent_pos_array.T[0],self.agent_pos_array.T[1]]+=1
-
-
-
-    def add_agents(self,agents_list):
+    def init_add_agents(self,agents_list):
 
         #Add agent objects once they are created.
         #The last agent added is a dummy agent, used for MCTS
@@ -118,22 +111,40 @@ class arena():
         self.mcts_agent = self.agents[-1]
         for agent in self.agents:
             self.grid_matrix[agent.curr_position[0],agent.curr_position[1]]=1
+
         if self.visualize:
             agent_parameters = [agent.params for agent in self.agents]
             self.visualizer = lvlvis.LVDvisualizer(self.grid_matrix,agent_parameters)
             self.visualize_thread = threading.Thread(target=self.visualizer.wait_on_event)
             self.visualize_thread.start()
 
-        self.create_objectitems()
+        self.init_build_itemObjects()
 
+        # for agent in self.agents:
+        #     _ = agent.get_visibleAgentsAndItems() #Setting state through init.
 
-    def create_objectitems(self):
-        items_loc = np.argwhere(np.logical_and(self.grid_matrix>0,self.grid_matrix<1)) #agents' positions are identified by ones
+    def init_build_itemObjects(self):
+        items_loc = np.argwhere(
+            np.logical_and(self.grid_matrix > 0, self.grid_matrix < 1))  # agents' positions are identified by ones
         for loc in items_loc:
-            item_obj = item(loc,self.grid_matrix[loc[0],loc[1]])
+            item_obj = item(loc, self.grid_matrix[loc[0], loc[1]])
             self.items.append(item_obj)
         self.no_items = len(self.items)
-        self.get_item_posarray()
+        self.build_itemPositionArray()
+
+
+    def build_itemPositionArray(self):
+        posarray = []
+        for item in self.items:
+            posarray.append(item.position)
+        return np.array(posarray)
+
+    def build_agentPositionArray(self):
+        posarray = []
+        for agent in self.agents:
+            posarray.append(agent.curr_position)
+        return np.array(posarray)
+
 
     def update(self):
         agent_actions = []
@@ -146,11 +157,7 @@ class arena():
 
             #retrieve the action.
             agent_action = agent.behave_act(action_probs)
-            if np.any(agent_action[2]>9):
-                pass
-
-
-
+            assert np.all(action_probs == agent.action_probability); "Behave_act shouldn't change the action probability"
             agent_actions.append(agent_action)
             agent_probs.append(action_probs)
 
@@ -158,6 +165,7 @@ class arena():
             #collision path with another agent, then this is not going to be aproble
             #as the other agent will plan accordingly.
             agent.execute_action(agent_action)
+            assert np.all(action_probs==agent.action_probability); "Execute action shouldn't change the action probability"
 
 
         #See if there is any load operation.
@@ -169,25 +177,13 @@ class arena():
 
         return agent_actions,agent_probs
 
-    def experiment(self):
-
-        for i in range(1):
-            self.update()
-            print(self.no_items)
-            if i==5:
-                pdb.set_trace()
-            # time.sleep(.4)
-        print()
-        return
-
-
-
 
     def update_foodconsumption(self):
         agents_around = []
 
         #Check how far each agent is from each item by a numpy array manipulation.
-        agents_relative_positions  = np.array([self.item_pos_array-agent.curr_position for agent in self.agents]) #Array holding agents' relative positions with respect to each of the objects.
+        item_pos_array = self.build_itemPositionArray()
+        agents_relative_positions  = np.array([item_pos_array-agent.curr_position for agent in self.agents]) #Array holding agents' relative positions with respect to each of the objects.
         agents_relative_distances = np.linalg.norm(agents_relative_positions,axis=2)
 
         #no_of agents surrounding each item
@@ -196,7 +192,6 @@ class arena():
         is_consumable = no_surrounding_agents>0
 
         #Fixme
-
         potentially_consumable_items = [[self.items[i],i] for consumable,i in zip(is_consumable,range(self.no_items)) if consumable]#List of items and their indexes that
 
         #are consumable
@@ -217,91 +212,32 @@ class arena():
         #now that we have all items to be consumed, eliminate them off the grid.
         for item,i in items_to_consume:
             item_loc = item.position
+            item_index = self.items.index(item)
+
             self.grid_matrix[item_loc[0],item_loc[1]] = 0
-            self.consumed_items.append([item,item_loc])
             self.items.remove(item)
             self.no_items-=1
-            self.get_item_posarray()
             print("item_consumed")
         return
 
     def update_vis(self):
-        self.get_agent_posarray()
+        agent_pos_array = self.build_agentPositionArray()
         orientations = np.array([agent.curr_orientation for agent in self.agents])
-        self.update_event = lvlvis.pygame.event.Event(self.visualizer.update_event_type,{'food_matrix': self.grid_matrix,'agents_positions':self.agent_pos_array,'agents_orientations':orientations})
+        self.update_event = lvlvis.pygame.event.Event(self.visualizer.update_event_type,{'food_matrix': self.grid_matrix,'agents_positions':agent_pos_array,'agents_orientations':orientations})
         lvlvis.pygame.event.post(self.update_event)
         # self.visualizer.snapshot(str(time.time()))
 
-    def duplicate(self):
-        """
-        Copy the existing arena and return a new object with exactly the same state. (It should be replaceable)
-        :return: A new arena object."""
 
+    def __getstate__(self):
+        cp = deepcopy
+        dict_state = {}
+        dict_state['grid_matrix'] = cp(self.grid_matrix)
+        dict_state['no_agents'] = cp(self.no_agents)
+        dict_state['no_items'] = cp(self.no_items)
+        return cp(dict_state)
 
-        cpd = deepcopy
-        gm_c = cpd(self.grid_matrix)
-        # self.update_mod_gridmatrx()
-        # modgm_c = cpd(self.mod_gridmatrix)
-        iposarray_c = cpd(self.item_pos_array)
-        # aposarray_c = cpd(self.agent_pos_array)
-        nagents_c = cpd(self.no_agents)
-        nitems_c = cpd(self.no_items)
-
-
-
-        new_arena = arena(gm_c,False)
-        new_arena.no_items = nitems_c
-        new_arena.no_agents = nagents_c
-        # new_arena.mod_gridmatrix = modgm_c
-        # new_arena.agent_pos_array = aposarray_c
-        new_arena.item_pos_array = iposarray_c
-
-        agents_new_objects = [agent.copy(new_arena) for agent in self.agents]
-        new_arena.add_agents(agents_new_objects)
-
-
-        #1) Agents' state is preserved
-        #2) Grid_matrix is preservered
-        #3) Visualization need not be carried
-        #4)
-
-        return new_arena
-
-    def duplicate_toMCTSAgent(self):
-        """
-        Copy the existing arena and return a new object with exactly the same state. (It should be replaceable)
-        :return: A new arena object."""
-
-
-        cpd = deepcopy
-        gm_c = cpd(self.grid_matrix)
-        # self.update_mod_gridmatrx()
-        # modgm_c = cpd(self.mod_gridmatrix)
-        iposarray_c = cpd(self.item_pos_array)
-        # aposarray_c = cpd(self.agent_pos_array)
-        nagents_c = cpd(self.no_agents)
-        nitems_c = cpd(self.no_items)
-
-
-        #New code for replicating into MCTS agent.
-        #Just need to import that and change 'arena' here.
-        new_arena = arena(gm_c,False)
-        new_arena.no_items = nitems_c
-        new_arena.no_agents = nagents_c
-        # new_arena.mod_gridmatrix = modgm_c
-        # new_arena.agent_pos_array = aposarray_c
-        new_arena.item_pos_array = iposarray_c
-
-        agents_new_objects = [agent.copy(new_arena) for agent in self.agents]
-        new_arena.add_agents(agents_new_objects)
-
-
-        #1) Agents' state is preserved
-        #2) Grid_matrix is preservered
-        #3) Visualization need not be carried
-        #4)
-
-        return new_arena
+    def __setstate__(self, state):
+        self.__dict__.update(state)
 
 
 
@@ -311,5 +247,61 @@ class arena():
         else:
             self.isterminal = False
         return
+
+
+
+    def __eq__(self, other):
+        #Compare if two arenas are equal
+        #Get all variables first.
+        allVars = self.__dict__
+        logger.debug("Comparision request between {} and {} \n".format(self,other))
+
+        compResult = []
+        excludeKeys = ['agents','mcts_agent']
+        for key in allVars.keys():
+            if 'visua' not in key and key not in excludeKeys:
+                currEle = self.__dict__[key]
+                if isinstance(currEle,list):
+                    try:
+                        if currEle[0] is not None:
+                            #Now we are comparing lists of items. This could be problematic when they are not in-order.
+                            #We should compare ordered representation.
+                            itemList1 = currEle
+                            itemList2 = other.__dict__[key]
+
+                            #O(N2) search. Just compare everything with everything.
+                            compresult = True
+                            for ele in itemList1:
+                                found = False
+                                for ele2 in itemList2:
+                                    if ele==ele2:
+                                        found = True
+                                        break
+                                if found is not True: #Even if one of the element is not found, then break.
+                                    compresult = False
+                                break
+                        else:
+                            compresult = self.__dict__[key] == other.__dict__[key]
+                    except IndexError:
+                        #Empty list
+                        if len(other.__dict__[key])>0:
+                            #If the other object's list isn't empty
+                            compresult = False
+                        else:
+                            compresult = True
+
+                else:
+                    compresult = self.__dict__[key]==other.__dict__[key]
+
+                logger.debug("Comparision of {} is {} \n".format(key,compresult))
+                compResult.append(compresult)
+
+        overallResult = [np.all(np.array(ele)) for ele in compResult]
+        logger.debug("Overall comaprision result is {}".format(np.all(overallResult)))
+        return np.all(overallResult)
+
+
+
+
 
 

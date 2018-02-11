@@ -351,68 +351,43 @@ class Agent():
 
         direction_vectors = loc_array-self.curr_position
         angle_vectors = np.arctan2(0-direction_vectors[:,0],direction_vectors[:,1])%(2*np.pi) #Compensate for numpy and real axis diff
-        # if debug:
-        #     print('In is_visible')
-        #     print direction_vectors,angle_vectors
 
         constraint1 = distance_list<self.view_radius
-        # self.get_outerandinnerAngles()
-        # loc_array_real = np.fliplr(loc_array)
-        # loc_array_real[:,1]*=-1 #y axis is inverted.
-        # # if debug:
-        #     # print loc_array_real
-        #
-        # constraint2 = np.array([self.is_withinSector(loc) for loc in loc_array_real])
-        # # if debug:
-        # #     print constraint2
-        #     print ("out of is_visible")
+
         constraint2 = np.ones(len(loc_array)).astype('bool')
         return np.all((constraint1,constraint2),axis=0)
 
-    def is_withinSector(self,target_loc):
-        target_vector = np.array(target_loc-self.curr_position_realaxis)
+    def is_withinSector(self, target_loc):
+        right_boundary_vector, left_boundary_vector= self.get_outerandinnerAngles()
+        target_vector = np.array(target_loc - self.curr_position_realaxis)
 
-        #Is the angle subtended between target and left most boundary, clockwise < 180?
-        #is the angle subtended between target and right most boundary, anticlockwise < 180?
+        # Is the angle subtended between target and left most boundary, clockwise < 180?
+        # is the angle subtended between target and right most boundary, anticlockwise < 180?
 
-        left_normal_vector = np.array([0-target_vector[1],target_vector[0]])
-        right_normal_vector = -1*left_normal_vector
+        left_normal_vector = np.array([0 - target_vector[1], target_vector[0]])
+        right_normal_vector = -1 * left_normal_vector
 
-        # if debug:
-        #     print ("in is_withinSector")
-        #     print target_vector
-        #     print left_normal_vector
-        #     print right_normal_vector
-        #
-        # if debug:
-        #     print np.dot(self.left_boundary_vector,left_normal_vector)
-        #     print np.dot(self.right_boundary_vector,right_normal_vector)
-        #     print np.dot(self.right_boundary_vector, left_normal_vector)
-        #     print np.dot(self.left_boundary_vector,right_normal_vector)
-        #     print ("out of is_withinSector")
-
-        if self.view_angle<=np.pi:
-            if (np.dot(self.left_boundary_vector,left_normal_vector)>=0 and np.dot(self.right_boundary_vector,right_normal_vector)>=0):
+        if self.view_angle <= np.pi:
+            if (np.dot(left_boundary_vector, left_normal_vector) >= 0 and np.dot(right_boundary_vector,
+                                                                                      right_normal_vector) >= 0):
                 return True
             else:
                 return False
         else:
-            if (np.dot(self.right_boundary_vector, left_normal_vector) >= 0 and np.dot(self.left_boundary_vector,right_normal_vector) >= 0):
+            if (np.dot(right_boundary_vector, left_normal_vector) >= 0 and np.dot(left_boundary_vector,
+                                                                                       right_normal_vector) >= 0):
                 return False
             else:
                 return True
 
-
-
     def get_outerandinnerAngles(self):
-        self.outerangle = (self.curr_orientation+(self.view_angle/2))%(2*np.pi)
-        self.innerangle = (self.curr_orientation-(self.view_angle/2))%(2*np.pi)
+        outerangle = (self.curr_orientation + (self.view_angle / 2)) % (2 * np.pi)
+        innerangle = (self.curr_orientation - (self.view_angle / 2)) % (2 * np.pi)
 
-        self.curr_position_realaxis = np.array([self.curr_position[1],-self.curr_position[0]])
-        self.right_boundary_vector = np.array([np.cos(self.innerangle),np.sin(self.innerangle)])
-        self.left_boundary_vector = np.array([np.cos(self.outerangle),np.sin(self.outerangle)])
-
-
+        self.curr_position_realaxis = np.array([self.curr_position[1], -self.curr_position[0]])
+        right_boundary_vector = np.array([np.cos(innerangle), np.sin(innerangle)])
+        left_boundary_vector = np.array([np.cos(outerangle), np.sin(outerangle)])
+        return right_boundary_vector,left_boundary_vector
 
 
     def choosetarget(self,visible_entities):
@@ -623,13 +598,35 @@ class Agent():
         # validrand_actionprob[np.where(validrand_actionprob!=0)]=1.0/no_validactinons
         return validrand_actionprob
 
+    def __getstate__(self):
+        cd = deepcopy
+        dict_state = {}
+        dict_state['type'] = cd(self.type)
+        dict_state['capacity_param'] = cd(self.capacity_param)
+        dict_state['view_radius'] = cd(self.view_radius)
+        dict_state['view_angle'] = cd(self.view_angle)
+        dict_state['viewAngle_param'] = cd(self.viewAngle_param)
+        dict_state['viewRadius_param'] = cd(self.viewRadius_param)
 
+        dict_state['load'] = cd(self.load)
+        dict_state['curr_destination'] = cd(self.curr_destination)
+        dict_state['memory'] = cd(self.memory)
 
+        dict_state['curr_position'] = cd(self.curr_position)
+        dict_state['curr_position_realaxis'] = cd(self.curr_position_realaxis)
+        dict_state['curr_orientation'] = cd(self.curr_orientation)
 
+        dict_state['action_probability'] = cd(self.action_probability)
+        return dict_state
 
+    def __setstate__(self, state):
+        self.__dict__.update(state)
 
+    def clone(self, state, arena_obj):
+        newAgent = Agent(state['capacity_param'], state['viewRadius_param'], state['viewAngle_param'],
+                         state['type'], state['curr_pos'], arena_obj)
+        newAgent.__setstate__(state)
+        return newAgent
 
-
-        #Removing methods:
 
 

@@ -1,7 +1,7 @@
 import numpy as np
 import time
-from agent_param import Agent_lh
-import rejection_sampler as rs
+from .agent_param import Agent_lh
+from . import rejection_sampler as rs
 import numpy.polynomial.polynomial as poly
 import matplotlib.pyplot as plt
 from tests import tests_helper as Tests
@@ -9,7 +9,7 @@ from scipy.interpolate import interp1d
 import seaborn as sns
 sns.set()
 import logging
-from ABU_estimator import ABU as abu
+from .ABU_estimator import ABU as abu
 
 logger = logging.getLogger(__name__)
 

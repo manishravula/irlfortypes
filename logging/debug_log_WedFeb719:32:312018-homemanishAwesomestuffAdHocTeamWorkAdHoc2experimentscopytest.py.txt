@@ -1,0 +1,243 @@
+2018-02-07 19:32:32,108 [INFO] __main__: Logging configuration of the file
+2018-02-07 19:32:32,111 [INFO] __main__: LOGGING_CONFIG
+2018-02-07 19:32:32,113 [INFO] generate_init: Initializing new configuration
+2018-02-07 19:32:32,117 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.431477743076, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,117 [INFO] src.agent_originaltypes: Created an agent with location [6 7], type 1, capacity 0.135310977176, view_radius 0.364120622163, view_angle 0.3353688316 in standard ranges
+2018-02-07 19:32:32,118 [INFO] src.agent_originaltypes: Created an agent with location [9 6], type 0, capacity 0.104643278446, view_radius 0.53319967109, view_angle 0.873401372785 in standard ranges
+2018-02-07 19:32:32,233 [INFO] generate_init: Finished creating arena and agents. One item consumed due to overlap. Current item count is 20
+2018-02-07 19:32:32,233 [INFO] src.ABU_estimator_noapproximation: Calling parent ABU via inheritance. This is ABU_noapproximation
+2018-02-07 19:32:32,234 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.1, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,234 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.131034482759, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,234 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.162068965517, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,234 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.193103448276, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,234 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.224137931034, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,235 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.255172413793, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,235 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.286206896552, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,235 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.31724137931, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,235 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.348275862069, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,236 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.379310344828, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,236 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.410344827586, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,236 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.441379310345, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,236 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.472413793103, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,237 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.503448275862, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,237 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.534482758621, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,237 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.565517241379, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,237 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.596551724138, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,237 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.627586206897, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,238 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.658620689655, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,238 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.689655172414, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,238 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.720689655172, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,238 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.751724137931, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,239 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.78275862069, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,239 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.813793103448, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,239 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.844827586207, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,239 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.875862068966, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,240 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.906896551724, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,240 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.937931034483, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,240 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 0.968965517241, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,241 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 0, capacity 0.135442560507, view_radius 1.0, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,241 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.1, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,242 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.131034482759, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,242 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.162068965517, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,242 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.193103448276, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,242 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.224137931034, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,243 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.255172413793, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,243 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.286206896552, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,243 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.31724137931, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,243 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.348275862069, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,244 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.379310344828, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,244 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.410344827586, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,244 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.441379310345, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,244 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.472413793103, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,245 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.503448275862, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,245 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.534482758621, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,245 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.565517241379, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,245 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.596551724138, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,246 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.627586206897, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,246 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.658620689655, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,246 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.689655172414, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,246 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.720689655172, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,246 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.751724137931, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,247 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.78275862069, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,247 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.813793103448, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,247 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.844827586207, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,247 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.875862068966, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,248 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.906896551724, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,248 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.937931034483, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,248 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 0.968965517241, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,248 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.135442560507, view_radius 1.0, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,249 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.1, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,249 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.131034482759, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,249 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.162068965517, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,249 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.193103448276, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,249 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.224137931034, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,250 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.255172413793, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,250 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.286206896552, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,250 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.31724137931, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,250 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.348275862069, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,251 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.379310344828, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,251 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.410344827586, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,251 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.441379310345, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,251 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.472413793103, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,252 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.503448275862, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,252 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.534482758621, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,252 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.565517241379, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,252 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.596551724138, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,253 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.627586206897, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,253 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.658620689655, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,253 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.689655172414, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,253 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.720689655172, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,254 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.751724137931, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,254 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.78275862069, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,254 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.813793103448, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,254 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.844827586207, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,254 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.875862068966, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,255 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.906896551724, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,255 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.937931034483, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,255 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 0.968965517241, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,255 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.135442560507, view_radius 1.0, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,256 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.1, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,256 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.131034482759, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,256 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.162068965517, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,257 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.193103448276, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,257 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.224137931034, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,257 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.255172413793, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,257 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.286206896552, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,257 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.31724137931, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,258 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.348275862069, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,258 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.379310344828, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,258 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.410344827586, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,259 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.441379310345, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,259 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.472413793103, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,259 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.503448275862, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,259 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.534482758621, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,260 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.565517241379, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,260 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.596551724138, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,260 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.627586206897, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,260 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.658620689655, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,261 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.689655172414, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,261 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.720689655172, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,261 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.751724137931, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,261 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.78275862069, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,261 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.813793103448, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,262 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.844827586207, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,262 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.875862068966, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,262 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.906896551724, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,262 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.937931034483, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,263 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 0.968965517241, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,263 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 3, capacity 0.135442560507, view_radius 1.0, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:32,263 [INFO] src.ABU_estimator: ABU Estimator class initialized with 30 agents and working on estimating parameter view_radius with a resolution of 30
+2018-02-07 19:32:32,263 [INFO] src.ABU_estimator: ABU polynomial info: resolution: 30, llpoly_degree: 5, priorpoly_degree: 5, postpoly_degree: 5, refitdensity: 20
+2018-02-07 19:32:32,264 [INFO] __main__: Initial states are : {'load': False, 'view_radius': 4.314777430758399, 'curr_position': array([1, 7]), 'action_probability': array([0.25, 0.25, 0.25, 0.25]), 'curr_position_realaxis': array([-1,  7]), 'viewAngle_param': 0.6757147222497087, 'curr_orientation': 3.106897776014648, 'capacity_param': 0.1354425605072238, 'memory': array([1, 7]), 'view_angle': 4.245640814684305, 'viewRadius_param': 0.43147774307583986, 'type': 0, 'curr_destination': None}
+2018-02-07 19:32:32,264 [INFO] __main__: Initial states are : {'load': False, 'view_radius': 3.6412062216272414, 'curr_position': array([6, 7]), 'action_probability': array([0.25, 0.25, 0.25, 0.25]), 'curr_position_realaxis': array([-6,  7]), 'viewAngle_param': 0.3353688315997992, 'curr_orientation': 3.76451671034431, 'capacity_param': 0.13531097717629756, 'memory': array([6, 7]), 'view_angle': 2.1071845151938433, 'viewRadius_param': 0.3641206221627241, 'type': 1, 'curr_destination': None}
+2018-02-07 19:32:32,265 [INFO] __main__: Initial states are : {'load': False, 'view_radius': 5.33199671090387, 'curr_position': array([9, 6]), 'action_probability': array([0.25, 0.25, 0.25, 0.25]), 'curr_position_realaxis': array([-9,  6]), 'viewAngle_param': 0.8734013727851752, 'curr_orientation': 0.08332134622976729, 'capacity_param': 0.10464327844572932, 'memory': array([9, 6]), 'view_angle': 5.487742672754293, 'viewRadius_param': 0.533199671090387, 'type': 0, 'curr_destination': None}
+2018-02-07 19:32:32,318 [INFO] __main__: [array([0.00961538, 0.96153846, 0.00961538, 0.00961538, 0.00961538]), array([0.00970874, 0.        , 0.00970874, 0.97087379, 0.00970874]), array([0.97087379, 0.        , 0.00970874, 0.00970874, 0.00970874])]
+2018-02-07 19:32:32,351 [INFO] __main__: [array([0.00980392, 0.98039216, 0.        , 0.        , 0.00980392]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.97087379, 0.00970874, 0.00970874])]
+2018-02-07 19:32:32,391 [INFO] __main__: [array([0.00970874, 0.97087379, 0.00970874, 0.        , 0.00970874]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.97087379, 0.00970874, 0.00970874])]
+2018-02-07 19:32:32,429 [INFO] __main__: [array([0.00961538, 0.96153846, 0.00961538, 0.00961538, 0.00961538]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.96153846, 0.00961538, 0.00961538, 0.00961538, 0.00961538])]
+2018-02-07 19:32:32,463 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.97087379, 0.00970874, 0.00970874, 0.        , 0.00970874])]
+2018-02-07 19:32:32,495 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:32,531 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:32,565 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:32,601 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:32,636 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:32,690 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:32,733 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:32,775 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:32,812 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:32,848 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:32,883 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:32,926 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:32,962 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:32,998 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:33,033 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:33,068 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:33,082 [INFO] __main__: Initiaed copying
+2018-02-07 19:32:33,084 [INFO] __main__: Passing state info: [{'load': True, 'view_radius': 4.314777430758399, 'curr_position': array([5, 7]), 'action_probability': array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), 'curr_position_realaxis': array([ 7, -1]), 'viewAngle_param': 0.6757147222497087, 'curr_orientation': 3.141592653589793, 'capacity_param': 0.1354425605072238, 'memory': array([5, 6]), 'view_angle': 4.245640814684305, 'viewRadius_param': 0.43147774307583986, 'type': 0, 'curr_destination': array([5, 6])}, {'load': True, 'view_radius': 3.6412062216272414, 'curr_position': array([6, 6]), 'action_probability': array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), 'curr_position_realaxis': array([ 7, -6]), 'viewAngle_param': 0.3353688315997992, 'curr_orientation': 4.71238898038469, 'capacity_param': 0.13531097717629756, 'memory': array([7, 6]), 'view_angle': 2.1071845151938433, 'viewRadius_param': 0.3641206221627241, 'type': 1, 'curr_destination': array([7, 6])}, {'load': True, 'view_radius': 5.33199671090387, 'curr_position': array([6, 8]), 'action_probability': array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379]), 'curr_position_realaxis': array([ 6, -9]), 'viewAngle_param': 0.8734013727851752, 'curr_orientation': 1.5707963267948966, 'capacity_param': 0.10464327844572932, 'memory': array([5, 8]), 'view_angle': 5.487742672754293, 'viewRadius_param': 0.533199671090387, 'type': 0, 'curr_destination': array([5, 8])}]
+2018-02-07 19:32:33,085 [INFO] src.agent_originaltypes: Created an agent with location [5 7], type 0, capacity 0.135442560507, view_radius 0.431477743076, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:33,086 [INFO] src.agent_originaltypes: Cloned agent with params {'load': True, 'view_radius': 4.314777430758399, 'curr_position': array([5, 7]), 'action_probability': array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), 'curr_position_realaxis': array([ 7, -1]), 'viewAngle_param': 0.6757147222497087, 'curr_orientation': 3.141592653589793, 'capacity_param': 0.1354425605072238, 'memory': array([5, 6]), 'view_angle': 4.245640814684305, 'viewRadius_param': 0.43147774307583986, 'type': 0, 'curr_destination': array([5, 6])}
+2018-02-07 19:32:33,087 [INFO] src.agent_originaltypes: Created an agent with location [6 6], type 1, capacity 0.135310977176, view_radius 0.364120622163, view_angle 0.3353688316 in standard ranges
+2018-02-07 19:32:33,087 [INFO] src.agent_originaltypes: Cloned agent with params {'load': True, 'view_radius': 3.6412062216272414, 'curr_position': array([6, 6]), 'action_probability': array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), 'curr_position_realaxis': array([ 7, -6]), 'viewAngle_param': 0.3353688315997992, 'curr_orientation': 4.71238898038469, 'capacity_param': 0.13531097717629756, 'memory': array([7, 6]), 'view_angle': 2.1071845151938433, 'viewRadius_param': 0.3641206221627241, 'type': 1, 'curr_destination': array([7, 6])}
+2018-02-07 19:32:33,088 [INFO] src.agent_originaltypes: Created an agent with location [6 8], type 0, capacity 0.104643278446, view_radius 0.53319967109, view_angle 0.873401372785 in standard ranges
+2018-02-07 19:32:33,088 [INFO] src.agent_originaltypes: Cloned agent with params {'load': True, 'view_radius': 5.33199671090387, 'curr_position': array([6, 8]), 'action_probability': array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379]), 'curr_position_realaxis': array([ 6, -9]), 'viewAngle_param': 0.8734013727851752, 'curr_orientation': 1.5707963267948966, 'capacity_param': 0.10464327844572932, 'memory': array([5, 8]), 'view_angle': 5.487742672754293, 'viewRadius_param': 0.533199671090387, 'type': 0, 'curr_destination': array([5, 8])}
+2018-02-07 19:32:33,090 [INFO] src.agent_originaltypes: Created an agent with location [5 7], type 0, capacity 0.135442560507, view_radius 0.431477743076, view_angle 0.67571472225 in standard ranges
+2018-02-07 19:32:33,091 [INFO] src.agent_originaltypes: Created an agent with location [6 6], type 1, capacity 0.135310977176, view_radius 0.364120622163, view_angle 0.3353688316 in standard ranges
+2018-02-07 19:32:33,091 [INFO] src.agent_originaltypes: Created an agent with location [6 8], type 0, capacity 0.104643278446, view_radius 0.53319967109, view_angle 0.873401372785 in standard ranges
+2018-02-07 19:32:33,104 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+ real agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+
+2018-02-07 19:32:33,104 [INFO] __main__: MSE For this iteration 0.0
+2018-02-07 19:32:33,104 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:33,138 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+ real agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+
+2018-02-07 19:32:33,138 [INFO] __main__: MSE For this iteration 0.0
+2018-02-07 19:32:33,138 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:33,162 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+ real agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+
+2018-02-07 19:32:33,162 [INFO] __main__: MSE For this iteration 0.0
+2018-02-07 19:32:33,162 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:33,186 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+ real agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+
+2018-02-07 19:32:33,186 [INFO] __main__: MSE For this iteration 0.0
+2018-02-07 19:32:33,186 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:33,212 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+ real agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+
+2018-02-07 19:32:33,212 [INFO] __main__: MSE For this iteration 0.0
+2018-02-07 19:32:33,213 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:33,236 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+ real agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+
+2018-02-07 19:32:33,236 [INFO] __main__: MSE For this iteration 0.0
+2018-02-07 19:32:33,236 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:33,260 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+ real agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+
+2018-02-07 19:32:33,261 [INFO] __main__: MSE For this iteration 0.0
+2018-02-07 19:32:33,261 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:33,286 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+ real agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+
+2018-02-07 19:32:33,286 [INFO] __main__: MSE For this iteration 0.0
+2018-02-07 19:32:33,287 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:33,311 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+ real agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+
+2018-02-07 19:32:33,311 [INFO] __main__: MSE For this iteration 0.0
+2018-02-07 19:32:33,312 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.97087379, 0.00970874, 0.00970874, 0.        , 0.00970874])]
+2018-02-07 19:32:33,346 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+ real agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+
+2018-02-07 19:32:33,346 [INFO] __main__: MSE For this iteration 0.0
+2018-02-07 19:32:33,347 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.00980392, 0.        , 0.98039216, 0.        , 0.00980392]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:33,371 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+ real agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+
+2018-02-07 19:32:33,371 [INFO] __main__: MSE For this iteration 0.0
+2018-02-07 19:32:33,371 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:33,394 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+ real agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+
+2018-02-07 19:32:33,395 [INFO] __main__: MSE For this iteration 0.0
+2018-02-07 19:32:33,395 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00970874, 0.00970874, 0.00970874, 0.97087379])]
+2018-02-07 19:32:33,418 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+ real agent [0.00980392 0.00980392 0.         0.         0.98039216] 
+
+2018-02-07 19:32:33,418 [INFO] __main__: MSE For this iteration 0.0
+2018-02-07 19:32:33,418 [INFO] __main__: [array([0.00980392, 0.00980392, 0.        , 0.        , 0.98039216]), array([0.        , 0.        , 0.00980392, 0.00980392, 0.98039216]), array([0.        , 0.00980392, 0.00980392, 0.        , 0.98039216])]

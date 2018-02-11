@@ -56,6 +56,24 @@ DEBUG TEST:
 
 logger = logging.getLogger(__name__)
 
+DICT_MOVES2ACTIONPROBS = {'-10': [1, 0, 0, 0, 0], '10': [0, 1, 0, 0, 0], '01': [0, 0, 1, 0, 0],
+                                '0-1': [0, 0, 0, 1, 0],
+                                '00': [0, 0, 0, 0, 1]}  # If the key is the difference between dest and curr,
+# The list returns the action probs.
+ACTIONS = np.arange(5)
+DICT_ACTION2INDEX = {'-10': 0, '10': 1, '01': 2, '0-1': 3,
+                             '00': 4}  # Get the action index given the desired movement.
+DICT_INDEX2ACTION = {0: '-10', 1: '10', 2: '01', 3: '0-1', 4: '00'}
+
+ACTION2MOVEMENTVECTOR = np.array(
+    [[-1, 0], [1, 0], [0, 1], [0, -1], [0, 0]])  # Given an action index, this array gives us the vector
+# to add to current states to get the result
+ACTION2ORIENTATION = np.array(
+    [np.pi / 2, 1.5 * np.pi, 0, np.pi])  # Given an action index, this array gives us the
+
+
+# what the orientation should be.
+
 class Agent():
     def __init__(self, capacity_param, viewRadius_param, viewAngle_param, type, curr_pos, foraging_arena):
         """
@@ -83,39 +101,14 @@ class Agent():
         self.view_radius = self.viewRadius_param * self.grid_matrix_size
         self.curr_destination = None
         self.curr_position = np.array(curr_pos)
-        self.curr_position_realaxis = (-1, 1) * self.curr_position
         self.memory = self.curr_position
         self.curr_orientation = np.random.random() * np.pi * 2
 
         self.params = [self.capacity, self.view_radius, self.view_angle]
-        self.visible_agents = []
-        self.visible_items = []
         self.action_probability = .25 * np.ones(4)
         # up,down,right,left
 
-        self.dict_moves_actionsProbs = {'-10': [1, 0, 0, 0, 0], '10': [0, 1, 0, 0, 0], '01': [0, 0, 1, 0, 0],
-                                        '0-1': [0, 0, 0, 1, 0],
-                                        '00': [0, 0, 0, 0, 1]}  # If the key is the difference between dest and curr,
-        # The list returns the action probs.
-        self.actions = np.arange(5)
-        self.dict_actiontoIndices = {'-10': 0, '10': 1, '01': 2, '0-1': 3,
-                                     '00': 4}  # Get the action index given the desired movement.
-        self.dict_indicestoActions = {0: '-10', 1: '10', 2: '01', 3: '0-1', 4: '00'}
 
-        self.action_to_movements = np.array(
-            [[-1, 0], [1, 0], [0, 1], [0, -1], [0, 0]])  # Given an action index, this array gives us the vector
-        # to add to current states to get the result
-        self.action_to_orientations = np.array(
-            [np.pi / 2, 1.5 * np.pi, 0, np.pi, self.curr_orientation])  # Given an action index, this array gives us the
-        # what the orientation should be.
-
-        # need to init curr_position by reading from the foraging_arena's grid
-        # action probabilities are [up,down,left,right]
-        self.pad_grid_matrix = np.zeros_like(self.arena.grid_matrix)
-        self.pad_grid_matrix = np.lib.pad(self.pad_grid_matrix, 1, 'constant', constant_values=1)
-
-        self.stagnant_count = 0
-        self.maximum_stagnation = 5
         logger.info('Created an agent with location {}, type {}, capacity {}, view_radius {}, view_angle {} in standard ranges'.format(self.curr_position, self.type, self.capacity_param,self.viewRadius_param,self.viewAngle_param))
 
 
@@ -182,16 +175,16 @@ class Agent():
             if ((self.arena.grid_matrix[self.curr_destination[0], self.curr_destination[1]]) and (
                     np.linalg.norm(self.curr_position - self.curr_destination) <= 1)):
                 # just load - no movement
-                self.action_probability = self.dict_moves_actionsProbs['00']  # load action has 00 movement, so.
+                self.action_probability = DICT_MOVES2ACTIONPROBS['00']  # load action has 00 movement, so.
             else:
                 # Chose an action that takes you towards your goal.
 
-                resulting_pos = self.curr_position + self.action_to_movements
+                resulting_pos = self.curr_position + ACTION2MOVEMENTVECTOR
                 resulting_distances = np.linalg.norm(self.curr_destination - resulting_pos, axis=1)
                 resulting_distances[
                     np.logical_not(valid_movesMask)] = np.inf  # Make chosing invalid actions impossible.
 
-                actionProb = self.dict_moves_actionsProbs[self.dict_indicestoActions[np.argmin(resulting_distances)]]
+                actionProb = DICT_MOVES2ACTIONPROBS[DICT_INDEX2ACTION[np.argmin(resulting_distances)]]
                 self.action_probability = actionProb
 
             # no 'valid'(actions that don't push the agent into boundaries) should be left with zero-probability.
@@ -224,10 +217,10 @@ class Agent():
         :return action_and_consequence: the selected action and consequence of such an action.
         """
         try:
-            final_action = np.random.choice(self.actions, 1, p=action_probs)[0]
+            final_action = np.random.choice(ACTIONS, 1, p=action_probs)[0]
         except ValueError:
             pass
-        final_movement = self.action_to_movements[final_action]
+        final_movement = ACTION2MOVEMENTVECTOR[final_action]
         final_nextposition = self.curr_position + final_movement
         action_and_consequence = [final_action, final_movement, final_nextposition]
         return (action_and_consequence)
@@ -241,7 +234,7 @@ class Agent():
         # if debug:
         #     pdb.set_trace()
         # optimize
-        final_pos = self.curr_position + self.action_to_movements
+        final_pos = self.curr_position + ACTION2MOVEMENTVECTOR
 
         # start_time = time.time()
         mask1_1 = np.all(final_pos >= 0, axis=1)  # boundary condition check.
@@ -265,6 +258,20 @@ class Agent():
 
         return valid_actions_prob_withLoad, valid_actions_prob_without_load, valid_actions_mask
 
+    def get_legalActionProbs(self):
+        validrand_actionprob = self.valid_randMoveActionProb(True)
+
+        # load action too
+        # validrand_actionprob[-1]=1
+        #
+        # normalize probability.
+        # no_validactinons = np.sum(validrand_actionprob!=0)
+        # validrand_actionprob[np.where(validrand_actionprob!=0)]=1.0/no_validactinons
+        return validrand_actionprob
+
+        # Removing methods:
+
+
     def execute_action(self, action_and_consequence):
         # The action is approved by the arena, and is being executed by the agent.
         # We can only move if it is not a load action.
@@ -272,14 +279,14 @@ class Agent():
         curr_position = self.curr_position.copy()
         if final_action != 4:
             self.load = False
-            self.curr_orientation = self.action_to_orientations[final_action]
+            self.curr_orientation = ACTION2ORIENTATION[final_action]
             self.arena.grid_matrix[self.curr_position[0], self.curr_position[1]] = 0
             self.curr_position = final_nextposition
 
             try:
                 self.arena.grid_matrix[self.curr_position[0], self.curr_position[1]] = 1
             except IndexError:
-                print("Tried to exceed boundaries")
+                raise ("Tried to exceed boundaries")
 
         else:
             # if this is a load action, this is probably already taken care of, by the arena.
@@ -288,14 +295,11 @@ class Agent():
             if np.any(self.curr_destination):
                 to_move = (self.curr_destination - self.curr_position)
                 if np.sum(np.abs(to_move)) < 2:  # Only align orientation if the item is near by.
-                    action_index = self.dict_actiontoIndices[str(to_move[0]) + str(to_move[1])]
-                    orientation = self.action_to_orientations[action_index]
+                    action_index = DICT_ACTION2INDEX[str(to_move[0]) + str(to_move[1])]
+                    orientation = ACTION2ORIENTATION[action_index]
                     self.curr_orientation = orientation
             # self.load = False
-        if np.sum(self.curr_position - curr_position) == 0:
-            self.stagnant_count += 1
-        else:
-            self.stagnant_count = 0
+
 
         return
 
@@ -311,25 +315,15 @@ class Agent():
         agents_list = self.arena.agents
 
         items_locarray = np.array([item.position for item in items_list])
-        # if debug:
-        #     print self.curr_position
-        #     print (items_locarray)
-        #
-        # if debug:
         items_is_visible = self.is_visible(items_locarray)
-        # else:
-        #     items_is_visible = self.is_visible(items_locarray,False)
-
-        self.visible_items = [item for (item, is_in) in zip(items_list, items_is_visible) if is_in]
+        visible_items = [item for (item, is_in) in zip(items_list, items_is_visible) if is_in]
 
         agents_locarray = np.array([agent.curr_position for agent in agents_list])
 
         agents_is_visible = self.is_visible(agents_locarray)
-        # if debug:
-        #     print agents_is_visible
-        self.visible_agents = [agent for (agent, is_in) in zip(agents_list, agents_is_visible) if is_in]
+        visible_agents = [agent for (agent, is_in) in zip(agents_list, agents_is_visible) if is_in]
 
-        return [self.visible_agents, self.visible_items]
+        return [visible_agents, visible_items]
 
     def is_visible(self, loc_array):
 
@@ -339,25 +333,20 @@ class Agent():
         direction_vectors = loc_array - self.curr_position
         angle_vectors = np.arctan2(0 - direction_vectors[:, 0], direction_vectors[:, 1]) % (
                 2 * np.pi)  # Compensate for numpy and real axis diff
-        # if debug:
-        #     print('In is_visible')
-        #     print direction_vectors,angle_vectors
 
         constraint1 = distance_list < self.view_radius
-        self.get_outerandinnerAngles()
         loc_array_real = np.fliplr(loc_array)
         loc_array_real[:, 1] *= -1  # y axis is inverted.
-        # if debug:
-        # print loc_array_real
+        curr_position_realaxis = np.array([self.curr_position[1], -self.curr_position[0]])
 
-        constraint2 = np.array([self.is_withinSector(loc) for loc in loc_array_real])
-        # if debug:
-        #     print constraint2
-        #     print ("out of is_visible")
+        right_boundary_vector, left_boundary_vector= self.get_outerandinnerAngles()
+
+        constraint2 = np.array([self.is_withinSector(loc,right_boundary_vector,left_boundary_vector,curr_position_realaxis) for loc in loc_array_real])
         return np.all((constraint1, constraint2), axis=0)
 
-    def is_withinSector(self, target_loc):
-        target_vector = np.array(target_loc - self.curr_position_realaxis)
+    def is_withinSector(self, target_loc,right_boundary_vector,left_boundary_vector,curr_position_realaxis):
+
+        target_vector = np.array(target_loc - curr_position_realaxis)
 
         # Is the angle subtended between target and left most boundary, clockwise < 180?
         # is the angle subtended between target and right most boundary, anticlockwise < 180?
@@ -365,63 +354,51 @@ class Agent():
         left_normal_vector = np.array([0 - target_vector[1], target_vector[0]])
         right_normal_vector = -1 * left_normal_vector
 
-        # if debug:
-        #     print ("in is_withinSector")
-        #     print target_vector
-        #     print left_normal_vector
-        #     print right_normal_vector
-        #
-        # if debug:
-        #     print np.dot(self.left_boundary_vector,left_normal_vector)
-        #     print np.dot(self.right_boundary_vector,right_normal_vector)
-        #     print np.dot(self.right_boundary_vector, left_normal_vector)
-        #     print np.dot(self.left_boundary_vector,right_normal_vector)
-        #     print ("out of is_withinSector")
-
         if self.view_angle <= np.pi:
-            if (np.dot(self.left_boundary_vector, left_normal_vector) >= 0 and np.dot(self.right_boundary_vector,
+            if (np.dot(left_boundary_vector, left_normal_vector) >= 0 and np.dot(right_boundary_vector,
                                                                                       right_normal_vector) >= 0):
                 return True
             else:
                 return False
         else:
-            if (np.dot(self.right_boundary_vector, left_normal_vector) >= 0 and np.dot(self.left_boundary_vector,
+            if (np.dot(right_boundary_vector, left_normal_vector) >= 0 and np.dot(left_boundary_vector,
                                                                                        right_normal_vector) >= 0):
                 return False
             else:
                 return True
 
     def get_outerandinnerAngles(self):
-        self.outerangle = (self.curr_orientation + (self.view_angle / 2)) % (2 * np.pi)
-        self.innerangle = (self.curr_orientation - (self.view_angle / 2)) % (2 * np.pi)
+        outerangle = (self.curr_orientation + (self.view_angle / 2)) % (2 * np.pi)
+        innerangle = (self.curr_orientation - (self.view_angle / 2)) % (2 * np.pi)
 
-        self.curr_position_realaxis = np.array([self.curr_position[1], -self.curr_position[0]])
-        self.right_boundary_vector = np.array([np.cos(self.innerangle), np.sin(self.innerangle)])
-        self.left_boundary_vector = np.array([np.cos(self.outerangle), np.sin(self.outerangle)])
+
+        right_boundary_vector = np.array([np.cos(innerangle), np.sin(innerangle)])
+        left_boundary_vector = np.array([np.cos(outerangle), np.sin(outerangle)])
+        return right_boundary_vector,left_boundary_vector
 
     def choosetarget(self, visible_entities):
         """
         :params: uses self.visible_agents and self.visible_items
         :return:
         """
-        [self.visible_agents, self.visible_items] = visible_entities
+        [visible_agents, visible_items] = visible_entities
         # self.arena.agents = self.arena.agents
         # self.arena.grid_matrix = self.arena.grid_matrix
 
         if self.type == 0:
-            if self.visible_items:
-                return (self.get_furthestItem(self.visible_items)).position
+            if visible_items:
+                return (self.get_furthestItem(visible_items)).position
             else:
                 return None
         elif self.type == 1:
-            if self.visible_items:
-                return (self.get_highestItemBelowSelf(self.visible_items)).position
+            if visible_items:
+                return (self.get_highestItemBelowSelf(visible_items)).position
             else:
                 return None
         elif self.type == 2:
-            if self.visible_agents:
-                furthest_agent = self.get_furthestAgent(self.visible_agents)
-                if self.visible_items:
+            if visible_agents:
+                furthest_agent = self.get_furthestAgent(visible_agents)
+                if visible_items:
                     # Saving
                     curr_position = copy(self.curr_position)
                     curr_type = copy(self.type)
@@ -440,14 +417,14 @@ class Agent():
             else:
                 return None
         elif self.type == 3:
-            if self.visible_agents:
-                highest_agent = self.get_highestAgentBelowSelf(self.visible_agents)
+            if visible_agents:
+                highest_agent = self.get_highestAgentBelowSelf(visible_agents)
                 if highest_agent:
                     dest = highest_agent
                 else:
-                    dest = self.get_furthestAgent(self.visible_agents)
+                    dest = self.get_furthestAgent(visible_agents)
 
-                if self.visible_items:
+                if visible_items:
                     # saving
                     curr_position = copy(self.curr_position)
                     curr_type = copy(self.type)
@@ -506,53 +483,82 @@ class Agent():
         else:
             return None
 
-    def copy(self, new_arena):
-        """
-        new_arena is the new arena object we need to preserve the state.
-        Copy the current agent with the exact state.
-        :return: A new agent object, without the underlying arena, but still replaceable.
-        """
 
-        # all_attrs = dir(self)
+    def __getstate__(self):
         cd = deepcopy
-        cp_c = cd(self.capacity)
-        vr_c = cd(self.view_radius)
-        va_c = cd(self.view_angle)
-        load_c = cd(self.load)
-        type_c = cd(self.type)
-        currdest_c = cd(self.curr_destination)
-        currpos_c = cd(self.curr_position)
-        currposreal_c = cd(self.curr_position_realaxis)
-        mem_c = cd(self.memory)
-        currorien_c = cd(self.curr_orientation)
-        ap_c = cd(self.action_probability)
+        dict_state = {}
+        dict_state['type'] = cd(self.type)
+        dict_state['capacity_param'] = cd(self.capacity_param)
+        dict_state['view_radius'] = cd(self.view_radius)
+        dict_state['view_angle'] = cd(self.view_angle)
+        dict_state['viewAngle_param'] = cd(self.viewAngle_param)
+        dict_state['viewRadius_param'] = cd(self.viewRadius_param)
 
-        # all_variables = [attr for attr in all_attrs if not type(attr.item)==types.MethodType()]
-        # all_variables.remove('arena')
+        dict_state['load']= cd(self.load)
+        dict_state['curr_destination'] = cd(self.curr_destination)
+        dict_state['memory'] = cd(self.memory)
 
-        # new_dict_variables = {variable_name:copy.deepcopy(self.__dict__[variable_name]) for variable_name in all_variables}
-        # ndv = new_dict_variables
-        # new_object = agent(ndv['capacity'],ndv['view_radius'],ndv['view_angle'],ndv['type'],ndv['curr_pos'],ndv['curr_heading'],
-        #                    new_arena)
-        new_agent = agent(cp_c, vr_c, va_c, type_c, currpos_c, currorien_c, new_arena)
-        new_agent.curr_destination = currdest_c
-        new_agent.memory = mem_c
-        new_agent.action_probability = ap_c
-        new_agent.curr_position_realaxis = currposreal_c
-        new_agent.load = load_c
+        dict_state['curr_position'] = cd(self.curr_position)
+        dict_state['curr_orientation'] = cd(self.curr_orientation)
 
-        return new_agent
+        dict_state['action_probability'] = cd(self.action_probability)
+        return dict_state
 
-    def get_legalActionProbs(self):
-        validrand_actionprob = self.valid_randMoveActionProb(True)
+    def __setstate__(self, state):
+        self.__dict__.update(state)
 
-        # load action too
-        # validrand_actionprob[-1]=1
-        #
-        # normalize probability.
-        # no_validactinons = np.sum(validrand_actionprob!=0)
-        # validrand_actionprob[np.where(validrand_actionprob!=0)]=1.0/no_validactinons
-        return validrand_actionprob
+    def __eq__(self,other):
+        #Method called when the equality operator is sought.
+        logging.debug("Comparision called between {} and {} ".format(self,other))
+        allVars = self.__dict__
+        compResult = []
+        exclude_keys = ['visible_agents','arena']
 
-        # Removing methods:
+        for key in allVars.keys():
+            if 'visua' not in key and key not in exclude_keys:
+                currEle = self.__dict__[key]
+                if isinstance(currEle,list):
+                    try:
+                        from src.arena import item
+                        if isinstance(currEle[0],item):
+                            #Now we are comparing lists of items. This could be problematic when they are not in-order.
+                            #We should compare ordered representation.
+                            itemList1 = currEle
+                            itemList2 = other.__dict__[key]
+
+                            #O(N2) search. Just compare everything with everything.
+                            compresult = True
+                            for ele in itemList1:
+                                found = False
+                                for ele2 in itemList2:
+                                    if ele==ele2:
+                                        found = True
+                                        break
+                                if found is not True: #Even if one of the element is not found, then break.
+                                    compresult = False
+                                break
+                        else:
+                            compresult = self.__dict__[key] == other.__dict__[key]
+                    except IndexError:
+                        #Empty list
+                        if len(other.__dict__[key])>0:
+                            #If the other object's list isn't empty
+                            compresult = False
+                        else:
+                            compresult = True
+
+                else:
+                    compresult = self.__dict__[key]==other.__dict__[key]
+
+                logger.debug("Comparision of {} is {} \n".format(key,compresult))
+                compResult.append(compresult)
+        return np.all([np.all(np.array(ele)) for ele in compResult])
+
+
+
+
+
+
+
+
 

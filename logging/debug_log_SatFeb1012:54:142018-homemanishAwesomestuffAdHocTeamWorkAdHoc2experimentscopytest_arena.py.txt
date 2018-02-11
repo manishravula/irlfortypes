@@ -1,0 +1,1085 @@
+2018-02-10 12:54:14,150 [INFO] __main__: Logging configuration of the file
+2018-02-10 12:54:14,153 [INFO] __main__: LOGGING_CONFIG
+2018-02-10 12:54:14,155 [INFO] generate_init: Initializing old configuration for grid and agents
+2018-02-10 12:54:14,157 [DEBUG] generate_init: creating arena object with grid_matrix [[0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.47986369
+  0.         0.         0.19289129 0.        ]
+ [0.         0.         0.         0.         0.         0.41578884
+  0.         0.         0.         0.        ]
+ [0.         0.25535226 0.         0.         0.         0.33101156
+  0.22598987 0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.26430396
+  0.         0.         0.1231086  0.        ]
+ [0.         0.         0.         0.0607705  0.         0.
+  0.         0.         0.37792623 0.        ]
+ [0.         0.09893835 0.24282728 0.         0.         0.26333421
+  0.         0.         0.07318104 0.        ]
+ [0.         0.         0.10854079 0.         0.         0.
+  0.30150698 0.20892911 0.         0.        ]
+ [0.         0.         0.47285442 0.         0.         0.
+  0.         0.42201632 0.28909144 0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]]
+2018-02-10 12:54:14,158 [DEBUG] generate_init: creating agent with capacity 0.161644586344 vradius 0.512316385518 vangle 0.50687683917 type 1 loc [4 1]
+2018-02-10 12:54:14,158 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.512316385518, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,158 [DEBUG] generate_init: creating agent with capacity 0.17911266639 vradius 0.836770768958 vangle 0.41860146025 type 2 loc [4 1]
+2018-02-10 12:54:14,158 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.17911266639, view_radius 0.836770768958, view_angle 0.41860146025 in standard ranges
+2018-02-10 12:54:14,158 [DEBUG] generate_init: creating agent with capacity 0.181896070149 vradius 0.405699255351 vangle 0.341128249979 type 0 loc [8 2]
+2018-02-10 12:54:14,159 [INFO] src.agent_originaltypes: Created an agent with location [8 2], type 0, capacity 0.181896070149, view_radius 0.405699255351, view_angle 0.341128249979 in standard ranges
+2018-02-10 12:54:14,255 [DEBUG] generate_init: Arena created with objects added and new grid_matrix [[0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]
+ [0.         0.         0.         0.         0.         0.47986369
+  0.         0.         0.19289129 0.        ]
+ [0.         0.         0.         0.         0.         0.41578884
+  0.         0.         0.         0.        ]
+ [0.         0.25535226 0.         0.         0.         0.33101156
+  0.22598987 0.         0.         0.        ]
+ [0.         1.         0.         0.         0.         0.26430396
+  0.         0.         0.1231086  0.        ]
+ [0.         0.         0.         0.0607705  0.         0.
+  0.         0.         0.37792623 0.        ]
+ [0.         0.09893835 0.24282728 0.         0.         0.26333421
+  0.         0.         0.07318104 0.        ]
+ [0.         0.         0.10854079 0.         0.         0.
+  0.30150698 0.20892911 0.         0.        ]
+ [0.         0.         1.         0.         0.         0.
+  0.         0.42201632 0.28909144 0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]]
+2018-02-10 12:54:14,255 [INFO] generate_init: Finished creating arena and agents. One item consumed due to overlap. Current item count is 19
+2018-02-10 12:54:14,255 [INFO] src.ABU_estimator_noapproximation: Calling parent ABU via inheritance. This is ABU_noapproximation
+2018-02-10 12:54:14,255 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.1, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,255 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.131034482759, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,256 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.162068965517, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,256 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.193103448276, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,256 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.224137931034, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,256 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.255172413793, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,256 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.286206896552, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,256 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.31724137931, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,256 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.348275862069, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,256 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.379310344828, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,257 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.410344827586, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,257 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.441379310345, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,257 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.472413793103, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,257 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.503448275862, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,257 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.534482758621, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,257 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.565517241379, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,257 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.596551724138, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,258 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.627586206897, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,258 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.658620689655, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,258 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.689655172414, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,258 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.720689655172, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,258 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.751724137931, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,258 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.78275862069, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,258 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.813793103448, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,258 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.844827586207, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,259 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.875862068966, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,259 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.906896551724, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,259 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.937931034483, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,259 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 0.968965517241, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,259 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.161644586344, view_radius 1.0, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,259 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.1, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,259 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.131034482759, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,259 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.162068965517, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,260 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.193103448276, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,260 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.224137931034, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,260 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.255172413793, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,260 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.286206896552, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,260 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.31724137931, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,260 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.348275862069, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,260 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.379310344828, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,260 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.410344827586, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,260 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.441379310345, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,261 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.472413793103, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,261 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.503448275862, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,261 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.534482758621, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,261 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.565517241379, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,261 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.596551724138, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,261 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.627586206897, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,261 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.658620689655, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,261 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.689655172414, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,262 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.720689655172, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,262 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.751724137931, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,262 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.78275862069, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,262 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.813793103448, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,262 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.844827586207, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,262 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.875862068966, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,262 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.906896551724, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,262 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.937931034483, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,263 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 0.968965517241, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,263 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 1, capacity 0.161644586344, view_radius 1.0, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,263 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.1, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,263 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.131034482759, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,263 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.162068965517, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,263 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.193103448276, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,263 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.224137931034, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,263 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.255172413793, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,264 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.286206896552, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,264 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.31724137931, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,264 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.348275862069, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,264 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.379310344828, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,264 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.410344827586, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,264 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.441379310345, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,264 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.472413793103, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,264 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.503448275862, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,265 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.534482758621, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,265 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.565517241379, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,265 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.596551724138, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,265 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.627586206897, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,265 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.658620689655, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,265 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.689655172414, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,265 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.720689655172, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,265 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.751724137931, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,266 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.78275862069, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,266 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.813793103448, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,266 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.844827586207, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,266 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.875862068966, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,266 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.906896551724, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,266 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.937931034483, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,267 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 0.968965517241, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,267 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 2, capacity 0.161644586344, view_radius 1.0, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,267 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.1, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,267 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.131034482759, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,267 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.162068965517, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,267 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.193103448276, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,267 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.224137931034, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,267 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.255172413793, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,268 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.286206896552, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,268 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.31724137931, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,268 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.348275862069, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,268 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.379310344828, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,268 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.410344827586, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,268 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.441379310345, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,268 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.472413793103, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,268 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.503448275862, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,268 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.534482758621, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,269 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.565517241379, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,269 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.596551724138, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,269 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.627586206897, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,269 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.658620689655, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,269 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.689655172414, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,269 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.720689655172, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,269 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.751724137931, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,269 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.78275862069, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,270 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.813793103448, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,270 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.844827586207, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,270 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.875862068966, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,270 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.906896551724, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,270 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.937931034483, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,270 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 0.968965517241, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,270 [INFO] src.agent_originaltypes: Created an agent with location [4 1], type 3, capacity 0.161644586344, view_radius 1.0, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,271 [INFO] src.ABU_estimator: ABU Estimator class initialized with 30 agents and working on estimating parameter view_radius with a resolution of 30
+2018-02-10 12:54:14,271 [INFO] src.ABU_estimator: ABU polynomial info: resolution: 30, llpoly_degree: 5, priorpoly_degree: 5, postpoly_degree: 5, refitdensity: 20
+2018-02-10 12:54:14,271 [INFO] __main__: Initial states are : {'load': False, 'view_radius': 5.123163855181626, 'curr_position': array([4, 1]), 'action_probability': array([0.25, 0.25, 0.25, 0.25]), 'viewAngle_param': 0.5068768391700075, 'curr_orientation': 1.6263844703560764, 'capacity_param': 0.16164458634376877, 'memory': array([4, 1]), 'view_angle': 3.1848011084226213, 'viewRadius_param': 0.5123163855181626, 'type': 1, 'curr_destination': None}
+2018-02-10 12:54:14,272 [INFO] __main__: Initial states are : {'load': False, 'view_radius': 8.367707689577115, 'curr_position': array([4, 1]), 'action_probability': array([0.25, 0.25, 0.25, 0.25]), 'viewAngle_param': 0.4186014602501946, 'curr_orientation': 1.5702208474111414, 'capacity_param': 0.17911266638985887, 'memory': array([4, 1]), 'view_angle': 2.6301505446079423, 'viewRadius_param': 0.8367707689577115, 'type': 2, 'curr_destination': None}
+2018-02-10 12:54:14,272 [INFO] __main__: Initial states are : {'load': False, 'view_radius': 4.056992553507528, 'curr_position': array([8, 2]), 'action_probability': array([0.25, 0.25, 0.25, 0.25]), 'viewAngle_param': 0.3411282499792071, 'curr_orientation': 4.740648700878882, 'capacity_param': 0.18189607014893844, 'memory': array([8, 2]), 'view_angle': 2.1433720081332392, 'viewRadius_param': 0.4056992553507528, 'type': 0, 'curr_destination': None}
+2018-02-10 12:54:14,315 [INFO] __main__: [array([0.        , 0.00970874, 0.97087379, 0.00970874, 0.00970874]), array([0.        , 0.33333333, 0.        , 0.33333333, 0.33333333]), array([0.  , 0.25, 0.25, 0.25, 0.25])]
+2018-02-10 12:54:14,318 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,320 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,321 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,322 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,322 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,323 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,323 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,323 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,356 [INFO] __main__: [array([0.96153846, 0.00961538, 0.00961538, 0.00961538, 0.00961538]), array([0.25, 0.25, 0.25, 0.  , 0.25]), array([0.2, 0.2, 0.2, 0.2, 0.2])]
+2018-02-10 12:54:14,358 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,358 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,359 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,360 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,361 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,362 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,362 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,362 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,388 [INFO] __main__: [array([0.00970874, 0.00970874, 0.97087379, 0.        , 0.00970874]), array([0.00970874, 0.00970874, 0.97087379, 0.        , 0.00970874]), array([0.2, 0.2, 0.2, 0.2, 0.2])]
+2018-02-10 12:54:14,391 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,393 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,394 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,395 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,396 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,401 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,402 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,403 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,422 [INFO] __main__: [array([0.96153846, 0.00961538, 0.00961538, 0.00961538, 0.00961538]), array([0.00970874, 0.        , 0.97087379, 0.00970874, 0.00970874]), array([0.25, 0.  , 0.25, 0.25, 0.25])]
+2018-02-10 12:54:14,425 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,425 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,426 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,427 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,428 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,428 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,428 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,429 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,449 [INFO] __main__: [array([0.00961538, 0.00961538, 0.96153846, 0.00961538, 0.00961538]), array([0.98039216, 0.        , 0.        , 0.00980392, 0.00980392]), array([0.25, 0.  , 0.25, 0.25, 0.25])]
+2018-02-10 12:54:14,452 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,453 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,454 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,455 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,456 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,456 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,456 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,456 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,477 [INFO] __main__: [array([0.97087379, 0.00970874, 0.        , 0.00970874, 0.00970874]), array([0.00961538, 0.00961538, 0.96153846, 0.00961538, 0.00961538]), array([0.96153846, 0.00961538, 0.00961538, 0.00961538, 0.00961538])]
+2018-02-10 12:54:14,479 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,480 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,481 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,481 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,484 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,485 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,486 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,487 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,505 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.97087379, 0.00970874, 0.00970874]), array([0.        , 0.00970874, 0.97087379, 0.00970874, 0.00970874])]
+2018-02-10 12:54:14,510 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,511 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,512 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,513 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,513 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,514 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,514 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,514 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,534 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.97087379, 0.        , 0.00970874, 0.00970874]), array([0.        , 0.00970874, 0.97087379, 0.00970874, 0.00970874])]
+2018-02-10 12:54:14,537 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,538 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,539 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,540 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,541 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,541 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,541 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,542 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,562 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.97087379, 0.        , 0.00970874]), array([0.96153846, 0.00961538, 0.00961538, 0.00961538, 0.00961538])]
+2018-02-10 12:54:14,566 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,567 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,568 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,569 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,570 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,571 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,572 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,573 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,595 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.        , 0.        , 0.98039216, 0.00980392, 0.00980392]), array([0.        , 0.00980392, 0.00980392, 0.        , 0.98039216])]
+2018-02-10 12:54:14,600 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,601 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,603 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,604 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,606 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,607 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,607 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,608 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,638 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00961538, 0.96153846, 0.00961538, 0.00961538, 0.00961538]), array([0.97087379, 0.00970874, 0.00970874, 0.        , 0.00970874])]
+2018-02-10 12:54:14,645 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,646 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,647 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,648 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,650 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,650 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,650 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,651 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,670 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00980392, 0.        , 0.98039216, 0.        , 0.00980392]), array([0.96153846, 0.00961538, 0.00961538, 0.00961538, 0.00961538])]
+2018-02-10 12:54:14,673 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,674 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,675 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,676 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,678 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,679 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,680 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,680 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,700 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00980392, 0.        , 0.        , 0.00980392, 0.98039216]), array([0.00961538, 0.00961538, 0.00961538, 0.96153846, 0.00961538])]
+2018-02-10 12:54:14,705 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,706 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,707 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,709 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,710 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,710 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,710 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,710 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,729 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.96153846, 0.00961538, 0.00961538, 0.00961538, 0.00961538])]
+2018-02-10 12:54:14,733 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,734 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,735 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,735 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,736 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,737 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,737 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,737 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,759 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:14,763 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,765 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,768 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,769 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,770 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,770 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,771 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,771 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,791 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:14,794 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,794 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,795 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,796 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,797 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,797 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,797 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,798 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,820 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.97087379, 0.        , 0.00970874, 0.00970874]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:14,823 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,824 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,825 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,825 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,826 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,827 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,827 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,827 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,846 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:14,849 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,850 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,851 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,851 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,852 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,852 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,853 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,853 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,871 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00980392, 0.        , 0.98039216, 0.        , 0.00980392]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:14,874 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,875 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,876 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,877 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,877 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,878 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,878 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,878 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,897 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:14,900 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,901 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,902 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,904 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,905 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,905 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,905 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,906 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,923 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:14,926 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,928 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,929 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,930 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,931 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,931 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,931 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,932 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,932 [INFO] __main__: Initiaed copying
+2018-02-10 12:54:14,933 [INFO] __main__: Passing state info: [{'load': True, 'view_radius': 5.123163855181626, 'curr_position': array([1, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'viewAngle_param': 0.5068768391700075, 'curr_orientation': 0.0, 'capacity_param': 0.16164458634376877, 'memory': array([1, 5]), 'view_angle': 3.1848011084226213, 'viewRadius_param': 0.5123163855181626, 'type': 1, 'curr_destination': array([1, 5])}, {'load': True, 'view_radius': 8.367707689577115, 'curr_position': array([6, 7]), 'action_probability': array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), 'viewAngle_param': 0.4186014602501946, 'curr_orientation': 4.71238898038469, 'capacity_param': 0.17911266638985887, 'memory': array([7, 7]), 'view_angle': 2.6301505446079423, 'viewRadius_param': 0.8367707689577115, 'type': 2, 'curr_destination': array([7, 7])}, {'load': True, 'view_radius': 4.056992553507528, 'curr_position': array([3, 2]), 'action_probability': array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379]), 'viewAngle_param': 0.3411282499792071, 'curr_orientation': 3.141592653589793, 'capacity_param': 0.18189607014893844, 'memory': array([3, 1]), 'view_angle': 2.1433720081332392, 'viewRadius_param': 0.4056992553507528, 'type': 0, 'curr_destination': array([3, 1])}]
+2018-02-10 12:54:14,934 [DEBUG] src.arena: Cloning from state {'load': True, 'view_radius': 5.123163855181626, 'curr_position': array([1, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'viewAngle_param': 0.5068768391700075, 'curr_orientation': 0.0, 'capacity_param': 0.16164458634376877, 'memory': array([1, 5]), 'view_angle': 3.1848011084226213, 'viewRadius_param': 0.5123163855181626, 'type': 1, 'curr_destination': array([1, 5])} to state {'load': True, 'view_radius': 5.123163855181626, 'curr_position': array([1, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'viewAngle_param': 0.5068768391700075, 'curr_orientation': 0.0, 'capacity_param': 0.16164458634376877, 'memory': array([1, 5]), 'view_angle': 3.1848011084226213, 'viewRadius_param': 0.5123163855181626, 'type': 1, 'curr_destination': array([1, 5])}
+2018-02-10 12:54:14,934 [INFO] src.agent_originaltypes: Created an agent with location [1 4], type 1, capacity 0.161644586344, view_radius 0.512316385518, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,934 [INFO] src.agent_originaltypes: Cloned agent with params {'load': True, 'view_radius': 5.123163855181626, 'curr_position': array([1, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'viewAngle_param': 0.5068768391700075, 'curr_orientation': 0.0, 'capacity_param': 0.16164458634376877, 'memory': array([1, 5]), 'view_angle': 3.1848011084226213, 'viewRadius_param': 0.5123163855181626, 'type': 1, 'curr_destination': array([1, 5])}
+2018-02-10 12:54:14,935 [DEBUG] src.arena: Cloning from state {'load': True, 'view_radius': 8.367707689577115, 'curr_position': array([6, 7]), 'action_probability': array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), 'viewAngle_param': 0.4186014602501946, 'curr_orientation': 4.71238898038469, 'capacity_param': 0.17911266638985887, 'memory': array([7, 7]), 'view_angle': 2.6301505446079423, 'viewRadius_param': 0.8367707689577115, 'type': 2, 'curr_destination': array([7, 7])} to state {'load': True, 'view_radius': 8.367707689577115, 'curr_position': array([6, 7]), 'action_probability': array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), 'viewAngle_param': 0.4186014602501946, 'curr_orientation': 4.71238898038469, 'capacity_param': 0.17911266638985887, 'memory': array([7, 7]), 'view_angle': 2.6301505446079423, 'viewRadius_param': 0.8367707689577115, 'type': 2, 'curr_destination': array([7, 7])}
+2018-02-10 12:54:14,935 [INFO] src.agent_originaltypes: Created an agent with location [6 7], type 2, capacity 0.17911266639, view_radius 0.836770768958, view_angle 0.41860146025 in standard ranges
+2018-02-10 12:54:14,935 [INFO] src.agent_originaltypes: Cloned agent with params {'load': True, 'view_radius': 8.367707689577115, 'curr_position': array([6, 7]), 'action_probability': array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), 'viewAngle_param': 0.4186014602501946, 'curr_orientation': 4.71238898038469, 'capacity_param': 0.17911266638985887, 'memory': array([7, 7]), 'view_angle': 2.6301505446079423, 'viewRadius_param': 0.8367707689577115, 'type': 2, 'curr_destination': array([7, 7])}
+2018-02-10 12:54:14,936 [DEBUG] src.arena: Cloning from state {'load': True, 'view_radius': 4.056992553507528, 'curr_position': array([3, 2]), 'action_probability': array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379]), 'viewAngle_param': 0.3411282499792071, 'curr_orientation': 3.141592653589793, 'capacity_param': 0.18189607014893844, 'memory': array([3, 1]), 'view_angle': 2.1433720081332392, 'viewRadius_param': 0.4056992553507528, 'type': 0, 'curr_destination': array([3, 1])} to state {'load': True, 'view_radius': 4.056992553507528, 'curr_position': array([3, 2]), 'action_probability': array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379]), 'viewAngle_param': 0.3411282499792071, 'curr_orientation': 3.141592653589793, 'capacity_param': 0.18189607014893844, 'memory': array([3, 1]), 'view_angle': 2.1433720081332392, 'viewRadius_param': 0.4056992553507528, 'type': 0, 'curr_destination': array([3, 1])}
+2018-02-10 12:54:14,936 [INFO] src.agent_originaltypes: Created an agent with location [3 2], type 0, capacity 0.181896070149, view_radius 0.405699255351, view_angle 0.341128249979 in standard ranges
+2018-02-10 12:54:14,936 [INFO] src.agent_originaltypes: Cloned agent with params {'load': True, 'view_radius': 4.056992553507528, 'curr_position': array([3, 2]), 'action_probability': array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379]), 'viewAngle_param': 0.3411282499792071, 'curr_orientation': 3.141592653589793, 'capacity_param': 0.18189607014893844, 'memory': array([3, 1]), 'view_angle': 2.1433720081332392, 'viewRadius_param': 0.4056992553507528, 'type': 0, 'curr_destination': array([3, 1])}
+2018-02-10 12:54:14,938 [DEBUG] src.arena: Cloned arena and agents with states {'no_agents': 3, 'no_items': 16, 'grid_matrix': array([[0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ],
+       [0.        , 0.        , 0.        , 0.        , 1.        ,
+        0.47986369, 0.        , 0.        , 0.19289129, 0.        ],
+       [0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.41578884, 0.        , 0.        , 0.        , 0.        ],
+       [0.        , 0.25535226, 1.        , 0.        , 0.        ,
+        0.33101156, 0.22598987, 0.        , 0.        , 0.        ],
+       [0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.26430396, 0.        , 0.        , 0.1231086 , 0.        ],
+       [0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.37792623, 0.        ],
+       [0.        , 0.09893835, 0.24282728, 0.        , 0.        ,
+        0.26333421, 0.        , 1.        , 0.        , 0.        ],
+       [0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.30150698, 0.20892911, 0.        , 0.        ],
+       [0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.42201632, 0.28909144, 0.        ],
+       [0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ]])} [{'load': True, 'view_radius': 5.123163855181626, 'curr_position': array([1, 4]), 'action_probability': array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), 'viewAngle_param': 0.5068768391700075, 'curr_orientation': 0.0, 'capacity_param': 0.16164458634376877, 'memory': array([1, 5]), 'view_angle': 3.1848011084226213, 'viewRadius_param': 0.5123163855181626, 'type': 1, 'curr_destination': array([1, 5])}, {'load': True, 'view_radius': 8.367707689577115, 'curr_position': array([6, 7]), 'action_probability': array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), 'viewAngle_param': 0.4186014602501946, 'curr_orientation': 4.71238898038469, 'capacity_param': 0.17911266638985887, 'memory': array([7, 7]), 'view_angle': 2.6301505446079423, 'viewRadius_param': 0.8367707689577115, 'type': 2, 'curr_destination': array([7, 7])}, {'load': True, 'view_radius': 4.056992553507528, 'curr_position': array([3, 2]), 'action_probability': array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379]), 'viewAngle_param': 0.3411282499792071, 'curr_orientation': 3.141592653589793, 'capacity_param': 0.18189607014893844, 'memory': array([3, 1]), 'view_angle': 2.1433720081332392, 'viewRadius_param': 0.4056992553507528, 'type': 0, 'curr_destination': array([3, 1])}]
+2018-02-10 12:54:14,938 [INFO] src.agent_originaltypes: Created an agent with location [1 4], type 1, capacity 0.161644586344, view_radius 0.512316385518, view_angle 0.50687683917 in standard ranges
+2018-02-10 12:54:14,938 [INFO] src.agent_originaltypes: Created an agent with location [6 7], type 2, capacity 0.17911266639, view_radius 0.836770768958, view_angle 0.41860146025 in standard ranges
+2018-02-10 12:54:14,938 [INFO] src.agent_originaltypes: Created an agent with location [3 2], type 0, capacity 0.181896070149, view_radius 0.405699255351, view_angle 0.341128249979 in standard ranges
+2018-02-10 12:54:14,960 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:14,960 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:14,960 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:14,964 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,965 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,966 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,967 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,968 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,968 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,968 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,969 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:14,990 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:14,990 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:14,990 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:14,993 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:14,994 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:14,994 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:14,995 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:14,996 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:14,996 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:14,997 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:14,997 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,024 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,024 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,024 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,027 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,028 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,029 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,029 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,030 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,031 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,031 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,031 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,054 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,054 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,054 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,057 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,058 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,059 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,060 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,060 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,061 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,061 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,061 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,085 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,085 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,085 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,088 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,089 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,089 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,090 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,091 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,091 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,091 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,092 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,113 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,113 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,113 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,117 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,118 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,118 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,119 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,120 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,120 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,120 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,121 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,140 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,141 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,141 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,143 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,144 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,145 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,146 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,146 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,147 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,147 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,147 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,167 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,167 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,167 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,170 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,171 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,172 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,173 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,174 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,174 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,174 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,175 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,195 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,195 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,195 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,198 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,199 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,200 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,201 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,202 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,203 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,203 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,204 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,226 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,226 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,226 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,229 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,230 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,230 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,231 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,233 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,233 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,233 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,234 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,255 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,255 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,255 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,258 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,259 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,260 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,260 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,261 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,261 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,262 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,262 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,285 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,286 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,286 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,288 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,289 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,290 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,290 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,291 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,291 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,292 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,292 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,312 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,312 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,312 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,315 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,316 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,317 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,318 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,318 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,319 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,319 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,319 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,339 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,339 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,339 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,342 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,343 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,344 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,344 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,345 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,345 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,346 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,346 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,367 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,367 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,367 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,370 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,371 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,372 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,372 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,373 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,373 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,374 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,374 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,395 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,395 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,395 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,398 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,398 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,399 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,400 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,401 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,402 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,402 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,402 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,425 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,425 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,425 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,428 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,429 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,430 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,430 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,431 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,431 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,432 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,433 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,454 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,454 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,454 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,457 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,458 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,459 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,460 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,460 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,461 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,461 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,461 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,483 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,483 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,483 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,486 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,487 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,488 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,489 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,489 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,490 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,490 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,490 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,511 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,511 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,511 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,514 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,515 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,516 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,517 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,518 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,518 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,519 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,519 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,540 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,540 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,540 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,543 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,544 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,545 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,545 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,546 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,546 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,547 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,547 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,568 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,568 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,568 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,571 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,572 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,573 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,574 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,575 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,575 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,575 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,575 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,596 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,596 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,597 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,600 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,601 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,602 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,603 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,604 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,604 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,604 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,605 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,627 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,627 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,627 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,630 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,631 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,633 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,634 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,635 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,635 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,636 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,636 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,657 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,657 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,657 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,660 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,661 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,662 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,663 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,663 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,664 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,664 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,664 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,689 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,689 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,689 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,692 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,692 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,693 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,694 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,695 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,695 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,695 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,695 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,720 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,720 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,720 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,723 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,723 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,724 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,725 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,725 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,726 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,727 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,727 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,750 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,750 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,750 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,754 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,755 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,756 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,757 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,758 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,758 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,759 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,759 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,781 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,781 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,781 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,785 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,786 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,787 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,787 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,788 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,788 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,789 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,789 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,811 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,811 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,811 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,814 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,816 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,817 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,818 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,819 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,820 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,820 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,820 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,843 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,843 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,843 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,846 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,847 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,848 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,849 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,850 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,851 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,851 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,851 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,873 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,873 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,873 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,876 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,876 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,877 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,878 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,879 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,879 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,879 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,879 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,902 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,902 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,902 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,905 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,906 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,907 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,907 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,908 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,908 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,909 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,909 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,930 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,930 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,930 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,935 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,936 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,936 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,937 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,938 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,938 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,938 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,938 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,960 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:15,960 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,960 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,962 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,963 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,964 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,965 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,966 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,966 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,967 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,967 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:15,990 [INFO] __main__: Action probabilies for 
+ dummy agent [0.97087379 0.00970874 0.         0.00970874 0.00970874] 
+ real agent [0.97087379 0.00970874 0.         0.00970874 0.00970874] 
+
+2018-02-10 12:54:15,990 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:15,990 [INFO] __main__: [array([0.97087379, 0.00970874, 0.        , 0.00970874, 0.00970874]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:15,992 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:15,993 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:15,994 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:15,995 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:15,995 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:15,996 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:15,996 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:15,996 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:16,010 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:16,010 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:16,010 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:16,013 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:16,014 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:16,015 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:16,016 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:16,017 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:16,018 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:16,018 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:16,018 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:16,033 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:16,033 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:16,033 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:16,036 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:16,037 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:16,038 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:16,039 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:16,039 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:16,040 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:16,040 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:16,040 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:16,054 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:16,054 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:16,054 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:16,057 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:16,058 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:16,058 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:16,059 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:16,060 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:16,060 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:16,060 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:16,061 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:16,075 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:16,075 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:16,075 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:16,078 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:16,079 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:16,079 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:16,080 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:16,081 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:16,082 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:16,082 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:16,082 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:16,096 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:16,097 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:16,097 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:16,100 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:16,100 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:16,101 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:16,102 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:16,103 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:16,103 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:16,103 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:16,103 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:16,117 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:16,117 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:16,117 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:16,120 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:16,121 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:16,122 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:16,122 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:16,123 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:16,123 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:16,124 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:16,124 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:16,138 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:16,138 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:16,138 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:16,141 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:16,141 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:16,142 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:16,143 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:16,144 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:16,144 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:16,144 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:16,144 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:16,158 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:16,158 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:16,158 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:16,161 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:16,162 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:16,163 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:16,163 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:16,164 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:16,164 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:16,165 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:16,165 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:16,179 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:16,179 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:16,179 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:16,182 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:16,183 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:16,184 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:16,185 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:16,185 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:16,186 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:16,186 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:16,186 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:16,200 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:16,200 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:16,200 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:16,203 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:16,204 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:16,204 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:16,205 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:16,206 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:16,206 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:16,206 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:16,207 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:16,221 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:16,221 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:16,221 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:16,224 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:16,225 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:16,226 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:16,227 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:16,227 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:16,228 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:16,228 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:16,228 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:16,244 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:16,244 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:16,244 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:16,247 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:16,247 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:16,249 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:16,250 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:16,251 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:16,251 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:16,252 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:16,252 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3
+2018-02-10 12:54:16,266 [INFO] __main__: Action probabilies for 
+ dummy agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+ real agent [0.00970874 0.00970874 0.         0.00970874 0.97087379] 
+
+2018-02-10 12:54:16,267 [INFO] __main__: MSE For this iteration 0.0
+2018-02-10 12:54:16,267 [INFO] __main__: [array([0.00970874, 0.00970874, 0.        , 0.00970874, 0.97087379]), array([0.00970874, 0.        , 0.00970874, 0.00970874, 0.97087379]), array([0.00970874, 0.00970874, 0.00970874, 0.        , 0.97087379])]
+2018-02-10 12:54:16,270 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 0
+2018-02-10 12:54:16,271 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 1
+2018-02-10 12:54:16,272 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 2
+2018-02-10 12:54:16,272 [DEBUG] src.ABU_estimator: Polynomial estimator called for type 3
+2018-02-10 12:54:16,274 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 0
+2018-02-10 12:54:16,274 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 1
+2018-02-10 12:54:16,274 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 2
+2018-02-10 12:54:16,274 [DEBUG] src.ABU_estimator_noapproximation: No approx estimator called with type 3

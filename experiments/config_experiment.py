@@ -28,7 +28,7 @@ from src.arena import arena as ARENA_CURR
 #Initialization to use
 FROM_MEMORY = 1
 FROM_NEW = 0
-INIT_TYPE = FROM_NEW
+INIT_TYPE = FROM_MEMORY
 # INIT_TYPE = 'random'
 
 #Visualization stuff
@@ -69,7 +69,7 @@ LOGGING_CONFIG = {
     'loggers': {
         '': {
             'handlers': ['infoterminal','Debug_File'],
-            'level': 'INFO',
+            'level': 'DEBUG',
             'propagate': True
         }
     }

@@ -26,6 +26,23 @@ really affect the gridmatrix.
 """
 from experiments import config_experiment as config
 Agent = config.AGENT_CURR
+import copy
+import numpy as np
+
+DICT_MOVES2ACTIONPROBS = {'-10': [1, 0, 0, 0, 0], '10': [0, 1, 0, 0, 0], '01': [0, 0, 1, 0, 0],
+                                '0-1': [0, 0, 0, 1, 0],
+                                '00': [0, 0, 0, 0, 1]}  # If the key is the difference between dest and curr,
+# The list returns the action probs.
+ACTIONS = np.arange(5)
+DICT_ACTION2INDEX = {'-10': 0, '10': 1, '01': 2, '0-1': 3,
+                             '00': 4}  # Get the action index given the desired movement.
+DICT_INDEX2ACTION = {0: '-10', 1: '10', 2: '01', 3: '0-1', 4: '00'}
+
+ACTION2MOVEMENTVECTOR = np.array(
+    [[-1, 0], [1, 0], [0, 1], [0, -1], [0, 0]])  # Given an action index, this array gives us the vector
+# to add to current states to get the result
+ACTION2ORIENTATION = np.array(
+    [np.pi / 2, 1.5 * np.pi, 0, np.pi])  # Given an action index, this array gives us the
 
 
 import numpy as np
@@ -71,7 +88,7 @@ class Agent_lh(Agent):
         # We can only move if it is not a load action.
         [final_action, final_movement, final_nextposition] = action_and_consequence
         if final_action != 4:
-            self.curr_orientation = self.action_to_orientations[final_action]
+            self.curr_orientation = ACTION2ORIENTATION[final_action]
             #Don't need the following line. The actual agent has already done this.
             # self.arena.grid_matrix[self.curr_position[0], self.curr_position[1]] = 0
             self.curr_position = final_nextposition
@@ -84,8 +101,8 @@ class Agent_lh(Agent):
             if np.any(self.curr_destination):
                 to_move = (self.curr_destination - self.curr_position)
                 if np.sum(np.abs(to_move)) < 2:  # Only align orientation if the item is near by.
-                    action_index = self.dict_actiontoIndices[str(to_move[0]) + str(to_move[1])]
-                    orientation = self.action_to_orientations[action_index]
+                    action_index = DICT_ACTION2INDEX[str(to_move[0]) + str(to_move[1])]
+                    orientation = ACTION2ORIENTATION[action_index]
                     self.curr_orientation = orientation
                     # self.load = False
         return
@@ -95,8 +112,9 @@ class Agent_lh(Agent):
         Dummy function to calcualte probs
         :return:
         """
-        self.behave(False)
+        actionprobs = self.behave(False)
         self.action_probs_are_fresh = True
+        return actionprobs
 
     def calc_likelihood(self,action_and_consequence):
         """
@@ -111,8 +129,6 @@ class Agent_lh(Agent):
         :param actual_action_and_consequence: [action, movement_delta, resulting_final_pos] the real action that the agent we are observing has taken.
         :return:
         """
-
-
         if self.action_probs_are_fresh:
             curr_prob = self.action_probability[action_and_consequence[0]]
             self.likelihood_curr = curr_prob
@@ -121,6 +137,7 @@ class Agent_lh(Agent):
             self.action_probs_are_fresh = False
         else:
             raise Exception("Not really working on the curr state probabilites")
+
 
 
 

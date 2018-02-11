@@ -291,8 +291,8 @@ if __name__ == "__main__":
         time_array.append(time.time()-begin_time)
     #plt.waitforbuttonpress()
     for ele in sol:
-        print ele
-    print np.mean(np.array(time_array))
+        print(ele)
+    print (np.mean(np.array(time_array)))
 
 
 
