@@ -4,7 +4,7 @@ import threading
 from copy import copy
 from copy import deepcopy
 import pdb
-from . import levelbasedforaging_visualizer as lvlvis
+from src import levelbasedforaging_visualizer as lvlvis
 import itertools
 import seaborn as sns
 import logging
@@ -219,6 +219,7 @@ class arena():
             self.items.remove(item)
             self.no_items-=1
             print("item_consumed at {}".format(item.position))
+        self.check_for_termination()
         return
 
     def update_vis(self):

@@ -507,6 +507,7 @@ class Agent():
     def __setstate__(self, state):
         self.__dict__.update(state)
 
+
     def __eq__(self,other):
         #Method called when the equality operator is sought.
         logging.debug("Comparision called between {} and {} ".format(self,other))
