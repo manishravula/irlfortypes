@@ -7,6 +7,9 @@ import math
 
 import logging
 # Ref doc:
+from src.global_const import DICT_MOVES2ACTIONPROBS, ACTIONS, DICT_ACTION2INDEX, DICT_INDEX2ACTION, \
+    ACTION2MOVEMENTVECTOR, ACTION2ORIENTATION
+
 """
 Input to the agent class:
     1) Agent's parameters:  
@@ -56,20 +59,10 @@ DEBUG TEST:
 
 logger = logging.getLogger(__name__)
 
-DICT_MOVES2ACTIONPROBS = {'-10': [1, 0, 0, 0, 0], '10': [0, 1, 0, 0, 0], '01': [0, 0, 1, 0, 0],
-                                '0-1': [0, 0, 0, 1, 0],
-                                '00': [0, 0, 0, 0, 1]}  # If the key is the difference between dest and curr,
-# The list returns the action probs.
-ACTIONS = np.arange(5)
-DICT_ACTION2INDEX = {'-10': 0, '10': 1, '01': 2, '0-1': 3,
-                             '00': 4}  # Get the action index given the desired movement.
-DICT_INDEX2ACTION = {0: '-10', 1: '10', 2: '01', 3: '0-1', 4: '00'}
 
-ACTION2MOVEMENTVECTOR = np.array(
-    [[-1, 0], [1, 0], [0, 1], [0, -1], [0, 0]])  # Given an action index, this array gives us the vector
+# The list returns the action probs.
+
 # to add to current states to get the result
-ACTION2ORIENTATION = np.array(
-    [np.pi / 2, 1.5 * np.pi, 0, np.pi])  # Given an action index, this array gives us the
 
 
 # what the orientation should be.
@@ -77,7 +70,6 @@ ACTION2ORIENTATION = np.array(
 class Agent():
     def __init__(self, capacity_param, viewRadius_param, viewAngle_param, type, curr_pos, foraging_arena):
         """
-
         :param capacity_param:  Paramter indicating capacity of the agent
         :param viewRadius_param: Parameter related to view radius - [0.1 - 1]*grid_size = viewradius
         :param viewAngle_param: Parameter related to view angel - [0.1 -1]*2pi = viewangle

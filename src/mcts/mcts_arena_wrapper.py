@@ -1,15 +1,16 @@
-import arena as original_arena
-import agent_originaltypes as original_agent
+import src.arena as original_arena
+import src.agents.agent_originaltypes as original_agent
 import numpy as np
 import itertools
+
+import src.global_const
 from MCTS import mcts as _mcts
-from experiments import config_experiment as config
+from experiments import configuration as config
 from src import generate_init as gi
 import logging
 import logging.config
 
-ACTIONS2CHAR = ['u','d','l','r','p','n'] #p is for pick- which is a rename for load. n is for none
-CHAR2ACTIONS = {'u':0,'d':1,'l':2,'r':3,'p':4,'n':5}
+from src.global_const import  ACTIONS2CHAR, CHAR2ACTIONS
 #if no action, then it is represented as 'n'
 
 logging.config.dictConfig(config.LOGGING_CONFIG)
@@ -20,14 +21,13 @@ orea = original_arena.arena
 class mcts_arena(orea):
     def __init__(self,grid_matrix,visualize):
         orea.__init__(self,grid_matrix,visualize)
-        self.current_state = 0
-        self.is_terminal = False
-        self.turn_whose = True
+        self.mctsagent_set = False
         return
 
     def add_MCTSagent(self,mctsAgent):
         self.agents.append(mctsAgent)
         self.mcts_agent = mctsAgent
+        self.mctsagent_set = True
         return
 
     def duplicate(self):
@@ -135,6 +135,7 @@ class mcts_arena(orea):
             return rand_validActionString
 
 
+
     def respond(self,action_agent):
         """
         MCTS proposes an action, called action_external and the environment applies the action
@@ -190,7 +191,7 @@ class mcts_arena(orea):
             if actionChar=='n':
                 raise Exception("Passed a no-do action to one of the agents")
             action = CHAR2ACTIONS[actionChar]
-            movement = original_agent.ACTION2MOVEMENTVECTOR[action] #Check
+            movement = src.global_const.ACTION2MOVEMENTVECTOR[action] #Check
             final_next_position = self.agents[idx].curr_position+movement
             action_and_consequence = [action,movement,final_next_position]
             _ = self.agents[idx].behave(False)
@@ -261,7 +262,7 @@ if __name__ == "__main__":
             logging.debug("Random action generated is {}".format(random_action))
             # logging.debug("Random action's index is {}".format(CHAR2ACTIONS[random_action[0]]))
             # logging.debug("Random movement is {}".format(original_agent.ACTION2MOVEMENTVECTOR[CHAR2ACTIONS[random_action[0]]]))
-            random_movement = original_agent.ACTION2MOVEMENTVECTOR[CHAR2ACTIONS[random_action[-1]]]
+            random_movement = src.global_const.ACTION2MOVEMENTVECTOR[CHAR2ACTIONS[random_action[-1]]]
             random_nextPosition = are.mcts_agent.curr_position+random_movement
 
             r,next_state = are.respond(random_action)
@@ -283,7 +284,7 @@ if __name__ == "__main__":
             # logging.debug("Random action's index is {}".format(CHAR2ACTIONS[random_action[0]]))
             # logging.debug(
             #     "Random movement is {}".format(original_agent.ACTION2MOVEMENTVECTOR[CHAR2ACTIONS[random_action[0]]]))
-            random_movement = original_agent.ACTION2MOVEMENTVECTOR[CHAR2ACTIONS[random_action[-1]]]
+            random_movement = src.global_const.ACTION2MOVEMENTVECTOR[CHAR2ACTIONS[random_action[-1]]]
             random_nextPosition = are.mcts_agent.curr_position + random_movement
 
             r, next_state = are.respond(random_action)
@@ -320,7 +321,7 @@ if __name__ == "__main__":
             logging.debug("Random action generated is {}".format(random_action))
             # logging.debug("Random action's index is {}".format(CHAR2ACTIONS[random_action[0]]))
             # logging.debug("Random movement is {}".format(original_agent.ACTION2MOVEMENTVECTOR[CHAR2ACTIONS[random_action[0]]]))
-            random_movement = original_agent.ACTION2MOVEMENTVECTOR[CHAR2ACTIONS[random_action[-1]]]
+            random_movement = src.global_const.ACTION2MOVEMENTVECTOR[CHAR2ACTIONS[random_action[-1]]]
             random_nextPosition = are.mcts_agent.curr_position + random_movement
 
             r, next_state = are.respond(random_action)

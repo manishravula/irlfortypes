@@ -1,5 +1,5 @@
 import numpy as np
-from experiments import config_experiment as config
+from experiments import configuration as config
 
 n_movs = config.NO_MOVEMENTS
 

@@ -14,6 +14,7 @@ MCTS has to be refactored.
 2) You have to keep track of all states. - states can be remembered as dictionaries or hashtables
 
 """
+from src.global_const import UNIVERSE, AIAGENT
 
 """"""
 
@@ -60,23 +61,15 @@ What should MCTS work on?
 
 
 import numpy as np
-import time
-import random
-import matplotlib.pyplot as plt
-from operator import attrgetter
-import random
 from graph_tool.all import *
-import pdb
 from copy import copy, deepcopy
-from environment import environment
+from MCTS.environment import environment
+from experiments import configuration as config
 
 global C
 C = np.sqrt(2)
 external_player = 0
 internal_agent = 1
-
-UNIVERSE = False
-AIAGENT = True
 
 """
 New design of the MCTS
@@ -140,7 +133,7 @@ MCTS methods:
 
 
 class mcts():
-    def __init__(self, name='Default', env_object, visualize=False,):
+    def __init__(self, env_object, visualize=False):
 
 
         self.discount = .95
@@ -199,7 +192,8 @@ class mcts():
             ep_label = self.graph.new_edge_property("string")
             self.graph.edge_properties.label = ep_label
 
-        self.rootVertex = self.addVertex(self.env_object.curr_state,AIAGENT,len(self.env_object.getActions_legalFromCurrentState(AIAGENT)),-1)
+        self.rootVertex = self.addVertex(self.env_object.curr_state, AIAGENT, len(self.env_object.getActions_legalFromCurrentState(
+            AIAGENT)), -1)
         self.rootVertex_index = self.graph.vertex_index(self.rootVertex)
         self.currState_vertexIndex  = copy.deepcopy(self.rootVertex_index)
         self.currState_vertex = self.rootVertex
@@ -272,7 +266,7 @@ class mcts():
 
         return
 
-    def rollout(self, env,root_index):
+    def rollout(self, env, root_index):
 
         """
         :param env:  The environment where the MCTS agent is called to act. We make
@@ -289,9 +283,7 @@ class mcts():
         chain_statesTraversed = []
         chain_rewards =[]
 
-
-        curr_env = env.duplicate()
-        curr_env = environment()
+        curr_env = env
 
         try:
             lil.append(2)
@@ -361,14 +353,14 @@ class mcts():
 
 
         #------------SIMULATION------------
-
         #simulation stage. Go until you reach the terminal state
 
         rewardList_sim = []
         if not curr_env.is_terminal:
             #the expansion node is not terminal
             turn_whose = self.graph.vp.turn_whose[curr_stateIndex]
-            while not curr_env.is_terminal:
+            rolloutidx =0
+            while not curr_env.is_terminal and rolloutidx<config.ROLLOUT_DEPTH:
                 if turn_whose is AIAGENT:
                     random_action = curr_env.getAction_randomLegalFromCurrentState()
                     r,next_state = curr_env.respond(random_action)
@@ -377,7 +369,7 @@ class mcts():
                 else:
                     r,next_state = curr_env.act_freewill()
                     turn_whose = AIAGENT
-
+                rolloutidx+=1
 
             totalReward_simulation = 0
             sim_length = len(rewardList_sim)
@@ -399,7 +391,6 @@ class mcts():
 
 
         #---------BACKPROP-----------
-
         #backprop list in the order root-->newnode - hence we need to reverse it.
         backpropChain_stateIndexes = chain_statesTraversed.reverse()
 
@@ -416,20 +407,16 @@ class mcts():
             self.update_UCT(nodeIndex,value_of_child)
 
         #backprop phase two from currstate with which the rollout was called to the root of the search tree.
+        #NOT NEEDED?
+        """
         parent = self.graph.vp.parentIndex[nodeIndex]
         if (parent>=0):
-
-
-
-
-
+        """
         #resetting the state
         self.curr_state = begin_state
         self.curr_stateIndex = begin_stateIndex
 
         return
-
-
 
     def update_UCT(self, stateIndex, reward):
         self.graph.vp.nsims[stateIndex] += 1
@@ -443,8 +430,6 @@ class mcts():
         uct = avg_reward + self.C * np.sqrt(((np.log(parent_nsims+1)) / self.graph.vp.nsims[stateIndex]))
         self.graph.vp.uct[stateIndex] = uct
         return
-
-
 
     def select_expandableNode(self,rootIndex,curr_env):
         """
@@ -528,20 +513,10 @@ class mcts():
         #Retrieve the string-name of the best action.
         bestAction_name = self.graph.ep[bestAction_edgeIndex]
 
-
         #Set the current node to go to the right place.
         self.currState_vertex = self.graph.vertex(bestChild_stateVertexIndex)
         self.currState_vertexIndex = bestChild_stateVertexIndex
 
-
         return bestAction_name
-
-
-
-
-
-
-
-
 
 env = environment()

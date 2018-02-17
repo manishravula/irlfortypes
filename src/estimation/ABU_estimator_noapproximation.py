@@ -1,10 +1,6 @@
 import numpy as np
-import time
-from .agent_param import Agent_lh
-from . import rejection_sampler as rs
-import numpy.polynomial.polynomial as poly
+from src.utils import rejection_sampler as rs
 import matplotlib.pyplot as plt
-from tests import tests_helper as Tests
 from scipy.interpolate import interp1d
 import seaborn as sns
 sns.set()

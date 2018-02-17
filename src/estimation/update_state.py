@@ -1,8 +1,7 @@
 import numpy as np
-from experiments import config_experiment as config
-from agent_param import Agent_lh
-import cloner as cloner
-import generate_init as gi
+from experiments import configuration as config
+from src.utils import cloner as cloner
+import src.generate_init as gi
 import time
 """
 Given a history of states, we need to recalculate the agent's current state. This is the case because the
@@ -21,13 +20,13 @@ def get_updatedStateForSingleAgent(history,agentIndex,targetConfig):
     :return:
     """
     #Initializing state
-    initstate_Arena = history[0][0]
+    initstate_Arena = history[0][0] #TODO change the datastructure for history
     initstatelist_Agents = [agentinfo[0] for agentinfo in history[0][1]]
     n_agents = len(initstatelist_Agents)
 
     initstatelist_Agents[agentIndex] = targetConfig
 
-    fresh_arena, fresh_AgentsList = cloner.clone_ArenaAndAgents(initstate_Arena,initstatelist_Agents)
+    fresh_arena, fresh_AgentsList = cloner.clone_ArenaAndAgents(initstate_Arena, initstatelist_Agents)
     actionProbs_list = []
     iteridx = 0
     for timestep_state in history:
@@ -46,21 +45,12 @@ def get_updatedStateForSingleAgent(history,agentIndex,targetConfig):
                 comparestate(agent.__getstate__(),currstep_AgentstateInfoList[m][0])
                 #Change anyway.
                 agent.__setstate__(currstep_AgentstateInfoList[m][0])
-            # else:
-            #     Soft compare and don't raise assertions.
-                # soft_comparestate(agent.__getstate__(),currstep_AgentstateInfoList[m][0])
 
-
-
-        #Updating
         curr_actionProbs = []
         for jdx,agent in enumerate(fresh_AgentsList):
             actionProbs = agent.behave(False)
             curr_actionProbs.append(actionProbs)
             agent.execute_action(currstep_AgentstateInfoList[jdx][1])
-
-        # if np.any([agent.load for agent in fresh_arena.agents]):
-        #     fresh_arena.update_foodconsumption()
 
         actionProbs_list.append(curr_actionProbs)
     return fresh_AgentsList[agentIndex].__getstate__(), actionProbs_list
@@ -84,7 +74,7 @@ def get_updatedStateForMultipleAgents(history,agentIndexList,targetConfigList):
     for agent_indx,id in enumerate(agentIndexList):
         initstatelist_Agents[agent_indx] = targetConfigList[id]
 
-    fresh_arena, fresh_AgentsList = cloner.clone_ArenaAndAgents(initstate_Arena,initstatelist_Agents)
+    fresh_arena, fresh_AgentsList = cloner.clone_ArenaAndAgents(initstate_Arena, initstatelist_Agents)
     actionProbs_list = []
     iteridx = 0
     for timestep_state in history:
@@ -98,7 +88,7 @@ def get_updatedStateForMultipleAgents(history,agentIndexList,targetConfigList):
         fresh_arena.__setstate__(currstep_ArenastateInfo)
 
         for agent,m in zip(fresh_AgentsList,range(n_agents)):
-            if m is not agentIndexList:
+            if m not in agentIndexList:
                 #Check if the state matches with what was in our books
                 comparestate(agent.__getstate__(),currstep_AgentstateInfoList[m][0])
                 #Change anyway.

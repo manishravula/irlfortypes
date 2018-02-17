@@ -1,12 +1,8 @@
 import numpy as np
 # import time
 import threading
-from copy import copy
 from copy import deepcopy
-import pdb
-from src import levelbasedforaging_visualizer as lvlvis
-import itertools
-import seaborn as sns
+from src.utils import levelbasedforaging_visualizer as lvlvis
 import logging
 logger = logging.getLogger(__name__)
 
@@ -66,9 +62,6 @@ Methods:
 
 
 """
-
-ACTION2INDEX = {'u':0,'d':1,'l':2,'r':3,'a':4}
-ACTIONHASHES =  [action for action in ACTION2INDEX.iterkeys()]
 
 
 class item():
@@ -150,9 +143,11 @@ class arena():
     def update(self):
         agent_actions = []
         agent_probs = []
-
-        #retrieve what the agent wants to do
+        self.messenger_for_mcts = [self.arena.__getstate__()]
         for agent in self.agents:
+            self.messenger_for_mcts.append([[agent.__getstate__(),None]])
+        #retrieve what the agent wants to do
+        for agent,idx in enumerate(self.agents):
             #Check what the agent wants to do
             action_probs = agent.behave(False)
 
@@ -160,6 +155,7 @@ class arena():
             agent_action = agent.behave_act(action_probs)
             assert np.all(action_probs == agent.action_probability); "Behave_act shouldn't change the action probability"
             agent_actions.append(agent_action)
+            self.messenger_for_mcts[1][idx][1] = agent_action
             agent_probs.append(action_probs)
 
             #Approve the agent's action. This way, if agent moves further and is in

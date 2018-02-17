@@ -1,10 +1,5 @@
-import numpy as np
 import time
 import inspect
-import logging
-
-
-
 
 NO_MOVEMENTS = 4
 LOAD_ACTION_PROBABILITY = []
@@ -19,11 +14,9 @@ COOPERATION_INDEX = .8 # index*grid_min
 
 
 #Agents to use
-from src.agent_originaltypes import Agent as AGENT_CURR
 # from src.agent_expressive1 import Agent as AGENT_CURR
 
 #Arena to use
-from src.arena import arena as ARENA_CURR
 
 #Initialization to use
 FROM_MEMORY = 1

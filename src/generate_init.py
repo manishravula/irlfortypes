@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import copy
-import experiments.config_experiment as config
+import experiments.configuration as config
 import logging
 import numpy as np
 

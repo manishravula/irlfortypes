@@ -1,7 +1,7 @@
-import numpy as np
-from experiments import config_experiment as config
-from agent_param import Agent_lh
+from experiments import configuration as config
+from src.estimation.agent_param import Agent_lh
 import logging
+from src.mcts import mcts_arena_wrapper as mcts_arena
 logger = logging.getLogger(__name__)
 
 def clone_ArenaAndAgents(arena_state, agentState_list):
@@ -21,6 +21,11 @@ def clone_Arena(arena_state):
     newArena.__setstate__(arena_state)
     return newArena
 
+def clone_MCTSArena(arena_state):
+    newMCTS_arena = mcts_arena.mcts_arena(arena_state['grid_matrix'],False)
+    newMCTS_arena.__setstate__(arena_state)
+    return newMCTS_arena
+
 def clone_Agent(agentState,arena_obj):
     newAgent = config.AGENT_CURR(agentState['capacity_param'],agentState['viewRadius_param'],
                                  agentState['viewAngle_param'],agentState['type'],agentState['curr_position'],arena_obj)
@@ -33,3 +38,4 @@ def clone_AgentLH(agentState,arena_obj):
                                  agentState['viewAngle_param']],agentState['type'],agentState['curr_position'],arena_obj)
     newAgent.__setstate__(agentState)
     return newAgent
+
