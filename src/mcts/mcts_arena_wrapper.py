@@ -1,16 +1,16 @@
-import src.arena as original_arena
-import src.agents.agent_originaltypes as original_agent
-import numpy as np
 import itertools
+import logging
+import logging.config
 
+import numpy as np
+
+import src.arena as original_arena
 import src.global_const
 from MCTS import mcts as _mcts
 from experiments import configuration as config
 from src import generate_init as gi
-import logging
-import logging.config
+from src.global_const import ACTIONS2CHAR, CHAR2ACTIONS
 
-from src.global_const import  ACTIONS2CHAR, CHAR2ACTIONS
 #if no action, then it is represented as 'n'
 
 logging.config.dictConfig(config.LOGGING_CONFIG)
@@ -22,7 +22,8 @@ class mcts_arena(orea):
     def __init__(self,grid_matrix,visualize):
         orea.__init__(self,grid_matrix,visualize)
         self.mctsagent_set = False
-        return
+        self.is_terminal = False
+
 
     def add_MCTSagent(self,mctsAgent):
         self.agents.append(mctsAgent)
@@ -70,7 +71,9 @@ class mcts_arena(orea):
         #Debug: In: an arena equipped with one MCTS agent.
                 Out: Visually check that the actions match.
         """
-        if turn_whose is _mcts.UNIVERSE:  # universe's turn
+        # TODO; Make this a generator.
+        # TODO: We only need one wrong example in most of the cases.
+        if turn_whose == _mcts.UNIVERSE:  # universe's turn
             validactionString_list = []
             for agent in self.agents[:-1]:  # exclude MCTS agent
                 validactionProb,_,_ = agent.get_legalActionProbs()
@@ -100,7 +103,7 @@ class mcts_arena(orea):
                  Out: Visually check that the actions match.
         """
         nlegalactions = 1
-        if turn_whose is _mcts.UNIVERSE:  # universe's turn
+        if turn_whose == _mcts.UNIVERSE:  # universe's turn
             for agent in self.agents[:-1]:  # exclude MCTS agent
                 validactionProb,_,_ = agent.get_legalActionProbs()
                 n_valid_actions_currAgent = np.sum(validactionProb != 0)
@@ -116,7 +119,7 @@ class mcts_arena(orea):
         :param turn_whose: Whose turn is it now?
         :return:
         """
-        if turn_whose is _mcts.UNIVERSE:  # universe's turn
+        if turn_whose == _mcts.UNIVERSE:  # universe's turn
             rand_validActionString = ''
             for agent in self.agents[:-1]:  # exclude MCTS agent
                 validactionProb,_,_ = agent.get_legalActionProbs()
@@ -174,6 +177,7 @@ class mcts_arena(orea):
 
         reward = 0
         new_state = self.hash_currstate()
+        self.check_for_termination()
         return reward,new_state
 
     def act_externalwill(self,action_externalRequested):
@@ -199,6 +203,7 @@ class mcts_arena(orea):
 
         reward=0
         new_state=self.hash_currstate()
+        self.check_for_termination()
         return reward,new_state
 
     def getvalue_terminalState(self):
@@ -217,7 +222,7 @@ if __name__ == "__main__":
         n_agents = 4
         cvs = config.VISUALIZE_SIM
         config.VISUALIZE_SIM = False
-        are = mcts_arena(gi.generate_arena_matrix(10,23)[0],False)
+        are = mcts_arena(gi.generate_arena_matrix(10, 23, )[0], False)
         agents = gi.generate_agents(4,are,from_save=False)
         are.init_add_agents(agents[:-1])
         are.add_MCTSagent(agents[-1])
@@ -298,7 +303,7 @@ if __name__ == "__main__":
         n_agents = 4
         cvs = config.VISUALIZE_SIM
         # config.VISUALIZE_SIM = False
-        are = mcts_arena(gi.generate_arena_matrix(10, 10)[0], True)
+        are = mcts_arena(gi.generate_arena_matrix(10, 10, )[0], True)
         agents = gi.generate_agents(4, are, from_save=False)
         are.init_add_agents(agents[:-1])
         are.add_MCTSagent(agents[-1])
@@ -356,7 +361,7 @@ if __name__ == "__main__":
         n_agents = 4
         cvs = config.VISUALIZE_SIM
         # config.VISUALIZE_SIM = False
-        are = mcts_arena(gi.generate_arena_matrix(10, 25)[0], True)
+        are = mcts_arena(gi.generate_arena_matrix(10, 25, )[0], True)
         agents = gi.generate_agents(4, are, from_save=False)
         are.init_add_agents(agents[:-1])
         are.add_MCTSagent(agents[-1])

@@ -1,15 +1,18 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import copy
-import experiments.configuration as config
 import logging
+import os
+
 import numpy as np
+
+import experiments.configuration as config
 
 logger = logging.getLogger(__name__)
 
-def generate_arena_matrix(size,n_items):
+
+def generate_arena_matrix(size, n_items, ret_numitems=True):
     """
 
+    :param ret_numitems:
     :param size: The size (in nxn) of the grid
     :param n_items: Approx. number of items. Rarely, after creation, some agents might fall in tha place of items
                     decreasing the total number of items.
@@ -27,16 +30,22 @@ def generate_arena_matrix(size,n_items):
 
     final_numitems = np.sum(grid_matrix!=0)
 
+    file_path = '../data/'
+    if not os.path.exists(file_path):
+        os.makedirs(file_path)
     np.save(open('../data/grid.npy','w+'),grid_matrix)
 
-    return g2,final_numitems
+    if ret_numitems:
+        return g2, final_numitems
+    else:
+        return g2
 
 def generate_agents(n_agents,arena,from_save=False):
     """
     Generate agent locations. The only constraint would be in assigning capacities.
     To randomize as much as possible.
-    :param n_agents:
-    :param grid_matrix:
+    :param n_agents: number of agents.
+    :param arena: nxn matrix.
     :return:
     """
     grid_matrix = arena.grid_matrix
@@ -63,7 +72,11 @@ def generate_agents(n_agents,arena,from_save=False):
         positions_array = np.random.randint(0,np.shape(arena.grid_matrix)[0],(n_agents,2))
 
         agent_params = [tp_array,capacity_array,vangle_array,vradius_array,positions_array[:,0],positions_array[:,1]]
-        np.save(open("../data/agentconfig.npy",'w+'),agent_params)
+
+        file_path = '../data/'
+        if not os.path.exists(file_path):
+            os.makedirs(file_path)
+        np.save(open('../data/agentconfig.npy', 'w+'), agent_params)
 
     else:
         (tp_array,capacity_array,vangle_array,vradius_array,positions_array_1,positions_array_2) =  np.load(open("../data/agentconfig.npy",'r'))
@@ -84,7 +97,7 @@ def generate_agents(n_agents,arena,from_save=False):
     return agent_list
 
 def generate_all(size,n_items,n_agents):
-    grid_matrix,final_numitems = generate_arena_matrix(size,n_items)
+    grid_matrix, final_numitems = generate_arena_matrix(size, n_items, )
     logger.info("Initializing new configuration")
     assert np.shape(grid_matrix)[0]==size, "Grid_matrix not of size {}".format(size)
     logger.debug('creating arena object with grid_matrix {}'.format(grid_matrix))

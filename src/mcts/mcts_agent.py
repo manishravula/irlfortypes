@@ -1,12 +1,16 @@
+import logging
+
+import src.generate_init as sgen
+import src.global_const as globals
 from experiments import configuration as config
-from src.global_const import CHAR2ACTIONS
-from src.utils import cloner as cloner
 from src.estimation import update_state as update_state
 from src.mcts import mcts_tree as mctstree
-import src.global_const as globals
+from src.utils import cloner as cloner
 
 #if no action, then it is represented as 'n'
-
+logging.config.dictConfig(config.LOGGING_CONFIG)
+logger = logging.getLogger(__name__)
+import time
 class mcts_agent(config.AGENT_CURR):
     """
     Class to wrap the MCTS planning functionality as an agent in the arena.
@@ -65,6 +69,7 @@ class mcts_agent(config.AGENT_CURR):
         :return:
         """
 
+
         #Sanity checks.
         if config.DEBUG:
             for id,pestimate in zip(trackingAgentIds,trackingAgentParameterEstimates):
@@ -94,18 +99,28 @@ class mcts_agent(config.AGENT_CURR):
 
         history[-1][1].append(history[-1][1][1]) #just to have a filler value for the last MCTS agent's
         #state.
-        corrected_states,_ = update_state.get_updatedStateForMultipleAgents(history,trackingAgentIds,trackingAgentParameterEstimates)
+        corrected_states = update_state.get_updatedStateForMultipleAgents(history, trackingAgentIds,
+                                                                          trackingAgentParameterEstimates, False)
+        return self.behave_rollout(corrected_states, trackingAgentIds)
 
+    def behave_rollout(self, corrected_states, trackingAgentIds):
         init_arena_for_rollout, init_agents_for_rollout = self.generate_environment(corrected_states,trackingAgentIds)
+        mctsAgent_forArena = cloner.clone_Agent(self.__getstate__(), init_arena_for_rollout)
+        init_arena_for_rollout.add_MCTSagent(mctsAgent_forArena)
+
         mcts_planner = mctstree.mcts(init_arena_for_rollout,False)
         #TODO parallelize
         for i in range(config.N_ROLLOUTS):
             arena_for_rollout, agents_for_rollout = self.generate_environment(corrected_states,trackingAgentIds)
             mctsAgent_forArena = cloner.clone_Agent(self.__getstate__(),arena_for_rollout)
             arena_for_rollout.add_MCTSagent(mctsAgent_forArena)
+            start = time.time()
             mcts_planner.rollout(arena_for_rollout,mcts_planner.rootVertex_index)
+            end = time.time()
+            logger.debug("time for one rollout {}".format(end - start))
 
         action_name = mcts_planner.get_bestActionGreedy()
+        action_name = action_name[-1]
         final_action = globals.CHAR2ACTIONS[action_name]
         final_movement = globals.ACTION2MOVEMENTVECTOR[final_action]
         final_position = self.curr_position + final_movement
@@ -113,23 +128,61 @@ class mcts_agent(config.AGENT_CURR):
 
 
     def generate_environment(self,corrected_states,trackingAgentIds):
+
+        # Sanity check.
+        assert len(trackingAgentIds) == len(corrected_states), 'Mismatch in tracking and correction'
+
         #Replicating arena.
         arena_for_rollout = cloner.clone_MCTSArena(self.arena.__getstate__())
 
         #Replicating agents.
         agents_for_rollout = []
         target_agentIdx = 0
-        for i in range(len(self.arena.agents)-1):
+
+        # TODO test the valiity of target_agentIdx increments.
+        for i in range(len(self.arena.agents)):
             if i not in trackingAgentIds:
                 new_agent = cloner.clone_Agent(self.arena.agents[i].__getstate__(),arena_for_rollout)
             else:
                 new_agent = cloner.clone_Agent(corrected_states[target_agentIdx],arena_for_rollout)
                 target_agentIdx+=1
             agents_for_rollout.append(new_agent)
-
+        arena_for_rollout.init_add_agents(agents_for_rollout)
         return arena_for_rollout,agents_for_rollout
 
 
 #TODO: Write tests for each of these individual functions.
 #Todo: Write a wholistic experiment to use all this function and run simulations.
 
+if __name__ == '__main__':
+    def generate_environment_test():
+        arena_matrix = sgen.generate_arena_matrix(10, 20, )
+        arena = config.ARENA_CURR(arena_matrix, False)
+        agents = sgen.generate_agents(5, arena, False)
+        agent_config = sgen.generate_agents(5, arena, False)
+
+
+    def behave_rollout_test():
+        arena_matrix = sgen.generate_arena_matrix(10, 20, False)
+        arena = config.ARENA_CURR(arena_matrix, False)
+        agents_for_config = sgen.generate_agents(1, arena, False)
+        dagent = agents_for_config[0]
+        try:
+            mctagent = mcts_agent(dagent.capacity_param, dagent.viewRadius_param, dagent.viewAngle_param, dagent.type,
+                                  dagent.curr_position, arena)
+            logger.debug('MCTSagent creation succeeded')
+        except:
+            logger.exception("MCTS agent creation failed")
+
+        additional_agents = sgen.generate_agents(4, arena, False)
+        arena.init_add_agents(additional_agents[:-1])  # Leaving the last agent for MCTS config.
+
+        corrected_states = []
+        tracking_agentIds = []
+
+        # Testing the function without updating history. Essentially testing the rollout functionality.
+        for i in range(10):
+            mctagent.behave_rollout(corrected_states, tracking_agentIds)
+
+
+    behave_rollout_test()

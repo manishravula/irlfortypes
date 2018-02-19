@@ -62,7 +62,7 @@ What should MCTS work on?
 
 import numpy as np
 from graph_tool.all import *
-from copy import copy, deepcopy
+from copy import deepcopy
 from MCTS.environment import environment
 from experiments import configuration as config
 
@@ -133,11 +133,11 @@ MCTS methods:
 
 
 class mcts():
-    def __init__(self, env_object, visualize=False):
+    def __init__(self, env_object, visualize=True):
 
 
         self.discount = .95
-        self.C = 1.95
+        self.C = 10.95
         self.env_object = env_object
 
         # Graph properties
@@ -151,10 +151,10 @@ class mcts():
         self.graph.vp.state_key = vp_stateKey
 
         vp_nlegalactions = self.graph.new_vertex_property("int") #Number of legal actions permissible by the env at this state.
-        self.graph.vp_nlegalactions = vp_nlegalactions
+        self.graph.vp.nlegalactions = vp_nlegalactions
 
         vp_parentIndex = self.graph.new_vertex_property("int")
-        self.graph.vp_parentIndex = vp_parentIndex
+        self.graph.vp.parentIndex = vp_parentIndex
 
         vp_avgreward = self.graph.new_vertex_property("float")
         self.graph.vp.avg_reward = vp_avgreward
@@ -192,10 +192,10 @@ class mcts():
             ep_label = self.graph.new_edge_property("string")
             self.graph.edge_properties.label = ep_label
 
-        self.rootVertex = self.addVertex(self.env_object.curr_state, AIAGENT, len(self.env_object.getActions_legalFromCurrentState(
+        self.rootVertex = self.addVertex('root', AIAGENT, len(self.env_object.getActions_legalFromCurrentState(
             AIAGENT)), -1)
-        self.rootVertex_index = self.graph.vertex_index(self.rootVertex)
-        self.currState_vertexIndex  = copy.deepcopy(self.rootVertex_index)
+        self.rootVertex_index = self.graph.vertex_index[self.rootVertex]  # [TODO: Fix an error here]
+        self.currState_vertexIndex = deepcopy(self.rootVertex_index)
         self.currState_vertex = self.rootVertex
 
         # Dict to remember the conversion between index of the vertex in the graph and stateKey
@@ -218,7 +218,7 @@ class mcts():
         """
         v = self.graph.add_vertex()
         self.graph.vp.state_key[v] = stateKey
-        self.graph.vp.n_legalactions[v] = n_legalactions
+        self.graph.vp.nlegalactions[v] = n_legalactions
         self.graph.vp.reward[v] = 0
         self.graph.vp.avg_reward[v] = 0
         self.graph.vp.cum_reward[v] = 0
@@ -285,15 +285,8 @@ class mcts():
 
         curr_env = env
 
-        try:
-            lil.append(2)
-        except:
-            raise Exception("Edit the above line first")
-
-
-
-        ##INITIALIZATION
-        begin_state = self.currState_vertex
+        # ------------INITIALIZATION
+        begin_state = self.graph.vp.state_key[self.currState_vertex]
         curr_state = deepcopy(begin_state)
 
         curr_stateIndex = self.currState_vertexIndex
@@ -311,8 +304,10 @@ class mcts():
         #------------EXPANSION------------
         #Select an action to expand on.
         legalactions = curr_env.getActions_legalFromCurrentState(self.graph.vp.turn_whose[expandable_nodeIndex])
-        existingEdges = self.graph.get_out_edges(curr_stateIndex)
-        existingExploredActions = [self.graph.edge_properties.action[edge[1]] for edge in existingEdges]
+        existingEdges = self.graph.get_out_edges(expandable_nodeIndex)
+        existingExploredActions = [self.graph.edge_properties.action[edge] for edge in
+                                   existingEdges]  # edge properties ta
+        #ake edge objects as input
 
         for action in legalactions:
             if action in existingExploredActions:
@@ -321,11 +316,10 @@ class mcts():
                 explorable_action = action
                 break
 
-        #explorable_realAction = world.unhash_action(explorable_action)
 
         #Create an node for the state that results on acting on this action.
         curr_turnwhose = self.graph.vp.turn_whose[expandable_nodeIndex]
-        if curr_turnwhose is AIAGENT:
+        if curr_turnwhose == AIAGENT:
             #so the agent is the one performing the action.
             reward_newState, new_state = curr_env.respond(explorable_action)
 
@@ -334,9 +328,12 @@ class mcts():
             reward_newState, new_state = curr_env.act_externalwill(explorable_action)
 
         #Add both the node and the edge to the graph.
-        newstate_vertex = self.addVertex(new_state,~curr_turnwhose,len(curr_env.getActions_legalFromCurrentState(~curr_turnwhose)),expandable_nodeIndex)
+        curr_turnwhose = not curr_turnwhose
+        newstate_vertex = self.addVertex(new_state, curr_turnwhose,
+                                         len(curr_env.getActions_legalFromCurrentState(curr_turnwhose)),
+                                         expandable_nodeIndex)
         newstateIndex = self.graph.vertex_index[newstate_vertex]
-        e = self.graph.add_edge(curr_stateIndex,newstateIndex)
+        e = self.graph.add_edge(expandable_nodeIndex, newstateIndex)
         self.graph.edge_properties.reward[e]=reward_newState
         self.graph.edge_properties.action[e]=explorable_action
 
@@ -361,18 +358,20 @@ class mcts():
             turn_whose = self.graph.vp.turn_whose[curr_stateIndex]
             rolloutidx =0
             while not curr_env.is_terminal and rolloutidx<config.ROLLOUT_DEPTH:
-                if turn_whose is AIAGENT:
-                    random_action = curr_env.getAction_randomLegalFromCurrentState()
+                if turn_whose == AIAGENT:
+                    random_action = curr_env.getAction_randomLegalFromCurrentState(turn_whose)
                     r,next_state = curr_env.respond(random_action)
                     rewardList_sim.append(r)
                     turn_whose = UNIVERSE
                 else:
                     r,next_state = curr_env.act_freewill()
+                    rewardList_sim.append(r)
                     turn_whose = AIAGENT
                 rolloutidx+=1
 
             totalReward_simulation = 0
             sim_length = len(rewardList_sim)
+            #todo: make this more efficient. Don't need so many multiplications
             for i in range(sim_length):
                 totalReward_simulation +=np.power(self.discount,i)*np.array(rewardList_sim[i])
 
@@ -392,21 +391,30 @@ class mcts():
 
         #---------BACKPROP-----------
         #backprop list in the order root-->newnode - hence we need to reverse it.
-        backpropChain_stateIndexes = chain_statesTraversed.reverse()
+        backpropChain_stateIndexes = chain_statesTraversed
+        backpropChain_stateIndexes.reverse()
 
-        #rewards from newnode---r[-1]--->expandablenode----->2ndRoot-->r[0]-->root - hence we need to reverse it.
-        backpropChain_rewards = chain_rewards.reverse()
+        # Rewards from newnode---r[-1]--->expandablenode----->2ndRoot-->r[0]-->root - hence we need to reverse it.
+        backpropChain_rewards = chain_rewards
+        backpropChain_rewards.reverse()
 
-
-        #this is the value of the child node of the expandable node, where we start our backprop
+        #This is the value of the child node of the expandable node, where we start our backprop
         value_of_child = totalReward_simulation
 
-        #backprop phase one until the currstate with which this rollout was called.
-        for nodeIndex,reward in zip(backpropChain_stateIndexes,backpropChain_rewards):
-            value_of_child+=(reward+self.discount*value_of_child)
-            self.update_UCT(nodeIndex,value_of_child)
+        if len(backpropChain_rewards) != 0:
+            # Backprop phase one until the currstate with which this rollout was called.
+            for nodeIndex, reward in zip(backpropChain_stateIndexes, backpropChain_rewards):
+                value_of_child += (reward + self.discount * value_of_child)
+                self.increment_UCT(nodeIndex, value_of_child)
 
-        #backprop phase two from currstate with which the rollout was called to the root of the search tree.
+        # Incrementing root's nsims, because the backprop doesn't do it already.
+        assert begin_stateIndex == 0;
+        'Root is not the beginning state index'
+        self.graph.vp.nsims[begin_stateIndex] += 1
+
+        # self.update_UCT(self.rootVertex_index,value_of_child)
+
+        #Backprop phase two from currstate with which the rollout was called to the root of the search tree.
         #NOT NEEDED?
         """
         parent = self.graph.vp.parentIndex[nodeIndex]
@@ -418,18 +426,46 @@ class mcts():
 
         return
 
-    def update_UCT(self, stateIndex, reward):
+    def increment_UCT(self, stateIndex, reward):
+        """
+        When the banditbox's hinge has been pulled, a new reward is accumulated, and hence we need to
+        Update it's value.
+        :param stateIndex:
+        :param reward:
+        :return:
+        """
         self.graph.vp.nsims[stateIndex] += 1
         self.graph.vp.cum_reward[stateIndex] += reward
         avg_reward = self.graph.vp.cum_reward[stateIndex] / self.graph.vp.nsims[stateIndex]
         self.graph.vp.avg_reward[stateIndex] = avg_reward
 
+
         parentIndex = self.graph.get_in_neighbors(stateIndex)[0]
-        parent_nsims = self.graph.vp[parentIndex]
+        parent_nsims = self.graph.vp.nsims[parentIndex]
 
         uct = avg_reward + self.C * np.sqrt(((np.log(parent_nsims+1)) / self.graph.vp.nsims[stateIndex]))
         self.graph.vp.uct[stateIndex] = uct
+        siblings_indices = self.graph.get_out_neighbors(parentIndex)
+
+        for sibling_index in siblings_indices:
+            if sibling_index != stateIndex:
+                self.refresh_UCT_becauseOfParent(sibling_index, parent_nsims + 1)
+
+        # Now we that we took care of ourselves, we need to take care of the siblings.
+        #Since the parent's nsims has increased, the siblings' UCT value change.
         return
+
+    def refresh_UCT_becauseOfParent(self, stateIndex, n_parentsims):
+        """
+        If a node's parent has been run-through, then the node's UCT also changes
+        on account of the parent_nsims part of the UCT formula. Hence we need to update this.
+        :param stateIndex:
+        :return:
+        """
+        avg_reward = self.graph.vp.avg_reward[stateIndex]
+        new_uct = avg_reward + self.C * np.sqrt(((np.log(n_parentsims)) / self.graph.vp.nsims[stateIndex]))
+        self.graph.vp.uct[stateIndex] = new_uct
+
 
     def select_expandableNode(self,rootIndex,curr_env):
         """
@@ -459,7 +495,8 @@ class mcts():
             turn_whose = self.graph.vp.turn_whose[currIndex]
 
             #TODO: Replace this with the node property
-            n_actions = len(curr_env.getActions_legalFromCurrentState(turn_whose))
+            # n_actions = len(curr_env.getActions_legalFromCurrentState(turn_whose))
+            n_actions = self.graph.vp.nlegalactions[currIndex]
 
             if n_children!=n_actions:
                 EXPANDABLE = True
@@ -473,7 +510,7 @@ class mcts():
 
                 #moving world to the next state.
                 # action_real = world.unhash(action)
-                if turn_whose is AIAGENT:
+                if turn_whose == AIAGENT:
                     reward,_ =curr_env.respond(action)
                 else:
                     reward,_ = curr_env.act_externalwill(action) ##
@@ -490,7 +527,8 @@ class mcts():
         children_uct = [self.graph.vp.uct[child] for child in children]
 
         maxuct_childIndex = children[children_uct.index(max(children_uct))]
-        maxuct_action = self.graph.edge(parentIndex,maxuct_childIndex)
+        maxuct_action_edge = self.graph.edge(parentIndex, maxuct_childIndex)
+        maxuct_action = self.graph.edge_properties.action[maxuct_action_edge]
 
         return maxuct_action,maxuct_childIndex
 
@@ -499,7 +537,7 @@ class mcts():
         #We just go ahead and pick the most valuable action/state pair.
 
         #Retrieve all children from the current state.
-        allChildren_stateVertexIndices = self.currState_vertex.out_neighbors()
+        allChildren_stateVertexIndices = [vertex for vertex in self.currState_vertex.out_neighbors()]
 
         #Retrieve their corresponding values
         allChildren_stateValues = [self.graph.vp.avg_reward[vertexIndex] for vertexIndex in allChildren_stateVertexIndices]
@@ -511,7 +549,7 @@ class mcts():
         bestAction_edgeIndex = self.graph.edge(self.curr_stateIndex,bestChild_stateVertexIndex)
 
         #Retrieve the string-name of the best action.
-        bestAction_name = self.graph.ep[bestAction_edgeIndex]
+        bestAction_name = self.graph.edge_properties.action[bestAction_edgeIndex]
 
         #Set the current node to go to the right place.
         self.currState_vertex = self.graph.vertex(bestChild_stateVertexIndex)
