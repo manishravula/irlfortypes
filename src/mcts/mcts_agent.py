@@ -50,7 +50,6 @@ class mcts_agent(config.AGENT_CURR):
 
     def __init__(self, capacity_param, viewRadius_param, viewAngle_param, type, curr_pos, foraging_arena):
         config.AGENT_CURR.__init__(self,capacity_param,viewRadius_param,viewAngle_param,type,curr_pos,foraging_arena)
-        self.rollout_itersLimit = 200
         self.history = [] #to hold the history from beginning to end
         self.targetAgentIds = [] #To save the target agent IDs
         self.estimated_params = [] #To have the current estimated agent params.

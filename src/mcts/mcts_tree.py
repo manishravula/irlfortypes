@@ -137,7 +137,7 @@ class mcts():
 
 
         self.discount = .95
-        self.C = 10.95
+        self.C = 5.95
         self.env_object = env_object
 
         # Graph properties
@@ -353,11 +353,11 @@ class mcts():
         #simulation stage. Go until you reach the terminal state
 
         rewardList_sim = []
-        if not curr_env.is_terminal:
+        if not curr_env.isterminal:
             #the expansion node is not terminal
             turn_whose = self.graph.vp.turn_whose[curr_stateIndex]
             rolloutidx =0
-            while not curr_env.is_terminal and rolloutidx<config.ROLLOUT_DEPTH:
+            while not curr_env.isterminal and rolloutidx < config.ROLLOUT_DEPTH:
                 if turn_whose == AIAGENT:
                     random_action = curr_env.getAction_randomLegalFromCurrentState(turn_whose)
                     r,next_state = curr_env.respond(random_action)

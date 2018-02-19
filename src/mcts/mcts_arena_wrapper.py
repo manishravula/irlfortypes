@@ -22,7 +22,6 @@ class mcts_arena(orea):
     def __init__(self,grid_matrix,visualize):
         orea.__init__(self,grid_matrix,visualize)
         self.mctsagent_set = False
-        self.is_terminal = False
 
 
     def add_MCTSagent(self,mctsAgent):
@@ -39,8 +38,10 @@ class mcts_arena(orea):
         Synthesize state definition from the current state.
         :return:
         """
-        return str(np.ravel_multi_index(np.argwhere(self.grid_matrix>0).T, self.grid_matrix.shape))
+        # return str(np.ravel_multi_index(np.argwhere(self.grid_matrix>0).T, self.grid_matrix.shape))
 
+        # Optimize-we don't need big strings.
+        return 'a'
 
     def hash_action(self,action_array):
         if len(action_array)==1:
@@ -154,13 +155,16 @@ class mcts_arena(orea):
         #Because the food consumption is evaluated here.
 
         init_nitems = len(self.items)
-        self.update_foodconsumption()
-        n_itemsConsumed = init_nitems - len(self.items)
-        reward = n_itemsConsumed
+        if np.any([a.load for a in self.agents]):
+            self.update_foodconsumption()
+            n_itemsConsumed = init_nitems - len(self.items)
+            reward = n_itemsConsumed
+        else:
+            reward = 0
         self.check_for_termination()
 
         new_state = self.hash_currstate()
-        return n_itemsConsumed,new_state
+        return reward, new_state
 
     def act_freewill(self):
         """

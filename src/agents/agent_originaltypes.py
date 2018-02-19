@@ -1,11 +1,12 @@
-import numpy as np
-# from Algorithms.AStar import astar as astar_nav
-from AStar import astar as ast
+import logging
+import math
 from copy import copy
 from copy import deepcopy
-import math
 
-import logging
+import numpy as np
+
+# from Algorithms.AStar import astar as astar_nav
+from AStar import astar as ast
 # Ref doc:
 from src.global_const import DICT_MOVES2ACTIONPROBS, ACTIONS, DICT_ACTION2INDEX, DICT_INDEX2ACTION, \
     ACTION2MOVEMENTVECTOR, ACTION2ORIENTATION
@@ -217,6 +218,7 @@ class Agent():
         action_and_consequence = [final_action, final_movement, final_nextposition]
         return (action_and_consequence)
 
+
     def valid_randMoveActionProb(self, debug=False):
         # Can optimize by replacing this with single array operations
 
@@ -306,9 +308,12 @@ class Agent():
         items_list = self.arena.items
         agents_list = self.arena.agents
 
-        items_locarray = np.array([item.position for item in items_list])
-        items_is_visible = self.is_visible(items_locarray)
-        visible_items = [item for (item, is_in) in zip(items_list, items_is_visible) if is_in]
+        if len(items_list) > 0:
+            items_locarray = np.array([item.position for item in items_list])
+            items_is_visible = self.is_visible(items_locarray)
+            visible_items = [item for (item, is_in) in zip(items_list, items_is_visible) if is_in]
+        else:
+            visible_items = []
 
         agents_locarray = np.array([agent.curr_position for agent in agents_list])
 
