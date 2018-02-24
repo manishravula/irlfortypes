@@ -2,16 +2,16 @@
 import matplotlib.pyplot as plt
 # from src.arena import arena
 # from src.agent_originaltypes import Agent
-from src.ABU_estimator_noapproximation import ABU
-from src.agent_param import Agent_lh
+from src.estimation.ABU_estimator_noapproximation import ABU
+from src.estimation.agent_param import Agent_lh
 import numpy as np
 import copy
 import time
 import numpy.polynomial.polynomial as poly
 from matplotlib.animation import FuncAnimation
 from tests import tests_helper as Tests
-import experiments.config_experiment as config
-import src.generate_init as genInit
+import experiments.configuration as config
+import src.utils.generate_init as genInit
 import seaborn as sns
 sns.set()
 import logging.config

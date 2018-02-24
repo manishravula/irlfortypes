@@ -7,8 +7,8 @@ import time
 import numpy.polynomial.polynomial as poly
 from matplotlib.animation import FuncAnimation
 from tests import tests_helper as Tests
-import config_experiment as config
-from src import generate_init as genInit
+import configuration as config
+from src.utils import generate_init as genInit
 import seaborn as sns
 sns.set()
 import logging.config

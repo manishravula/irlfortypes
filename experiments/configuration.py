@@ -1,47 +1,49 @@
-import numpy as np
 import time
 import inspect
-import logging
 
 
-
+DEBUG=False
 
 NO_MOVEMENTS = 4
 LOAD_ACTION_PROBABILITY = []
 
-NO_TYPES = 4
-N_AGENTS = 3
-
-
-
-#Initialization stuff
-COOPERATION_INDEX = .8 # index*grid_min
 
 
 #Agents to use
-from src.agent_originaltypes import Agent as AGENT_CURR
-# from src.agent_expressive1 import Agent as AGENT_CURR
-
-#Arena to use
+from src.agents.agent_originaltypes import Agent as AGENT_CURR
 from src.arena import arena as ARENA_CURR
 
+#Arena to use
+#src.generation_init config
+COOPERATION_INDEX = .8 # index*grid_min
+NO_TYPES = 4
+N_AGENTS = 3
 #Initialization to use
 FROM_MEMORY = 1
 FROM_NEW = 0
 INIT_TYPE = FROM_MEMORY
 # INIT_TYPE = 'random'
 
-#Visualization stuff
 
+
+
+#Visualization stuff
 #visualization of the estimation process
 VISUALIZE_ESTIMATION = False
-
 #Save figures or not switch
 VISUALIZE_ESTIMATION_SAVE = False
 DPI = 300
-
 #Visualize the simulation or not.
 VISUALIZE_SIM = True
+
+
+#MCTS Related
+N_ROLLOUTS = 30
+ROLLOUT_DEPTH = 30
+
+
+
+
 
 #logging config
 LOGGING_CONFIG = {
