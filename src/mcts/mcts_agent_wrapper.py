@@ -108,6 +108,7 @@ class mcts_agent(config.AGENT_CURR):
         init_arena_for_rollout.add_MCTSagent(mctsAgent_forArena)
 
         mcts_planner = mctstree.mcts(init_arena_for_rollout,False)
+        logger.info("Starting Rollouts:")
         #TODO parallelize
         for i in range(config.N_ROLLOUTS):
             logger.info("Rollout {} with max steps {}".format(i,config.ROLLOUT_DEPTH))

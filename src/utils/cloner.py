@@ -30,7 +30,7 @@ def clone_Agent(agentState,arena_obj):
     newAgent = config.AGENT_CURR(agentState['capacity_param'],agentState['viewRadius_param'],
                                  agentState['viewAngle_param'],agentState['type'],agentState['curr_position'],arena_obj)
     newAgent.__setstate__(agentState)
-    logger.info("Cloned agent with params {}".format(agentState))
+    logger.debug("Cloned agent with params {}".format(agentState))
     return newAgent
 
 def clone_AgentLH(agentState,arena_obj):

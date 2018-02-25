@@ -102,7 +102,7 @@ class Agent():
         # up,down,right,left
 
 
-        logger.info('Created an agent with location {}, type {}, capacity {}, view_radius {}, view_angle {} in standard ranges'.format(self.curr_position, self.type, self.capacity_param,self.viewRadius_param,self.viewAngle_param))
+        logger.debug('Created an agent with location {}, type {}, capacity {}, view_radius {}, view_angle {} in standard ranges'.format(self.curr_position, self.type, self.capacity_param,self.viewRadius_param,self.viewAngle_param))
 
 
     @classmethod

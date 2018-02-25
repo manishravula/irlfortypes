@@ -13,7 +13,11 @@ from src.utils import cloner, generate_init
 from src.estimation import update_state, ABU_estimator_noapproximation
 
 import configuration as config
+from src.utils import banner
+import logging
 
+logging.config.dictConfig(config.LOGGING_CONFIG)
+logger = logging.getLogger(__name__)
 
 no_experiments = 10
 n_agents = 4 #including MCTS
@@ -31,11 +35,18 @@ abu_param_dict = {
               'visualize':config.VISUALIZE_ESTIMATION,
               'saveplots':config.VISUALIZE_ESTIMATION_SAVE}
 
+class result(object):
+    def __init__(self,ID):
+        self.experimentID = ID
+
 
 
 for i in range(no_experiments):
+    r = result(i)
+    logger.info(banner.horizontal('Experiment {}'.format(i)))
     #Conducting individual experiments now.
     main_arena, agents = generate_init.generate_all(10,25,n_agents)
+    r.ini_number_items = main_arena.no_items
 
     #Setting up ABU.
     abu = ABU_estimator_noapproximation.ABU(agents[0],main_arena,abu_param_dict)
@@ -109,3 +120,10 @@ for i in range(no_experiments):
         main_arena.update_foodconsumption()
         main_arena.check_for_termination()
         j+=1
+
+    r.left_over_items = len(main_arena.items)
+    r.game_length = j
+    for key,value in zip(r.__dict__.keys(),r.__dict__.values()):
+        logging.info('result {}, {}'.format(key,value))
+
+    logger.info("End of expriment {}".format(i))

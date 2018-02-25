@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14adfc7-e64e-4c51-b3fc-75fe43f68cff" name="Default" comment="MCTS debugged and working. Slight modifications in performance and some&#10;bug fixes included.">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/utils/banner.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/MCTS/environment.py" afterPath="$PROJECT_DIR$/MCTS/environment.py" />
-      <change beforePath="$PROJECT_DIR$/MCTS/mcts/lib/python2.7/site-packages/matplotlib/backends/web_backend/all_figures.html" afterPath="$PROJECT_DIR$/MCTS/mcts/lib/python2.7/site-packages/matplotlib/backends/web_backend/all_figures.html" />
-      <change beforePath="$PROJECT_DIR$/MCTS/mcts/lib/python2.7/site-packages/matplotlib/backends/web_backend/ipython_inline_figure.html" afterPath="$PROJECT_DIR$/MCTS/mcts/lib/python2.7/site-packages/matplotlib/backends/web_backend/ipython_inline_figure.html" />
-      <change beforePath="$PROJECT_DIR$/MCTS/mcts/lib/python2.7/site-packages/matplotlib/backends/web_backend/mpl.js" afterPath="$PROJECT_DIR$/MCTS/mcts/lib/python2.7/site-packages/matplotlib/backends/web_backend/mpl.js" />
-      <change beforePath="$PROJECT_DIR$/MCTS/mcts/lib/python2.7/site-packages/matplotlib/backends/web_backend/nbagg_mpl.js" afterPath="$PROJECT_DIR$/MCTS/mcts/lib/python2.7/site-packages/matplotlib/backends/web_backend/nbagg_mpl.js" />
-      <change beforePath="$PROJECT_DIR$/MCTS/mcts/lib/python2.7/site-packages/matplotlib/backends/web_backend/single_figure.html" afterPath="$PROJECT_DIR$/MCTS/mcts/lib/python2.7/site-packages/matplotlib/backends/web_backend/single_figure.html" />
       <change beforePath="$PROJECT_DIR$/data/agentconfig.npy" afterPath="$PROJECT_DIR$/data/agentconfig.npy" />
       <change beforePath="$PROJECT_DIR$/data/grid.npy" afterPath="$PROJECT_DIR$/data/grid.npy" />
-      <change beforePath="$PROJECT_DIR$/src/arena.py" afterPath="$PROJECT_DIR$/src/arena.py" />
-      <change beforePath="$PROJECT_DIR$/src/estimation/update_state.py" afterPath="$PROJECT_DIR$/src/estimation/update_state.py" />
+      <change beforePath="$PROJECT_DIR$/experiments/PlanningWithoutCPAdaptation.py" afterPath="$PROJECT_DIR$/experiments/PlanningWithoutCPAdaptation.py" />
+      <change beforePath="$PROJECT_DIR$/src/agents/agent_originaltypes.py" afterPath="$PROJECT_DIR$/src/agents/agent_originaltypes.py" />
       <change beforePath="$PROJECT_DIR$/src/mcts/mcts_agent_wrapper.py" afterPath="$PROJECT_DIR$/src/mcts/mcts_agent_wrapper.py" />
-      <change beforePath="$PROJECT_DIR$/src/mcts/mcts_arena_wrapper.py" afterPath="$PROJECT_DIR$/src/mcts/mcts_arena_wrapper.py" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_helper.py" afterPath="$PROJECT_DIR$/tests/tests_helper.py" />
+      <change beforePath="$PROJECT_DIR$/src/utils/cloner.py" afterPath="$PROJECT_DIR$/src/utils/cloner.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,6 +26,7 @@
     <SUITE FILE_PATH="coverage/AdHoc2$test.coverage" NAME="test Coverage Results" MODIFIED="1516149550074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/AdHoc2$mcts_agent.coverage" NAME="mcts_agent Coverage Results" MODIFIED="1519057806053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/mcts" />
     <SUITE FILE_PATH="coverage/AdHoc2$agent_originaltypes.coverage" NAME="agent_originaltypes Coverage Results" MODIFIED="1518229201793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/AdHoc2$banner.coverage" NAME="banner Coverage Results" MODIFIED="1519536633043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
     <SUITE FILE_PATH="coverage/AdHoc2$ABU_estimator.coverage" NAME="ABU_estimator Coverage Results" MODIFIED="1517274447170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/AdHoc2$ABU_estimator_noapproximation.coverage" NAME="ABU_estimator_noapproximation Coverage Results" MODIFIED="1516998381124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/AdHoc2$copytest_arena.coverage" NAME="copytest_arena Coverage Results" MODIFIED="1518288888622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments" />
@@ -47,7 +41,7 @@
     <SUITE FILE_PATH="coverage/AdHoc2$Nosetests_in_arena_mcts_py.coverage" NAME="Nosetests in arena_mcts.py Coverage Results" MODIFIED="1518417512780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/AdHoc2$mcts_tree.coverage" NAME="mcts_tree Coverage Results" MODIFIED="1519022671181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/mcts" />
     <SUITE FILE_PATH="coverage/AdHoc2$singleTypeParameterEstimationExperiment.coverage" NAME="singleTypeParameterEstimationExperiment Coverage Results" MODIFIED="1518056537369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments" />
-    <SUITE FILE_PATH="coverage/AdHoc2$PlanningWithoutCPAdaptation.coverage" NAME="PlanningWithoutCPAdaptation Coverage Results" MODIFIED="1519515795182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments" />
+    <SUITE FILE_PATH="coverage/AdHoc2$PlanningWithoutCPAdaptation.coverage" NAME="PlanningWithoutCPAdaptation Coverage Results" MODIFIED="1519536652522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/experiments" />
     <SUITE FILE_PATH="coverage/AdHoc2$update_state.coverage" NAME="update_state Coverage Results" MODIFIED="1519370404745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/estimation" />
     <SUITE FILE_PATH="coverage/AdHoc$agentarenatest.coverage" NAME="agentarenatest Coverage Results" MODIFIED="1511135591520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AdHoc2$agent.coverage" NAME="agent Coverage Results" MODIFIED="1516035919564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
@@ -69,14 +63,14 @@
     <favorites_list name="AdHoc2" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42664725">
+    <splitter split-orientation="horizontal" split-proportion="0.41002524">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
           <file leaf-file-name="mcts_agent_wrapper.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/mcts/mcts_agent_wrapper.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="263">
-                  <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+                <state relative-caret-position="506">
+                  <caret line="124" column="58" lean-forward="false" selection-start-line="124" selection-start-column="58" selection-end-line="124" selection-end-column="58" />
                   <folding>
                     <element signature="e#0#14#0" expanded="true" />
                   </folding>
@@ -98,7 +92,7 @@
             <entry file="file://$PROJECT_DIR$/src/utils/cloner.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="572">
-                  <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+                  <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
                   <folding>
                     <element signature="e#0#47#0" expanded="true" />
                   </folding>
@@ -110,28 +104,16 @@
             <entry file="file://$PROJECT_DIR$/src/agents/agent_originaltypes.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="694">
-                  <caret line="257" column="25" lean-forward="false" selection-start-line="257" selection-start-column="25" selection-end-line="257" selection-end-column="25" />
+                  <caret line="104" column="19" lean-forward="false" selection-start-line="104" selection-start-column="19" selection-end-line="104" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="singleTypeParameterEstimationExperiment.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/experiments/singleTypeParameterEstimationExperiment.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4114">
-                  <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#1#32#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="configuration.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="configuration.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/experiments/configuration.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="880">
+                <state relative-caret-position="750">
                   <caret line="41" column="17" lean-forward="false" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
                   <folding />
                 </state>
@@ -141,7 +123,7 @@
           <file leaf-file-name="ABU_estimator_noapproximation.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/estimation/ABU_estimator_noapproximation.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="660">
+                <state relative-caret-position="-1695">
                   <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
                   <folding />
                 </state>
@@ -158,10 +140,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="generate_init.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="generate_init.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/utils/generate_init.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1672">
+                <state relative-caret-position="646">
                   <caret line="76" column="39" lean-forward="false" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
@@ -173,7 +155,7 @@
           <file leaf-file-name="mcts_sourcealgo.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/mcts/mcts_sourcealgo.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="241">
+                <state relative-caret-position="11990">
                   <caret line="545" column="0" lean-forward="false" selection-start-line="545" selection-start-column="0" selection-end-line="545" selection-end-column="0" />
                   <folding />
                 </state>
@@ -187,8 +169,8 @@
           <file leaf-file-name="PlanningWithoutCPAdaptation.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/experiments/PlanningWithoutCPAdaptation.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="461">
-                  <caret line="65" column="27" lean-forward="false" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+                <state relative-caret-position="132">
+                  <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
@@ -196,46 +178,12 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tests_helper.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/tests_helper.py">
+          <file leaf-file-name="banner.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/utils/banner.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+                <state relative-caret-position="881">
+                  <caret line="124" column="4" lean-forward="false" selection-start-line="124" selection-start-column="4" selection-end-line="124" selection-end-column="4" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ABU_estimator.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/estimation/ABU_estimator.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="617">
-                  <caret line="235" column="8" lean-forward="false" selection-start-line="235" selection-start-column="8" selection-end-line="235" selection-end-column="8" />
-                  <folding>
-                    <marker date="1518464928905" expanded="true" signature="15732:16069" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="fromnumeric.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../adhoc/local/lib/python2.7/site-packages/numpy/core/fromnumeric.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="428">
-                  <caret line="2271" column="0" lean-forward="false" selection-start-line="2271" selection-start-column="0" selection-end-line="2271" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="update_state.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/estimation/update_state.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="279">
-                  <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#11#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -265,6 +213,8 @@
       <find>'n'</find>
       <find>history</find>
       <find>dagent</find>
+      <find>logger.info</find>
+      <find>.info</find>
     </findStrings>
     <replaceStrings>
       <replace>3.0</replace>
@@ -274,6 +224,8 @@
       <replace>ACTION2ORIENTATION</replace>
       <replace>_dumm_agent_for_config</replace>
       <replace>_dummy_agent_for_config</replace>
+      <replace>.debug</replace>
+      <replace>logger.debug</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -321,22 +273,23 @@
         <option value="$PROJECT_DIR$/src/arena_mcts.py" />
         <option value="$PROJECT_DIR$/src/mcts_arena.py" />
         <option value="$PROJECT_DIR$/MCTS/mcts_unique.py" />
-        <option value="$PROJECT_DIR$/src/utils/cloner.py" />
         <option value="$PROJECT_DIR$/src/global_const.py" />
         <option value="$PROJECT_DIR$/src/estimation/agent_param.py" />
         <option value="$PROJECT_DIR$/MCTS/environment.py" />
         <option value="$PROJECT_DIR$/src/generate_init.py" />
         <option value="$PROJECT_DIR$/src/mcts/mcts_arena_wrapper.py" />
-        <option value="$PROJECT_DIR$/src/agents/agent_originaltypes.py" />
         <option value="$PROJECT_DIR$/src/mcts/mcts_agent.py" />
         <option value="$PROJECT_DIR$/src/mcts/mcts_tree.py" />
         <option value="$PROJECT_DIR$/src/utils/generate_init.py" />
         <option value="$PROJECT_DIR$/tests/tests_helper.py" />
         <option value="$PROJECT_DIR$/src/arena.py" />
-        <option value="$PROJECT_DIR$/src/mcts/mcts_agent_wrapper.py" />
         <option value="$PROJECT_DIR$/experiments/configuration.py" />
-        <option value="$PROJECT_DIR$/experiments/PlanningWithoutCPAdaptation.py" />
         <option value="$PROJECT_DIR$/src/estimation/update_state.py" />
+        <option value="$PROJECT_DIR$/src/utils/cloner.py" />
+        <option value="$PROJECT_DIR$/src/mcts/mcts_agent_wrapper.py" />
+        <option value="$PROJECT_DIR$/experiments/PlanningWithoutCPAdaptation.py" />
+        <option value="$PROJECT_DIR$/src/agents/agent_originaltypes.py" />
+        <option value="$PROJECT_DIR$/src/utils/banner.py" />
       </list>
     </option>
   </component>
@@ -347,9 +300,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="10" />
+    <option name="y" value="-1" />
     <option name="width" value="2880" />
-    <option name="height" value="1574" />
+    <option name="height" value="1585" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -371,7 +324,7 @@
     </entry>
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -384,7 +337,38 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AdHoc2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdHoc2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AdHoc2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdHoc2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AdHoc2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdHoc2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="logging" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AdHoc2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdHoc2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -461,20 +445,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="arena_mcts" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="banner" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/utils" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="AdHoc" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/arena_mcts.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/utils/banner.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -580,19 +564,19 @@
       <item index="0" class="java.lang.String" itemvalue="Python.Unnamed" />
       <item index="1" class="java.lang.String" itemvalue="Python.test" />
       <item index="2" class="java.lang.String" itemvalue="Python.singleTypeParameterEstimationExperiment" />
-      <item index="3" class="java.lang.String" itemvalue="Python.arena_mcts" />
-      <item index="4" class="java.lang.String" itemvalue="Python.mcts_agent" />
-      <item index="5" class="java.lang.String" itemvalue="Python.mcts_tree" />
-      <item index="6" class="java.lang.String" itemvalue="Python.PlanningWithoutCPAdaptation" />
-      <item index="7" class="java.lang.String" itemvalue="Python.update_state" />
+      <item index="3" class="java.lang.String" itemvalue="Python.mcts_agent" />
+      <item index="4" class="java.lang.String" itemvalue="Python.mcts_tree" />
+      <item index="5" class="java.lang.String" itemvalue="Python.PlanningWithoutCPAdaptation" />
+      <item index="6" class="java.lang.String" itemvalue="Python.update_state" />
+      <item index="7" class="java.lang.String" itemvalue="Python.banner" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.PlanningWithoutCPAdaptation" />
-        <item index="1" class="java.lang.String" itemvalue="Python.update_state" />
-        <item index="2" class="java.lang.String" itemvalue="Python.mcts_agent" />
-        <item index="3" class="java.lang.String" itemvalue="Python.mcts_tree" />
-        <item index="4" class="java.lang.String" itemvalue="Python.arena_mcts" />
+        <item index="1" class="java.lang.String" itemvalue="Python.banner" />
+        <item index="2" class="java.lang.String" itemvalue="Python.update_state" />
+        <item index="3" class="java.lang.String" itemvalue="Python.mcts_agent" />
+        <item index="4" class="java.lang.String" itemvalue="Python.mcts_tree" />
       </list>
     </recent_temporary>
   </component>
@@ -649,23 +633,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="10" width="2880" height="1574" extended-state="0" />
+    <frame x="0" y="-1" width="2880" height="1585" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1945047" sideWeight="0.49857345" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29428777" sideWeight="0.51141226" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.020328103" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="0" y="0" width="590" height="1205" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21144098" sideWeight="0.5042857" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.009642857" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="0" y="0" width="590" height="1205" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294714" sideWeight="0.49857143" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24150398" sideWeight="0.4914408" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21185827" sideWeight="0.49857345" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29428777" sideWeight="0.48858774" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12981455" sideWeight="0.49178645" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21144098" sideWeight="0.49571428" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29398987" sideWeight="0.48714286" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12964286" sideWeight="0.49178645" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983872" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16364953" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.3291726" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="1444" y="28" width="1432" height="1552" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23214285" sideWeight="0.5082136" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33984092" sideWeight="0.8302425" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33960897" sideWeight="0.82785714" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -811,7 +795,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/mcts/mcts_agent_wrapper.py</url>
-          <line>181</line>
+          <line>182</line>
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -831,7 +815,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/experiments/PlanningWithoutCPAdaptation.py</url>
-          <line>101</line>
+          <line>112</line>
           <option name="timeStamp" value="236" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -841,8 +825,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/experiments/PlanningWithoutCPAdaptation.py</url>
-          <line>56</line>
+          <line>67</line>
           <option name="timeStamp" value="238" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/experiments/PlanningWithoutCPAdaptation.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="239" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -855,7 +844,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="239" />
+      <option name="time" value="240" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -916,27 +905,11 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/logging/debug_log_WedFeb717:02:412018-homemanishAwesomestuffAdHocTeamWorkAdHoc2experimentscopytest.py.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26453">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/logging/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="733" column="0" lean-forward="false" selection-start-line="733" selection-start-column="0" selection-end-line="733" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/champ.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1254">
           <caret line="111" column="50" lean-forward="false" selection-start-line="111" selection-start-column="50" selection-end-line="111" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -981,13 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/Tests/copytest_arenaagents.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="115" column="58" lean-forward="false" selection-start-line="115" selection-start-column="58" selection-end-line="115" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/experiments/param_test2.py" />
     <entry file="file://$PROJECT_DIR$/visibletest.py" />
     <entry file="file://$PROJECT_DIR$/polynomial_integrals.py">
@@ -1015,9 +981,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-13">
           <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#32#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1137,17 +1101,7 @@
         <state relative-caret-position="4114">
           <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding>
-            <element signature="e#1#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/cloner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
+            <element signature="e#1#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1167,17 +1121,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiments/singleTypeParameterEstimationExperimentWithoutPolynomialApproximation.py">
+    <entry file="file://$PROJECT_DIR$/../adhoc/local/lib/python2.7/site-packages/numpy/core/fromnumeric.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        <state relative-caret-position="49720">
+          <caret line="2271" column="0" lean-forward="false" selection-start-line="2271" selection-start-column="0" selection-end-line="2271" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/tests_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mcts/mcts_sourcealgo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11990">
+          <caret line="545" column="0" lean-forward="false" selection-start-line="545" selection-start-column="0" selection-end-line="545" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/estimation/update_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2046">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/generate_init.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="76" column="39" lean-forward="false" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logging/debug_log_FriFeb918:48:142018-homemanishDownloadspycharm-2017.2.3helperspydevpydevd.py.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10248">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/cloner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments/Tests/copytest_arenaagents.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/estimation/ABU_estimator_noapproximation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
+        <state relative-caret-position="-1695">
           <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
           <folding />
         </state>
@@ -1185,19 +1201,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mcts/mcts_agent_wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+        <state relative-caret-position="506">
+          <caret line="124" column="58" lean-forward="false" selection-start-line="124" selection-start-column="58" selection-end-line="124" selection-end-column="58" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../adhoc/local/lib/python2.7/site-packages/numpy/core/fromnumeric.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="2271" column="0" lean-forward="false" selection-start-line="2271" selection-start-column="0" selection-end-line="2271" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1211,64 +1219,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/tests_helper.py">
+    <entry file="file://$PROJECT_DIR$/experiments/singleTypeParameterEstimationExperimentWithoutPolynomialApproximation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        <state relative-caret-position="1320">
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mcts/mcts_sourcealgo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="545" column="0" lean-forward="false" selection-start-line="545" selection-start-column="0" selection-end-line="545" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/estimation/update_state.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/agents/agent_originaltypes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="694">
-          <caret line="257" column="25" lean-forward="false" selection-start-line="257" selection-start-column="25" selection-end-line="257" selection-end-column="25" />
+          <caret line="104" column="19" lean-forward="false" selection-start-line="104" selection-start-column="19" selection-end-line="104" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/experiments/configuration.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
+        <state relative-caret-position="750">
           <caret line="41" column="17" lean-forward="false" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/banner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="881">
+          <caret line="124" column="4" lean-forward="false" selection-start-line="124" selection-start-column="4" selection-end-line="124" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/experiments/PlanningWithoutCPAdaptation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="65" column="27" lean-forward="false" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+        <state relative-caret-position="132">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/generate_init.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1672">
-          <caret line="76" column="39" lean-forward="false" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
