@@ -43,8 +43,8 @@ ROLLOUT_DEPTH = 30
 
 
 #Twilio details
-from twilio.rest import Client
-SMSClient = Client("AC03c6c74162a11f07ffb0170da406f3c2","2fd3da4f21f36483ffb1dfcf31ebf117")
+from experiments import twiliocreds
+SMSClient = twiliocreds.SMSClient
 from_number = "+15126438645"
 to_number = "+15125022558"
 
