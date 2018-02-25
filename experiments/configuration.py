@@ -34,7 +34,7 @@ VISUALIZE_ESTIMATION = False
 VISUALIZE_ESTIMATION_SAVE = False
 DPI = 300
 #Visualize the simulation or not.
-VISUALIZE_SIM = True
+VISUALIZE_SIM = False
 
 
 #MCTS Related

@@ -82,8 +82,8 @@ for i in range(no_experiments):
                 _ = abu.fit_likelihoodPolynomial_allTypes(action_and_consequence)
                 abu.get_likelihoodValues_allTypes()
                 abu.calculate_modelEvidence(j)
-                _,_ = abu.estimate_allTypes(i)
-                estimates, _ = abu.estimate_allTypes_withoutApproximation(i)
+                _,_ = abu.estimate_allTypes(j)
+                estimates, _ = abu.estimate_allTypes_withoutApproximation(j)
             ag.execute_action(action_and_consequence)
 
         currstep_agentStates.append(currstep_agentStates[-2]) #like a dummy so that the mcts caller won't be upset.
