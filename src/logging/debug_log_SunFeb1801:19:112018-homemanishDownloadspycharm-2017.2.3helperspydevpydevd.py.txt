@@ -1,0 +1,7 @@
+2018-02-18 01:19:13,250 [DEBUG] src.generate_init: creating agent with capacity 0.410681398475 vradius 0.243266731199 vangle 0.360145814775 type 2 loc [2 9]
+2018-02-18 01:19:13,251 [INFO] src.agents.agent_originaltypes: Created an agent with location [2 9], type 2, capacity 0.410681398475, view_radius 0.243266731199, view_angle 0.360145814775 in standard ranges
+2018-02-18 01:19:36,853 [ERROR] __main__: MCTS agent creation failed
+Traceback (most recent call last):
+  File "/home/manish/Awesomestuff/AdHocTeamWork/AdHoc2/src/mcts/mcts_agent.py", line 159, in behave_rollout_test
+    mctagent = mcts_agent(dagent.capacity_param,dagent.viewRadius_param,dagent.viewAngle_param,dagent.type,
+NameError: global name 'mcts_agent' is not defined

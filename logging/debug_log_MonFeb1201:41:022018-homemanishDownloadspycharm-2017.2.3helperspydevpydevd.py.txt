@@ -1,0 +1,221 @@
+2018-02-12 01:41:03,029 [DEBUG] src.generate_init: creating agent with capacity 0.377750252207 vradius 0.573372721887 vangle 0.433122204591 type 1 loc [8 2]
+2018-02-12 01:41:03,029 [INFO] src.agent_originaltypes: Created an agent with location [8 2], type 1, capacity 0.377750252207, view_radius 0.573372721887, view_angle 0.433122204591 in standard ranges
+2018-02-12 01:41:03,029 [DEBUG] src.generate_init: creating agent with capacity 0.102401937993 vradius 0.215171214408 vangle 0.688937975717 type 1 loc [0 0]
+2018-02-12 01:41:03,029 [INFO] src.agent_originaltypes: Created an agent with location [0 0], type 1, capacity 0.102401937993, view_radius 0.215171214408, view_angle 0.688937975717 in standard ranges
+2018-02-12 01:41:03,030 [DEBUG] src.generate_init: creating agent with capacity 0.295322016721 vradius 0.184098782379 vangle 0.525019943011 type 0 loc [2 1]
+2018-02-12 01:41:03,030 [INFO] src.agent_originaltypes: Created an agent with location [2 1], type 0, capacity 0.295322016721, view_radius 0.184098782379, view_angle 0.525019943011 in standard ranges
+2018-02-12 01:41:03,030 [DEBUG] src.generate_init: creating agent with capacity 0.403236107025 vradius 0.22689229725 vangle 0.67975146424 type 0 loc [1 3]
+2018-02-12 01:41:03,030 [INFO] src.agent_originaltypes: Created an agent with location [1 3], type 0, capacity 0.403236107025, view_radius 0.22689229725, view_angle 0.67975146424 in standard ranges
+2018-02-12 01:41:03,031 [DEBUG] __main__: The generated random actions for UNI look like this 
+ ['dddn', 'ddln', 'ddrn', 'ddpn', 'dldn', 'dlln', 'dlrn', 'dlpn', 'dpdn', 'dpln', 'dprn', 'dppn', 'lddn', 'ldln', 'ldrn', 'ldpn', 'lldn', 'llln', 'llrn', 'llpn', 'lpdn', 'lpln', 'lprn', 'lppn', 'rddn', 'rdln', 'rdrn', 'rdpn', 'rldn', 'rlln', 'rlrn', 'rlpn', 'rpdn', 'rpln', 'rprn', 'rppn', 'pddn', 'pdln', 'pdrn', 'pdpn', 'pldn', 'plln', 'plrn', 'plpn', 'ppdn', 'ppln', 'pprn', 'pppn']
+2018-02-12 01:41:03,031 [DEBUG] __main__: PASS: Test 1 passed. The number of legal actions function works
+2018-02-12 01:41:03,031 [DEBUG] __main__: Iter 0, turn UNI, randomaction: rddn
+2018-02-12 01:41:03,032 [DEBUG] __main__: Iter 0, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,032 [DEBUG] __main__: Iter 1, turn UNI, randomaction: plrn
+2018-02-12 01:41:03,032 [DEBUG] __main__: Iter 1, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,032 [DEBUG] __main__: Iter 2, turn UNI, randomaction: dldn
+2018-02-12 01:41:03,033 [DEBUG] __main__: Iter 2, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,033 [DEBUG] __main__: Iter 3, turn UNI, randomaction: ddln
+2018-02-12 01:41:03,033 [DEBUG] __main__: Iter 3, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,033 [DEBUG] __main__: Iter 4, turn UNI, randomaction: rdpn
+2018-02-12 01:41:03,034 [DEBUG] __main__: Iter 4, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,034 [DEBUG] __main__: Iter 5, turn UNI, randomaction: ppdn
+2018-02-12 01:41:03,034 [DEBUG] __main__: Iter 5, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,035 [DEBUG] __main__: Iter 6, turn UNI, randomaction: ldpn
+2018-02-12 01:41:03,035 [DEBUG] __main__: Iter 6, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,035 [DEBUG] __main__: Iter 7, turn UNI, randomaction: ldrn
+2018-02-12 01:41:03,035 [DEBUG] __main__: Iter 7, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,036 [DEBUG] __main__: Iter 8, turn UNI, randomaction: ppdn
+2018-02-12 01:41:03,036 [DEBUG] __main__: Iter 8, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,037 [DEBUG] __main__: Iter 9, turn UNI, randomaction: llpn
+2018-02-12 01:41:03,037 [DEBUG] __main__: Iter 9, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,038 [DEBUG] __main__: Iter 10, turn UNI, randomaction: pdln
+2018-02-12 01:41:03,038 [DEBUG] __main__: Iter 10, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,038 [DEBUG] __main__: Iter 11, turn UNI, randomaction: dpln
+2018-02-12 01:41:03,039 [DEBUG] __main__: Iter 11, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,039 [DEBUG] __main__: Iter 12, turn UNI, randomaction: dpln
+2018-02-12 01:41:03,040 [DEBUG] __main__: Iter 12, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,040 [DEBUG] __main__: Iter 13, turn UNI, randomaction: llpn
+2018-02-12 01:41:03,040 [DEBUG] __main__: Iter 13, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,041 [DEBUG] __main__: Iter 14, turn UNI, randomaction: dprn
+2018-02-12 01:41:03,041 [DEBUG] __main__: Iter 14, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,041 [DEBUG] __main__: Iter 15, turn UNI, randomaction: dprn
+2018-02-12 01:41:03,041 [DEBUG] __main__: Iter 15, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,042 [DEBUG] __main__: Iter 16, turn UNI, randomaction: dddn
+2018-02-12 01:41:03,042 [DEBUG] __main__: Iter 16, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,042 [DEBUG] __main__: Iter 17, turn UNI, randomaction: ldpn
+2018-02-12 01:41:03,042 [DEBUG] __main__: Iter 17, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,043 [DEBUG] __main__: Iter 18, turn UNI, randomaction: ldln
+2018-02-12 01:41:03,043 [DEBUG] __main__: Iter 18, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,043 [DEBUG] __main__: Iter 19, turn UNI, randomaction: ppdn
+2018-02-12 01:41:03,043 [DEBUG] __main__: Iter 19, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,044 [DEBUG] __main__: Iter 20, turn UNI, randomaction: rpdn
+2018-02-12 01:41:03,044 [DEBUG] __main__: Iter 20, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,044 [DEBUG] __main__: Iter 21, turn UNI, randomaction: llpn
+2018-02-12 01:41:03,044 [DEBUG] __main__: Iter 21, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,045 [DEBUG] __main__: Iter 22, turn UNI, randomaction: dlrn
+2018-02-12 01:41:03,045 [DEBUG] __main__: Iter 22, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,045 [DEBUG] __main__: Iter 23, turn UNI, randomaction: dddn
+2018-02-12 01:41:03,045 [DEBUG] __main__: Iter 23, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,046 [DEBUG] __main__: Iter 24, turn UNI, randomaction: rpdn
+2018-02-12 01:41:03,046 [DEBUG] __main__: Iter 24, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,046 [DEBUG] __main__: Iter 25, turn UNI, randomaction: pppn
+2018-02-12 01:41:03,046 [DEBUG] __main__: Iter 25, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,047 [DEBUG] __main__: Iter 26, turn UNI, randomaction: ppdn
+2018-02-12 01:41:03,047 [DEBUG] __main__: Iter 26, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,047 [DEBUG] __main__: Iter 27, turn UNI, randomaction: pprn
+2018-02-12 01:41:03,048 [DEBUG] __main__: Iter 27, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,048 [DEBUG] __main__: Iter 28, turn UNI, randomaction: ddpn
+2018-02-12 01:41:03,048 [DEBUG] __main__: Iter 28, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,048 [DEBUG] __main__: Iter 29, turn UNI, randomaction: dlrn
+2018-02-12 01:41:03,049 [DEBUG] __main__: Iter 29, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,049 [DEBUG] __main__: Iter 30, turn UNI, randomaction: lpdn
+2018-02-12 01:41:03,049 [DEBUG] __main__: Iter 30, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,049 [DEBUG] __main__: Iter 31, turn UNI, randomaction: ddrn
+2018-02-12 01:41:03,050 [DEBUG] __main__: Iter 31, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,050 [DEBUG] __main__: Iter 32, turn UNI, randomaction: dlrn
+2018-02-12 01:41:03,050 [DEBUG] __main__: Iter 32, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,051 [DEBUG] __main__: Iter 33, turn UNI, randomaction: rprn
+2018-02-12 01:41:03,051 [DEBUG] __main__: Iter 33, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,051 [DEBUG] __main__: Iter 34, turn UNI, randomaction: rlrn
+2018-02-12 01:41:03,051 [DEBUG] __main__: Iter 34, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,052 [DEBUG] __main__: Iter 35, turn UNI, randomaction: dpln
+2018-02-12 01:41:03,052 [DEBUG] __main__: Iter 35, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,052 [DEBUG] __main__: Iter 36, turn UNI, randomaction: dppn
+2018-02-12 01:41:03,053 [DEBUG] __main__: Iter 36, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,053 [DEBUG] __main__: Iter 37, turn UNI, randomaction: ddpn
+2018-02-12 01:41:03,053 [DEBUG] __main__: Iter 37, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,054 [DEBUG] __main__: Iter 38, turn UNI, randomaction: dlln
+2018-02-12 01:41:03,054 [DEBUG] __main__: Iter 38, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,054 [DEBUG] __main__: Iter 39, turn UNI, randomaction: rlpn
+2018-02-12 01:41:03,054 [DEBUG] __main__: Iter 39, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,055 [DEBUG] __main__: Iter 40, turn UNI, randomaction: ddpn
+2018-02-12 01:41:03,055 [DEBUG] __main__: Iter 40, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,055 [DEBUG] __main__: Iter 41, turn UNI, randomaction: rpdn
+2018-02-12 01:41:03,055 [DEBUG] __main__: Iter 41, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,056 [DEBUG] __main__: Iter 42, turn UNI, randomaction: lddn
+2018-02-12 01:41:03,056 [DEBUG] __main__: Iter 42, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,056 [DEBUG] __main__: Iter 43, turn UNI, randomaction: pdrn
+2018-02-12 01:41:03,057 [DEBUG] __main__: Iter 43, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,057 [DEBUG] __main__: Iter 44, turn UNI, randomaction: rldn
+2018-02-12 01:41:03,057 [DEBUG] __main__: Iter 44, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,057 [DEBUG] __main__: Iter 45, turn UNI, randomaction: rpln
+2018-02-12 01:41:03,058 [DEBUG] __main__: Iter 45, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,058 [DEBUG] __main__: Iter 46, turn UNI, randomaction: pppn
+2018-02-12 01:41:03,058 [DEBUG] __main__: Iter 46, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,058 [DEBUG] __main__: Iter 47, turn UNI, randomaction: dprn
+2018-02-12 01:41:03,059 [DEBUG] __main__: Iter 47, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,059 [DEBUG] __main__: Iter 48, turn UNI, randomaction: ddln
+2018-02-12 01:41:03,059 [DEBUG] __main__: Iter 48, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,059 [DEBUG] __main__: Iter 49, turn UNI, randomaction: dpln
+2018-02-12 01:41:03,060 [DEBUG] __main__: Iter 49, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,060 [DEBUG] __main__: Iter 50, turn UNI, randomaction: rlrn
+2018-02-12 01:41:03,060 [DEBUG] __main__: Iter 50, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,060 [DEBUG] __main__: Iter 51, turn UNI, randomaction: dddn
+2018-02-12 01:41:03,061 [DEBUG] __main__: Iter 51, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,061 [DEBUG] __main__: Iter 52, turn UNI, randomaction: dpln
+2018-02-12 01:41:03,061 [DEBUG] __main__: Iter 52, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,061 [DEBUG] __main__: Iter 53, turn UNI, randomaction: rpln
+2018-02-12 01:41:03,062 [DEBUG] __main__: Iter 53, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,062 [DEBUG] __main__: Iter 54, turn UNI, randomaction: ldpn
+2018-02-12 01:41:03,062 [DEBUG] __main__: Iter 54, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,062 [DEBUG] __main__: Iter 55, turn UNI, randomaction: lldn
+2018-02-12 01:41:03,063 [DEBUG] __main__: Iter 55, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,063 [DEBUG] __main__: Iter 56, turn UNI, randomaction: pddn
+2018-02-12 01:41:03,063 [DEBUG] __main__: Iter 56, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,064 [DEBUG] __main__: Iter 57, turn UNI, randomaction: lpdn
+2018-02-12 01:41:03,064 [DEBUG] __main__: Iter 57, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,064 [DEBUG] __main__: Iter 58, turn UNI, randomaction: rdrn
+2018-02-12 01:41:03,064 [DEBUG] __main__: Iter 58, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,065 [DEBUG] __main__: Iter 59, turn UNI, randomaction: rppn
+2018-02-12 01:41:03,065 [DEBUG] __main__: Iter 59, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,065 [DEBUG] __main__: Iter 60, turn UNI, randomaction: pprn
+2018-02-12 01:41:03,065 [DEBUG] __main__: Iter 60, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,066 [DEBUG] __main__: Iter 61, turn UNI, randomaction: pdpn
+2018-02-12 01:41:03,066 [DEBUG] __main__: Iter 61, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,066 [DEBUG] __main__: Iter 62, turn UNI, randomaction: ldrn
+2018-02-12 01:41:03,066 [DEBUG] __main__: Iter 62, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,067 [DEBUG] __main__: Iter 63, turn UNI, randomaction: rddn
+2018-02-12 01:41:03,067 [DEBUG] __main__: Iter 63, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,067 [DEBUG] __main__: Iter 64, turn UNI, randomaction: ddpn
+2018-02-12 01:41:03,067 [DEBUG] __main__: Iter 64, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,068 [DEBUG] __main__: Iter 65, turn UNI, randomaction: lldn
+2018-02-12 01:41:03,068 [DEBUG] __main__: Iter 65, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,068 [DEBUG] __main__: Iter 66, turn UNI, randomaction: rppn
+2018-02-12 01:41:03,068 [DEBUG] __main__: Iter 66, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,069 [DEBUG] __main__: Iter 67, turn UNI, randomaction: ddrn
+2018-02-12 01:41:03,069 [DEBUG] __main__: Iter 67, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,069 [DEBUG] __main__: Iter 68, turn UNI, randomaction: pdln
+2018-02-12 01:41:03,070 [DEBUG] __main__: Iter 68, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,070 [DEBUG] __main__: Iter 69, turn UNI, randomaction: rdrn
+2018-02-12 01:41:03,070 [DEBUG] __main__: Iter 69, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,071 [DEBUG] __main__: Iter 70, turn UNI, randomaction: pddn
+2018-02-12 01:41:03,071 [DEBUG] __main__: Iter 70, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,071 [DEBUG] __main__: Iter 71, turn UNI, randomaction: pdrn
+2018-02-12 01:41:03,071 [DEBUG] __main__: Iter 71, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,072 [DEBUG] __main__: Iter 72, turn UNI, randomaction: dlln
+2018-02-12 01:41:03,072 [DEBUG] __main__: Iter 72, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,072 [DEBUG] __main__: Iter 73, turn UNI, randomaction: rprn
+2018-02-12 01:41:03,072 [DEBUG] __main__: Iter 73, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,073 [DEBUG] __main__: Iter 74, turn UNI, randomaction: pdln
+2018-02-12 01:41:03,073 [DEBUG] __main__: Iter 74, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,074 [DEBUG] __main__: Iter 75, turn UNI, randomaction: rddn
+2018-02-12 01:41:03,074 [DEBUG] __main__: Iter 75, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,074 [DEBUG] __main__: Iter 76, turn UNI, randomaction: ppln
+2018-02-12 01:41:03,074 [DEBUG] __main__: Iter 76, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,075 [DEBUG] __main__: Iter 77, turn UNI, randomaction: lprn
+2018-02-12 01:41:03,075 [DEBUG] __main__: Iter 77, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,075 [DEBUG] __main__: Iter 78, turn UNI, randomaction: ldln
+2018-02-12 01:41:03,075 [DEBUG] __main__: Iter 78, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,076 [DEBUG] __main__: Iter 79, turn UNI, randomaction: rdpn
+2018-02-12 01:41:03,076 [DEBUG] __main__: Iter 79, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,076 [DEBUG] __main__: Iter 80, turn UNI, randomaction: rlln
+2018-02-12 01:41:03,076 [DEBUG] __main__: Iter 80, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,077 [DEBUG] __main__: Iter 81, turn UNI, randomaction: pdpn
+2018-02-12 01:41:03,077 [DEBUG] __main__: Iter 81, turn AIG, randomaction: nnnd
+2018-02-12 01:41:03,077 [DEBUG] __main__: Iter 82, turn UNI, randomaction: dpdn
+2018-02-12 01:41:03,077 [DEBUG] __main__: Iter 82, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,078 [DEBUG] __main__: Iter 83, turn UNI, randomaction: plrn
+2018-02-12 01:41:03,078 [DEBUG] __main__: Iter 83, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,078 [DEBUG] __main__: Iter 84, turn UNI, randomaction: ldln
+2018-02-12 01:41:03,078 [DEBUG] __main__: Iter 84, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,079 [DEBUG] __main__: Iter 85, turn UNI, randomaction: dppn
+2018-02-12 01:41:03,079 [DEBUG] __main__: Iter 85, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,079 [DEBUG] __main__: Iter 86, turn UNI, randomaction: rpdn
+2018-02-12 01:41:03,080 [DEBUG] __main__: Iter 86, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,080 [DEBUG] __main__: Iter 87, turn UNI, randomaction: dpln
+2018-02-12 01:41:03,080 [DEBUG] __main__: Iter 87, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,080 [DEBUG] __main__: Iter 88, turn UNI, randomaction: lpln
+2018-02-12 01:41:03,081 [DEBUG] __main__: Iter 88, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,081 [DEBUG] __main__: Iter 89, turn UNI, randomaction: lpdn
+2018-02-12 01:41:03,081 [DEBUG] __main__: Iter 89, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,081 [DEBUG] __main__: Iter 90, turn UNI, randomaction: rdrn
+2018-02-12 01:41:03,082 [DEBUG] __main__: Iter 90, turn AIG, randomaction: nnnr
+2018-02-12 01:41:03,082 [DEBUG] __main__: Iter 91, turn UNI, randomaction: llrn
+2018-02-12 01:41:03,082 [DEBUG] __main__: Iter 91, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,082 [DEBUG] __main__: Iter 92, turn UNI, randomaction: rpdn
+2018-02-12 01:41:03,083 [DEBUG] __main__: Iter 92, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,083 [DEBUG] __main__: Iter 93, turn UNI, randomaction: dpdn
+2018-02-12 01:41:03,083 [DEBUG] __main__: Iter 93, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,083 [DEBUG] __main__: Iter 94, turn UNI, randomaction: dldn
+2018-02-12 01:41:03,084 [DEBUG] __main__: Iter 94, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,084 [DEBUG] __main__: Iter 95, turn UNI, randomaction: llrn
+2018-02-12 01:41:03,084 [DEBUG] __main__: Iter 95, turn AIG, randomaction: nnnu
+2018-02-12 01:41:03,084 [DEBUG] __main__: Iter 96, turn UNI, randomaction: ldln
+2018-02-12 01:41:03,085 [DEBUG] __main__: Iter 96, turn AIG, randomaction: nnnl
+2018-02-12 01:41:03,085 [DEBUG] __main__: Iter 97, turn UNI, randomaction: ddpn
+2018-02-12 01:41:03,085 [DEBUG] __main__: Iter 97, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,085 [DEBUG] __main__: Iter 98, turn UNI, randomaction: ddln
+2018-02-12 01:41:03,086 [DEBUG] __main__: Iter 98, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,086 [DEBUG] __main__: Iter 99, turn UNI, randomaction: rlln
+2018-02-12 01:41:03,086 [DEBUG] __main__: Iter 99, turn AIG, randomaction: nnnp
+2018-02-12 01:41:03,087 [DEBUG] __main__: PASS: Test 2 passed. The random action generator works for both turns.
+2018-02-12 01:41:03,091 [DEBUG] __main__: PASS: After acting freewill, new state is [10 11 25 27 31 32 33 34 36 41 42 47 48 57 61 63 66 67 72 74 77 78 83 84 87
+ 88] with reward 0
+2018-02-12 01:41:03,091 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:41:06,013 [DEBUG] root: Reward returned for are.respond is 0 and new state is [10 11 25 27 31 32 33 34 36 41 42 47 48 57 61 63 66 67 72 74 77 78 83 84 87
+ 88]
+2018-02-12 01:43:19,204 [DEBUG] root: PASS: act_external with random action uppn and returned reward 0 with new state [10 11 25 27 31 32 33 34 36 41 42 47 48 57 61 63 66 67 72 73 74 77 78 84 87
+ 88]
+2018-02-12 01:43:27,163 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:43:27,574 [DEBUG] root: Random action's index is 5

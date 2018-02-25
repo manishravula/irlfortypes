@@ -1,0 +1,12 @@
+2018-02-18 01:39:09,793 [DEBUG] src.generate_init: creating agent with capacity 0.312463032133 vradius 0.734735794246 vangle 0.38689523618 type 2 loc [0 7]
+2018-02-18 01:39:09,793 [INFO] src.agents.agent_originaltypes: Created an agent with location [0 7], type 2, capacity 0.312463032133, view_radius 0.734735794246, view_angle 0.38689523618 in standard ranges
+2018-02-18 01:39:09,793 [INFO] src.agents.agent_originaltypes: Created an agent with location [0 7], type 2, capacity 0.312463032133, view_radius 0.734735794246, view_angle 0.38689523618 in standard ranges
+2018-02-18 01:39:09,794 [DEBUG] __main__: MCTSagent creation succeeded
+2018-02-18 01:39:09,794 [DEBUG] src.generate_init: creating agent with capacity 0.443357675091 vradius 0.264068750574 vangle 0.496649833433 type 2 loc [5 3]
+2018-02-18 01:39:09,795 [INFO] src.agents.agent_originaltypes: Created an agent with location [5 3], type 2, capacity 0.443357675091, view_radius 0.264068750574, view_angle 0.496649833433 in standard ranges
+2018-02-18 01:39:09,795 [DEBUG] src.generate_init: creating agent with capacity 0.448395729618 vradius 0.689035894312 vangle 0.544441160139 type 0 loc [0 1]
+2018-02-18 01:39:09,795 [INFO] src.agents.agent_originaltypes: Created an agent with location [0 1], type 0, capacity 0.448395729618, view_radius 0.689035894312, view_angle 0.544441160139 in standard ranges
+2018-02-18 01:39:09,795 [DEBUG] src.generate_init: creating agent with capacity 0.488471388979 vradius 0.442818724535 vangle 0.355464762894 type 0 loc [2 8]
+2018-02-18 01:39:09,796 [INFO] src.agents.agent_originaltypes: Created an agent with location [2 8], type 0, capacity 0.488471388979, view_radius 0.442818724535, view_angle 0.355464762894 in standard ranges
+2018-02-18 01:39:09,797 [DEBUG] src.generate_init: creating agent with capacity 0.2583979665 vradius 0.818810070729 vangle 0.303562792769 type 0 loc [3 1]
+2018-02-18 01:39:09,797 [INFO] src.agents.agent_originaltypes: Created an agent with location [3 1], type 0, capacity 0.2583979665, view_radius 0.818810070729, view_angle 0.303562792769 in standard ranges

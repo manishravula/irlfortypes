@@ -1,0 +1,1673 @@
+2018-02-12 01:53:47,939 [DEBUG] src.generate_init: creating agent with capacity 0.249731176995 vradius 0.191952294728 vangle 0.664386253566 type 1 loc [8 2]
+2018-02-12 01:53:47,940 [INFO] src.agent_originaltypes: Created an agent with location [8 2], type 1, capacity 0.249731176995, view_radius 0.191952294728, view_angle 0.664386253566 in standard ranges
+2018-02-12 01:53:47,940 [DEBUG] src.generate_init: creating agent with capacity 0.326731688557 vradius 0.350653013982 vangle 0.4263510534 type 0 loc [2 7]
+2018-02-12 01:53:47,940 [INFO] src.agent_originaltypes: Created an agent with location [2 7], type 0, capacity 0.326731688557, view_radius 0.350653013982, view_angle 0.4263510534 in standard ranges
+2018-02-12 01:53:47,941 [DEBUG] src.generate_init: creating agent with capacity 0.431999597107 vradius 0.707710859746 vangle 0.496433434988 type 2 loc [4 4]
+2018-02-12 01:53:47,941 [INFO] src.agent_originaltypes: Created an agent with location [4 4], type 2, capacity 0.431999597107, view_radius 0.707710859746, view_angle 0.496433434988 in standard ranges
+2018-02-12 01:53:47,941 [DEBUG] src.generate_init: creating agent with capacity 0.436784560358 vradius 0.27312501576 vangle 0.507071660977 type 0 loc [9 2]
+2018-02-12 01:53:47,941 [INFO] src.agent_originaltypes: Created an agent with location [9 2], type 0, capacity 0.436784560358, view_radius 0.27312501576, view_angle 0.507071660977 in standard ranges
+2018-02-12 01:53:47,945 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 26 31 33 34 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,946 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:47,946 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 26 31 33 34 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,948 [DEBUG] root: PASS: act_external with random action drrn and returned reward 0 with new state [11 18 25 31 33 34 41 43 44 46 47 51 52 54 63 64 66 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:47,948 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 25 31 33 34 41 43 44 46 47 51 52 54 63 64 66 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:47,949 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,950 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:47,950 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,951 [DEBUG] root: PASS: act_external with random action rpdn and returned reward 0 with new state [11 18 31 33 34 35 41 43 46 47 51 52 54 55 63 64 66 68 72 73 74 76 81 82 85]
+2018-02-12 01:53:47,952 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 46 47 51 52 54 55 63 64 66 68 72 73 74 76 81 82 85]
+2018-02-12 01:53:47,953 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,954 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:47,954 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,955 [DEBUG] root: PASS: act_external with random action dudn and returned reward 0 with new state [11 18 25 31 33 34 41 43 46 47 51 52 54 55 63 64 66 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:47,956 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 25 31 33 34 41 43 46 47 51 52 54 55 63 64 66 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:47,957 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,958 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:47,958 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,960 [DEBUG] root: PASS: act_external with random action pprn and returned reward 0 with new state [11 18 31 33 34 35 41 43 44 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,960 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 44 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,962 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,962 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:47,963 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,964 [DEBUG] root: PASS: act_external with random action dlrn and returned reward 0 with new state [11 18 31 33 34 36 41 43 44 46 47 51 52 54 63 64 66 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:47,965 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 36 41 43 44 46 47 51 52 54 63 64 66 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:47,966 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,966 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:47,967 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,968 [DEBUG] root: PASS: act_external with random action ppdn and returned reward 0 with new state [11 18 31 33 34 35 41 43 46 47 51 52 54 55 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,968 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 46 47 51 52 54 55 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,969 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,969 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:47,969 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,970 [DEBUG] root: PASS: act_external with random action lpdn and returned reward 0 with new state [11 18 31 33 34 35 41 43 46 47 51 52 54 55 63 64 66 68 72 73 74 76 81 84 85]
+2018-02-12 01:53:47,970 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 46 47 51 52 54 55 63 64 66 68 72 73 74 76 81 84 85]
+2018-02-12 01:53:47,971 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,971 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:47,971 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,972 [DEBUG] root: PASS: act_external with random action ppdn and returned reward 0 with new state [11 18 31 33 34 35 41 43 46 47 51 52 54 55 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,972 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 46 47 51 52 54 55 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,973 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,973 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:47,973 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,974 [DEBUG] root: PASS: act_external with random action dudn and returned reward 0 with new state [11 18 25 31 33 34 41 43 46 47 51 52 54 55 63 64 66 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:47,974 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 25 31 33 34 41 43 46 47 51 52 54 55 63 64 66 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:47,975 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,975 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:47,976 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,976 [DEBUG] root: PASS: act_external with random action rurn and returned reward 0 with new state [11 18 25 31 33 34 41 43 44 46 47 51 52 54 63 64 66 68 72 73 74 76 81 82 85]
+2018-02-12 01:53:47,977 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 25 31 33 34 41 43 44 46 47 51 52 54 63 64 66 68 72 73 74 76 81 82 85]
+2018-02-12 01:53:47,977 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,978 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:47,978 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,978 [DEBUG] root: PASS: act_external with random action lppn and returned reward 0 with new state [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 84 85]
+2018-02-12 01:53:47,979 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 84 85]
+2018-02-12 01:53:47,980 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 33 34 35 41 43 44 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,980 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:47,980 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 34 35 41 43 44 46 47 51 52 54 63 64 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,981 [DEBUG] root: PASS: act_external with random action ddpn and returned reward 0 with new state [11 18 31 33 34 41 43 44 45 46 47 51 52 54 63 64 66 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:47,982 [DEBUG] root: Reward returned for are.respond is 3 and new state is [11 18 31 33 41 44 45 46 47 51 52 63 64 66 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:47,983 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 33 41 43 46 47 51 52 55 63 64 66 68 72 73 74 76 81 85 93] with reward 0
+2018-02-12 01:53:47,983 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:47,983 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 41 43 46 47 51 52 55 63 64 66 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:47,984 [DEBUG] root: PASS: act_external with random action udln and returned reward 0 with new state [11 18 31 33 41 44 46 47 51 52 63 64 65 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,985 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 41 44 46 47 51 52 63 64 65 66 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,985 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 33 41 43 46 47 51 52 63 64 65 66 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,986 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:47,986 [DEBUG] root: Reward returned for are.respond is 2 and new state is [11 18 31 33 41 43 46 47 51 52 63 65 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,987 [DEBUG] root: PASS: act_external with random action pupn and returned reward 0 with new state [11 18 31 33 41 43 46 47 51 52 55 63 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,987 [DEBUG] root: Reward returned for are.respond is 1 and new state is [11 18 31 41 43 46 47 51 52 55 63 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,988 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 41 42 46 47 51 52 54 63 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,988 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:47,988 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 41 42 46 47 51 52 54 63 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,989 [DEBUG] root: PASS: act_external with random action lrun and returned reward 0 with new state [11 18 31 32 41 46 47 51 52 53 63 68 72 73 74 76 81 84 85]
+2018-02-12 01:53:47,989 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 32 41 46 47 51 52 53 63 68 72 73 74 76 81 84 85]
+2018-02-12 01:53:47,990 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 41 42 46 47 51 52 53 63 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,991 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:47,991 [DEBUG] root: Reward returned for are.respond is 1 and new state is [11 18 31 41 42 46 47 51 53 63 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,992 [DEBUG] root: PASS: act_external with random action plun and returned reward 0 with new state [11 18 31 32 41 46 47 51 54 63 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,993 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 32 41 46 47 51 54 63 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,993 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 41 42 46 47 51 53 63 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,994 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:47,994 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 41 42 46 47 51 53 63 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,995 [DEBUG] root: PASS: act_external with random action lldn and returned reward 0 with new state [11 18 31 41 46 47 51 52 54 63 68 72 73 74 76 81 84 85]
+2018-02-12 01:53:47,995 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 41 46 47 51 52 54 63 68 72 73 74 76 81 84 85]
+2018-02-12 01:53:47,996 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 41 46 47 51 53 62 63 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,996 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:47,996 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 41 46 47 51 53 62 63 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,997 [DEBUG] root: PASS: act_external with random action pprn and returned reward 0 with new state [11 18 31 41 46 47 51 53 61 63 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,997 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 41 46 47 51 53 61 63 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,998 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 41 43 46 47 51 62 63 68 72 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:47,998 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:47,998 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 41 43 46 47 51 62 63 68 72 73 74 76 81 83 85]
+2018-02-12 01:53:47,999 [DEBUG] root: PASS: act_external with random action duun and returned reward 0 with new state [11 18 31 33 41 46 47 51 52 63 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:47,999 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 33 41 46 47 51 52 63 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:48,000 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 31 32 41 46 47 51 62 63 68 72 73 74 76 81 85 93] with reward 0
+2018-02-12 01:53:48,000 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,000 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 31 32 41 46 47 51 62 63 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:48,001 [DEBUG] root: PASS: act_external with random action lurn and returned reward 0 with new state [11 18 22 31 41 46 47 51 61 63 68 72 73 74 76 81 85 94]
+2018-02-12 01:53:48,002 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 22 31 41 46 47 51 61 63 68 72 73 74 76 81 85 94]
+2018-02-12 01:53:48,003 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 21 31 41 46 47 51 62 63 68 72 73 74 76 81 85 95] with reward 0
+2018-02-12 01:53:48,003 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,004 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 21 31 41 46 47 51 62 63 68 72 73 74 76 81 85 95]
+2018-02-12 01:53:48,005 [DEBUG] root: PASS: act_external with random action rprn and returned reward 0 with new state [11 18 21 31 41 46 47 51 61 63 68 72 73 74 76 81 85 94]
+2018-02-12 01:53:48,005 [DEBUG] root: Reward returned for are.respond is 2 and new state is [18 21 41 46 47 51 61 63 68 72 73 74 76 81 85 94]
+2018-02-12 01:53:48,007 [DEBUG] __main__: PASS: After acting freewill, new state is [18 31 41 46 47 51 62 63 68 72 73 74 76 81 85 93] with reward 0
+2018-02-12 01:53:48,007 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,007 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 31 41 46 47 51 62 63 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:48,008 [DEBUG] root: PASS: act_external with random action pupn and returned reward 0 with new state [18 21 41 46 47 51 62 63 68 72 73 74 76 81 85 93]
+2018-02-12 01:53:48,009 [DEBUG] root: Reward returned for are.respond is 2 and new state is [18 21 41 46 47 51 62 68 73 74 76 81 85 93]
+2018-02-12 01:53:48,009 [DEBUG] __main__: PASS: After acting freewill, new state is [18 31 41 46 47 51 52 68 73 74 76 81 85 93] with reward 0
+2018-02-12 01:53:48,010 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,010 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 31 41 46 47 51 52 68 73 74 76 81 85 93]
+2018-02-12 01:53:48,011 [DEBUG] root: PASS: act_external with random action ulun and returned reward 0 with new state [18 32 41 42 46 47 51 68 73 74 76 81 83 85]
+2018-02-12 01:53:48,011 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 32 41 42 46 47 51 68 73 74 76 81 83 85]
+2018-02-12 01:53:48,012 [DEBUG] __main__: PASS: After acting freewill, new state is [18 31 41 42 46 47 51 68 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:48,013 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,013 [DEBUG] root: Reward returned for are.respond is 1 and new state is [18 31 42 46 47 51 68 73 74 76 81 83 85]
+2018-02-12 01:53:48,015 [DEBUG] root: PASS: act_external with random action lpln and returned reward 0 with new state [18 31 43 46 47 51 68 73 74 76 81 84 85]
+2018-02-12 01:53:48,015 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 31 43 46 47 51 68 73 74 76 81 84 85]
+2018-02-12 01:53:48,016 [DEBUG] __main__: PASS: After acting freewill, new state is [18 41 46 47 51 53 68 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:48,016 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,017 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 41 46 47 51 53 68 73 74 76 81 83 85]
+2018-02-12 01:53:48,018 [DEBUG] root: PASS: act_external with random action prdn and returned reward 0 with new state [18 40 46 47 51 63 68 73 74 76 81 83 85]
+2018-02-12 01:53:48,018 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 40 46 47 51 63 68 73 74 76 81 83 85]
+2018-02-12 01:53:48,019 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 50 51 62 68 73 74 76 81 83 85] with reward 0
+2018-02-12 01:53:48,019 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,020 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 50 51 62 68 73 74 76 81 83 85]
+2018-02-12 01:53:48,020 [DEBUG] root: PASS: act_external with random action ruun and returned reward 0 with new state [18 40 46 47 51 52 68 73 74 76 81 82 85]
+2018-02-12 01:53:48,021 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 40 46 47 51 52 68 73 74 76 81 82 85]
+2018-02-12 01:53:48,022 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 50 51 62 68 73 74 76 81 82 85] with reward 0
+2018-02-12 01:53:48,022 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,022 [DEBUG] root: Reward returned for are.respond is 1 and new state is [18 46 47 50 51 62 68 73 74 76 82 85]
+2018-02-12 01:53:48,024 [DEBUG] root: PASS: act_external with random action udun and returned reward 0 with new state [18 46 47 51 52 60 68 72 73 74 76 85]
+2018-02-12 01:53:48,024 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 52 60 68 72 73 74 76 85]
+2018-02-12 01:53:48,025 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 53 61 68 72 73 74 76 85] with reward 0
+2018-02-12 01:53:48,025 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,026 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 53 61 68 72 73 74 76 85]
+2018-02-12 01:53:48,026 [DEBUG] root: PASS: act_external with random action udrn and returned reward 0 with new state [18 46 47 51 52 62 68 71 73 74 76 85]
+2018-02-12 01:53:48,027 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 52 62 68 71 73 74 76 85]
+2018-02-12 01:53:48,028 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 53 68 70 72 73 74 76 85] with reward 0
+2018-02-12 01:53:48,028 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,028 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 53 68 70 72 73 74 76 85]
+2018-02-12 01:53:48,029 [DEBUG] root: PASS: act_external with random action rppn and returned reward 0 with new state [18 46 47 51 53 68 70 71 73 74 76 85]
+2018-02-12 01:53:48,029 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 53 68 70 71 73 74 76 85]
+2018-02-12 01:53:48,030 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 54 68 72 73 74 76 80 85] with reward 0
+2018-02-12 01:53:48,030 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,031 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 54 68 72 73 74 76 80 85]
+2018-02-12 01:53:48,032 [DEBUG] root: PASS: act_external with random action rprn and returned reward 0 with new state [18 46 47 51 53 68 71 73 74 76 80 85]
+2018-02-12 01:53:48,032 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 53 68 71 73 74 76 80 85]
+2018-02-12 01:53:48,034 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 54 68 72 73 74 76 81 85] with reward 0
+2018-02-12 01:53:48,034 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,034 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 54 68 72 73 74 76 81 85]
+2018-02-12 01:53:48,035 [DEBUG] root: PASS: act_external with random action rdpn and returned reward 0 with new state [18 46 47 51 54 68 71 73 74 76 85 91]
+2018-02-12 01:53:48,036 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 54 68 71 73 74 76 85 91]
+2018-02-12 01:53:48,037 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 64 68 72 73 74 76 85 90] with reward 0
+2018-02-12 01:53:48,037 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,038 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 64 68 72 73 74 76 85 90]
+2018-02-12 01:53:48,039 [DEBUG] root: PASS: act_external with random action plrn and returned reward 0 with new state [18 46 47 51 63 68 72 73 74 76 85 91]
+2018-02-12 01:53:48,039 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 63 68 72 73 74 76 85 91]
+2018-02-12 01:53:48,040 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 64 68 72 73 74 76 85 91] with reward 0
+2018-02-12 01:53:48,041 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,041 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 64 68 72 73 74 76 85 91]
+2018-02-12 01:53:48,042 [DEBUG] root: PASS: act_external with random action ruln and returned reward 0 with new state [18 46 47 51 65 68 71 73 74 76 81 85]
+2018-02-12 01:53:48,042 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 65 68 71 73 74 76 81 85]
+2018-02-12 01:53:48,044 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 72 73 74 75 76 81 85] with reward 0
+2018-02-12 01:53:48,044 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,044 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 74 75 76 81 85]
+2018-02-12 01:53:48,045 [DEBUG] root: PASS: act_external with random action ppun and returned reward 0 with new state [18 46 47 51 65 68 72 73 74 76 81 85]
+2018-02-12 01:53:48,046 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 65 68 72 73 74 76 81 85]
+2018-02-12 01:53:48,047 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 72 73 74 75 76 82 85] with reward 0
+2018-02-12 01:53:48,047 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,048 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 74 75 76 82 85]
+2018-02-12 01:53:48,049 [DEBUG] root: PASS: act_external with random action plpn and returned reward 0 with new state [18 46 47 51 68 72 73 74 75 76 83 85]
+2018-02-12 01:53:48,050 [DEBUG] root: Reward returned for are.respond is 3 and new state is [18 46 47 51 68 72 73 75 83]
+2018-02-12 01:53:48,051 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 72 73 82 85] with reward 0
+2018-02-12 01:53:48,051 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,052 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 82 85]
+2018-02-12 01:53:48,053 [DEBUG] root: PASS: act_external with random action rldn and returned reward 0 with new state [18 46 47 51 68 71 73 83 95]
+2018-02-12 01:53:48,054 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 71 73 83 95]
+2018-02-12 01:53:48,055 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 72 73 82 96] with reward 0
+2018-02-12 01:53:48,055 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,056 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 82 96]
+2018-02-12 01:53:48,057 [DEBUG] root: PASS: act_external with random action pdrn and returned reward 0 with new state [18 46 47 51 68 72 73 92 95]
+2018-02-12 01:53:48,058 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 92 95]
+2018-02-12 01:53:48,059 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 72 73 91 95] with reward 0
+2018-02-12 01:53:48,060 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,060 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 91 95]
+2018-02-12 01:53:48,061 [DEBUG] root: PASS: act_external with random action rrln and returned reward 0 with new state [18 46 47 51 68 71 73 90 96]
+2018-02-12 01:53:48,062 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 71 73 90 96]
+2018-02-12 01:53:48,063 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 72 73 91 95] with reward 0
+2018-02-12 01:53:48,063 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,063 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 91 95]
+2018-02-12 01:53:48,064 [DEBUG] root: PASS: act_external with random action plln and returned reward 0 with new state [18 46 47 51 68 72 73 92 96]
+2018-02-12 01:53:48,065 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 92 96]
+2018-02-12 01:53:48,066 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 72 73 93 95] with reward 0
+2018-02-12 01:53:48,066 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,067 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 93 95]
+2018-02-12 01:53:48,068 [DEBUG] root: PASS: act_external with random action rprn and returned reward 0 with new state [18 46 47 51 68 71 73 93 94]
+2018-02-12 01:53:48,068 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 71 73 93 94]
+2018-02-12 01:53:48,069 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 72 73 93 95] with reward 0
+2018-02-12 01:53:48,069 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,069 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 93 95]
+2018-02-12 01:53:48,070 [DEBUG] root: PASS: act_external with random action ppln and returned reward 0 with new state [18 46 47 51 68 72 73 93 96]
+2018-02-12 01:53:48,070 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 93 96]
+2018-02-12 01:53:48,070 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 72 73 93 95] with reward 0
+2018-02-12 01:53:48,071 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,071 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 93 95]
+2018-02-12 01:53:48,071 [DEBUG] root: PASS: act_external with random action rurn and returned reward 0 with new state [18 46 47 51 68 71 73 83 94]
+2018-02-12 01:53:48,072 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 71 73 83 94]
+2018-02-12 01:53:48,072 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 72 73 82 94] with reward 0
+2018-02-12 01:53:48,072 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,073 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 82 94]
+2018-02-12 01:53:48,073 [DEBUG] root: PASS: act_external with random action pdln and returned reward 0 with new state [18 46 47 51 68 72 73 92 95]
+2018-02-12 01:53:48,073 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 92 95]
+2018-02-12 01:53:48,074 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 72 73 92 95] with reward 0
+2018-02-12 01:53:48,075 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,075 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 92 95]
+2018-02-12 01:53:48,076 [DEBUG] root: PASS: act_external with random action prun and returned reward 0 with new state [18 46 47 51 68 72 73 85 91]
+2018-02-12 01:53:48,076 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 85 91]
+2018-02-12 01:53:48,077 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 72 73 84 91] with reward 0
+2018-02-12 01:53:48,077 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,078 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 84 91]
+2018-02-12 01:53:48,079 [DEBUG] root: PASS: act_external with random action plrn and returned reward 0 with new state [18 46 47 51 68 72 73 83 92]
+2018-02-12 01:53:48,079 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 83 92]
+2018-02-12 01:53:48,080 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 72 73 82 92] with reward 0
+2018-02-12 01:53:48,080 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,081 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 82 92]
+2018-02-12 01:53:48,081 [DEBUG] root: PASS: act_external with random action rlpn and returned reward 0 with new state [18 46 47 51 68 71 73 82 93]
+2018-02-12 01:53:48,082 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 71 73 82 93]
+2018-02-12 01:53:48,083 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 72 73 81 93] with reward 0
+2018-02-12 01:53:48,083 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,083 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 73 81 93]
+2018-02-12 01:53:48,084 [DEBUG] root: PASS: act_external with random action dpun and returned reward 0 with new state [18 46 47 51 68 71 73 82 93]
+2018-02-12 01:53:48,084 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 71 73 82 93]
+2018-02-12 01:53:48,085 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 68 73 83 92] with reward 0
+2018-02-12 01:53:48,085 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,085 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 73 83 92]
+2018-02-12 01:53:48,086 [DEBUG] root: PASS: act_external with random action rpln and returned reward 0 with new state [18 46 47 51 62 68 73 83 91]
+2018-02-12 01:53:48,086 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 68 73 83 91]
+2018-02-12 01:53:48,087 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 52 68 73 82 91] with reward 0
+2018-02-12 01:53:48,087 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,088 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 52 68 73 82 91]
+2018-02-12 01:53:48,089 [DEBUG] root: PASS: act_external with random action rrln and returned reward 0 with new state [18 46 47 51 53 68 73 81 90]
+2018-02-12 01:53:48,089 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 53 68 73 81 90]
+2018-02-12 01:53:48,090 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 52 68 73 81 91] with reward 0
+2018-02-12 01:53:48,090 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,091 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 52 68 73 81 91]
+2018-02-12 01:53:48,092 [DEBUG] root: PASS: act_external with random action ruun and returned reward 0 with new state [18 42 46 47 51 68 71 73 90]
+2018-02-12 01:53:48,092 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 42 46 47 51 68 71 73 90]
+2018-02-12 01:53:48,093 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 52 68 70 73 91] with reward 0
+2018-02-12 01:53:48,093 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,094 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 52 68 70 73 91]
+2018-02-12 01:53:48,095 [DEBUG] root: PASS: act_external with random action uldn and returned reward 0 with new state [18 46 47 51 62 68 71 73 81]
+2018-02-12 01:53:48,095 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 68 71 73 81]
+2018-02-12 01:53:48,096 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 68 70 73 82] with reward 0
+2018-02-12 01:53:48,097 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,097 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 70 73 82]
+2018-02-12 01:53:48,098 [DEBUG] root: PASS: act_external with random action rdln and returned reward 0 with new state [18 46 47 51 62 68 73 80 81]
+2018-02-12 01:53:48,098 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 68 73 80 81]
+2018-02-12 01:53:48,099 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 52 68 70 73 82] with reward 0
+2018-02-12 01:53:48,100 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,100 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 52 68 70 73 82]
+2018-02-12 01:53:48,101 [DEBUG] root: PASS: act_external with random action dlpn and returned reward 0 with new state [18 46 47 51 52 68 71 73 92]
+2018-02-12 01:53:48,102 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 52 68 71 73 92]
+2018-02-12 01:53:48,103 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 52 68 72 73 92] with reward 0
+2018-02-12 01:53:48,103 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,103 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 52 68 72 73 92]
+2018-02-12 01:53:48,104 [DEBUG] root: PASS: act_external with random action lrdn and returned reward 0 with new state [18 46 47 51 62 68 71 73 93]
+2018-02-12 01:53:48,105 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 68 71 73 93]
+2018-02-12 01:53:48,106 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 68 71 73 92] with reward 0
+2018-02-12 01:53:48,106 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,107 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 71 73 92]
+2018-02-12 01:53:48,108 [DEBUG] root: PASS: act_external with random action prln and returned reward 0 with new state [18 46 47 51 62 68 70 73 92]
+2018-02-12 01:53:48,108 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 68 70 73 92]
+2018-02-12 01:53:48,109 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 70 72 73 93] with reward 0
+2018-02-12 01:53:48,110 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,110 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 70 72 73 93]
+2018-02-12 01:53:48,111 [DEBUG] root: PASS: act_external with random action lpun and returned reward 0 with new state [18 46 47 51 62 68 70 73 94]
+2018-02-12 01:53:48,112 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 68 70 73 94]
+2018-02-12 01:53:48,113 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 60 63 68 73 94] with reward 0
+2018-02-12 01:53:48,113 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,114 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 60 63 68 73 94]
+2018-02-12 01:53:48,115 [DEBUG] root: PASS: act_external with random action ruun and returned reward 0 with new state [18 46 47 50 51 53 68 73 93]
+2018-02-12 01:53:48,115 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 50 51 53 68 73 93]
+2018-02-12 01:53:48,116 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 50 51 52 68 73 94] with reward 0
+2018-02-12 01:53:48,117 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,117 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 50 51 52 68 73 94]
+2018-02-12 01:53:48,118 [DEBUG] root: PASS: act_external with random action ppln and returned reward 0 with new state [18 46 47 50 51 53 68 73 94]
+2018-02-12 01:53:48,119 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 50 51 53 68 73 94]
+2018-02-12 01:53:48,120 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 50 51 52 68 73 94] with reward 0
+2018-02-12 01:53:48,120 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,120 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 50 51 52 68 73 94]
+2018-02-12 01:53:48,121 [DEBUG] root: PASS: act_external with random action pdpn and returned reward 0 with new state [18 46 47 51 52 60 68 73 94]
+2018-02-12 01:53:48,122 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 52 60 68 73 94]
+2018-02-12 01:53:48,123 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 50 51 52 68 73 93] with reward 0
+2018-02-12 01:53:48,123 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,124 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 50 51 52 68 73 93]
+2018-02-12 01:53:48,125 [DEBUG] root: PASS: act_external with random action puln and returned reward 0 with new state [18 40 46 47 51 53 68 73 93]
+2018-02-12 01:53:48,125 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 40 46 47 51 53 68 73 93]
+2018-02-12 01:53:48,126 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 50 51 63 68 73 94] with reward 0
+2018-02-12 01:53:48,126 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,127 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 50 51 63 68 73 94]
+2018-02-12 01:53:48,128 [DEBUG] root: PASS: act_external with random action ldrn and returned reward 0 with new state [18 46 47 51 60 62 68 73 95]
+2018-02-12 01:53:48,129 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 60 62 68 73 95]
+2018-02-12 01:53:48,130 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 68 70 73 96] with reward 0
+2018-02-12 01:53:48,130 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,130 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 70 73 96]
+2018-02-12 01:53:48,131 [DEBUG] root: PASS: act_external with random action upln and returned reward 0 with new state [18 46 47 51 62 68 70 73 86]
+2018-02-12 01:53:48,132 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 68 70 73 86]
+2018-02-12 01:53:48,133 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 63 68 70 73 85] with reward 0
+2018-02-12 01:53:48,133 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,133 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 63 68 70 73 85]
+2018-02-12 01:53:48,134 [DEBUG] root: PASS: act_external with random action dlrn and returned reward 0 with new state [18 46 47 51 62 68 71 73 95]
+2018-02-12 01:53:48,135 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 68 71 73 95]
+2018-02-12 01:53:48,136 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 63 68 70 73 85] with reward 0
+2018-02-12 01:53:48,136 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,136 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 63 68 70 73 85]
+2018-02-12 01:53:48,137 [DEBUG] root: PASS: act_external with random action upln and returned reward 0 with new state [18 46 47 51 64 68 70 73 75]
+2018-02-12 01:53:48,137 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 64 68 70 73 75]
+2018-02-12 01:53:48,138 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 63 68 70 73 74] with reward 0
+2018-02-12 01:53:48,138 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,139 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 63 68 70 73 74]
+2018-02-12 01:53:48,139 [DEBUG] root: PASS: act_external with random action pdpn and returned reward 0 with new state [18 46 47 51 63 68 73 74 80]
+2018-02-12 01:53:48,140 [DEBUG] root: Reward returned for are.respond is 1 and new state is [18 46 47 51 63 68 74 80]
+2018-02-12 01:53:48,141 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 62 68 81 84] with reward 0
+2018-02-12 01:53:48,141 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,142 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 68 81 84]
+2018-02-12 01:53:48,143 [DEBUG] root: PASS: act_external with random action lrdn and returned reward 0 with new state [18 46 47 51 68 72 80 85]
+2018-02-12 01:53:48,143 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 72 80 85]
+2018-02-12 01:53:48,144 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 71 80 85] with reward 0
+2018-02-12 01:53:48,144 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,145 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 71 80 85]
+2018-02-12 01:53:48,146 [DEBUG] root: PASS: act_external with random action llpn and returned reward 0 with new state [18 46 47 51 68 71 81 86]
+2018-02-12 01:53:48,146 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 71 81 86]
+2018-02-12 01:53:48,147 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 71 82 87] with reward 0
+2018-02-12 01:53:48,148 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,148 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 71 82 87]
+2018-02-12 01:53:48,149 [DEBUG] root: PASS: act_external with random action udun and returned reward 0 with new state [18 46 47 51 61 68 77 92]
+2018-02-12 01:53:48,150 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 77 92]
+2018-02-12 01:53:48,151 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 68 78 92] with reward 0
+2018-02-12 01:53:48,151 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,152 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 78 92]
+2018-02-12 01:53:48,153 [DEBUG] root: PASS: act_external with random action dprn and returned reward 0 with new state [18 46 47 51 60 68 88 92]
+2018-02-12 01:53:48,153 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 60 68 88 92]
+2018-02-12 01:53:48,154 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 68 89 92] with reward 0
+2018-02-12 01:53:48,154 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,155 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 89 92]
+2018-02-12 01:53:48,156 [DEBUG] root: PASS: act_external with random action urln and returned reward 0 with new state [18 46 47 51 62 68 79 91]
+2018-02-12 01:53:48,156 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 68 79 91]
+2018-02-12 01:53:48,157 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 62 68 89 90] with reward 0
+2018-02-12 01:53:48,157 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,157 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 68 89 90]
+2018-02-12 01:53:48,158 [DEBUG] root: PASS: act_external with random action uurn and returned reward 0 with new state [18 46 47 51 61 68 79 80]
+2018-02-12 01:53:48,159 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 79 80]
+2018-02-12 01:53:48,160 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 68 78 80] with reward 0
+2018-02-12 01:53:48,160 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,160 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 78 80]
+2018-02-12 01:53:48,161 [DEBUG] root: PASS: act_external with random action ddpn and returned reward 0 with new state [18 46 47 51 61 68 88 90]
+2018-02-12 01:53:48,161 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 88 90]
+2018-02-12 01:53:48,162 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 68 80 98] with reward 0
+2018-02-12 01:53:48,163 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,163 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 80 98]
+2018-02-12 01:53:48,164 [DEBUG] root: PASS: act_external with random action rlpn and returned reward 0 with new state [18 46 47 51 61 68 81 97]
+2018-02-12 01:53:48,165 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 81 97]
+2018-02-12 01:53:48,165 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 68 82 98] with reward 0
+2018-02-12 01:53:48,166 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,166 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 82 98]
+2018-02-12 01:53:48,167 [DEBUG] root: PASS: act_external with random action uudn and returned reward 0 with new state [18 46 47 51 68 71 72 88]
+2018-02-12 01:53:48,168 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 71 72 88]
+2018-02-12 01:53:48,169 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 68 82 98] with reward 0
+2018-02-12 01:53:48,169 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,169 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 82 98]
+2018-02-12 01:53:48,170 [DEBUG] root: PASS: act_external with random action pdln and returned reward 0 with new state [18 46 47 51 62 68 92 98]
+2018-02-12 01:53:48,171 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 68 92 98]
+2018-02-12 01:53:48,172 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 68 92 98] with reward 0
+2018-02-12 01:53:48,172 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,173 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 92 98]
+2018-02-12 01:53:48,174 [DEBUG] root: PASS: act_external with random action llrn and returned reward 0 with new state [18 46 47 51 60 68 93 99]
+2018-02-12 01:53:48,174 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 60 68 93 99]
+2018-02-12 01:53:48,175 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 70 92 98] with reward 0
+2018-02-12 01:53:48,176 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,176 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 70 92 98]
+2018-02-12 01:53:48,177 [DEBUG] root: PASS: act_external with random action uudn and returned reward 0 with new state [18 46 47 51 68 80 82 88]
+2018-02-12 01:53:48,178 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 80 82 88]
+2018-02-12 01:53:48,179 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 70 81 89] with reward 0
+2018-02-12 01:53:48,179 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,179 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 70 81 89]
+2018-02-12 01:53:48,180 [DEBUG] root: PASS: act_external with random action rpun and returned reward 0 with new state [18 46 47 51 60 68 81 88]
+2018-02-12 01:53:48,181 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 60 68 81 88]
+2018-02-12 01:53:48,182 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 70 71 89] with reward 0
+2018-02-12 01:53:48,182 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,183 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 70 71 89]
+2018-02-12 01:53:48,184 [DEBUG] root: PASS: act_external with random action udpn and returned reward 0 with new state [18 46 47 51 68 70 79 81]
+2018-02-12 01:53:48,185 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 70 79 81]
+2018-02-12 01:53:48,186 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 68 71 79 80] with reward 0
+2018-02-12 01:53:48,186 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,186 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 68 71 79 80]
+2018-02-12 01:53:48,187 [DEBUG] root: PASS: act_external with random action rlun and returned reward 0 with new state [18 46 47 51 61 68 78 81]
+2018-02-12 01:53:48,188 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 68 78 81]
+2018-02-12 01:53:48,189 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 68 71 78] with reward 0
+2018-02-12 01:53:48,189 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,190 [DEBUG] root: Reward returned for are.respond is 1 and new state is [18 46 47 51 61 71 78]
+2018-02-12 01:53:48,191 [DEBUG] root: PASS: act_external with random action lppn and returned reward 0 with new state [18 46 47 51 61 71 79]
+2018-02-12 01:53:48,192 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 71 79]
+2018-02-12 01:53:48,193 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 69 72] with reward 0
+2018-02-12 01:53:48,194 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,194 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 69 72]
+2018-02-12 01:53:48,195 [DEBUG] root: PASS: act_external with random action plrn and returned reward 0 with new state [18 46 47 51 60 69 73]
+2018-02-12 01:53:48,196 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 60 69 73]
+2018-02-12 01:53:48,197 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 60 69 73] with reward 0
+2018-02-12 01:53:48,198 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,198 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 60 69 73]
+2018-02-12 01:53:48,200 [DEBUG] root: PASS: act_external with random action drdn and returned reward 0 with new state [18 46 47 51 70 72 79]
+2018-02-12 01:53:48,200 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 70 72 79]
+2018-02-12 01:53:48,202 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 60 73 78] with reward 0
+2018-02-12 01:53:48,202 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,202 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 60 73 78]
+2018-02-12 01:53:48,203 [DEBUG] root: PASS: act_external with random action ldln and returned reward 0 with new state [18 46 47 51 61 79 83]
+2018-02-12 01:53:48,204 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 79 83]
+2018-02-12 01:53:48,205 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 78 83] with reward 0
+2018-02-12 01:53:48,206 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,206 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 78 83]
+2018-02-12 01:53:48,208 [DEBUG] root: PASS: act_external with random action lpln and returned reward 0 with new state [18 46 47 51 62 79 83]
+2018-02-12 01:53:48,208 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 79 83]
+2018-02-12 01:53:48,210 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 62 73 89] with reward 0
+2018-02-12 01:53:48,210 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,210 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 73 89]
+2018-02-12 01:53:48,212 [DEBUG] root: PASS: act_external with random action prrn and returned reward 0 with new state [18 46 47 51 61 72 89]
+2018-02-12 01:53:48,212 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 72 89]
+2018-02-12 01:53:48,214 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 71 79] with reward 0
+2018-02-12 01:53:48,214 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,214 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 71 79]
+2018-02-12 01:53:48,216 [DEBUG] root: PASS: act_external with random action ddrn and returned reward 0 with new state [18 46 47 51 60 81 89]
+2018-02-12 01:53:48,217 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 60 81 89]
+2018-02-12 01:53:48,218 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 61 71 88] with reward 0
+2018-02-12 01:53:48,218 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,219 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 71 88]
+2018-02-12 01:53:48,220 [DEBUG] root: PASS: act_external with random action rrln and returned reward 0 with new state [18 46 47 51 62 70 87]
+2018-02-12 01:53:48,221 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 70 87]
+2018-02-12 01:53:48,222 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 72 80 87] with reward 0
+2018-02-12 01:53:48,223 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,223 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 72 80 87]
+2018-02-12 01:53:48,224 [DEBUG] root: PASS: act_external with random action dlun and returned reward 0 with new state [18 46 47 51 62 81 97]
+2018-02-12 01:53:48,225 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 81 97]
+2018-02-12 01:53:48,226 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 72 82 96] with reward 0
+2018-02-12 01:53:48,226 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,226 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 72 82 96]
+2018-02-12 01:53:48,227 [DEBUG] root: PASS: act_external with random action ulln and returned reward 0 with new state [18 46 47 51 73 83 86]
+2018-02-12 01:53:48,227 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 73 83 86]
+2018-02-12 01:53:48,228 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 82 83 86] with reward 0
+2018-02-12 01:53:48,228 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,229 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 82 83 86]
+2018-02-12 01:53:48,229 [DEBUG] root: PASS: act_external with random action pdpn and returned reward 0 with new state [18 46 47 51 83 86 92]
+2018-02-12 01:53:48,230 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 83 86 92]
+2018-02-12 01:53:48,230 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 83 86 93] with reward 0
+2018-02-12 01:53:48,231 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,231 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 83 86 93]
+2018-02-12 01:53:48,231 [DEBUG] root: PASS: act_external with random action dpun and returned reward 0 with new state [18 46 47 51 73 93 96]
+2018-02-12 01:53:48,232 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 73 93 96]
+2018-02-12 01:53:48,233 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 83 86 92] with reward 0
+2018-02-12 01:53:48,233 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,233 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 83 86 92]
+2018-02-12 01:53:48,234 [DEBUG] root: PASS: act_external with random action durn and returned reward 0 with new state [18 46 47 51 82 96]
+2018-02-12 01:53:48,234 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 82 96]
+2018-02-12 01:53:48,235 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 92 97] with reward 0
+2018-02-12 01:53:48,235 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,235 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 92 97]
+2018-02-12 01:53:48,236 [DEBUG] root: PASS: act_external with random action pppn and returned reward 0 with new state [18 46 47 51 92 97]
+2018-02-12 01:53:48,236 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 92 97]
+2018-02-12 01:53:48,237 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 93 98] with reward 0
+2018-02-12 01:53:48,237 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,237 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 93 98]
+2018-02-12 01:53:48,238 [DEBUG] root: PASS: act_external with random action urrn and returned reward 0 with new state [18 46 47 51 81 88 92]
+2018-02-12 01:53:48,238 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 81 88 92]
+2018-02-12 01:53:48,239 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 78 81 92] with reward 0
+2018-02-12 01:53:48,239 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,239 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 78 81 92]
+2018-02-12 01:53:48,240 [DEBUG] root: PASS: act_external with random action lpln and returned reward 0 with new state [18 46 47 51 79 82 92]
+2018-02-12 01:53:48,240 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 79 82 92]
+2018-02-12 01:53:48,241 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 69 82 91] with reward 0
+2018-02-12 01:53:48,241 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,241 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 69 82 91]
+2018-02-12 01:53:48,242 [DEBUG] root: PASS: act_external with random action dldn and returned reward 0 with new state [18 46 47 51 79 92]
+2018-02-12 01:53:48,243 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 79 92]
+2018-02-12 01:53:48,243 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 89 93] with reward 0
+2018-02-12 01:53:48,243 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,244 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 89 93]
+2018-02-12 01:53:48,244 [DEBUG] root: PASS: act_external with random action ppun and returned reward 0 with new state [18 46 47 51 83 89]
+2018-02-12 01:53:48,245 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 83 89]
+2018-02-12 01:53:48,245 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 83 89 91] with reward 0
+2018-02-12 01:53:48,245 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,246 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 83 89 91]
+2018-02-12 01:53:48,246 [DEBUG] root: PASS: act_external with random action urln and returned reward 0 with new state [18 46 47 51 79 84 90]
+2018-02-12 01:53:48,247 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 79 84 90]
+2018-02-12 01:53:48,247 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 74 78 80] with reward 0
+2018-02-12 01:53:48,248 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,248 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 74 78 80]
+2018-02-12 01:53:48,249 [DEBUG] root: PASS: act_external with random action pupn and returned reward 0 with new state [18 46 47 51 70 74 78]
+2018-02-12 01:53:48,249 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 70 74 78]
+2018-02-12 01:53:48,250 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 70 73 88] with reward 0
+2018-02-12 01:53:48,250 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,250 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 70 73 88]
+2018-02-12 01:53:48,251 [DEBUG] root: PASS: act_external with random action dlln and returned reward 0 with new state [18 46 47 51 71 74 98]
+2018-02-12 01:53:48,251 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 71 74 98]
+2018-02-12 01:53:48,252 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 72 73 97] with reward 0
+2018-02-12 01:53:48,252 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,252 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 72 73 97]
+2018-02-12 01:53:48,253 [DEBUG] root: PASS: act_external with random action urln and returned reward 0 with new state [18 46 47 51 71 74 87]
+2018-02-12 01:53:48,253 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 71 74 87]
+2018-02-12 01:53:48,254 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 72 73 87] with reward 0
+2018-02-12 01:53:48,254 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,254 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 72 73 87]
+2018-02-12 01:53:48,255 [DEBUG] root: PASS: act_external with random action drdn and returned reward 0 with new state [18 46 47 51 71 83 97]
+2018-02-12 01:53:48,255 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 71 83 97]
+2018-02-12 01:53:48,256 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 81 83 97] with reward 0
+2018-02-12 01:53:48,256 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,256 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 81 83 97]
+2018-02-12 01:53:48,257 [DEBUG] root: PASS: act_external with random action prrn and returned reward 0 with new state [18 46 47 51 80 82 97]
+2018-02-12 01:53:48,257 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 80 82 97]
+2018-02-12 01:53:48,258 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 80 92 96] with reward 0
+2018-02-12 01:53:48,258 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,258 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 80 92 96]
+2018-02-12 01:53:48,259 [DEBUG] root: PASS: act_external with random action upln and returned reward 0 with new state [18 46 47 51 80 86 93]
+2018-02-12 01:53:48,259 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 80 86 93]
+2018-02-12 01:53:48,260 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 80 87 93] with reward 0
+2018-02-12 01:53:48,260 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,260 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 80 87 93]
+2018-02-12 01:53:48,261 [DEBUG] root: PASS: act_external with random action dlrn and returned reward 0 with new state [18 46 47 51 81 92 97]
+2018-02-12 01:53:48,261 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 81 92 97]
+2018-02-12 01:53:48,262 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 81 93 96] with reward 0
+2018-02-12 01:53:48,262 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,262 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 81 93 96]
+2018-02-12 01:53:48,263 [DEBUG] root: PASS: act_external with random action lpln and returned reward 0 with new state [18 46 47 51 81 94 97]
+2018-02-12 01:53:48,263 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 81 94 97]
+2018-02-12 01:53:48,264 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 71 84 87] with reward 0
+2018-02-12 01:53:48,264 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,265 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 71 84 87]
+2018-02-12 01:53:48,265 [DEBUG] root: PASS: act_external with random action upln and returned reward 0 with new state [18 46 47 51 71 77 85]
+2018-02-12 01:53:48,266 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 71 77 85]
+2018-02-12 01:53:48,266 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 67 70 84] with reward 0
+2018-02-12 01:53:48,266 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,267 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 67 70 84]
+2018-02-12 01:53:48,267 [DEBUG] root: PASS: act_external with random action uprn and returned reward 0 with new state [18 46 47 51 57 70 83]
+2018-02-12 01:53:48,268 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 57 70 83]
+2018-02-12 01:53:48,269 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 57 70 73] with reward 0
+2018-02-12 01:53:48,269 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,269 [DEBUG] root: Reward returned for are.respond is 1 and new state is [18 46 51 57 70 73]
+2018-02-12 01:53:48,270 [DEBUG] root: PASS: act_external with random action upln and returned reward 0 with new state [18 46 47 51 70 74]
+2018-02-12 01:53:48,270 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 70 74]
+2018-02-12 01:53:48,271 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 73 80] with reward 0
+2018-02-12 01:53:48,271 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,271 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 73 80]
+2018-02-12 01:53:48,271 [DEBUG] root: PASS: act_external with random action upun and returned reward 0 with new state [18 37 46 51 63 80]
+2018-02-12 01:53:48,272 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 37 46 51 63 80]
+2018-02-12 01:53:48,272 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 62 70] with reward 0
+2018-02-12 01:53:48,272 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,273 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 62 70]
+2018-02-12 01:53:48,273 [DEBUG] root: PASS: act_external with random action pprn and returned reward 0 with new state [18 46 47 51 61 70]
+2018-02-12 01:53:48,274 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 61 70]
+2018-02-12 01:53:48,274 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 51 60 71] with reward 0
+2018-02-12 01:53:48,274 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,274 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 51 60 71]
+2018-02-12 01:53:48,275 [DEBUG] root: PASS: act_external with random action drun and returned reward 0 with new state [18 46 50 51 57 70]
+2018-02-12 01:53:48,275 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 50 51 57 70]
+2018-02-12 01:53:48,276 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 50 51 57 60] with reward 0
+2018-02-12 01:53:48,276 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,276 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 50 51 57 60]
+2018-02-12 01:53:48,277 [DEBUG] root: PASS: act_external with random action ddpn and returned reward 0 with new state [18 46 50 51 67 70]
+2018-02-12 01:53:48,277 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 50 51 67 70]
+2018-02-12 01:53:48,278 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 50 51 60 68] with reward 0
+2018-02-12 01:53:48,278 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,278 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 50 51 60 68]
+2018-02-12 01:53:48,279 [DEBUG] root: PASS: act_external with random action rlun and returned reward 0 with new state [18 40 46 51 61 67]
+2018-02-12 01:53:48,279 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 40 46 51 61 67]
+2018-02-12 01:53:48,280 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 50 51 61 66] with reward 0
+2018-02-12 01:53:48,280 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,280 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 50 51 61 66]
+2018-02-12 01:53:48,281 [DEBUG] root: PASS: act_external with random action lpun and returned reward 0 with new state [18 40 46 51 61 67]
+2018-02-12 01:53:48,282 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 40 46 51 61 67]
+2018-02-12 01:53:48,282 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 50 51 61 68] with reward 0
+2018-02-12 01:53:48,283 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,283 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 50 51 61 68]
+2018-02-12 01:53:48,283 [DEBUG] root: PASS: act_external with random action rdun and returned reward 0 with new state [18 40 46 51 67 71]
+2018-02-12 01:53:48,284 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 40 46 51 67 71]
+2018-02-12 01:53:48,284 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 50 51 77 81] with reward 0
+2018-02-12 01:53:48,284 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,285 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 50 51 77 81]
+2018-02-12 01:53:48,285 [DEBUG] root: PASS: act_external with random action ulpn and returned reward 0 with new state [18 46 50 51 67 82]
+2018-02-12 01:53:48,285 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 50 51 67 82]
+2018-02-12 01:53:48,286 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 50 51 66 72] with reward 0
+2018-02-12 01:53:48,286 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,286 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 50 51 66 72]
+2018-02-12 01:53:48,287 [DEBUG] root: PASS: act_external with random action ludn and returned reward 0 with new state [18 46 51 60 62 67]
+2018-02-12 01:53:48,287 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 60 62 67]
+2018-02-12 01:53:48,288 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 57 61 62] with reward 0
+2018-02-12 01:53:48,288 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,288 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 57 61 62]
+2018-02-12 01:53:48,289 [DEBUG] root: PASS: act_external with random action dlrn and returned reward 0 with new state [18 46 51 60 63 67]
+2018-02-12 01:53:48,289 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 60 63 67]
+2018-02-12 01:53:48,290 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 62 70 77] with reward 0
+2018-02-12 01:53:48,290 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,290 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 62 70 77]
+2018-02-12 01:53:48,291 [DEBUG] root: PASS: act_external with random action dldn and returned reward 0 with new state [18 46 51 63 80 87]
+2018-02-12 01:53:48,291 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 63 80 87]
+2018-02-12 01:53:48,291 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 62 81 97] with reward 0
+2018-02-12 01:53:48,292 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,292 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 62 81 97]
+2018-02-12 01:53:48,293 [DEBUG] root: PASS: act_external with random action rlpn and returned reward 0 with new state [18 46 51 63 81 96]
+2018-02-12 01:53:48,293 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 63 81 96]
+2018-02-12 01:53:48,294 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 62 82 95] with reward 0
+2018-02-12 01:53:48,294 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,294 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 62 82 95]
+2018-02-12 01:53:48,294 [DEBUG] root: PASS: act_external with random action ulun and returned reward 0 with new state [18 46 51 63 72 85]
+2018-02-12 01:53:48,295 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 63 72 85]
+2018-02-12 01:53:48,295 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 62 71 84] with reward 0
+2018-02-12 01:53:48,295 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,296 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 62 71 84]
+2018-02-12 01:53:48,296 [DEBUG] root: PASS: act_external with random action rrrn and returned reward 0 with new state [18 46 51 61 70 83]
+2018-02-12 01:53:48,296 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 61 70 83]
+2018-02-12 01:53:48,297 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 60 61 84] with reward 0
+2018-02-12 01:53:48,297 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,297 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 60 61 84]
+2018-02-12 01:53:48,298 [DEBUG] root: PASS: act_external with random action uldn and returned reward 0 with new state [18 46 51 62 70 74]
+2018-02-12 01:53:48,299 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 62 70 74]
+2018-02-12 01:53:48,299 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 62 64 70] with reward 0
+2018-02-12 01:53:48,299 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,299 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 62 64 70]
+2018-02-12 01:53:48,300 [DEBUG] root: PASS: act_external with random action ulln and returned reward 0 with new state [18 46 51 54 63 71]
+2018-02-12 01:53:48,300 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 54 63 71]
+2018-02-12 01:53:48,301 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 55 62 81] with reward 0
+2018-02-12 01:53:48,301 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,301 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 55 62 81]
+2018-02-12 01:53:48,302 [DEBUG] root: PASS: act_external with random action dldn and returned reward 0 with new state [18 46 51 63 65 91]
+2018-02-12 01:53:48,302 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 63 65 91]
+2018-02-12 01:53:48,303 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 62 65 90] with reward 0
+2018-02-12 01:53:48,303 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,303 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 62 65 90]
+2018-02-12 01:53:48,304 [DEBUG] root: PASS: act_external with random action plln and returned reward 0 with new state [18 46 51 63 65 91]
+2018-02-12 01:53:48,304 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 63 65 91]
+2018-02-12 01:53:48,305 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 62 75 90] with reward 0
+2018-02-12 01:53:48,305 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,305 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 62 75 90]
+2018-02-12 01:53:48,306 [DEBUG] root: PASS: act_external with random action pdln and returned reward 0 with new state [18 46 51 72 75 91]
+2018-02-12 01:53:48,306 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 72 75 91]
+2018-02-12 01:53:48,306 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 65 72 90] with reward 0
+2018-02-12 01:53:48,306 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,307 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 65 72 90]
+2018-02-12 01:53:48,307 [DEBUG] root: PASS: act_external with random action udln and returned reward 0 with new state [18 46 51 55 82 91]
+2018-02-12 01:53:48,307 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 55 82 91]
+2018-02-12 01:53:48,308 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 51 72 92] with reward 0
+2018-02-12 01:53:48,308 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,308 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 51 72 92]
+2018-02-12 01:53:48,309 [DEBUG] root: PASS: act_external with random action upun and returned reward 0 with new state [18 35 46 51 72 82]
+2018-02-12 01:53:48,310 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 35 46 51 72 82]
+2018-02-12 01:53:48,310 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 51 62 72] with reward 0
+2018-02-12 01:53:48,310 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,310 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 51 62 72]
+2018-02-12 01:53:48,311 [DEBUG] root: PASS: act_external with random action dldn and returned reward 0 with new state [18 46 51 55 63 82]
+2018-02-12 01:53:48,311 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 55 63 82]
+2018-02-12 01:53:48,312 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 56 62 82] with reward 0
+2018-02-12 01:53:48,312 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,312 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 56 62 82]
+2018-02-12 01:53:48,313 [DEBUG] root: PASS: act_external with random action luln and returned reward 0 with new state [18 46 51 52 57 83]
+2018-02-12 01:53:48,313 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 52 57 83]
+2018-02-12 01:53:48,314 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 52 58 73] with reward 0
+2018-02-12 01:53:48,314 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,314 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 52 58 73]
+2018-02-12 01:53:48,314 [DEBUG] root: PASS: act_external with random action purn and returned reward 0 with new state [18 42 46 51 58 72]
+2018-02-12 01:53:48,315 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 42 46 51 58 72]
+2018-02-12 01:53:48,315 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 52 57 62] with reward 0
+2018-02-12 01:53:48,315 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,316 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 52 57 62]
+2018-02-12 01:53:48,316 [DEBUG] root: PASS: act_external with random action pppn and returned reward 0 with new state [18 46 51 52 57 62]
+2018-02-12 01:53:48,316 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 52 57 62]
+2018-02-12 01:53:48,317 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 51 52 58 61] with reward 0
+2018-02-12 01:53:48,317 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,317 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 51 52 58 61]
+2018-02-12 01:53:48,318 [DEBUG] root: PASS: act_external with random action lppn and returned reward 0 with new state [18 46 51 52 59 61]
+2018-02-12 01:53:48,318 [DEBUG] root: Reward returned for are.respond is 1 and new state is [18 46 52 59 61]
+2018-02-12 01:53:48,319 [DEBUG] __main__: PASS: After acting freewill, new state is [18 42 46 58 62] with reward 0
+2018-02-12 01:53:48,319 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,320 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 42 46 58 62]
+2018-02-12 01:53:48,320 [DEBUG] root: PASS: act_external with random action dudn and returned reward 0 with new state [18 32 46 68 72]
+2018-02-12 01:53:48,321 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 32 46 68 72]
+2018-02-12 01:53:48,321 [DEBUG] __main__: PASS: After acting freewill, new state is [18 22 46 73 78] with reward 0
+2018-02-12 01:53:48,321 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,322 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 22 46 73 78]
+2018-02-12 01:53:48,322 [DEBUG] root: PASS: act_external with random action rlln and returned reward 0 with new state [18 23 46 74 77]
+2018-02-12 01:53:48,323 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 23 46 74 77]
+2018-02-12 01:53:48,323 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 46 64 87] with reward 0
+2018-02-12 01:53:48,323 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,324 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 23 46 64 87]
+2018-02-12 01:53:48,324 [DEBUG] root: PASS: act_external with random action ddln and returned reward 0 with new state [18 33 46 65 97]
+2018-02-12 01:53:48,325 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 33 46 65 97]
+2018-02-12 01:53:48,325 [DEBUG] __main__: PASS: After acting freewill, new state is [18 34 46 75 98] with reward 0
+2018-02-12 01:53:48,326 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,326 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 34 46 75 98]
+2018-02-12 01:53:48,326 [DEBUG] root: PASS: act_external with random action lpln and returned reward 0 with new state [18 34 46 76 99]
+2018-02-12 01:53:48,327 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 34 46 76 99]
+2018-02-12 01:53:48,327 [DEBUG] __main__: PASS: After acting freewill, new state is [18 35 46 75 98] with reward 0
+2018-02-12 01:53:48,327 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,328 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 35 46 75 98]
+2018-02-12 01:53:48,328 [DEBUG] root: PASS: act_external with random action ulrn and returned reward 0 with new state [18 36 46 74 88]
+2018-02-12 01:53:48,329 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 36 46 74 88]
+2018-02-12 01:53:48,329 [DEBUG] __main__: PASS: After acting freewill, new state is [18 36 46 64 89] with reward 0
+2018-02-12 01:53:48,329 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,329 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 36 46 64 89]
+2018-02-12 01:53:48,330 [DEBUG] root: PASS: act_external with random action dudn and returned reward 0 with new state [18 26 46 74 99]
+2018-02-12 01:53:48,330 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 26 46 74 99]
+2018-02-12 01:53:48,331 [DEBUG] __main__: PASS: After acting freewill, new state is [18 36 46 64 99] with reward 0
+2018-02-12 01:53:48,331 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,331 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 36 46 64 99]
+2018-02-12 01:53:48,332 [DEBUG] root: PASS: act_external with random action urln and returned reward 0 with new state [18 35 46 65 89]
+2018-02-12 01:53:48,332 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 35 46 65 89]
+2018-02-12 01:53:48,333 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 65 88] with reward 0
+2018-02-12 01:53:48,333 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,333 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 65 88]
+2018-02-12 01:53:48,333 [DEBUG] root: PASS: act_external with random action pppn and returned reward 0 with new state [18 45 46 65 88]
+2018-02-12 01:53:48,334 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 65 88]
+2018-02-12 01:53:48,334 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 55 88] with reward 0
+2018-02-12 01:53:48,335 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,335 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 55 88]
+2018-02-12 01:53:48,335 [DEBUG] root: PASS: act_external with random action duln and returned reward 0 with new state [18 35 46 56 98]
+2018-02-12 01:53:48,336 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 35 46 56 98]
+2018-02-12 01:53:48,336 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 56 97] with reward 0
+2018-02-12 01:53:48,336 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,337 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 56 97]
+2018-02-12 01:53:48,337 [DEBUG] root: PASS: act_external with random action rrrn and returned reward 0 with new state [18 44 46 55 96]
+2018-02-12 01:53:48,337 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 44 46 55 96]
+2018-02-12 01:53:48,338 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 56 95] with reward 0
+2018-02-12 01:53:48,338 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,338 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 56 95]
+2018-02-12 01:53:48,339 [DEBUG] root: PASS: act_external with random action updn and returned reward 0 with new state [18 45 46 66 85]
+2018-02-12 01:53:48,339 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 66 85]
+2018-02-12 01:53:48,340 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 75 76] with reward 0
+2018-02-12 01:53:48,340 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,340 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 75 76]
+2018-02-12 01:53:48,341 [DEBUG] root: PASS: act_external with random action udpn and returned reward 0 with new state [18 46 55 65 76]
+2018-02-12 01:53:48,341 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 55 65 76]
+2018-02-12 01:53:48,341 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 66 77] with reward 0
+2018-02-12 01:53:48,342 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,342 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 66 77]
+2018-02-12 01:53:48,342 [DEBUG] root: PASS: act_external with random action drln and returned reward 0 with new state [18 44 46 76 78]
+2018-02-12 01:53:48,343 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 44 46 76 78]
+2018-02-12 01:53:48,343 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 66 79] with reward 0
+2018-02-12 01:53:48,343 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,343 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 66 79]
+2018-02-12 01:53:48,344 [DEBUG] root: PASS: act_external with random action pppn and returned reward 0 with new state [18 45 46 66 79]
+2018-02-12 01:53:48,344 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 66 79]
+2018-02-12 01:53:48,345 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 65 78] with reward 0
+2018-02-12 01:53:48,345 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,345 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 65 78]
+2018-02-12 01:53:48,346 [DEBUG] root: PASS: act_external with random action luln and returned reward 0 with new state [18 35 46 66 79]
+2018-02-12 01:53:48,346 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 35 46 66 79]
+2018-02-12 01:53:48,347 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 69 76] with reward 0
+2018-02-12 01:53:48,347 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,347 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 69 76]
+2018-02-12 01:53:48,348 [DEBUG] root: PASS: act_external with random action dppn and returned reward 0 with new state [18 45 46 69 86]
+2018-02-12 01:53:48,348 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 69 86]
+2018-02-12 01:53:48,348 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 68 85] with reward 0
+2018-02-12 01:53:48,349 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,349 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 68 85]
+2018-02-12 01:53:48,349 [DEBUG] root: PASS: act_external with random action pdpn and returned reward 0 with new state [18 46 55 68 85]
+2018-02-12 01:53:48,350 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 55 68 85]
+2018-02-12 01:53:48,350 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 65 67 84] with reward 0
+2018-02-12 01:53:48,350 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,351 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 65 67 84]
+2018-02-12 01:53:48,351 [DEBUG] root: PASS: act_external with random action prln and returned reward 0 with new state [18 46 64 68 84]
+2018-02-12 01:53:48,351 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 64 68 84]
+2018-02-12 01:53:48,352 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 65 78 94] with reward 0
+2018-02-12 01:53:48,352 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,352 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 65 78 94]
+2018-02-12 01:53:48,353 [DEBUG] root: PASS: act_external with random action ppun and returned reward 0 with new state [18 46 65 68 94]
+2018-02-12 01:53:48,353 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 65 68 94]
+2018-02-12 01:53:48,354 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 58 65 94] with reward 0
+2018-02-12 01:53:48,354 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,354 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 58 65 94]
+2018-02-12 01:53:48,355 [DEBUG] root: PASS: act_external with random action plrn and returned reward 0 with new state [18 46 57 66 94]
+2018-02-12 01:53:48,355 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 57 66 94]
+2018-02-12 01:53:48,356 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 65 84] with reward 0
+2018-02-12 01:53:48,356 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,356 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 65 84]
+2018-02-12 01:53:48,356 [DEBUG] root: PASS: act_external with random action duun and returned reward 0 with new state [18 37 46 55 94]
+2018-02-12 01:53:48,357 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 37 46 55 94]
+2018-02-12 01:53:48,357 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 55 84] with reward 0
+2018-02-12 01:53:48,357 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,358 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 55 84]
+2018-02-12 01:53:48,358 [DEBUG] root: PASS: act_external with random action rdln and returned reward 0 with new state [18 46 48 65 83]
+2018-02-12 01:53:48,358 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 48 65 83]
+2018-02-12 01:53:48,359 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 64 93] with reward 0
+2018-02-12 01:53:48,359 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,359 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 64 93]
+2018-02-12 01:53:48,360 [DEBUG] root: PASS: act_external with random action uppn and returned reward 0 with new state [18 46 47 64 83]
+2018-02-12 01:53:48,360 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 64 83]
+2018-02-12 01:53:48,361 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 47 65 73] with reward 0
+2018-02-12 01:53:48,361 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,361 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 47 65 73]
+2018-02-12 01:53:48,362 [DEBUG] root: PASS: act_external with random action rudn and returned reward 0 with new state [18 46 55 57 72]
+2018-02-12 01:53:48,362 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 55 57 72]
+2018-02-12 01:53:48,363 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 55 58 73] with reward 0
+2018-02-12 01:53:48,363 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,363 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 55 58 73]
+2018-02-12 01:53:48,364 [DEBUG] root: PASS: act_external with random action lrln and returned reward 0 with new state [18 46 54 59 74]
+2018-02-12 01:53:48,364 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 54 59 74]
+2018-02-12 01:53:48,365 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 55 58 75] with reward 0
+2018-02-12 01:53:48,365 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,365 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 55 58 75]
+2018-02-12 01:53:48,366 [DEBUG] root: PASS: act_external with random action lrdn and returned reward 0 with new state [18 46 54 68 76]
+2018-02-12 01:53:48,366 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 54 68 76]
+2018-02-12 01:53:48,366 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 55 77 78] with reward 0
+2018-02-12 01:53:48,367 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,367 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 55 77 78]
+2018-02-12 01:53:48,367 [DEBUG] root: PASS: act_external with random action dppn and returned reward 0 with new state [18 46 55 78 87]
+2018-02-12 01:53:48,368 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 55 78 87]
+2018-02-12 01:53:48,369 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 54 79 97] with reward 0
+2018-02-12 01:53:48,369 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,369 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 54 79 97]
+2018-02-12 01:53:48,370 [DEBUG] root: PASS: act_external with random action updn and returned reward 0 with new state [18 46 54 87 89]
+2018-02-12 01:53:48,370 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 54 87 89]
+2018-02-12 01:53:48,370 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 55 79 87] with reward 0
+2018-02-12 01:53:48,371 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,371 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 55 79 87]
+2018-02-12 01:53:48,371 [DEBUG] root: PASS: act_external with random action purn and returned reward 0 with new state [18 45 46 78 87]
+2018-02-12 01:53:48,372 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 78 87]
+2018-02-12 01:53:48,372 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 68 77] with reward 0
+2018-02-12 01:53:48,372 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,372 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 68 77]
+2018-02-12 01:53:48,373 [DEBUG] root: PASS: act_external with random action rdln and returned reward 0 with new state [18 46 55 69 76]
+2018-02-12 01:53:48,373 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 55 69 76]
+2018-02-12 01:53:48,374 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 66 68] with reward 0
+2018-02-12 01:53:48,374 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,374 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 66 68]
+2018-02-12 01:53:48,375 [DEBUG] root: PASS: act_external with random action rrdn and returned reward 0 with new state [18 44 46 65 78]
+2018-02-12 01:53:48,375 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 44 46 65 78]
+2018-02-12 01:53:48,375 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 66 79] with reward 0
+2018-02-12 01:53:48,375 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,376 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 66 79]
+2018-02-12 01:53:48,376 [DEBUG] root: PASS: act_external with random action upun and returned reward 0 with new state [18 45 46 56 69]
+2018-02-12 01:53:48,376 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 46 56 69]
+2018-02-12 01:53:48,377 [DEBUG] __main__: PASS: After acting freewill, new state is [18 45 46 56 68] with reward 0
+2018-02-12 01:53:48,377 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,377 [DEBUG] root: Reward returned for are.respond is 1 and new state is [18 45 56 68]
+2018-02-12 01:53:48,378 [DEBUG] root: PASS: act_external with random action uddn and returned reward 0 with new state [18 46 55 78]
+2018-02-12 01:53:48,378 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 55 78]
+2018-02-12 01:53:48,379 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 54 88] with reward 0
+2018-02-12 01:53:48,379 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,379 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 54 88]
+2018-02-12 01:53:48,380 [DEBUG] root: PASS: act_external with random action urln and returned reward 0 with new state [18 36 53 89]
+2018-02-12 01:53:48,380 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 36 53 89]
+2018-02-12 01:53:48,381 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 52 88] with reward 0
+2018-02-12 01:53:48,381 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,382 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 52 88]
+2018-02-12 01:53:48,383 [DEBUG] root: PASS: act_external with random action rprn and returned reward 0 with new state [18 45 52 87]
+2018-02-12 01:53:48,383 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 45 52 87]
+2018-02-12 01:53:48,384 [DEBUG] __main__: PASS: After acting freewill, new state is [18 42 46 86] with reward 0
+2018-02-12 01:53:48,384 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,384 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 42 46 86]
+2018-02-12 01:53:48,385 [DEBUG] root: PASS: act_external with random action rurn and returned reward 0 with new state [18 32 45 85]
+2018-02-12 01:53:48,385 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 32 45 85]
+2018-02-12 01:53:48,386 [DEBUG] __main__: PASS: After acting freewill, new state is [18 32 46 75] with reward 0
+2018-02-12 01:53:48,386 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,386 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 32 46 75]
+2018-02-12 01:53:48,387 [DEBUG] root: PASS: act_external with random action ppdn and returned reward 0 with new state [18 32 46 85]
+2018-02-12 01:53:48,387 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 32 46 85]
+2018-02-12 01:53:48,388 [DEBUG] __main__: PASS: After acting freewill, new state is [18 22 45 84] with reward 0
+2018-02-12 01:53:48,388 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,389 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 22 45 84]
+2018-02-12 01:53:48,390 [DEBUG] root: PASS: act_external with random action dldn and returned reward 0 with new state [18 23 55 94]
+2018-02-12 01:53:48,390 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 23 55 94]
+2018-02-12 01:53:48,391 [DEBUG] __main__: PASS: After acting freewill, new state is [13 18 54 93] with reward 0
+2018-02-12 01:53:48,391 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,391 [DEBUG] root: Reward returned for are.respond is 0 and new state is [13 18 54 93]
+2018-02-12 01:53:48,392 [DEBUG] root: PASS: act_external with random action puln and returned reward 0 with new state [ 3 18 54 94]
+2018-02-12 01:53:48,392 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 3 18 54 94]
+2018-02-12 01:53:48,393 [DEBUG] __main__: PASS: After acting freewill, new state is [ 2 18 54 93] with reward 0
+2018-02-12 01:53:48,394 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,394 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 2 18 54 93]
+2018-02-12 01:53:48,395 [DEBUG] root: PASS: act_external with random action dprn and returned reward 0 with new state [ 2 18 64 92]
+2018-02-12 01:53:48,395 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 2 18 64 92]
+2018-02-12 01:53:48,396 [DEBUG] __main__: PASS: After acting freewill, new state is [12 18 74 82] with reward 0
+2018-02-12 01:53:48,396 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,396 [DEBUG] root: Reward returned for are.respond is 0 and new state is [12 18 74 82]
+2018-02-12 01:53:48,397 [DEBUG] root: PASS: act_external with random action rlrn and returned reward 0 with new state [13 18 73 81]
+2018-02-12 01:53:48,398 [DEBUG] root: Reward returned for are.respond is 0 and new state is [13 18 73 81]
+2018-02-12 01:53:48,399 [DEBUG] __main__: PASS: After acting freewill, new state is [ 3 18 74 81] with reward 0
+2018-02-12 01:53:48,399 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,399 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 3 18 74 81]
+2018-02-12 01:53:48,400 [DEBUG] root: PASS: act_external with random action ddln and returned reward 0 with new state [13 18 82 84]
+2018-02-12 01:53:48,400 [DEBUG] root: Reward returned for are.respond is 0 and new state is [13 18 82 84]
+2018-02-12 01:53:48,401 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 82 83] with reward 0
+2018-02-12 01:53:48,401 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,401 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 23 82 83]
+2018-02-12 01:53:48,402 [DEBUG] root: PASS: act_external with random action lrun and returned reward 0 with new state [18 22 72 84]
+2018-02-12 01:53:48,403 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 22 72 84]
+2018-02-12 01:53:48,403 [DEBUG] __main__: PASS: After acting freewill, new state is [12 18 73 84] with reward 0
+2018-02-12 01:53:48,404 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,404 [DEBUG] root: Reward returned for are.respond is 0 and new state is [12 18 73 84]
+2018-02-12 01:53:48,405 [DEBUG] root: PASS: act_external with random action ldun and returned reward 0 with new state [18 22 63 85]
+2018-02-12 01:53:48,405 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 22 63 85]
+2018-02-12 01:53:48,407 [DEBUG] __main__: PASS: After acting freewill, new state is [18 32 73 84] with reward 0
+2018-02-12 01:53:48,407 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,407 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 32 73 84]
+2018-02-12 01:53:48,408 [DEBUG] root: PASS: act_external with random action lrln and returned reward 0 with new state [18 31 74 85]
+2018-02-12 01:53:48,408 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 31 74 85]
+2018-02-12 01:53:48,409 [DEBUG] __main__: PASS: After acting freewill, new state is [18 32 64 86] with reward 0
+2018-02-12 01:53:48,409 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,410 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 32 64 86]
+2018-02-12 01:53:48,410 [DEBUG] root: PASS: act_external with random action prdn and returned reward 0 with new state [18 31 74 86]
+2018-02-12 01:53:48,411 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 31 74 86]
+2018-02-12 01:53:48,411 [DEBUG] __main__: PASS: After acting freewill, new state is [18 41 84 87] with reward 0
+2018-02-12 01:53:48,412 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,412 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 41 84 87]
+2018-02-12 01:53:48,413 [DEBUG] root: PASS: act_external with random action llpn and returned reward 0 with new state [18 42 84 88]
+2018-02-12 01:53:48,413 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 42 84 88]
+2018-02-12 01:53:48,414 [DEBUG] __main__: PASS: After acting freewill, new state is [18 43 94 98] with reward 0
+2018-02-12 01:53:48,414 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,414 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 43 94 98]
+2018-02-12 01:53:48,415 [DEBUG] root: PASS: act_external with random action uprn and returned reward 0 with new state [18 43 88 93]
+2018-02-12 01:53:48,415 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 43 88 93]
+2018-02-12 01:53:48,416 [DEBUG] __main__: PASS: After acting freewill, new state is [18 53 89 94] with reward 0
+2018-02-12 01:53:48,416 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,416 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 53 89 94]
+2018-02-12 01:53:48,417 [DEBUG] root: PASS: act_external with random action drpn and returned reward 0 with new state [18 52 94 99]
+2018-02-12 01:53:48,417 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 52 94 99]
+2018-02-12 01:53:48,418 [DEBUG] __main__: PASS: After acting freewill, new state is [18 53 84 89] with reward 0
+2018-02-12 01:53:48,418 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,418 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 53 84 89]
+2018-02-12 01:53:48,419 [DEBUG] root: PASS: act_external with random action prln and returned reward 0 with new state [18 52 85 89]
+2018-02-12 01:53:48,419 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 52 85 89]
+2018-02-12 01:53:48,420 [DEBUG] __main__: PASS: After acting freewill, new state is [18 51 85 99] with reward 0
+2018-02-12 01:53:48,420 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,420 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 51 85 99]
+2018-02-12 01:53:48,421 [DEBUG] root: PASS: act_external with random action rddn and returned reward 0 with new state [18 61 95 98]
+2018-02-12 01:53:48,422 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 61 95 98]
+2018-02-12 01:53:48,422 [DEBUG] __main__: PASS: After acting freewill, new state is [18 51 96 98] with reward 0
+2018-02-12 01:53:48,422 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,423 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 51 96 98]
+2018-02-12 01:53:48,423 [DEBUG] root: PASS: act_external with random action urpn and returned reward 0 with new state [18 50 88 96]
+2018-02-12 01:53:48,424 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 50 88 96]
+2018-02-12 01:53:48,424 [DEBUG] __main__: PASS: After acting freewill, new state is [18 40 95 98] with reward 0
+2018-02-12 01:53:48,424 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,425 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 40 95 98]
+2018-02-12 01:53:48,425 [DEBUG] root: PASS: act_external with random action rlln and returned reward 0 with new state [18 41 96 97]
+2018-02-12 01:53:48,426 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 41 96 97]
+2018-02-12 01:53:48,426 [DEBUG] __main__: PASS: After acting freewill, new state is [18 40 95 97] with reward 0
+2018-02-12 01:53:48,427 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,427 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 40 95 97]
+2018-02-12 01:53:48,428 [DEBUG] root: PASS: act_external with random action rurn and returned reward 0 with new state [18 30 94 96]
+2018-02-12 01:53:48,428 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 30 94 96]
+2018-02-12 01:53:48,429 [DEBUG] __main__: PASS: After acting freewill, new state is [18 40 95 97] with reward 0
+2018-02-12 01:53:48,429 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,429 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 40 95 97]
+2018-02-12 01:53:48,430 [DEBUG] root: PASS: act_external with random action ulun and returned reward 0 with new state [18 41 85 87]
+2018-02-12 01:53:48,430 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 41 85 87]
+2018-02-12 01:53:48,431 [DEBUG] __main__: PASS: After acting freewill, new state is [18 31 84 88] with reward 0
+2018-02-12 01:53:48,431 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,431 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 31 84 88]
+2018-02-12 01:53:48,432 [DEBUG] root: PASS: act_external with random action lldn and returned reward 0 with new state [18 32 89 94]
+2018-02-12 01:53:48,432 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 32 89 94]
+2018-02-12 01:53:48,433 [DEBUG] __main__: PASS: After acting freewill, new state is [18 31 88 95] with reward 0
+2018-02-12 01:53:48,433 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,433 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 31 88 95]
+2018-02-12 01:53:48,434 [DEBUG] root: PASS: act_external with random action duln and returned reward 0 with new state [18 21 96 98]
+2018-02-12 01:53:48,434 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 21 96 98]
+2018-02-12 01:53:48,435 [DEBUG] __main__: PASS: After acting freewill, new state is [18 20 86 88] with reward 0
+2018-02-12 01:53:48,435 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,435 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 20 86 88]
+2018-02-12 01:53:48,436 [DEBUG] root: PASS: act_external with random action ldpn and returned reward 0 with new state [18 30 86 89]
+2018-02-12 01:53:48,436 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 30 86 89]
+2018-02-12 01:53:48,437 [DEBUG] __main__: PASS: After acting freewill, new state is [18 20 85 88] with reward 0
+2018-02-12 01:53:48,437 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,437 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 20 85 88]
+2018-02-12 01:53:48,438 [DEBUG] root: PASS: act_external with random action lddn and returned reward 0 with new state [18 30 89 95]
+2018-02-12 01:53:48,438 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 30 89 95]
+2018-02-12 01:53:48,439 [DEBUG] __main__: PASS: After acting freewill, new state is [18 30 95 99] with reward 0
+2018-02-12 01:53:48,439 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,440 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 30 95 99]
+2018-02-12 01:53:48,440 [DEBUG] root: PASS: act_external with random action rdrn and returned reward 0 with new state [18 40 94 98]
+2018-02-12 01:53:48,441 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 40 94 98]
+2018-02-12 01:53:48,441 [DEBUG] __main__: PASS: After acting freewill, new state is [18 30 88 95] with reward 0
+2018-02-12 01:53:48,441 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,442 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 30 88 95]
+2018-02-12 01:53:48,442 [DEBUG] root: PASS: act_external with random action uupn and returned reward 0 with new state [18 20 78 95]
+2018-02-12 01:53:48,443 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 20 78 95]
+2018-02-12 01:53:48,443 [DEBUG] __main__: PASS: After acting freewill, new state is [18 20 77 94] with reward 0
+2018-02-12 01:53:48,444 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,444 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 20 77 94]
+2018-02-12 01:53:48,445 [DEBUG] root: PASS: act_external with random action rlpn and returned reward 0 with new state [18 21 76 94]
+2018-02-12 01:53:48,445 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 21 76 94]
+2018-02-12 01:53:48,446 [DEBUG] __main__: PASS: After acting freewill, new state is [18 22 66 93] with reward 0
+2018-02-12 01:53:48,446 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,446 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 22 66 93]
+2018-02-12 01:53:48,447 [DEBUG] root: PASS: act_external with random action drln and returned reward 0 with new state [18 21 76 94]
+2018-02-12 01:53:48,447 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 21 76 94]
+2018-02-12 01:53:48,448 [DEBUG] __main__: PASS: After acting freewill, new state is [18 31 75 95] with reward 0
+2018-02-12 01:53:48,448 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,448 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 31 75 95]
+2018-02-12 01:53:48,449 [DEBUG] root: PASS: act_external with random action ddrn and returned reward 0 with new state [18 41 85 94]
+2018-02-12 01:53:48,449 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 41 85 94]
+2018-02-12 01:53:48,450 [DEBUG] __main__: PASS: After acting freewill, new state is [18 41 84 95] with reward 0
+2018-02-12 01:53:48,450 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,450 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 41 84 95]
+2018-02-12 01:53:48,451 [DEBUG] root: PASS: act_external with random action llpn and returned reward 0 with new state [18 42 84 96]
+2018-02-12 01:53:48,451 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 42 84 96]
+2018-02-12 01:53:48,452 [DEBUG] __main__: PASS: After acting freewill, new state is [18 43 74 96] with reward 0
+2018-02-12 01:53:48,452 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,452 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 43 74 96]
+2018-02-12 01:53:48,453 [DEBUG] root: PASS: act_external with random action urun and returned reward 0 with new state [18 42 64 86]
+2018-02-12 01:53:48,453 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 42 64 86]
+2018-02-12 01:53:48,454 [DEBUG] __main__: PASS: After acting freewill, new state is [18 52 65 85] with reward 0
+2018-02-12 01:53:48,454 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,455 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 52 65 85]
+2018-02-12 01:53:48,455 [DEBUG] root: PASS: act_external with random action rudn and returned reward 0 with new state [18 42 75 84]
+2018-02-12 01:53:48,456 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 42 75 84]
+2018-02-12 01:53:48,456 [DEBUG] __main__: PASS: After acting freewill, new state is [18 41 65 85] with reward 0
+2018-02-12 01:53:48,457 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,457 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 41 65 85]
+2018-02-12 01:53:48,458 [DEBUG] root: PASS: act_external with random action lpdn and returned reward 0 with new state [18 41 75 86]
+2018-02-12 01:53:48,458 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 41 75 86]
+2018-02-12 01:53:48,459 [DEBUG] __main__: PASS: After acting freewill, new state is [18 51 75 76] with reward 0
+2018-02-12 01:53:48,459 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,459 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 51 75 76]
+2018-02-12 01:53:48,460 [DEBUG] root: PASS: act_external with random action urrn and returned reward 0 with new state [18 50 66 74]
+2018-02-12 01:53:48,460 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 50 66 74]
+2018-02-12 01:53:48,461 [DEBUG] __main__: PASS: After acting freewill, new state is [18 50 76 84] with reward 0
+2018-02-12 01:53:48,461 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,461 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 50 76 84]
+2018-02-12 01:53:48,462 [DEBUG] root: PASS: act_external with random action plpn and returned reward 0 with new state [18 51 76 84]
+2018-02-12 01:53:48,462 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 51 76 84]
+2018-02-12 01:53:48,463 [DEBUG] __main__: PASS: After acting freewill, new state is [18 41 74 76] with reward 0
+2018-02-12 01:53:48,463 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,463 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 41 74 76]
+2018-02-12 01:53:48,464 [DEBUG] root: PASS: act_external with random action puun and returned reward 0 with new state [18 31 64 76]
+2018-02-12 01:53:48,464 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 31 64 76]
+2018-02-12 01:53:48,465 [DEBUG] __main__: PASS: After acting freewill, new state is [18 32 64 77] with reward 0
+2018-02-12 01:53:48,465 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,465 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 32 64 77]
+2018-02-12 01:53:48,466 [DEBUG] root: PASS: act_external with random action prpn and returned reward 0 with new state [18 31 64 77]
+2018-02-12 01:53:48,466 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 31 64 77]
+2018-02-12 01:53:48,467 [DEBUG] __main__: PASS: After acting freewill, new state is [18 21 64 78] with reward 0
+2018-02-12 01:53:48,467 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,467 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 21 64 78]
+2018-02-12 01:53:48,468 [DEBUG] root: PASS: act_external with random action ldln and returned reward 0 with new state [18 31 65 79]
+2018-02-12 01:53:48,468 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 31 65 79]
+2018-02-12 01:53:48,469 [DEBUG] __main__: PASS: After acting freewill, new state is [18 41 66 79] with reward 0
+2018-02-12 01:53:48,469 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,469 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 41 66 79]
+2018-02-12 01:53:48,470 [DEBUG] root: PASS: act_external with random action pupn and returned reward 0 with new state [18 31 66 79]
+2018-02-12 01:53:48,470 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 31 66 79]
+2018-02-12 01:53:48,471 [DEBUG] __main__: PASS: After acting freewill, new state is [18 32 56 89] with reward 0
+2018-02-12 01:53:48,471 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,471 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 32 56 89]
+2018-02-12 01:53:48,472 [DEBUG] root: PASS: act_external with random action durn and returned reward 0 with new state [18 22 55 99]
+2018-02-12 01:53:48,472 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 22 55 99]
+2018-02-12 01:53:48,473 [DEBUG] __main__: PASS: After acting freewill, new state is [18 21 54 89] with reward 0
+2018-02-12 01:53:48,473 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,474 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 21 54 89]
+2018-02-12 01:53:48,474 [DEBUG] root: PASS: act_external with random action pupn and returned reward 0 with new state [11 18 54 89]
+2018-02-12 01:53:48,475 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 54 89]
+2018-02-12 01:53:48,475 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 55 79] with reward 0
+2018-02-12 01:53:48,475 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,476 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 55 79]
+2018-02-12 01:53:48,476 [DEBUG] root: PASS: act_external with random action drln and returned reward 0 with new state [10 18 56 89]
+2018-02-12 01:53:48,477 [DEBUG] root: Reward returned for are.respond is 0 and new state is [10 18 56 89]
+2018-02-12 01:53:48,477 [DEBUG] __main__: PASS: After acting freewill, new state is [ 0 18 55 88] with reward 0
+2018-02-12 01:53:48,478 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,478 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 0 18 55 88]
+2018-02-12 01:53:48,479 [DEBUG] root: PASS: act_external with random action udln and returned reward 0 with new state [10 18 56 78]
+2018-02-12 01:53:48,479 [DEBUG] root: Reward returned for are.respond is 0 and new state is [10 18 56 78]
+2018-02-12 01:53:48,480 [DEBUG] __main__: PASS: After acting freewill, new state is [ 0 18 55 68] with reward 0
+2018-02-12 01:53:48,480 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,480 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 0 18 55 68]
+2018-02-12 01:53:48,481 [DEBUG] root: PASS: act_external with random action uldn and returned reward 0 with new state [ 1 18 58 65]
+2018-02-12 01:53:48,481 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 1 18 58 65]
+2018-02-12 01:53:48,482 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 59 66] with reward 0
+2018-02-12 01:53:48,482 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,482 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 59 66]
+2018-02-12 01:53:48,483 [DEBUG] root: PASS: act_external with random action urrn and returned reward 0 with new state [10 18 49 65]
+2018-02-12 01:53:48,483 [DEBUG] root: Reward returned for are.respond is 0 and new state is [10 18 49 65]
+2018-02-12 01:53:48,484 [DEBUG] __main__: PASS: After acting freewill, new state is [18 20 48 65] with reward 0
+2018-02-12 01:53:48,484 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,484 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 20 48 65]
+2018-02-12 01:53:48,485 [DEBUG] root: PASS: act_external with random action dlln and returned reward 0 with new state [18 21 58 66]
+2018-02-12 01:53:48,485 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 21 58 66]
+2018-02-12 01:53:48,486 [DEBUG] __main__: PASS: After acting freewill, new state is [18 20 57 65] with reward 0
+2018-02-12 01:53:48,486 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,486 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 20 57 65]
+2018-02-12 01:53:48,487 [DEBUG] root: PASS: act_external with random action uupn and returned reward 0 with new state [10 18 47 65]
+2018-02-12 01:53:48,487 [DEBUG] root: Reward returned for are.respond is 0 and new state is [10 18 47 65]
+2018-02-12 01:53:48,488 [DEBUG] __main__: PASS: After acting freewill, new state is [10 18 46 55] with reward 0
+2018-02-12 01:53:48,488 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,488 [DEBUG] root: Reward returned for are.respond is 0 and new state is [10 18 46 55]
+2018-02-12 01:53:48,489 [DEBUG] root: PASS: act_external with random action ruun and returned reward 0 with new state [ 0 18 45]
+2018-02-12 01:53:48,489 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 0 18 45]
+2018-02-12 01:53:48,490 [DEBUG] __main__: PASS: After acting freewill, new state is [10 18 46 55] with reward 0
+2018-02-12 01:53:48,490 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,490 [DEBUG] root: Reward returned for are.respond is 0 and new state is [10 18 46 55]
+2018-02-12 01:53:48,491 [DEBUG] root: PASS: act_external with random action dpdn and returned reward 0 with new state [10 18 56 65]
+2018-02-12 01:53:48,491 [DEBUG] root: Reward returned for are.respond is 0 and new state is [10 18 56 65]
+2018-02-12 01:53:48,492 [DEBUG] __main__: PASS: After acting freewill, new state is [ 0 18 56 64] with reward 0
+2018-02-12 01:53:48,492 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,493 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 0 18 56 64]
+2018-02-12 01:53:48,493 [DEBUG] root: PASS: act_external with random action dppn and returned reward 0 with new state [ 0 18 56 74]
+2018-02-12 01:53:48,494 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 0 18 56 74]
+2018-02-12 01:53:48,494 [DEBUG] __main__: PASS: After acting freewill, new state is [10 18 56 74] with reward 0
+2018-02-12 01:53:48,495 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,495 [DEBUG] root: Reward returned for are.respond is 0 and new state is [10 18 56 74]
+2018-02-12 01:53:48,496 [DEBUG] root: PASS: act_external with random action pupn and returned reward 0 with new state [ 0 18 56 74]
+2018-02-12 01:53:48,496 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 0 18 56 74]
+2018-02-12 01:53:48,497 [DEBUG] __main__: PASS: After acting freewill, new state is [10 18 46 74] with reward 0
+2018-02-12 01:53:48,497 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,497 [DEBUG] root: Reward returned for are.respond is 0 and new state is [10 18 46 74]
+2018-02-12 01:53:48,498 [DEBUG] root: PASS: act_external with random action rdln and returned reward 0 with new state [18 20 47 73]
+2018-02-12 01:53:48,498 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 20 47 73]
+2018-02-12 01:53:48,499 [DEBUG] __main__: PASS: After acting freewill, new state is [18 21 57 83] with reward 0
+2018-02-12 01:53:48,499 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,499 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 21 57 83]
+2018-02-12 01:53:48,500 [DEBUG] root: PASS: act_external with random action dprn and returned reward 0 with new state [18 21 56 93]
+2018-02-12 01:53:48,500 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 21 56 93]
+2018-02-12 01:53:48,501 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 55 93] with reward 0
+2018-02-12 01:53:48,501 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,501 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 55 93]
+2018-02-12 01:53:48,502 [DEBUG] root: PASS: act_external with random action lupn and returned reward 0 with new state [ 1 18 55 94]
+2018-02-12 01:53:48,502 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 1 18 55 94]
+2018-02-12 01:53:48,503 [DEBUG] __main__: PASS: After acting freewill, new state is [ 1 18 54 94] with reward 0
+2018-02-12 01:53:48,503 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,503 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 1 18 54 94]
+2018-02-12 01:53:48,504 [DEBUG] root: PASS: act_external with random action ppdn and returned reward 0 with new state [ 1 18 64 94]
+2018-02-12 01:53:48,504 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 1 18 64 94]
+2018-02-12 01:53:48,505 [DEBUG] __main__: PASS: After acting freewill, new state is [ 1 18 74 95] with reward 0
+2018-02-12 01:53:48,505 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,505 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 1 18 74 95]
+2018-02-12 01:53:48,506 [DEBUG] root: PASS: act_external with random action lrun and returned reward 0 with new state [ 0 18 64 96]
+2018-02-12 01:53:48,506 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 0 18 64 96]
+2018-02-12 01:53:48,507 [DEBUG] __main__: PASS: After acting freewill, new state is [ 1 18 74 86] with reward 0
+2018-02-12 01:53:48,507 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,507 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 1 18 74 86]
+2018-02-12 01:53:48,508 [DEBUG] root: PASS: act_external with random action ppln and returned reward 0 with new state [ 1 18 75 86]
+2018-02-12 01:53:48,508 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 1 18 75 86]
+2018-02-12 01:53:48,509 [DEBUG] __main__: PASS: After acting freewill, new state is [11 18 75 85] with reward 0
+2018-02-12 01:53:48,509 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,510 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 75 85]
+2018-02-12 01:53:48,510 [DEBUG] root: PASS: act_external with random action dppn and returned reward 0 with new state [11 18 75 95]
+2018-02-12 01:53:48,511 [DEBUG] root: Reward returned for are.respond is 0 and new state is [11 18 75 95]
+2018-02-12 01:53:48,511 [DEBUG] __main__: PASS: After acting freewill, new state is [10 18 65 85] with reward 0
+2018-02-12 01:53:48,512 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,512 [DEBUG] root: Reward returned for are.respond is 0 and new state is [10 18 65 85]
+2018-02-12 01:53:48,513 [DEBUG] root: PASS: act_external with random action pudn and returned reward 0 with new state [ 0 18 75 85]
+2018-02-12 01:53:48,513 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 0 18 75 85]
+2018-02-12 01:53:48,514 [DEBUG] __main__: PASS: After acting freewill, new state is [ 1 18 76 85] with reward 0
+2018-02-12 01:53:48,514 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,514 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 1 18 76 85]
+2018-02-12 01:53:48,515 [DEBUG] root: PASS: act_external with random action lldn and returned reward 0 with new state [ 2 18 86]
+2018-02-12 01:53:48,515 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 2 18 86]
+2018-02-12 01:53:48,516 [DEBUG] __main__: PASS: After acting freewill, new state is [ 3 18 85] with reward 0
+2018-02-12 01:53:48,516 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,516 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 3 18 85]
+2018-02-12 01:53:48,517 [DEBUG] root: PASS: act_external with random action udpn and returned reward 0 with new state [13 18 75]
+2018-02-12 01:53:48,517 [DEBUG] root: Reward returned for are.respond is 0 and new state is [13 18 75]
+2018-02-12 01:53:48,518 [DEBUG] __main__: PASS: After acting freewill, new state is [ 3 18 75 87] with reward 0
+2018-02-12 01:53:48,518 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,518 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 3 18 75 87]
+2018-02-12 01:53:48,519 [DEBUG] root: PASS: act_external with random action plln and returned reward 0 with new state [ 4 18 75 88]
+2018-02-12 01:53:48,519 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 4 18 75 88]
+2018-02-12 01:53:48,520 [DEBUG] __main__: PASS: After acting freewill, new state is [ 5 18 85 87] with reward 0
+2018-02-12 01:53:48,520 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,520 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 5 18 85 87]
+2018-02-12 01:53:48,521 [DEBUG] root: PASS: act_external with random action rdpn and returned reward 0 with new state [15 18 84 87]
+2018-02-12 01:53:48,521 [DEBUG] root: Reward returned for are.respond is 0 and new state is [15 18 84 87]
+2018-02-12 01:53:48,522 [DEBUG] __main__: PASS: After acting freewill, new state is [16 18 84 88] with reward 0
+2018-02-12 01:53:48,522 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,522 [DEBUG] root: Reward returned for are.respond is 0 and new state is [16 18 84 88]
+2018-02-12 01:53:48,523 [DEBUG] root: PASS: act_external with random action prun and returned reward 0 with new state [15 18 78 84]
+2018-02-12 01:53:48,523 [DEBUG] root: Reward returned for are.respond is 0 and new state is [15 18 78 84]
+2018-02-12 01:53:48,524 [DEBUG] __main__: PASS: After acting freewill, new state is [16 18 88 94] with reward 0
+2018-02-12 01:53:48,524 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,524 [DEBUG] root: Reward returned for are.respond is 0 and new state is [16 18 88 94]
+2018-02-12 01:53:48,525 [DEBUG] root: PASS: act_external with random action llln and returned reward 0 with new state [17 18 89 95]
+2018-02-12 01:53:48,525 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 89 95]
+2018-02-12 01:53:48,526 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 89 94] with reward 0
+2018-02-12 01:53:48,526 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,526 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 89 94]
+2018-02-12 01:53:48,527 [DEBUG] root: PASS: act_external with random action lrpn and returned reward 0 with new state [16 18 89 95]
+2018-02-12 01:53:48,527 [DEBUG] root: Reward returned for are.respond is 0 and new state is [16 18 89 95]
+2018-02-12 01:53:48,528 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 79 94] with reward 0
+2018-02-12 01:53:48,528 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,528 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 79 94]
+2018-02-12 01:53:48,529 [DEBUG] root: PASS: act_external with random action udrn and returned reward 0 with new state [18 27 78 84]
+2018-02-12 01:53:48,529 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 78 84]
+2018-02-12 01:53:48,530 [DEBUG] __main__: PASS: After acting freewill, new state is [18 28 78 84] with reward 0
+2018-02-12 01:53:48,530 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,530 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 78 84]
+2018-02-12 01:53:48,531 [DEBUG] root: PASS: act_external with random action rpdn and returned reward 0 with new state [18 28 83 88]
+2018-02-12 01:53:48,531 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 83 88]
+2018-02-12 01:53:48,532 [DEBUG] __main__: PASS: After acting freewill, new state is [18 28 89 93] with reward 0
+2018-02-12 01:53:48,532 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,532 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 89 93]
+2018-02-12 01:53:48,533 [DEBUG] root: PASS: act_external with random action ldun and returned reward 0 with new state [18 38 79 94]
+2018-02-12 01:53:48,533 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 38 79 94]
+2018-02-12 01:53:48,534 [DEBUG] __main__: PASS: After acting freewill, new state is [18 37 69 94] with reward 0
+2018-02-12 01:53:48,534 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,534 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 37 69 94]
+2018-02-12 01:53:48,535 [DEBUG] root: PASS: act_external with random action uldn and returned reward 0 with new state [18 38 79 84]
+2018-02-12 01:53:48,535 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 38 79 84]
+2018-02-12 01:53:48,536 [DEBUG] __main__: PASS: After acting freewill, new state is [18 28 69 85] with reward 0
+2018-02-12 01:53:48,536 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,536 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 69 85]
+2018-02-12 01:53:48,537 [DEBUG] root: PASS: act_external with random action rrun and returned reward 0 with new state [18 27 59 84]
+2018-02-12 01:53:48,537 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 59 84]
+2018-02-12 01:53:48,538 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 49 74] with reward 0
+2018-02-12 01:53:48,538 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,538 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 49 74]
+2018-02-12 01:53:48,539 [DEBUG] root: PASS: act_external with random action lpun and returned reward 0 with new state [17 18 39 75]
+2018-02-12 01:53:48,539 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 39 75]
+2018-02-12 01:53:48,540 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 49 75] with reward 0
+2018-02-12 01:53:48,540 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,540 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 49 75]
+2018-02-12 01:53:48,541 [DEBUG] root: PASS: act_external with random action drpn and returned reward 0 with new state [16 18 49 85]
+2018-02-12 01:53:48,541 [DEBUG] root: Reward returned for are.respond is 0 and new state is [16 18 49 85]
+2018-02-12 01:53:48,542 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 48 86] with reward 0
+2018-02-12 01:53:48,542 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,542 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 48 86]
+2018-02-12 01:53:48,543 [DEBUG] root: PASS: act_external with random action lrln and returned reward 0 with new state [16 18 49 87]
+2018-02-12 01:53:48,543 [DEBUG] root: Reward returned for are.respond is 0 and new state is [16 18 49 87]
+2018-02-12 01:53:48,543 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 48 88] with reward 0
+2018-02-12 01:53:48,544 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,544 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 48 88]
+2018-02-12 01:53:48,544 [DEBUG] root: PASS: act_external with random action rdun and returned reward 0 with new state [18 27 38 87]
+2018-02-12 01:53:48,545 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 38 87]
+2018-02-12 01:53:48,545 [DEBUG] __main__: PASS: After acting freewill, new state is [18 26 48 77] with reward 0
+2018-02-12 01:53:48,545 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,546 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 26 48 77]
+2018-02-12 01:53:48,546 [DEBUG] root: PASS: act_external with random action updn and returned reward 0 with new state [18 26 58 67]
+2018-02-12 01:53:48,547 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 26 58 67]
+2018-02-12 01:53:48,547 [DEBUG] __main__: PASS: After acting freewill, new state is [18 27 58 68] with reward 0
+2018-02-12 01:53:48,547 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,548 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 58 68]
+2018-02-12 01:53:48,548 [DEBUG] root: PASS: act_external with random action lrrn and returned reward 0 with new state [18 26 57 69]
+2018-02-12 01:53:48,549 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 26 57 69]
+2018-02-12 01:53:48,549 [DEBUG] __main__: PASS: After acting freewill, new state is [18 27 56 59] with reward 0
+2018-02-12 01:53:48,549 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,550 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 56 59]
+2018-02-12 01:53:48,550 [DEBUG] root: PASS: act_external with random action plun and returned reward 0 with new state [18 28 46 59]
+2018-02-12 01:53:48,550 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 46 59]
+2018-02-12 01:53:48,551 [DEBUG] __main__: PASS: After acting freewill, new state is [18 28 46 59] with reward 0
+2018-02-12 01:53:48,551 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,551 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 46 59]
+2018-02-12 01:53:48,552 [DEBUG] root: PASS: act_external with random action rldn and returned reward 0 with new state [18 29 56 58]
+2018-02-12 01:53:48,552 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 29 56 58]
+2018-02-12 01:53:48,553 [DEBUG] __main__: PASS: After acting freewill, new state is [18 19 48 57] with reward 0
+2018-02-12 01:53:48,553 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,553 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 19 48 57]
+2018-02-12 01:53:48,554 [DEBUG] root: PASS: act_external with random action rddn and returned reward 0 with new state [18 29 47 67]
+2018-02-12 01:53:48,554 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 29 47 67]
+2018-02-12 01:53:48,555 [DEBUG] __main__: PASS: After acting freewill, new state is [18 39 46 77] with reward 0
+2018-02-12 01:53:48,555 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,555 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 39 46 77]
+2018-02-12 01:53:48,556 [DEBUG] root: PASS: act_external with random action urdn and returned reward 0 with new state [18 36 38 87]
+2018-02-12 01:53:48,556 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 36 38 87]
+2018-02-12 01:53:48,557 [DEBUG] __main__: PASS: After acting freewill, new state is [18 35 39 88] with reward 0
+2018-02-12 01:53:48,557 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,557 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 35 39 88]
+2018-02-12 01:53:48,558 [DEBUG] root: PASS: act_external with random action ldln and returned reward 0 with new state [18 36 49 89]
+2018-02-12 01:53:48,558 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 36 49 89]
+2018-02-12 01:53:48,559 [DEBUG] __main__: PASS: After acting freewill, new state is [18 35 48 89] with reward 0
+2018-02-12 01:53:48,559 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,559 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 35 48 89]
+2018-02-12 01:53:48,560 [DEBUG] root: PASS: act_external with random action ppdn and returned reward 0 with new state [18 35 48 99]
+2018-02-12 01:53:48,560 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 35 48 99]
+2018-02-12 01:53:48,561 [DEBUG] __main__: PASS: After acting freewill, new state is [18 36 47 98] with reward 0
+2018-02-12 01:53:48,561 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,561 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 36 47 98]
+2018-02-12 01:53:48,562 [DEBUG] root: PASS: act_external with random action dlln and returned reward 0 with new state [18 46 48 99]
+2018-02-12 01:53:48,562 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 48 99]
+2018-02-12 01:53:48,563 [DEBUG] __main__: PASS: After acting freewill, new state is [18 47 58 99] with reward 0
+2018-02-12 01:53:48,563 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,563 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 47 58 99]
+2018-02-12 01:53:48,564 [DEBUG] root: PASS: act_external with random action drrn and returned reward 0 with new state [18 57 98]
+2018-02-12 01:53:48,564 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 57 98]
+2018-02-12 01:53:48,565 [DEBUG] __main__: PASS: After acting freewill, new state is [18 57 99] with reward 0
+2018-02-12 01:53:48,565 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,565 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 57 99]
+2018-02-12 01:53:48,566 [DEBUG] root: PASS: act_external with random action drpn and returned reward 0 with new state [18 56 67 99]
+2018-02-12 01:53:48,566 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 56 67 99]
+2018-02-12 01:53:48,567 [DEBUG] __main__: PASS: After acting freewill, new state is [18 46 57 99] with reward 0
+2018-02-12 01:53:48,567 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,567 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 57 99]
+2018-02-12 01:53:48,568 [DEBUG] root: PASS: act_external with random action pupn and returned reward 0 with new state [18 36 57 99]
+2018-02-12 01:53:48,568 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 36 57 99]
+2018-02-12 01:53:48,569 [DEBUG] __main__: PASS: After acting freewill, new state is [18 37 67 89] with reward 0
+2018-02-12 01:53:48,569 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,569 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 37 67 89]
+2018-02-12 01:53:48,570 [DEBUG] root: PASS: act_external with random action pdpn and returned reward 0 with new state [18 47 67 89]
+2018-02-12 01:53:48,570 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 47 67 89]
+2018-02-12 01:53:48,570 [DEBUG] __main__: PASS: After acting freewill, new state is [18 57 68 89] with reward 0
+2018-02-12 01:53:48,571 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,571 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 57 68 89]
+2018-02-12 01:53:48,571 [DEBUG] root: PASS: act_external with random action dpdn and returned reward 0 with new state [18 57 78 99]
+2018-02-12 01:53:48,572 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 57 78 99]
+2018-02-12 01:53:48,572 [DEBUG] __main__: PASS: After acting freewill, new state is [18 58 88 89] with reward 0
+2018-02-12 01:53:48,572 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,573 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 58 88 89]
+2018-02-12 01:53:48,573 [DEBUG] root: PASS: act_external with random action dddn and returned reward 0 with new state [18 68 98 99]
+2018-02-12 01:53:48,574 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 68 98 99]
+2018-02-12 01:53:48,574 [DEBUG] __main__: PASS: After acting freewill, new state is [18 58 97 99] with reward 0
+2018-02-12 01:53:48,574 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,575 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 58 97 99]
+2018-02-12 01:53:48,575 [DEBUG] root: PASS: act_external with random action pupn and returned reward 0 with new state [18 48 97 99]
+2018-02-12 01:53:48,575 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 48 97 99]
+2018-02-12 01:53:48,576 [DEBUG] __main__: PASS: After acting freewill, new state is [18 38 97 99] with reward 0
+2018-02-12 01:53:48,576 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,576 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 38 97 99]
+2018-02-12 01:53:48,577 [DEBUG] root: PASS: act_external with random action pdrn and returned reward 0 with new state [18 48 97 98]
+2018-02-12 01:53:48,577 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 48 97 98]
+2018-02-12 01:53:48,578 [DEBUG] __main__: PASS: After acting freewill, new state is [18 49 97 99] with reward 0
+2018-02-12 01:53:48,578 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,578 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 49 97 99]
+2018-02-12 01:53:48,579 [DEBUG] root: PASS: act_external with random action rurn and returned reward 0 with new state [18 39 96 98]
+2018-02-12 01:53:48,579 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 39 96 98]
+2018-02-12 01:53:48,580 [DEBUG] __main__: PASS: After acting freewill, new state is [18 29 97 98] with reward 0
+2018-02-12 01:53:48,580 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,580 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 29 97 98]
+2018-02-12 01:53:48,581 [DEBUG] root: PASS: act_external with random action pdun and returned reward 0 with new state [18 39 88 97]
+2018-02-12 01:53:48,581 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 39 88 97]
+2018-02-12 01:53:48,582 [DEBUG] __main__: PASS: After acting freewill, new state is [18 29 87 98] with reward 0
+2018-02-12 01:53:48,582 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,582 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 29 87 98]
+2018-02-12 01:53:48,583 [DEBUG] root: PASS: act_external with random action ldrn and returned reward 0 with new state [18 39 88 97]
+2018-02-12 01:53:48,583 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 39 88 97]
+2018-02-12 01:53:48,584 [DEBUG] __main__: PASS: After acting freewill, new state is [18 49 87 89] with reward 0
+2018-02-12 01:53:48,584 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,584 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 49 87 89]
+2018-02-12 01:53:48,585 [DEBUG] root: PASS: act_external with random action uupn and returned reward 0 with new state [18 39 79 87]
+2018-02-12 01:53:48,585 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 39 79 87]
+2018-02-12 01:53:48,585 [DEBUG] __main__: PASS: After acting freewill, new state is [18 38 69 87] with reward 0
+2018-02-12 01:53:48,586 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,586 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 38 69 87]
+2018-02-12 01:53:48,586 [DEBUG] root: PASS: act_external with random action ruln and returned reward 0 with new state [18 28 68 88]
+2018-02-12 01:53:48,587 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 68 88]
+2018-02-12 01:53:48,587 [DEBUG] __main__: PASS: After acting freewill, new state is [18 28 67 89] with reward 0
+2018-02-12 01:53:48,587 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,588 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 67 89]
+2018-02-12 01:53:48,588 [DEBUG] root: PASS: act_external with random action drun and returned reward 0 with new state [18 27 77 79]
+2018-02-12 01:53:48,588 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 77 79]
+2018-02-12 01:53:48,589 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 76 78] with reward 0
+2018-02-12 01:53:48,589 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,589 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 76 78]
+2018-02-12 01:53:48,590 [DEBUG] root: PASS: act_external with random action duln and returned reward 0 with new state [ 7 18 79 86]
+2018-02-12 01:53:48,590 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 7 18 79 86]
+2018-02-12 01:53:48,591 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 78 87] with reward 0
+2018-02-12 01:53:48,591 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,591 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 78 87]
+2018-02-12 01:53:48,592 [DEBUG] root: PASS: act_external with random action purn and returned reward 0 with new state [ 7 18 77 87]
+2018-02-12 01:53:48,592 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 7 18 77 87]
+2018-02-12 01:53:48,593 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 77 86] with reward 0
+2018-02-12 01:53:48,593 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,593 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 77 86]
+2018-02-12 01:53:48,594 [DEBUG] root: PASS: act_external with random action ddln and returned reward 0 with new state [18 27 78 96]
+2018-02-12 01:53:48,594 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 78 96]
+2018-02-12 01:53:48,595 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 86 88] with reward 0
+2018-02-12 01:53:48,595 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,595 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 86 88]
+2018-02-12 01:53:48,596 [DEBUG] root: PASS: act_external with random action rudn and returned reward 0 with new state [ 7 18 85 98]
+2018-02-12 01:53:48,596 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 7 18 85 98]
+2018-02-12 01:53:48,597 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 88 95] with reward 0
+2018-02-12 01:53:48,597 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,597 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 88 95]
+2018-02-12 01:53:48,598 [DEBUG] root: PASS: act_external with random action rurn and returned reward 0 with new state [ 7 18 87 94]
+2018-02-12 01:53:48,598 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 7 18 87 94]
+2018-02-12 01:53:48,598 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 77 94] with reward 0
+2018-02-12 01:53:48,599 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,599 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 77 94]
+2018-02-12 01:53:48,599 [DEBUG] root: PASS: act_external with random action prun and returned reward 0 with new state [16 18 67 94]
+2018-02-12 01:53:48,600 [DEBUG] root: Reward returned for are.respond is 0 and new state is [16 18 67 94]
+2018-02-12 01:53:48,600 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 57 93] with reward 0
+2018-02-12 01:53:48,600 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,601 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 57 93]
+2018-02-12 01:53:48,601 [DEBUG] root: PASS: act_external with random action ppun and returned reward 0 with new state [17 18 47 93]
+2018-02-12 01:53:48,601 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 47 93]
+2018-02-12 01:53:48,602 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 47 94] with reward 0
+2018-02-12 01:53:48,602 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,602 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 47 94]
+2018-02-12 01:53:48,603 [DEBUG] root: PASS: act_external with random action rppn and returned reward 0 with new state [17 18 47 93]
+2018-02-12 01:53:48,603 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 47 93]
+2018-02-12 01:53:48,604 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 46 83] with reward 0
+2018-02-12 01:53:48,604 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,604 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 46 83]
+2018-02-12 01:53:48,605 [DEBUG] root: PASS: act_external with random action lupn and returned reward 0 with new state [ 7 18 46 84]
+2018-02-12 01:53:48,605 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 7 18 46 84]
+2018-02-12 01:53:48,606 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 45 83] with reward 0
+2018-02-12 01:53:48,606 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,606 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 45 83]
+2018-02-12 01:53:48,607 [DEBUG] root: PASS: act_external with random action upun and returned reward 0 with new state [17 18 35 73]
+2018-02-12 01:53:48,607 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 35 73]
+2018-02-12 01:53:48,608 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 36 73] with reward 0
+2018-02-12 01:53:48,608 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,608 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 36 73]
+2018-02-12 01:53:48,609 [DEBUG] root: PASS: act_external with random action ddpn and returned reward 0 with new state [18 27 36 83]
+2018-02-12 01:53:48,609 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 36 83]
+2018-02-12 01:53:48,610 [DEBUG] __main__: PASS: After acting freewill, new state is [18 26 37 82] with reward 0
+2018-02-12 01:53:48,610 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,610 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 26 37 82]
+2018-02-12 01:53:48,611 [DEBUG] root: PASS: act_external with random action llrn and returned reward 0 with new state [18 27 36 83]
+2018-02-12 01:53:48,611 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 36 83]
+2018-02-12 01:53:48,612 [DEBUG] __main__: PASS: After acting freewill, new state is [18 28 46 82] with reward 0
+2018-02-12 01:53:48,612 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,612 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 46 82]
+2018-02-12 01:53:48,613 [DEBUG] root: PASS: act_external with random action prrn and returned reward 0 with new state [18 27 45 82]
+2018-02-12 01:53:48,613 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 45 82]
+2018-02-12 01:53:48,614 [DEBUG] __main__: PASS: After acting freewill, new state is [18 37 44 92] with reward 0
+2018-02-12 01:53:48,614 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,614 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 37 44 92]
+2018-02-12 01:53:48,615 [DEBUG] root: PASS: act_external with random action prun and returned reward 0 with new state [18 34 36 92]
+2018-02-12 01:53:48,615 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 34 36 92]
+2018-02-12 01:53:48,616 [DEBUG] __main__: PASS: After acting freewill, new state is [18 35 37 91] with reward 0
+2018-02-12 01:53:48,616 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,616 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 35 37 91]
+2018-02-12 01:53:48,617 [DEBUG] root: PASS: act_external with random action ppun and returned reward 0 with new state [18 25 37 91]
+2018-02-12 01:53:48,617 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 25 37 91]
+2018-02-12 01:53:48,618 [DEBUG] __main__: PASS: After acting freewill, new state is [18 26 37 92] with reward 0
+2018-02-12 01:53:48,618 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,618 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 26 37 92]
+2018-02-12 01:53:48,619 [DEBUG] root: PASS: act_external with random action prun and returned reward 0 with new state [16 18 36 92]
+2018-02-12 01:53:48,619 [DEBUG] root: Reward returned for are.respond is 0 and new state is [16 18 36 92]
+2018-02-12 01:53:48,620 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 37 82] with reward 0
+2018-02-12 01:53:48,620 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,620 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 37 82]
+2018-02-12 01:53:48,621 [DEBUG] root: PASS: act_external with random action uprn and returned reward 0 with new state [16 18 37 72]
+2018-02-12 01:53:48,621 [DEBUG] root: Reward returned for are.respond is 0 and new state is [16 18 37 72]
+2018-02-12 01:53:48,622 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 27 73] with reward 0
+2018-02-12 01:53:48,622 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,622 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 27 73]
+2018-02-12 01:53:48,623 [DEBUG] root: PASS: act_external with random action udun and returned reward 0 with new state [ 7 18 37 63]
+2018-02-12 01:53:48,623 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 7 18 37 63]
+2018-02-12 01:53:48,623 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 47 53] with reward 0
+2018-02-12 01:53:48,624 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,624 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 47 53]
+2018-02-12 01:53:48,624 [DEBUG] root: PASS: act_external with random action ulrn and returned reward 0 with new state [16 18 43 48]
+2018-02-12 01:53:48,625 [DEBUG] root: Reward returned for are.respond is 0 and new state is [16 18 43 48]
+2018-02-12 01:53:48,625 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 43 49] with reward 0
+2018-02-12 01:53:48,625 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,626 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 43 49]
+2018-02-12 01:53:48,626 [DEBUG] root: PASS: act_external with random action rurn and returned reward 0 with new state [16 18 39 42]
+2018-02-12 01:53:48,626 [DEBUG] root: Reward returned for are.respond is 0 and new state is [16 18 39 42]
+2018-02-12 01:53:48,627 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 29 41] with reward 0
+2018-02-12 01:53:48,627 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,627 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 29 41]
+2018-02-12 01:53:48,628 [DEBUG] root: PASS: act_external with random action ddun and returned reward 0 with new state [ 7 18 39 51]
+2018-02-12 01:53:48,628 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 7 18 39 51]
+2018-02-12 01:53:48,629 [DEBUG] __main__: PASS: After acting freewill, new state is [ 7 18 29 51] with reward 0
+2018-02-12 01:53:48,629 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,629 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 7 18 29 51]
+2018-02-12 01:53:48,630 [DEBUG] root: PASS: act_external with random action dupn and returned reward 0 with new state [ 7 18 19 61]
+2018-02-12 01:53:48,630 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 7 18 19 61]
+2018-02-12 01:53:48,631 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 19 62] with reward 0
+2018-02-12 01:53:48,631 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,631 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 19 62]
+2018-02-12 01:53:48,632 [DEBUG] root: PASS: act_external with random action rpdn and returned reward 0 with new state [18 19 27 61]
+2018-02-12 01:53:48,632 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 19 27 61]
+2018-02-12 01:53:48,633 [DEBUG] __main__: PASS: After acting freewill, new state is [18 19 37 62] with reward 0
+2018-02-12 01:53:48,633 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,633 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 19 37 62]
+2018-02-12 01:53:48,634 [DEBUG] root: PASS: act_external with random action luun and returned reward 0 with new state [ 9 18 27 63]
+2018-02-12 01:53:48,634 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 9 18 27 63]
+2018-02-12 01:53:48,635 [DEBUG] __main__: PASS: After acting freewill, new state is [18 19 27 62] with reward 0
+2018-02-12 01:53:48,635 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,635 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 19 27 62]
+2018-02-12 01:53:48,636 [DEBUG] root: PASS: act_external with random action uudn and returned reward 0 with new state [ 9 18 37 52]
+2018-02-12 01:53:48,636 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 9 18 37 52]
+2018-02-12 01:53:48,637 [DEBUG] __main__: PASS: After acting freewill, new state is [18 19 47 51] with reward 0
+2018-02-12 01:53:48,637 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,637 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 19 47 51]
+2018-02-12 01:53:48,638 [DEBUG] root: PASS: act_external with random action dpdn and returned reward 0 with new state [18 19 57 61]
+2018-02-12 01:53:48,638 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 19 57 61]
+2018-02-12 01:53:48,639 [DEBUG] __main__: PASS: After acting freewill, new state is [18 19 58 62] with reward 0
+2018-02-12 01:53:48,639 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,639 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 19 58 62]
+2018-02-12 01:53:48,640 [DEBUG] root: PASS: act_external with random action pddn and returned reward 0 with new state [18 29 62 68]
+2018-02-12 01:53:48,640 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 29 62 68]
+2018-02-12 01:53:48,640 [DEBUG] __main__: PASS: After acting freewill, new state is [18 39 68 72] with reward 0
+2018-02-12 01:53:48,641 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,641 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 39 68 72]
+2018-02-12 01:53:48,641 [DEBUG] root: PASS: act_external with random action uprn and returned reward 0 with new state [18 39 62 67]
+2018-02-12 01:53:48,642 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 39 62 67]
+2018-02-12 01:53:48,642 [DEBUG] __main__: PASS: After acting freewill, new state is [18 49 57 72] with reward 0
+2018-02-12 01:53:48,642 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,643 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 49 57 72]
+2018-02-12 01:53:48,643 [DEBUG] root: PASS: act_external with random action dppn and returned reward 0 with new state [18 49 57 82]
+2018-02-12 01:53:48,644 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 49 57 82]
+2018-02-12 01:53:48,644 [DEBUG] __main__: PASS: After acting freewill, new state is [18 49 58 72] with reward 0
+2018-02-12 01:53:48,645 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,645 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 49 58 72]
+2018-02-12 01:53:48,645 [DEBUG] root: PASS: act_external with random action prun and returned reward 0 with new state [18 48 72]
+2018-02-12 01:53:48,646 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 48 72]
+2018-02-12 01:53:48,646 [DEBUG] __main__: PASS: After acting freewill, new state is [18 38 49 71] with reward 0
+2018-02-12 01:53:48,646 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,647 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 38 49 71]
+2018-02-12 01:53:48,647 [DEBUG] root: PASS: act_external with random action pudn and returned reward 0 with new state [18 28 59 71]
+2018-02-12 01:53:48,648 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 59 71]
+2018-02-12 01:53:48,648 [DEBUG] __main__: PASS: After acting freewill, new state is [18 28 69 70] with reward 0
+2018-02-12 01:53:48,648 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,649 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 69 70]
+2018-02-12 01:53:48,649 [DEBUG] root: PASS: act_external with random action lldn and returned reward 0 with new state [18 29 71 79]
+2018-02-12 01:53:48,650 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 29 71 79]
+2018-02-12 01:53:48,650 [DEBUG] __main__: PASS: After acting freewill, new state is [18 28 72 89] with reward 0
+2018-02-12 01:53:48,651 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,651 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 72 89]
+2018-02-12 01:53:48,652 [DEBUG] root: PASS: act_external with random action updn and returned reward 0 with new state [18 28 62 99]
+2018-02-12 01:53:48,652 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 62 99]
+2018-02-12 01:53:48,653 [DEBUG] __main__: PASS: After acting freewill, new state is [18 28 62 98] with reward 0
+2018-02-12 01:53:48,653 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,653 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 62 98]
+2018-02-12 01:53:48,654 [DEBUG] root: PASS: act_external with random action drrn and returned reward 0 with new state [18 27 72 97]
+2018-02-12 01:53:48,654 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 72 97]
+2018-02-12 01:53:48,655 [DEBUG] __main__: PASS: After acting freewill, new state is [18 37 71 98] with reward 0
+2018-02-12 01:53:48,655 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,655 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 37 71 98]
+2018-02-12 01:53:48,656 [DEBUG] root: PASS: act_external with random action luln and returned reward 0 with new state [18 27 72 99]
+2018-02-12 01:53:48,656 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 72 99]
+2018-02-12 01:53:48,657 [DEBUG] __main__: PASS: After acting freewill, new state is [18 26 62 98] with reward 0
+2018-02-12 01:53:48,657 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,657 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 26 62 98]
+2018-02-12 01:53:48,658 [DEBUG] root: PASS: act_external with random action lpun and returned reward 0 with new state [18 26 63 88]
+2018-02-12 01:53:48,658 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 26 63 88]
+2018-02-12 01:53:48,659 [DEBUG] __main__: PASS: After acting freewill, new state is [18 27 63 98] with reward 0
+2018-02-12 01:53:48,659 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,659 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 63 98]
+2018-02-12 01:53:48,660 [DEBUG] root: PASS: act_external with random action puln and returned reward 0 with new state [17 18 63 99]
+2018-02-12 01:53:48,660 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 63 99]
+2018-02-12 01:53:48,660 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 53 89] with reward 0
+2018-02-12 01:53:48,661 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,661 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 53 89]
+2018-02-12 01:53:48,661 [DEBUG] root: PASS: act_external with random action pdrn and returned reward 0 with new state [18 27 53 88]
+2018-02-12 01:53:48,662 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 53 88]
+2018-02-12 01:53:48,662 [DEBUG] __main__: PASS: After acting freewill, new state is [18 37 52 78] with reward 0
+2018-02-12 01:53:48,663 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,663 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 37 52 78]
+2018-02-12 01:53:48,663 [DEBUG] root: PASS: act_external with random action rrrn and returned reward 0 with new state [18 36 51 77]
+2018-02-12 01:53:48,664 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 36 51 77]
+2018-02-12 01:53:48,664 [DEBUG] __main__: PASS: After acting freewill, new state is [18 26 61 78] with reward 0
+2018-02-12 01:53:48,664 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,665 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 26 61 78]
+2018-02-12 01:53:48,665 [DEBUG] root: PASS: act_external with random action ppun and returned reward 0 with new state [18 26 61 68]
+2018-02-12 01:53:48,666 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 26 61 68]
+2018-02-12 01:53:48,666 [DEBUG] __main__: PASS: After acting freewill, new state is [18 27 62 69] with reward 0
+2018-02-12 01:53:48,666 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,667 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 62 69]
+2018-02-12 01:53:48,667 [DEBUG] root: PASS: act_external with random action pprn and returned reward 0 with new state [18 27 62 68]
+2018-02-12 01:53:48,668 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 62 68]
+2018-02-12 01:53:48,668 [DEBUG] __main__: PASS: After acting freewill, new state is [18 28 52 67] with reward 0
+2018-02-12 01:53:48,668 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,669 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 52 67]
+2018-02-12 01:53:48,669 [DEBUG] root: PASS: act_external with random action pppn and returned reward 0 with new state [18 28 52 67]
+2018-02-12 01:53:48,670 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 52 67]
+2018-02-12 01:53:48,670 [DEBUG] __main__: PASS: After acting freewill, new state is [18 28 62 77] with reward 0
+2018-02-12 01:53:48,670 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,671 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 62 77]
+2018-02-12 01:53:48,671 [DEBUG] root: PASS: act_external with random action dpun and returned reward 0 with new state [18 28 67 72]
+2018-02-12 01:53:48,671 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 67 72]
+2018-02-12 01:53:48,672 [DEBUG] __main__: PASS: After acting freewill, new state is [18 28 73 77] with reward 0
+2018-02-12 01:53:48,672 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,672 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 73 77]
+2018-02-12 01:53:48,673 [DEBUG] root: PASS: act_external with random action lrdn and returned reward 0 with new state [18 27 74 87]
+2018-02-12 01:53:48,673 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 74 87]
+2018-02-12 01:53:48,674 [DEBUG] __main__: PASS: After acting freewill, new state is [18 37 84 87] with reward 0
+2018-02-12 01:53:48,674 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,674 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 37 84 87]
+2018-02-12 01:53:48,675 [DEBUG] root: PASS: act_external with random action udun and returned reward 0 with new state [18 47 74 77]
+2018-02-12 01:53:48,675 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 47 74 77]
+2018-02-12 01:53:48,676 [DEBUG] __main__: PASS: After acting freewill, new state is [18 57 74 78] with reward 0
+2018-02-12 01:53:48,676 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,676 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 57 74 78]
+2018-02-12 01:53:48,677 [DEBUG] root: PASS: act_external with random action uuun and returned reward 0 with new state [18 47 64 68]
+2018-02-12 01:53:48,677 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 47 64 68]
+2018-02-12 01:53:48,678 [DEBUG] __main__: PASS: After acting freewill, new state is [18 47 69 74] with reward 0
+2018-02-12 01:53:48,678 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,678 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 47 69 74]
+2018-02-12 01:53:48,679 [DEBUG] root: PASS: act_external with random action urun and returned reward 0 with new state [18 46 59 64]
+2018-02-12 01:53:48,679 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 46 59 64]
+2018-02-12 01:53:48,680 [DEBUG] __main__: PASS: After acting freewill, new state is [18 36 58 63] with reward 0
+2018-02-12 01:53:48,680 [DEBUG] root: Random action generated is nnnu
+2018-02-12 01:53:48,680 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 36 58 63]
+2018-02-12 01:53:48,681 [DEBUG] root: PASS: act_external with random action rrrn and returned reward 0 with new state [18 35 57 62]
+2018-02-12 01:53:48,681 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 35 57 62]
+2018-02-12 01:53:48,682 [DEBUG] __main__: PASS: After acting freewill, new state is [18 36 56 72] with reward 0
+2018-02-12 01:53:48,682 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,682 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 36 56 72]
+2018-02-12 01:53:48,683 [DEBUG] root: PASS: act_external with random action rldn and returned reward 0 with new state [18 37 66 71]
+2018-02-12 01:53:48,683 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 37 66 71]
+2018-02-12 01:53:48,684 [DEBUG] __main__: PASS: After acting freewill, new state is [18 27 66 81] with reward 0
+2018-02-12 01:53:48,684 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,684 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 66 81]
+2018-02-12 01:53:48,685 [DEBUG] root: PASS: act_external with random action lrdn and returned reward 0 with new state [18 26 76 82]
+2018-02-12 01:53:48,685 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 26 76 82]
+2018-02-12 01:53:48,685 [DEBUG] __main__: PASS: After acting freewill, new state is [18 27 72 77] with reward 0
+2018-02-12 01:53:48,686 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,686 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 72 77]
+2018-02-12 01:53:48,686 [DEBUG] root: PASS: act_external with random action llpn and returned reward 0 with new state [18 28 73 77]
+2018-02-12 01:53:48,687 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 73 77]
+2018-02-12 01:53:48,687 [DEBUG] __main__: PASS: After acting freewill, new state is [18 28 78 83] with reward 0
+2018-02-12 01:53:48,688 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,688 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 28 78 83]
+2018-02-12 01:53:48,688 [DEBUG] root: PASS: act_external with random action udpn and returned reward 0 with new state [18 38 73 78]
+2018-02-12 01:53:48,689 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 38 73 78]
+2018-02-12 01:53:48,689 [DEBUG] __main__: PASS: After acting freewill, new state is [18 38 68 83] with reward 0
+2018-02-12 01:53:48,689 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,690 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 38 68 83]
+2018-02-12 01:53:48,690 [DEBUG] root: PASS: act_external with random action ldpn and returned reward 0 with new state [18 48 68 84]
+2018-02-12 01:53:48,690 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 48 68 84]
+2018-02-12 01:53:48,691 [DEBUG] __main__: PASS: After acting freewill, new state is [18 47 67 84] with reward 0
+2018-02-12 01:53:48,691 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,691 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 47 67 84]
+2018-02-12 01:53:48,692 [DEBUG] root: PASS: act_external with random action rpln and returned reward 0 with new state [18 47 68 83]
+2018-02-12 01:53:48,692 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 47 68 83]
+2018-02-12 01:53:48,693 [DEBUG] __main__: PASS: After acting freewill, new state is [18 57 67 82] with reward 0
+2018-02-12 01:53:48,693 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,693 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 57 67 82]
+2018-02-12 01:53:48,694 [DEBUG] root: PASS: act_external with random action ulpn and returned reward 0 with new state [18 58 67 72]
+2018-02-12 01:53:48,694 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 58 67 72]
+2018-02-12 01:53:48,695 [DEBUG] __main__: PASS: After acting freewill, new state is [18 58 67 73] with reward 0
+2018-02-12 01:53:48,695 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,695 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 58 67 73]
+2018-02-12 01:53:48,696 [DEBUG] root: PASS: act_external with random action udrn and returned reward 0 with new state [18 63 66 68]
+2018-02-12 01:53:48,696 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 63 66 68]
+2018-02-12 01:53:48,697 [DEBUG] __main__: PASS: After acting freewill, new state is [18 56 63 67] with reward 0
+2018-02-12 01:53:48,697 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,697 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 56 63 67]
+2018-02-12 01:53:48,698 [DEBUG] root: PASS: act_external with random action rdpn and returned reward 0 with new state [18 56 62 77]
+2018-02-12 01:53:48,698 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 56 62 77]
+2018-02-12 01:53:48,699 [DEBUG] __main__: PASS: After acting freewill, new state is [18 56 61 78] with reward 0
+2018-02-12 01:53:48,699 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,699 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 56 61 78]
+2018-02-12 01:53:48,700 [DEBUG] root: PASS: act_external with random action puln and returned reward 0 with new state [18 57 61 68]
+2018-02-12 01:53:48,700 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 57 61 68]
+2018-02-12 01:53:48,701 [DEBUG] __main__: PASS: After acting freewill, new state is [18 57 61 68] with reward 0
+2018-02-12 01:53:48,701 [DEBUG] root: Random action generated is nnnr
+2018-02-12 01:53:48,701 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 57 61 68]
+2018-02-12 01:53:48,701 [DEBUG] root: PASS: act_external with random action dppn and returned reward 0 with new state [18 57 68 71]
+2018-02-12 01:53:48,702 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 57 68 71]
+2018-02-12 01:53:48,702 [DEBUG] __main__: PASS: After acting freewill, new state is [18 47 61 78] with reward 0
+2018-02-12 01:53:48,702 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,703 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 47 61 78]
+2018-02-12 01:53:48,703 [DEBUG] root: PASS: act_external with random action dlun and returned reward 0 with new state [18 37 71 79]
+2018-02-12 01:53:48,704 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 37 71 79]
+2018-02-12 01:53:48,704 [DEBUG] __main__: PASS: After acting freewill, new state is [18 27 61 89] with reward 0
+2018-02-12 01:53:48,704 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,704 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 61 89]
+2018-02-12 01:53:48,705 [DEBUG] root: PASS: act_external with random action ddpn and returned reward 0 with new state [18 27 71 99]
+2018-02-12 01:53:48,705 [DEBUG] root: Reward returned for are.respond is 0 and new state is [18 27 71 99]
+2018-02-12 01:53:48,706 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 61 99] with reward 0
+2018-02-12 01:53:48,706 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,706 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 61 99]
+2018-02-12 01:53:48,707 [DEBUG] root: PASS: act_external with random action luun and returned reward 0 with new state [ 7 18 62 89]
+2018-02-12 01:53:48,707 [DEBUG] root: Reward returned for are.respond is 0 and new state is [ 7 18 62 89]
+2018-02-12 01:53:48,708 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 63 88] with reward 0
+2018-02-12 01:53:48,708 [DEBUG] root: Random action generated is nnnl
+2018-02-12 01:53:48,708 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 63 88]
+2018-02-12 01:53:48,709 [DEBUG] root: PASS: act_external with random action llrn and returned reward 0 with new state [16 18 64 89]
+2018-02-12 01:53:48,709 [DEBUG] root: Reward returned for are.respond is 0 and new state is [16 18 64 89]
+2018-02-12 01:53:48,710 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 54 99] with reward 0
+2018-02-12 01:53:48,710 [DEBUG] root: Random action generated is nnnp
+2018-02-12 01:53:48,710 [DEBUG] root: Reward returned for are.respond is 0 and new state is [17 18 54 99]
+2018-02-12 01:53:48,711 [DEBUG] root: PASS: act_external with random action lupn and returned reward 0 with new state [17 18 55 89]
+2018-02-12 01:53:48,711 [DEBUG] root: Reward returned for are.respond is 1 and new state is [17 55 89]

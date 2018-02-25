@@ -1,0 +1,7 @@
+2018-02-18 01:20:10,976 [DEBUG] src.generate_init: creating agent with capacity 0.16629779138 vradius 0.193327725616 vangle 0.484965651614 type 2 loc [5 1]
+2018-02-18 01:20:10,978 [INFO] src.agents.agent_originaltypes: Created an agent with location [5 1], type 2, capacity 0.16629779138, view_radius 0.193327725616, view_angle 0.484965651614 in standard ranges
+2018-02-18 01:20:17,052 [ERROR] __main__: MCTS agent creation failed
+Traceback (most recent call last):
+  File "/home/manish/Awesomestuff/AdHocTeamWork/AdHoc2/src/mcts/mcts_agent.py", line 160, in behave_rollout_test
+    dagent.curr_pos,arena)
+AttributeError: Agent instance has no attribute 'curr_pos'

@@ -1,0 +1,11 @@
+2018-02-12 01:14:38,458 [DEBUG] src.generate_init: creating agent with capacity 0.111904243456 vradius 0.788040743301 vangle 0.506216369852 type 1 loc [5 3]
+2018-02-12 01:14:38,458 [INFO] src.agent_originaltypes: Created an agent with location [5 3], type 1, capacity 0.111904243456, view_radius 0.788040743301, view_angle 0.506216369852 in standard ranges
+2018-02-12 01:14:38,458 [DEBUG] src.generate_init: creating agent with capacity 0.183019071794 vradius 0.397961490705 vangle 0.502477542541 type 2 loc [8 4]
+2018-02-12 01:14:38,458 [INFO] src.agent_originaltypes: Created an agent with location [8 4], type 2, capacity 0.183019071794, view_radius 0.397961490705, view_angle 0.502477542541 in standard ranges
+2018-02-12 01:14:38,459 [DEBUG] src.generate_init: creating agent with capacity 0.468658083542 vradius 0.499059045267 vangle 0.299269307299 type 1 loc [0 6]
+2018-02-12 01:14:38,459 [INFO] src.agent_originaltypes: Created an agent with location [0 6], type 1, capacity 0.468658083542, view_radius 0.499059045267, view_angle 0.299269307299 in standard ranges
+2018-02-12 01:14:38,459 [DEBUG] src.generate_init: creating agent with capacity 0.332203654584 vradius 0.198045486096 vangle 0.709761641659 type 2 loc [5 2]
+2018-02-12 01:14:38,459 [INFO] src.agent_originaltypes: Created an agent with location [5 2], type 2, capacity 0.332203654584, view_radius 0.198045486096, view_angle 0.709761641659 in standard ranges
+2018-02-12 01:14:48,526 [DEBUG] __main__: The generated random actions for UNI look like this 
+ ['ddln', 'ddrn', 'ddpn', 'dlln', 'dlrn', 'dlpn', 'drln', 'drrn', 'drpn', 'dpln', 'dprn', 'dppn', 'ldln', 'ldrn', 'ldpn', 'llln', 'llrn', 'llpn', 'lrln', 'lrrn', 'lrpn', 'lpln', 'lprn', 'lppn', 'rdln', 'rdrn', 'rdpn', 'rlln', 'rlrn', 'rlpn', 'rrln', 'rrrn', 'rrpn', 'rpln', 'rprn', 'rppn', 'pdln', 'pdrn', 'pdpn', 'plln', 'plrn', 'plpn', 'prln', 'prrn', 'prpn', 'ppln', 'pprn', 'pppn']
+2018-02-12 01:14:49,410 [DEBUG] __main__: PASS: Test 1 passed. The number of legal actions function works

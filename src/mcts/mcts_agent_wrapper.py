@@ -1,10 +1,10 @@
 import logging
 
-import src.generate_init as sgen
+import src.utils.generate_init as sgen
 import src.global_const as globals
 from experiments import configuration as config
 from src.estimation import update_state as update_state
-from src.mcts import mcts_tree as mctstree
+from src.mcts import mcts_sourcealgo as mctstree
 from src.utils import cloner as cloner
 
 #if no action, then it is represented as 'n'
@@ -96,7 +96,7 @@ class mcts_agent(config.AGENT_CURR):
         """
 
 
-        history[-1][1].append(history[-1][1][1]) #just to have a filler value for the last MCTS agent's
+        # history[-1][1].append(history[-1][1][1]) #just to have a filler value for the last MCTS agent's
         #state.
         corrected_states = update_state.get_updatedStateForMultipleAgents(history, trackingAgentIds,
                                                                           trackingAgentParameterEstimates, False)
@@ -110,13 +110,11 @@ class mcts_agent(config.AGENT_CURR):
         mcts_planner = mctstree.mcts(init_arena_for_rollout,False)
         #TODO parallelize
         for i in range(config.N_ROLLOUTS):
+            logger.info("Rollout {} with max steps {}".format(i,config.ROLLOUT_DEPTH))
             arena_for_rollout, agents_for_rollout = self.generate_environment(corrected_states,trackingAgentIds)
             mctsAgent_forArena = cloner.clone_Agent(self.__getstate__(),arena_for_rollout)
             arena_for_rollout.add_MCTSagent(mctsAgent_forArena)
-            start = time.time()
             mcts_planner.rollout(arena_for_rollout,mcts_planner.rootVertex_index)
-            end = time.time()
-            logger.debug("time for one rollout {}".format(end - start))
 
         action_name = mcts_planner.get_bestActionGreedy()
         action_name = action_name[-1]
@@ -139,7 +137,7 @@ class mcts_agent(config.AGENT_CURR):
         target_agentIdx = 0
 
         # TODO test the valiity of target_agentIdx increments.
-        for i in range(len(self.arena.agents)):
+        for i in range(len(self.arena.agents)-1):
             if i not in trackingAgentIds:
                 new_agent = cloner.clone_Agent(self.arena.agents[i].__getstate__(),arena_for_rollout)
             else:

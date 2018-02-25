@@ -3,7 +3,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from src.arena import arena
-from src.agent import Agent
+from src.agents.agent_originaltypes import Agent
 import numpy as np
 import copy
 import time

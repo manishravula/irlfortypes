@@ -12,6 +12,7 @@ class environment():
         return self.__init__()
 
     def getActions_legalFromCurrentState(self,turn_whose):
+        return
 
     def getAction_randomLegalFromCurrentState(self, turn_whose):
         """

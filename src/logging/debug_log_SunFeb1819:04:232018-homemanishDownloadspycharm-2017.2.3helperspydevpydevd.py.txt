@@ -1,0 +1,12 @@
+2018-02-18 19:04:23,384 [DEBUG] src.generate_init: creating agent with capacity 0.302051644133 vradius 0.650672576472 vangle 0.307668572709 type 2 loc [6 9]
+2018-02-18 19:04:23,384 [INFO] src.agents.agent_originaltypes: Created an agent with location [6 9], type 2, capacity 0.302051644133, view_radius 0.650672576472, view_angle 0.307668572709 in standard ranges
+2018-02-18 19:04:23,385 [INFO] src.agents.agent_originaltypes: Created an agent with location [6 9], type 2, capacity 0.302051644133, view_radius 0.650672576472, view_angle 0.307668572709 in standard ranges
+2018-02-18 19:04:23,386 [DEBUG] __main__: MCTSagent creation succeeded
+2018-02-18 19:04:23,387 [DEBUG] src.generate_init: creating agent with capacity 0.162458772019 vradius 0.711667100935 vangle 0.895653434619 type 0 loc [4 1]
+2018-02-18 19:04:23,387 [INFO] src.agents.agent_originaltypes: Created an agent with location [4 1], type 0, capacity 0.162458772019, view_radius 0.711667100935, view_angle 0.895653434619 in standard ranges
+2018-02-18 19:04:23,388 [DEBUG] src.generate_init: creating agent with capacity 0.198460818863 vradius 0.182998870964 vangle 0.187059555961 type 2 loc [2 0]
+2018-02-18 19:04:23,388 [INFO] src.agents.agent_originaltypes: Created an agent with location [2 0], type 2, capacity 0.198460818863, view_radius 0.182998870964, view_angle 0.187059555961 in standard ranges
+2018-02-18 19:04:23,388 [DEBUG] src.generate_init: creating agent with capacity 0.192185354324 vradius 0.228904729308 vangle 0.158437350132 type 0 loc [5 7]
+2018-02-18 19:04:23,388 [INFO] src.agents.agent_originaltypes: Created an agent with location [5 7], type 0, capacity 0.192185354324, view_radius 0.228904729308, view_angle 0.158437350132 in standard ranges
+2018-02-18 19:04:23,389 [DEBUG] src.generate_init: creating agent with capacity 0.378673270782 vradius 0.673882624488 vangle 0.575714925964 type 2 loc [1 8]
+2018-02-18 19:04:23,389 [INFO] src.agents.agent_originaltypes: Created an agent with location [1 8], type 2, capacity 0.378673270782, view_radius 0.673882624488, view_angle 0.575714925964 in standard ranges

@@ -8,7 +8,7 @@ import src.arena as original_arena
 import src.global_const
 from MCTS import mcts as _mcts
 from experiments import configuration as config
-from src import generate_init as gi
+from src.utils import generate_init as gi
 from src.global_const import ACTIONS2CHAR, CHAR2ACTIONS
 
 #if no action, then it is represented as 'n'

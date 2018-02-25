@@ -1,0 +1,55 @@
+2018-02-23 00:59:46,513 [INFO] src.utils.generate_init: Initializing new configuration
+2018-02-23 00:59:46,514 [DEBUG] src.utils.generate_init: creating arena object with grid_matrix [[ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.        ]
+ [ 0.          0.          0.          0.46982012  0.          0.          0.
+   0.          0.04382851  0.        ]
+ [ 0.          0.          0.          0.46743712  0.          0.          0.
+   0.          0.          0.        ]
+ [ 0.          0.          0.          0.28915851  0.09906169  0.41256541
+   0.          0.40659699  0.42169041  0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.49444551  0.37018898  0.        ]
+ [ 0.          0.          0.          0.          0.34687077  0.          0.
+   0.37264197  0.          0.        ]
+ [ 0.          0.          0.1457681   0.          0.          0.3207807
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.21614764  0.          0.04450443  0.19099733
+   0.25782517  0.          0.          0.        ]
+ [ 0.          0.37234896  0.          0.01982353  0.          0.          0.
+   0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.        ]]
+2018-02-23 00:59:46,514 [DEBUG] src.utils.generate_init: creating 3 agents
+2018-02-23 00:59:46,515 [DEBUG] src.utils.generate_init: creating agent with capacity 0.382225725941 vradius 0.535764910814 vangle 0.81668222646 type 0 loc [5 3]
+2018-02-23 00:59:46,515 [INFO] src.agents.agent_originaltypes: Created an agent with location [5 3], type 0, capacity 0.382225725941, view_radius 0.535764910814, view_angle 0.81668222646 in standard ranges
+2018-02-23 00:59:46,515 [DEBUG] src.utils.generate_init: creating agent with capacity 0.172303892757 vradius 0.216107175968 vangle 0.528697956411 type 1 loc [6 0]
+2018-02-23 00:59:46,515 [INFO] src.agents.agent_originaltypes: Created an agent with location [6 0], type 1, capacity 0.172303892757, view_radius 0.216107175968, view_angle 0.528697956411 in standard ranges
+2018-02-23 00:59:46,515 [DEBUG] src.utils.generate_init: creating agent with capacity 0.267605867164 vradius 0.328337311657 vangle 0.691643471052 type 0 loc [3 6]
+2018-02-23 00:59:46,516 [INFO] src.agents.agent_originaltypes: Created an agent with location [3 6], type 0, capacity 0.267605867164, view_radius 0.328337311657, view_angle 0.691643471052 in standard ranges
+2018-02-23 00:59:46,518 [DEBUG] src.utils.generate_init: Arena created with objects added and new grid_matrix [[ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.        ]
+ [ 0.          0.          0.          0.46982012  0.          0.          0.
+   0.          0.04382851  0.        ]
+ [ 0.          0.          0.          0.46743712  0.          0.          0.
+   0.          0.          0.        ]
+ [ 0.          0.          0.          0.28915851  0.09906169  0.41256541
+   1.          0.40659699  0.42169041  0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.49444551  0.37018898  0.        ]
+ [ 0.          0.          0.          1.          0.34687077  0.          0.
+   0.37264197  0.          0.        ]
+ [ 1.          0.          0.1457681   0.          0.          0.3207807
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.21614764  0.          0.04450443  0.19099733
+   0.25782517  0.          0.          0.        ]
+ [ 0.          0.37234896  0.          0.01982353  0.          0.          0.
+   0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.        ]]
+2018-02-23 00:59:46,518 [INFO] src.utils.generate_init: Finished creating arena and agents. One item consumed due to overlap. Current item count is 20
+2018-02-23 00:59:46,560 [INFO] src.agents.agent_originaltypes: Created an agent with location [5 3], type 0, capacity 0.382225725941, view_radius 0.535764910814, view_angle 0.81668222646 in standard ranges
+2018-02-23 00:59:46,560 [INFO] src.utils.cloner: Cloned agent with params {'load': False, 'view_radius': 5.3576491081438418, 'curr_position': array([5, 3]), 'action_probability': array([ 0.25,  0.25,  0.25,  0.25]), 'viewAngle_param': 0.81668222645962718, 'curr_orientation': 0.06892113801755965, 'capacity_param': 0.38222572594125293, 'memory': array([5, 3]), 'view_angle': 5.1313657659258407, 'viewRadius_param': 0.53576491081438415, 'type': 0, 'curr_destination': None}
+2018-02-23 00:59:46,560 [INFO] src.agents.agent_originaltypes: Created an agent with location [6 0], type 1, capacity 0.172303892757, view_radius 0.216107175968, view_angle 0.528697956411 in standard ranges
+2018-02-23 00:59:46,561 [INFO] src.utils.cloner: Cloned agent with params {'load': False, 'view_radius': 2.1610717596789626, 'curr_position': array([6, 0]), 'action_probability': array([ 0.25,  0.25,  0.25,  0.25]), 'viewAngle_param': 0.52869795641103201, 'curr_orientation': 3.725342240808558, 'capacity_param': 0.17230389275713712, 'memory': array([6, 0]), 'view_angle': 3.3219072316576694, 'viewRadius_param': 0.21610717596789625, 'type': 1, 'curr_destination': None}
+2018-02-23 00:59:46,561 [INFO] src.agents.agent_originaltypes: Created an agent with location [3 6], type 0, capacity 0.5, view_radius 0.328337311657, view_angle 0.691643471052 in standard ranges
+2018-02-23 00:59:46,561 [INFO] src.utils.cloner: Cloned agent with params {'load': False, 'view_radius': 3.2833731165717897, 'curr_position': array([3, 6]), 'action_probability': array([ 0.25,  0.25,  0.25,  0.25]), 'viewAngle_param': 0.69164347105193469, 'curr_orientation': 5.090673589737705, 'capacity_param': 0.5, 'memory': array([3, 6]), 'view_angle': 4.3457240951202056, 'viewRadius_param': 0.32833731165717894, 'type': 0, 'curr_destination': None}

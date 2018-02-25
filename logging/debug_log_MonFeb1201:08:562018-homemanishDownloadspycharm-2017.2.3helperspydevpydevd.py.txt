@@ -1,0 +1,8 @@
+2018-02-12 01:08:56,564 [DEBUG] src.generate_init: creating agent with capacity 0.209533079161 vradius 0.158206064393 vangle 0.863853402367 type 2 loc [4 4]
+2018-02-12 01:08:56,564 [INFO] src.agent_originaltypes: Created an agent with location [4 4], type 2, capacity 0.209533079161, view_radius 0.158206064393, view_angle 0.863853402367 in standard ranges
+2018-02-12 01:08:56,564 [DEBUG] src.generate_init: creating agent with capacity 0.237960399663 vradius 0.176232784815 vangle 0.421764759922 type 2 loc [9 7]
+2018-02-12 01:08:56,565 [INFO] src.agent_originaltypes: Created an agent with location [9 7], type 2, capacity 0.237960399663, view_radius 0.176232784815, view_angle 0.421764759922 in standard ranges
+2018-02-12 01:08:56,565 [DEBUG] src.generate_init: creating agent with capacity 0.217228255941 vradius 0.627158237135 vangle 0.79713798273 type 1 loc [3 0]
+2018-02-12 01:08:56,565 [INFO] src.agent_originaltypes: Created an agent with location [3 0], type 1, capacity 0.217228255941, view_radius 0.627158237135, view_angle 0.79713798273 in standard ranges
+2018-02-12 01:08:56,565 [DEBUG] src.generate_init: creating agent with capacity 0.488398345181 vradius 0.283437600645 vangle 0.618774964112 type 0 loc [4 0]
+2018-02-12 01:08:56,565 [INFO] src.agent_originaltypes: Created an agent with location [4 0], type 0, capacity 0.488398345181, view_radius 0.283437600645, view_angle 0.618774964112 in standard ranges

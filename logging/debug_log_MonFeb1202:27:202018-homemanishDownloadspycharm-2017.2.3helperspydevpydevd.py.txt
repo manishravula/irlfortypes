@@ -1,0 +1,123 @@
+2018-02-12 02:27:20,681 [DEBUG] src.generate_init: creating agent with capacity 0.398605392274 vradius 0.159289134635 vangle 0.554074491587 type 0 loc [9 7]
+2018-02-12 02:27:20,682 [INFO] src.agent_originaltypes: Created an agent with location [9 7], type 0, capacity 0.398605392274, view_radius 0.159289134635, view_angle 0.554074491587 in standard ranges
+2018-02-12 02:27:20,682 [DEBUG] src.generate_init: creating agent with capacity 0.418579436133 vradius 0.812403795611 vangle 0.312857540654 type 0 loc [0 3]
+2018-02-12 02:27:20,683 [INFO] src.agent_originaltypes: Created an agent with location [0 3], type 0, capacity 0.418579436133, view_radius 0.812403795611, view_angle 0.312857540654 in standard ranges
+2018-02-12 02:27:20,683 [DEBUG] src.generate_init: creating agent with capacity 0.315991947727 vradius 0.762740252565 vangle 0.406201888806 type 1 loc [2 1]
+2018-02-12 02:27:20,683 [INFO] src.agent_originaltypes: Created an agent with location [2 1], type 1, capacity 0.315991947727, view_radius 0.762740252565, view_angle 0.406201888806 in standard ranges
+2018-02-12 02:27:20,684 [DEBUG] src.generate_init: creating agent with capacity 0.265108141515 vradius 0.570121548193 vangle 0.742224845197 type 0 loc [1 4]
+2018-02-12 02:27:20,684 [INFO] src.agent_originaltypes: Created an agent with location [1 4], type 0, capacity 0.265108141515, view_radius 0.570121548193, view_angle 0.742224845197 in standard ranges
+2018-02-12 02:27:20,812 [DEBUG] __main__: PASS: After acting freewill, new state is [13 18 22 23 25 31 38 53 55 66 77 98] with reward 0
+2018-02-12 02:27:20,814 [DEBUG] __main__: PASS: After acting freewill, new state is [14 18 23 25 31 32 38 53 55 66 77 88] with reward 0
+2018-02-12 02:27:20,815 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 25 31 33 38 53 55 66 77 78] with reward 0
+2018-02-12 02:27:20,816 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 34 38 43 53 55 66 77 78] with reward 0
+2018-02-12 02:27:20,817 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 33 38 44 53 55 66 77 78] with reward 0
+2018-02-12 02:27:20,818 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 34 38 43 53 55 66 77 78] with reward 0
+2018-02-12 02:27:20,819 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 35 38 44 53 55 66 77 78] with reward 0
+2018-02-12 02:27:20,820 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 45 53 54 55 66 77 78] with reward 0
+2018-02-12 02:27:20,821 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 46 53 55 64 66 77 78] with reward 0
+2018-02-12 02:27:20,822 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 53 55 56 65 66 77 78] with reward 0
+2018-02-12 02:27:20,823 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 53 55 56 66 75 77 78] with reward 0
+2018-02-12 02:27:20,824 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 53 66 76 77 78] with reward 0
+2018-02-12 02:27:20,825 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 53 67 76 77 78] with reward 0
+2018-02-12 02:27:20,827 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 53 67 76 77] with reward 0
+2018-02-12 02:27:20,828 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 53 67 76 77] with reward 0
+2018-02-12 02:27:20,829 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 53 67 76 77] with reward 0
+2018-02-12 02:27:20,831 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 53 67 76 87] with reward 0
+2018-02-12 02:27:20,832 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 53 66 77 86] with reward 0
+2018-02-12 02:27:20,834 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 53 65 76 87] with reward 0
+2018-02-12 02:27:20,835 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 53 64 75 77] with reward 0
+2018-02-12 02:27:20,836 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 53 54 74 76] with reward 0
+2018-02-12 02:27:20,838 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 53 54 64 75] with reward 0
+2018-02-12 02:27:20,839 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 38 44 64 65] with reward 0
+2018-02-12 02:27:20,840 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 25 31 34 38 63 64] with reward 0
+2018-02-12 02:27:20,841 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 25 31 38 54 73] with reward 0
+2018-02-12 02:27:20,842 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 25 31 38 53 72] with reward 0
+2018-02-12 02:27:20,844 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 38 43 71] with reward 0
+2018-02-12 02:27:20,845 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 38 42 81] with reward 0
+2018-02-12 02:27:20,846 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 82] with reward 0
+2018-02-12 02:27:20,847 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 92] with reward 0
+2018-02-12 02:27:20,848 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 82] with reward 0
+2018-02-12 02:27:20,849 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 72] with reward 0
+2018-02-12 02:27:20,851 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 71] with reward 0
+2018-02-12 02:27:20,852 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 72] with reward 0
+2018-02-12 02:27:20,853 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 71] with reward 0
+2018-02-12 02:27:20,854 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 61] with reward 0
+2018-02-12 02:27:20,855 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 61] with reward 0
+2018-02-12 02:27:20,856 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 51] with reward 0
+2018-02-12 02:27:20,857 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 52] with reward 0
+2018-02-12 02:27:20,858 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 62] with reward 0
+2018-02-12 02:27:20,859 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 52] with reward 0
+2018-02-12 02:27:20,861 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 62] with reward 0
+2018-02-12 02:27:20,862 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 62] with reward 0
+2018-02-12 02:27:20,863 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 52] with reward 0
+2018-02-12 02:27:20,864 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 62] with reward 0
+2018-02-12 02:27:20,865 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 52] with reward 0
+2018-02-12 02:27:20,866 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 52] with reward 0
+2018-02-12 02:27:20,868 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 38 42 62] with reward 0
+2018-02-12 02:27:20,869 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 62] with reward 0
+2018-02-12 02:27:20,870 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 63] with reward 0
+2018-02-12 02:27:20,871 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 73] with reward 0
+2018-02-12 02:27:20,872 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 74] with reward 0
+2018-02-12 02:27:20,873 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 73] with reward 0
+2018-02-12 02:27:20,874 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 73] with reward 0
+2018-02-12 02:27:20,875 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 83] with reward 0
+2018-02-12 02:27:20,877 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 83] with reward 0
+2018-02-12 02:27:20,878 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 83] with reward 0
+2018-02-12 02:27:20,879 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 82] with reward 0
+2018-02-12 02:27:20,880 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 92] with reward 0
+2018-02-12 02:27:20,881 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 93] with reward 0
+2018-02-12 02:27:20,882 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 83] with reward 0
+2018-02-12 02:27:20,883 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 84] with reward 0
+2018-02-12 02:27:20,885 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 85] with reward 0
+2018-02-12 02:27:20,886 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 85] with reward 0
+2018-02-12 02:27:20,887 [DEBUG] __main__: PASS: After acting freewill, new state is [18 22 23 24 31 38 75] with reward 0
+2018-02-12 02:27:20,888 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 75] with reward 0
+2018-02-12 02:27:20,890 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 85] with reward 0
+2018-02-12 02:27:20,892 [DEBUG] __main__: PASS: After acting freewill, new state is [14 18 23 31 32 38 85] with reward 0
+2018-02-12 02:27:20,894 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 75] with reward 0
+2018-02-12 02:27:20,895 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 76] with reward 0
+2018-02-12 02:27:20,897 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 75] with reward 0
+2018-02-12 02:27:20,898 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 76] with reward 0
+2018-02-12 02:27:20,900 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 75] with reward 0
+2018-02-12 02:27:20,903 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 65] with reward 0
+2018-02-12 02:27:20,905 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 66] with reward 0
+2018-02-12 02:27:20,908 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 65] with reward 0
+2018-02-12 02:27:20,910 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 66] with reward 0
+2018-02-12 02:27:20,912 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 66] with reward 0
+2018-02-12 02:27:20,913 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 66] with reward 0
+2018-02-12 02:27:20,914 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 65] with reward 0
+2018-02-12 02:27:20,916 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 65] with reward 0
+2018-02-12 02:27:20,917 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 55] with reward 0
+2018-02-12 02:27:20,918 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 65] with reward 0
+2018-02-12 02:27:20,920 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 55] with reward 0
+2018-02-12 02:27:20,921 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 54] with reward 0
+2018-02-12 02:27:20,923 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 53] with reward 0
+2018-02-12 02:27:20,925 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 52] with reward 0
+2018-02-12 02:27:20,927 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 53] with reward 0
+2018-02-12 02:27:20,930 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 63] with reward 0
+2018-02-12 02:27:20,932 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 64] with reward 0
+2018-02-12 02:27:20,934 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 65] with reward 0
+2018-02-12 02:27:20,936 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 66] with reward 0
+2018-02-12 02:27:20,938 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 65] with reward 0
+2018-02-12 02:27:20,940 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 55] with reward 0
+2018-02-12 02:27:20,942 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 38 45] with reward 0
+2018-02-12 02:27:20,943 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 35 38] with reward 0
+2018-02-12 02:27:20,944 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 34 38] with reward 0
+2018-02-12 02:27:20,946 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 33 38] with reward 0
+2018-02-12 02:27:20,947 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 31 32 33 34 38] with reward 0
+2018-02-12 02:27:20,948 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 33 38] with reward 0
+2018-02-12 02:27:20,949 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 24 31 32 33 38] with reward 0
+2018-02-12 02:27:20,951 [DEBUG] __main__: PASS: After acting freewill, new state is [18 23 31 32 33 38] with reward 0
+2018-02-12 02:27:20,952 [DEBUG] __main__: PASS: After acting freewill, new state is [18 22 31 32 34 38] with reward 0
+2018-02-12 02:27:20,954 [DEBUG] __main__: PASS: After acting freewill, new state is [18 21 31 32 33 38] with reward 0
+2018-02-12 02:27:20,955 [DEBUG] __main__: PASS: After acting freewill, new state is [18 21 31 32 34 38] with reward 0
+2018-02-12 02:27:20,956 [DEBUG] __main__: PASS: After acting freewill, new state is [18 21 31 35 38] with reward 0
+2018-02-12 02:27:20,958 [DEBUG] __main__: PASS: After acting freewill, new state is [18 31 32 36 38] with reward 0
+2018-02-12 02:27:20,960 [DEBUG] __main__: PASS: After acting freewill, new state is [18 31 33 37 38] with reward 0
+2018-02-12 02:27:20,961 [DEBUG] __main__: PASS: After acting freewill, new state is [18 32 34 37 38] with reward 0
+2018-02-12 02:27:20,963 [DEBUG] __main__: PASS: After acting freewill, new state is [18 33 35 36] with reward 0
+2018-02-12 02:27:20,964 [DEBUG] __main__: PASS: After acting freewill, new state is [18 25 34 37] with reward 0
+2018-02-12 02:27:20,965 [DEBUG] __main__: PASS: After acting freewill, new state is [18 26 35 36] with reward 0
+2018-02-12 02:27:20,967 [DEBUG] __main__: PASS: After acting freewill, new state is [18 27 36 37] with reward 0
+2018-02-12 02:27:20,968 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 26 38] with reward 0
+2018-02-12 02:27:20,969 [DEBUG] __main__: PASS: After acting freewill, new state is [17 18 27 37] with reward 0

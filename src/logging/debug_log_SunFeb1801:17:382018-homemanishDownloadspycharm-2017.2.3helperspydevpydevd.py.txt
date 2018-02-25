@@ -1,0 +1,15 @@
+2018-02-18 01:17:46,007 [DEBUG] src.generate_init: creating agent with capacity 0.260393065316 vradius 0.268689056313 vangle 0.46549897436 type 1 loc [9 7]
+2018-02-18 01:17:46,008 [INFO] src.agents.agent_originaltypes: Created an agent with location [9 7], type 1, capacity 0.260393065316, view_radius 0.268689056313, view_angle 0.46549897436 in standard ranges
+2018-02-18 01:17:55,831 [ERROR] __main__: MCTS agent creation failed
+Traceback (most recent call last):
+  File "/home/manish/Awesomestuff/AdHocTeamWork/AdHoc2/src/mcts/mcts_agent.py", line 159, in behave_rollout_test
+    mctagent = mcts_agent(dagent.capacity_param,dagent.viewRadius_param,dagent.viewAngle_param,dagent.type,
+NameError: global name 'mcts_agent' is not defined
+2018-02-18 01:17:57,857 [DEBUG] src.generate_init: creating agent with capacity 0.181082232322 vradius 0.213372736542 vangle 0.236954961956 type 0 loc [7 8]
+2018-02-18 01:17:57,858 [INFO] src.agents.agent_originaltypes: Created an agent with location [7 8], type 0, capacity 0.181082232322, view_radius 0.213372736542, view_angle 0.236954961956 in standard ranges
+2018-02-18 01:17:57,859 [DEBUG] src.generate_init: creating agent with capacity 0.233633552583 vradius 0.781036519742 vangle 0.229607679604 type 2 loc [9 6]
+2018-02-18 01:17:57,860 [INFO] src.agents.agent_originaltypes: Created an agent with location [9 6], type 2, capacity 0.233633552583, view_radius 0.781036519742, view_angle 0.229607679604 in standard ranges
+2018-02-18 01:17:57,862 [DEBUG] src.generate_init: creating agent with capacity 0.467405592887 vradius 0.165472364528 vangle 0.252492789001 type 1 loc [5 9]
+2018-02-18 01:17:57,863 [INFO] src.agents.agent_originaltypes: Created an agent with location [5 9], type 1, capacity 0.467405592887, view_radius 0.165472364528, view_angle 0.252492789001 in standard ranges
+2018-02-18 01:17:57,864 [DEBUG] src.generate_init: creating agent with capacity 0.266518375921 vradius 0.198922545284 vangle 0.833839415926 type 2 loc [3 0]
+2018-02-18 01:17:57,865 [INFO] src.agents.agent_originaltypes: Created an agent with location [3 0], type 2, capacity 0.266518375921, view_radius 0.198922545284, view_angle 0.833839415926 in standard ranges

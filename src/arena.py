@@ -101,7 +101,6 @@ class arena():
         #The last agent added is a dummy agent, used for MCTS
         self.agents = agents_list
         self.no_agents = len(self.agents)
-        self.mcts_agent = self.agents[-1]
         for agent in self.agents:
             self.grid_matrix[agent.curr_position[0],agent.curr_position[1]]=1
 
@@ -143,9 +142,6 @@ class arena():
     def update(self):
         agent_actions = []
         agent_probs = []
-        self.messenger_for_mcts = [self.arena.__getstate__()]
-        for agent in self.agents:
-            self.messenger_for_mcts.append([[agent.__getstate__(),None]])
         #retrieve what the agent wants to do
         for agent,idx in enumerate(self.agents):
             #Check what the agent wants to do
@@ -155,7 +151,6 @@ class arena():
             agent_action = agent.behave_act(action_probs)
             assert np.all(action_probs == agent.action_probability); "Behave_act shouldn't change the action probability"
             agent_actions.append(agent_action)
-            self.messenger_for_mcts[1][idx][1] = agent_action
             agent_probs.append(action_probs)
 
             #Approve the agent's action. This way, if agent moves further and is in
@@ -180,7 +175,14 @@ class arena():
 
         #Check how far each agent is from each item by a numpy array manipulation.
         item_pos_array = self.build_itemPositionArray()
-        agents_relative_positions  = np.array([item_pos_array-agent.curr_position for agent in self.agents]) #Array holding agents' relative positions with respect to each of the objects.
+        try:
+            agents_relative_positions  = np.array([item_pos_array-agent.curr_position for agent in self.agents]) #Array holding agents' relative positions with respect to each of the objects.
+        except ValueError:
+            if len(item_pos_array) == 0:
+                self.check_for_termination()
+                raise Exception("It seems like the sim has terminated. self.isterminal is {}".format(self.isterminal))
+            else:
+                raise
         agents_relative_distances = np.linalg.norm(agents_relative_positions,axis=2)
 
         #no_of agents surrounding each item

@@ -1,0 +1,11 @@
+2018-02-12 01:11:34,527 [DEBUG] src.generate_init: creating agent with capacity 0.308985056806 vradius 0.350041061724 vangle 0.866329554469 type 2 loc [2 1]
+2018-02-12 01:11:34,528 [INFO] src.agent_originaltypes: Created an agent with location [2 1], type 2, capacity 0.308985056806, view_radius 0.350041061724, view_angle 0.866329554469 in standard ranges
+2018-02-12 01:11:34,528 [DEBUG] src.generate_init: creating agent with capacity 0.267649856259 vradius 0.710574028624 vangle 0.361978070634 type 0 loc [1 0]
+2018-02-12 01:11:34,528 [INFO] src.agent_originaltypes: Created an agent with location [1 0], type 0, capacity 0.267649856259, view_radius 0.710574028624, view_angle 0.361978070634 in standard ranges
+2018-02-12 01:11:34,528 [DEBUG] src.generate_init: creating agent with capacity 0.275511961021 vradius 0.768964450812 vangle 0.502001629351 type 2 loc [9 0]
+2018-02-12 01:11:34,528 [INFO] src.agent_originaltypes: Created an agent with location [9 0], type 2, capacity 0.275511961021, view_radius 0.768964450812, view_angle 0.502001629351 in standard ranges
+2018-02-12 01:11:34,529 [DEBUG] src.generate_init: creating agent with capacity 0.244127441086 vradius 0.697866551013 vangle 0.534935610803 type 1 loc [5 4]
+2018-02-12 01:11:34,529 [INFO] src.agent_originaltypes: Created an agent with location [5 4], type 1, capacity 0.244127441086, view_radius 0.697866551013, view_angle 0.534935610803 in standard ranges
+2018-02-12 01:11:40,288 [DEBUG] __main__: The generated random actions for UNI look like this 
+ ['uuun', 'uuln', 'uupn', 'udun', 'udln', 'udpn', 'ulun', 'ulln', 'ulpn', 'upun', 'upln', 'uppn', 'duun', 'duln', 'dupn', 'ddun', 'ddln', 'ddpn', 'dlun', 'dlln', 'dlpn', 'dpun', 'dpln', 'dppn', 'luun', 'luln', 'lupn', 'ldun', 'ldln', 'ldpn', 'llun', 'llln', 'llpn', 'lpun', 'lpln', 'lppn', 'ruun', 'ruln', 'rupn', 'rdun', 'rdln', 'rdpn', 'rlun', 'rlln', 'rlpn', 'rpun', 'rpln', 'rppn', 'puun', 'puln', 'pupn', 'pdun', 'pdln', 'pdpn', 'plun', 'plln', 'plpn', 'ppun', 'ppln', 'pppn']
+2018-02-12 01:12:21,170 [DEBUG] __main__: PASS: Test 1 passed. The number of legal actions function works

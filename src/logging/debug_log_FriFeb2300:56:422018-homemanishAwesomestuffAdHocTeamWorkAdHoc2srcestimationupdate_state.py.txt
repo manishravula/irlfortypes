@@ -1,0 +1,49 @@
+2018-02-23 00:56:42,949 [INFO] src.utils.generate_init: Initializing new configuration
+2018-02-23 00:56:42,950 [DEBUG] src.utils.generate_init: creating arena object with grid_matrix [[ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.        ]
+ [ 0.          0.10335447  0.          0.33530782  0.          0.
+   0.49128178  0.46763215  0.          0.        ]
+ [ 0.          0.15365262  0.          0.          0.          0.
+   0.26198018  0.          0.          0.        ]
+ [ 0.          0.          0.          0.36973025  0.          0.          0.
+   0.28707342  0.          0.        ]
+ [ 0.          0.          0.          0.33758668  0.21490577  0.43853811
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.3171816
+   0.          0.12878854  0.48878544  0.        ]
+ [ 0.          0.          0.          0.23133241  0.2987498   0.37029421
+   0.          0.41032851  0.          0.        ]
+ [ 0.          0.          0.          0.086067    0.          0.42404927
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.        ]]
+2018-02-23 00:56:42,951 [DEBUG] src.utils.generate_init: creating 3 agents
+2018-02-23 00:56:42,951 [DEBUG] src.utils.generate_init: creating agent with capacity 0.380801227059 vradius 0.446403699918 vangle 0.768901428236 type 0 loc [0 0]
+2018-02-23 00:56:42,951 [INFO] src.agents.agent_originaltypes: Created an agent with location [0 0], type 0, capacity 0.380801227059, view_radius 0.446403699918, view_angle 0.768901428236 in standard ranges
+2018-02-23 00:56:42,951 [DEBUG] src.utils.generate_init: creating agent with capacity 0.391824635758 vradius 0.676048237317 vangle 0.375562294753 type 1 loc [1 6]
+2018-02-23 00:56:42,951 [INFO] src.agents.agent_originaltypes: Created an agent with location [1 6], type 1, capacity 0.391824635758, view_radius 0.676048237317, view_angle 0.375562294753 in standard ranges
+2018-02-23 00:56:42,951 [DEBUG] src.utils.generate_init: creating agent with capacity 0.448029322301 vradius 0.80102185521 vangle 0.351172847955 type 1 loc [1 7]
+2018-02-23 00:56:42,951 [INFO] src.agents.agent_originaltypes: Created an agent with location [1 7], type 1, capacity 0.448029322301, view_radius 0.80102185521, view_angle 0.351172847955 in standard ranges
+2018-02-23 00:56:42,953 [DEBUG] src.utils.generate_init: Arena created with objects added and new grid_matrix [[ 1.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.        ]
+ [ 0.          0.10335447  0.          0.33530782  0.          0.          1.
+   1.          0.          0.        ]
+ [ 0.          0.15365262  0.          0.          0.          0.
+   0.26198018  0.          0.          0.        ]
+ [ 0.          0.          0.          0.36973025  0.          0.          0.
+   0.28707342  0.          0.        ]
+ [ 0.          0.          0.          0.33758668  0.21490577  0.43853811
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.3171816
+   0.          0.12878854  0.48878544  0.        ]
+ [ 0.          0.          0.          0.23133241  0.2987498   0.37029421
+   0.          0.41032851  0.          0.        ]
+ [ 0.          0.          0.          0.086067    0.          0.42404927
+   0.          0.          0.          0.        ]
+ [ 0.          0.          0.          0.          0.          0.          0.
+   0.          0.          0.        ]]
+2018-02-23 00:56:42,953 [INFO] src.utils.generate_init: Finished creating arena and agents. One item consumed due to overlap. Current item count is 18
