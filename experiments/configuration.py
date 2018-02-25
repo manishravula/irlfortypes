@@ -38,8 +38,8 @@ VISUALIZE_SIM = False
 
 
 #MCTS Related
-N_ROLLOUTS = 30
-ROLLOUT_DEPTH = 30
+N_ROLLOUTS = 3
+ROLLOUT_DEPTH = 3
 
 
 #Twilio details
@@ -67,10 +67,10 @@ LOGGING_CONFIG = {
             # 'stream': 'sys.stdout'
         },
         'Debug_File':{
-            'level': 'DEBUG',
+            'level': 'INFO',
             'formatter': 'standard',
             'class': 'logging.FileHandler',
-            'filename': '../logging/debug_log_{}-{}.txt'.format(time.asctime().replace(' ',''),inspect.stack()[-1][1].replace('/',''))
+            'filename': './logging/debug_log_{}-{}.txt'.format(time.asctime().replace(' ',''),inspect.stack()[-1][1].replace('/',''))
         },
     },
     'loggers': {

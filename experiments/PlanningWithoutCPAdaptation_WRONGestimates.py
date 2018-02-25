@@ -4,7 +4,9 @@ import logging
 import time
 import copy
 import seaborn as sns
+
 import pickle
+import tempfile
 
 sns.set()
 import logging.config
@@ -121,6 +123,9 @@ try:
             trackingAgentParameterEstimates = [copy.deepcopy(history[0].agent_states[0])]
             trackingAgentParameterEstimates[0].update(tainfo)
 
+            #REVERSING TO GIVE RANDOM ESTIMATES
+            trackingAgentParameterEstimates.reverse()
+
             mcts_state = mctsagent.__getstate__()
             action_and_consequence = mctsagent.behave(history,trackingAgentIds,trackingAgentParameterEstimates)
 
@@ -150,6 +155,7 @@ try:
         pickle.dump(final_results,handle)
 
 except Exception as e:
-    logging.exception("Experiment failed")
-    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiment exception {} ! Check logs!".format(e))
+    logging.exception('Experiment failed')
+    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,
+                                     body="Experiment exception occured {}! Check logs!".format(e))
 
