@@ -4,9 +4,7 @@ import logging
 import time
 import copy
 import seaborn as sns
-
 import pickle
-import tempfile
 
 sns.set()
 import logging.config
@@ -23,9 +21,9 @@ import logging
 logging.config.dictConfig(config.LOGGING_CONFIG)
 logger = logging.getLogger(__name__)
 
-
 experimentID = int(time.time())
-logger.info("----Experiment without passing the right estimates to MCTS")
+
+logger.info("-----Experiment without the oracle support to MCTS")
 logger.info("-----------------------------Experiment {} begins--------------------------".format(experimentID))
 
 no_experiments = config.N_EXPERIMENTS
@@ -39,6 +37,7 @@ logger.info("Configurations of the experiment: n_agents: {}".format(n_agents))
 
 n_agents_tracking = 1
 logger.info("Configurations of the experiment: n_agents_tracking: {}".format(n_agents_tracking))
+
 
 
 abu_param_dict = {
@@ -79,9 +78,22 @@ try:
 
         main_arena.agents.append(mctsagent)
 
+        changepoint_time = int(100*np.random.random()+50)
+        newtp = np.random.randint(0,3,1)[0]
+        while newtp == main_arena.type:
+            newtp = np.random.randint(0,3,1)[0]
+        changepoint_postType = newtp
+
+        logger.info("Preset changepoint is at {}".format(changepoint_time))
+
         j=0
         #Beginning loop
         while (j<n_max_iters_in_experiment) and not main_arena.isterminal:
+
+            #Changing type
+            if j==changepoint_time:
+                main_arena.agents[0].type = changepoint_postType
+            logger.info("Agent 0/1's type changed from to {}".format(changepoint_postType))
 
             abu.all_agents_behave()
             currstep_arenaState = main_arena.__getstate__()
@@ -111,7 +123,6 @@ try:
             history.append(currstep_history)
 
 
-
             estimated_type = np.argmax(abu.model_evidence[-1])
             estimated_param = estimates[estimated_type][0]
 
@@ -120,12 +131,10 @@ try:
             tainfo = {'viewRadius_param':estimated_param,'type':estimated_type,'view_radius':estimated_param*main_arena.grid_matrix.shape[0]}
             # trackingAgentParameterEstimates = copy.deepcopy(history[0][1][0][0])
 
+
             #Dummy chaning the state of only one agent(0).
             trackingAgentParameterEstimates = [copy.deepcopy(history[0].agent_states[0])]
             trackingAgentParameterEstimates[0].update(tainfo)
-
-            #REVERSING TO GIVE RANDOM ESTIMATES
-            trackingAgentParameterEstimates.reverse()
 
             mcts_state = mctsagent.__getstate__()
             action_and_consequence = mctsagent.behave(history,trackingAgentIds,trackingAgentParameterEstimates)
@@ -149,14 +158,12 @@ try:
 
         logger.info("End of expriment {}".format(i))
         final_results.append(r)
-    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} with false information finished succesfully".format(experimentID))
-    resultname = str(experimentID)+'_resultswithWrongEstimation'
+    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} for planning without Oracle finished succesfully".format(experimentID))
+    resultname = str(experimentID)+'_resultswithOUTOracle'
 
     with open(resultname,'wb') as handle:
         pickle.dump(final_results,handle)
 
 except Exception as e:
-    logging.exception('Experiment failed')
-    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,
-                                     body="Experiment with false information exception occured {}! Check logs!".format(e))
-
+    logging.exception("Experiment failed")
+    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiment without oracle exception {} ! Check logs!".format(e))

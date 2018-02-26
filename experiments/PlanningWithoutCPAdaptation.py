@@ -23,12 +23,13 @@ logger = logging.getLogger(__name__)
 
 experimentID = int(time.time())
 
+logger.info("-----Experiment with passing the estimates to MCTS")
 logger.info("-----------------------------Experiment {} begins--------------------------".format(experimentID))
 
-no_experiments = 10
+no_experiments = config.N_EXPERIMENTS
 logger.info("Configuration of the experiment: no_experiments: {}".format(no_experiments))
 
-n_max_iters_in_experiment = 15
+n_max_iters_in_experiment = config.N_MAXITERS_IN_EXPERIMENTS
 logger.info("Configurations of the experiment: n_max_iters_experiment: {}".format(n_max_iters_in_experiment))
 
 n_agents = 4 #including MCTS
@@ -143,13 +144,13 @@ try:
 
         logger.info("End of expriment {}".format(i))
         final_results.append(r)
-    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} finished succesfully".format(experimentID))
-    resultname = str(experimentID)+'_results'
+    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} for true information finished succesfully".format(experimentID))
+    resultname = str(experimentID)+'_resultswithEstimation'
 
     with open(resultname,'wb') as handle:
         pickle.dump(final_results,handle)
 
 except Exception as e:
     logging.exception("Experiment failed")
-    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiment exception {} ! Check logs!".format(e))
+    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiment with true estimation failed exception {} ! Check logs!".format(e))
 

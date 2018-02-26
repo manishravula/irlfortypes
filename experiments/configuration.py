@@ -48,7 +48,9 @@ SMSClient = twiliocreds.SMSClient
 from_number = "+15126438645"
 to_number = "+15125022558"
 
-
+#Experimental details
+N_EXPERIMENTS = 10
+N_MAXITERS_IN_EXPERIMENTS = 150
 
 #logging config
 LOGGING_CONFIG = {

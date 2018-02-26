@@ -4,9 +4,7 @@ import logging
 import time
 import copy
 import seaborn as sns
-
 import pickle
-import tempfile
 
 sns.set()
 import logging.config
@@ -23,9 +21,9 @@ import logging
 logging.config.dictConfig(config.LOGGING_CONFIG)
 logger = logging.getLogger(__name__)
 
-
 experimentID = int(time.time())
-logger.info("----Experiment without passing the right estimates to MCTS")
+
+logger.info("-----Experiment with oracle support in ChangePoints ------ ")
 logger.info("-----------------------------Experiment {} begins--------------------------".format(experimentID))
 
 no_experiments = config.N_EXPERIMENTS
@@ -79,9 +77,28 @@ try:
 
         main_arena.agents.append(mctsagent)
 
+        changepoint_time = int(100*np.random.random()+50)
+        newtp = np.random.randint(0,3,1)[0]
+        while newtp == main_arena.type:
+            newtp = np.random.randint(0,3,1)[0]
+        changepoint_postType = newtp
+
+        logger.info("Preset changepoint is at {}".format(changepoint_time))
+
         j=0
         #Beginning loop
         while (j<n_max_iters_in_experiment) and not main_arena.isterminal:
+
+            #Changing type
+            if j==changepoint_time:
+                main_arena.agents[0].type = changepoint_postType
+                main_arena.agents[0].curr_destination = None #resetting state
+                main_arena.agents[0].memory = None #resetting state
+                new_abu = ABU_estimator_noapproximation.ABU(agents[0],main_arena,abu_param_dict)
+                abu = new_abu
+                history = [] #resetting history.
+
+            logger.info("Agent 0/1's type changed from to {}".format(changepoint_postType))
 
             abu.all_agents_behave()
             currstep_arenaState = main_arena.__getstate__()
@@ -99,9 +116,15 @@ try:
                     abu.all_agents_calc_likelihood(action_and_consequence)
                     _ = abu.fit_likelihoodPolynomial_allTypes(action_and_consequence)
                     abu.get_likelihoodValues_allTypes()
-                    abu.calculate_modelEvidence(j)
-                    _,_ = abu.estimate_allTypes(j)
-                    estimates, _ = abu.estimate_allTypes_withoutApproximation(j)
+                    if j<changepoint_time:
+                        abu.calculate_modelEvidence(j)
+                        _,_ = abu.estimate_allTypes(j)
+                        estimates, _ = abu.estimate_allTypes_withoutApproximation(j)
+                    else:
+                        abu.calculate_modelEvidence(j-changepoint_time)
+                        _,_ = abu.estimate_allTypes(j-changepoint_time)
+                        estimate, _ = abu.estimate_allTypes_withoutApproximation(j-changepoint_time)
+
                 ag.execute_action(action_and_consequence)
 
             currstep_agentStates.append(currstep_agentStates[-2]) #like a dummy so that the mcts caller won't be upset.
@@ -123,9 +146,6 @@ try:
             #Dummy chaning the state of only one agent(0).
             trackingAgentParameterEstimates = [copy.deepcopy(history[0].agent_states[0])]
             trackingAgentParameterEstimates[0].update(tainfo)
-
-            #REVERSING TO GIVE RANDOM ESTIMATES
-            trackingAgentParameterEstimates.reverse()
 
             mcts_state = mctsagent.__getstate__()
             action_and_consequence = mctsagent.behave(history,trackingAgentIds,trackingAgentParameterEstimates)
@@ -149,14 +169,12 @@ try:
 
         logger.info("End of expriment {}".format(i))
         final_results.append(r)
-    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} with false information finished succesfully".format(experimentID))
-    resultname = str(experimentID)+'_resultswithWrongEstimation'
+    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} for Planning with Oracle help finished succesfully".format(experimentID))
+    resultname = str(experimentID)+'_resultsWithOracle'
 
     with open(resultname,'wb') as handle:
         pickle.dump(final_results,handle)
 
 except Exception as e:
-    logging.exception('Experiment failed')
-    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,
-                                     body="Experiment with false information exception occured {}! Check logs!".format(e))
-
+    logging.exception("Experiment failed")
+    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiment with oracle exception {} ! Check logs!".format(e))
