@@ -1,1 +1,0 @@
-2018-01-28 16:05:10,933 [INFO] generate_init: Initializing new configuration

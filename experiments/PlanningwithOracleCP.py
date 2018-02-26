@@ -19,7 +19,7 @@ from src.utils import banner
 import logging
 
 logging.config.dictConfig(config.LOGGING_CONFIG)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('withOracle')
 
 experimentID = int(time.time())
 
@@ -79,7 +79,7 @@ try:
 
         changepoint_time = int(100*np.random.random()+50)
         newtp = np.random.randint(0,3,1)[0]
-        while newtp == main_arena.type:
+        while newtp == main_arena.agents[0].type:
             newtp = np.random.randint(0,3,1)[0]
         changepoint_postType = newtp
 
@@ -88,7 +88,7 @@ try:
         j=0
         #Beginning loop
         while (j<n_max_iters_in_experiment) and not main_arena.isterminal:
-
+            logger.info('iter {} in experiment {}'.format(j,i))
             #Changing type
             if j==changepoint_time:
                 main_arena.agents[0].type = changepoint_postType
@@ -97,8 +97,7 @@ try:
                 new_abu = ABU_estimator_noapproximation.ABU(agents[0],main_arena,abu_param_dict)
                 abu = new_abu
                 history = [] #resetting history.
-
-            logger.info("Agent 0/1's type changed from to {}".format(changepoint_postType))
+                logger.info("Agent 0/1's type changed from to {}".format(changepoint_postType))
 
             abu.all_agents_behave()
             currstep_arenaState = main_arena.__getstate__()

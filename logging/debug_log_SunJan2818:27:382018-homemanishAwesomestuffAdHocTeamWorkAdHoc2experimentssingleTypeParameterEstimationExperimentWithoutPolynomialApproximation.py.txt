@@ -1,4 +1,0 @@
-2018-01-28 18:27:38,320 [INFO] generate_init: Initializing old configuration for grid and agents
-2018-01-28 18:27:38,322 [INFO] src.agent_originaltypes: Created an agent with location [1 7], type 2, capacity 0.260043395988, view_radius 0.407492966482, view_angle 0.459320310756 in standard ranges
-2018-01-28 18:27:38,323 [INFO] src.agent_originaltypes: Created an agent with location [5 7], type 0, capacity 0.271151175905, view_radius 0.245258344302, view_angle 0.256973635399 in standard ranges
-2018-01-28 18:27:38,323 [INFO] src.agent_originaltypes: Created an agent with location [1 6], type 2, capacity 0.386401061346, view_radius 0.185542396793, view_angle 0.693968193063 in standard ranges

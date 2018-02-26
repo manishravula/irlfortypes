@@ -1,6 +1,0 @@
-2018-02-07 15:48:14,782 [INFO] __main__: Logging configuration of the file
-2018-02-07 15:48:14,784 [INFO] __main__: LOGGING_CONFIG
-2018-02-07 15:48:14,786 [INFO] generate_init: Initializing new configuration
-2018-02-07 15:48:14,789 [INFO] src.agent_originaltypes: Created an agent with location [4 0], type 0, capacity 0.116259575237, view_radius 0.409420325181, view_angle 0.748976735134 in standard ranges
-2018-02-07 15:48:14,789 [INFO] src.agent_originaltypes: Created an agent with location [1 5], type 2, capacity 0.189698137768, view_radius 0.390204102422, view_angle 0.667725639867 in standard ranges
-2018-02-07 15:48:14,790 [INFO] src.agent_originaltypes: Created an agent with location [3 9], type 0, capacity 0.458396317229, view_radius 0.667475261339, view_angle 0.821293168497 in standard ranges

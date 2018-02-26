@@ -1,8 +1,0 @@
-2018-01-29 19:06:17,613 [INFO] __main__: Logging configuration of the file
-2018-01-29 19:06:17,616 [INFO] __main__: LOGGING_CONFIG
-2018-01-29 19:06:17,621 [INFO] generate_init: Initializing new configuration
-2018-01-29 19:06:17,624 [INFO] src.agent_originaltypes: Created an agent with location [1 6], type 0, capacity 0.485962389123, view_radius 0.372276695376, view_angle 0.252691414646 in standard ranges
-2018-01-29 19:06:17,625 [INFO] src.agent_originaltypes: Created an agent with location [5 6], type 0, capacity 0.2109191547, view_radius 0.780459374177, view_angle 0.774533598795 in standard ranges
-2018-01-29 19:06:17,625 [INFO] src.agent_originaltypes: Created an agent with location [6 0], type 2, capacity 0.170180209932, view_radius 0.443331328808, view_angle 0.598383974363 in standard ranges
-2018-01-29 19:06:17,745 [INFO] generate_init: Finished creating arena and agents. One item consumed due to overlap. Current item count is 20
-2018-01-29 19:06:17,745 [INFO] src.ABU_estimator_noapproximation: Calling parent ABU via inheritance. This is ABU_noapproximation

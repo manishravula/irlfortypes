@@ -1,4 +1,0 @@
-2018-01-28 16:02:18,901 [INFO] generate_init: Initializing new configuration
-2018-01-28 16:02:18,997 [INFO] generate_init: Finished creating arena and agents. One item consumed due to overlap. Current item count is 18
-2018-01-28 16:02:19,001 [INFO] src.ABU_estimator_noapproximation: ABU Estimator class initialized with 10 agents and working on estimating parameter view_radius with a resolution of 10
-2018-01-28 16:02:19,002 [INFO] src.ABU_estimator_noapproximation: ABU polynomial info: resolution: 10, llpoly_degree: 9, priorpoly_degree: 9, postpoly_degree: 9, refitdensity: 20

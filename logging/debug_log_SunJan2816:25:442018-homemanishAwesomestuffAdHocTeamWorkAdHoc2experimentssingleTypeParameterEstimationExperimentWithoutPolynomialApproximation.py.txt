@@ -1,1 +1,0 @@
-2018-01-28 16:25:44,513 [INFO] generate_init: Initializing old configuration for grid and agents

@@ -21,7 +21,7 @@ from src.utils import banner
 import logging
 
 logging.config.dictConfig(config.LOGGING_CONFIG)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('wrongEstimates')
 
 
 experimentID = int(time.time())
@@ -82,7 +82,7 @@ try:
         j=0
         #Beginning loop
         while (j<n_max_iters_in_experiment) and not main_arena.isterminal:
-
+            logger.info('iter {} in experiment {}'.format(j,i))
             abu.all_agents_behave()
             currstep_arenaState = main_arena.__getstate__()
             currstep_agentStates = [ag.__getstate__() for ag in main_arena.agents[:-1]]
