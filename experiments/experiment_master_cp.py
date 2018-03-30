@@ -178,7 +178,7 @@ try:
                         else:
                             abu.calculate_modelEvidence(j-changepoint_time)
                             _,_ = abu.estimate_allTypes(j-changepoint_time)
-                            estimates, _ = abu.estimate_allTypes_withoutApproximation(j - changepoint_time)
+                            estimates, _ = abu.estimate_allTypes_withoutApproximation(j - changepoint_time,False)
 
                 ag.execute_action(action_and_consequence)
 
