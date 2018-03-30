@@ -241,15 +241,19 @@ try:
 
         logger.info("End of expriment {}".format(i))
         final_results.append(r)
-    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} with args {} finished succesfully".format(experimentID,args))
     resultname = str(experimentID)+'_'+args.type+'_'+args.mcts_setting
 
     config_forsaving = {}
-    config_forsaving.update(config.__dict__)
+    p1 = config.__dict__
+    for key in p1.keys():
+        p1[key] = str(p1[key])
+    config_forsaving.update(p1)
     config_forsaving.update(args.__dict__)
     final_results.append(config_forsaving)
     with open(resultname,'wb') as handle:
-        pickle.dump(final_results,handle)
+        pickle.dump(final_results,handle,protocol=pickle.HIGHEST_PROTOCOL)
+
+    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} with args {} finished succesfully".format(experimentID,args))
 
 except Exception as e:
     logging.exception("Experiment failed")
