@@ -169,16 +169,16 @@ try:
                     if args.type == 'cp-nooracle':
                         abu.calculate_modelEvidence(j)
                         _,_ = abu.estimate_allTypes(j)
-                        estimates, _ = abu.estimate_allTypes_withoutApproximation(j)
+                        estimates, _ = abu.estimate_allTypes_withoutApproximation(j,False)
                     else:
                         if j<changepoint_time:
                             abu.calculate_modelEvidence(j)
                             _,_ = abu.estimate_allTypes(j)
-                            estimates, _ = abu.estimate_allTypes_withoutApproximation(j)
+                            estimates, _ = abu.estimate_allTypes_withoutApproximation(j,False)
                         else:
                             abu.calculate_modelEvidence(j-changepoint_time)
                             _,_ = abu.estimate_allTypes(j-changepoint_time)
-                            estimates, _ = abu.estimate_allTypes_withoutApproximation(j-changepoint_time)
+                            estimates, _ = abu.estimate_allTypes_withoutApproximation(j - changepoint_time)
 
                 ag.execute_action(action_and_consequence)
 
@@ -244,6 +244,10 @@ try:
     config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} with args {} finished succesfully".format(experimentID,args))
     resultname = str(experimentID)+'_'+args.type+'_'+args.mcts_setting
 
+    config_forsaving = {}
+    config_forsaving.update(config.__dict__)
+    config_forsaving.update(args.__dict__)
+    final_results.append(config_forsaving)
     with open(resultname,'wb') as handle:
         pickle.dump(final_results,handle)
 

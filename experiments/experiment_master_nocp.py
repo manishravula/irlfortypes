@@ -121,7 +121,7 @@ try:
                     abu.get_likelihoodValues_allTypes()
                     abu.calculate_modelEvidence(j)
                     _,_ = abu.estimate_allTypes(j)
-                    estimates, _ = abu.estimate_allTypes_withoutApproximation(j)
+                    estimates, _ = abu.estimate_allTypes_withoutApproximation(j,False)
                 ag.execute_action(action_and_consequence)
 
             currstep_agentStates.append(currstep_agentStates[-2]) #like a dummy so that the mcts caller won't be upset.
@@ -185,7 +185,10 @@ try:
         final_results.append(r)
     config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} with args {} finished succesfully".format(experimentID,args))
     resultname = str(experimentID)+'_'+args.type+'_'+args.mcts_setting
-
+    config_forsaving = {}
+    config_forsaving.update(config.__dict__)
+    config_forsaving.update(args.__dict__)
+    final_results.append(config_forsaving)
     with open(resultname,'wb') as handle:
         pickle.dump(final_results,handle)
 

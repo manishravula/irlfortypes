@@ -18,12 +18,13 @@ class ABU(abu):
     def __init__(self,mimicking_agent,arena_obj,kwargs):
         logger.info('Calling parent ABU via inheritance. This is ABU_noapproximation')
         abu.__init__(self,mimicking_agent,arena_obj,kwargs)
-        self.inital_prior_points = np.ones(self.resolution,'float')/(len(self.x_points))
+        self.initial_prior_points = np.ones(self.resolution, 'float') / (len(self.x_points))
         self.likelihood_dense_typesList = []
         self.prior_dense_typesList = []
         self.posterior_dense_typesList = []
         self.posteriorEstimates_maximum_withoutApproximation = []
         self.posteriorEstimates_sample_withoutApproximation = []
+        self.posteriors_curr = [self.initial_prior_points]*4
 
     def get_likelihoodArray(self,tp):
         agents_set = self.lh_agents[tp]
@@ -70,22 +71,56 @@ class ABU(abu):
         posterior_estimate_maximum = self.x_points[np.argmax(posterior_points_normalized)]
         return posterior_points_normalized,posterior_estimate_sample,posterior_estimate_maximum
 
-    def estimate_allTypes_withoutApproximation(self,i):
+    def estimate_allTypes_withoutApproximation(self, i, remember):
+        """
+        Rolling estimation of the parameters. Needs to be called everystep.
+
+
+        :param i:
+        :param remember: If these estimates for use-discard, or if these are a part of the esimation chain
+             and whose results will be remembered in the future?
+        :return:
+        """
         estimates_list = []
         posterior_list = []
         for tp in self.types:
             likelihood_points = self.likelihood_dense_typesList[i][tp]
             if i==0:
-                prior_points = self.inital_prior_points
+                prior_points = self.initial_prior_points
             else:
-                prior_points = self.posterior_dense_typesList[i-1][tp]
+                prior_points = self.posteriors_curr[tp]
             update_posteriorPoints, estim_sample,estim_maximum = self.estimate_parameter_withoutApproximation(likelihood_points,prior_points,tp)
             posterior_list.append(update_posteriorPoints)
             estimates_list.append([estim_sample,estim_maximum])
-        self.posterior_dense_typesList.append(posterior_list)
-        self.posteriorEstimates_maximum_withoutApproximation.append([estimate[1] for estimate in estimates_list])
-        self.posteriorEstimates_sample_withoutApproximation.append([estimate[0] for estimate in estimates_list])
+        self.posteirors_curr = posterior_list
+
+        if remember:
+            self.posterior_dense_typesList.append(posterior_list)
+            self.posteriorEstimates_maximum_withoutApproximation.append([estimate[1] for estimate in estimates_list])
+            self.posteriorEstimates_sample_withoutApproximation.append([estimate[0] for estimate in estimates_list])
         return estimates_list, posterior_list
+
+
+    def reset(self,i,jmax):
+        """
+        Reset the ABU updater back to this point, and recompute all the variables .
+        :param i: The time point from which to recompute the posterior.
+        :param jmax: the time until which we want to refresh our estimates
+        :return: None
+        """
+        logger.info("ABU reset called to reset at {} till {}".format(i,jmax))
+        self.posteriors_curr = self.initial_prior_points * len(self.types)
+        if jmax<i:
+            raise Exception("Called with the wrong reset window i {} jmax {}".format(i,jmax))
+        if jmax>len(self.likelihood_dense_typesList):
+            raise Exception("Called with Jmax {} exceeding likelihood collection length {}".format(jmax,len(self.likelihood_dense_typesList)))
+        if i==jmax:
+            raise Exception("I and JMax both cannot be the same {} {}".format(i,jmax))
+        for i in range(i,jmax):
+            es,po = self.estimate_allTypes_withoutApproximation(i,False)
+
+        return es
+
 
 
 
@@ -100,7 +135,6 @@ class ABU(abu):
         if i<0:
             raise Exception('Negative time asked')
 
-
         if tp>3:
             raise Exception('Wrong type requested')
 
@@ -108,7 +142,7 @@ class ABU(abu):
 
         estimate_list = []
         mev_list = []
-        prior_vals = self.inital_prior_points[tp]
+        prior_vals = self.initial_prior_points[tp]
 
         for t in range(i+1, j+1):
             likelihood_vals = self.likelihood_dense_typesList[i][tp]
@@ -138,3 +172,12 @@ class ABU(abu):
 
     def estimate_segmentForChamp_type3_withoutApprox(self, i, j):
         return self.estimate_singleType_segment_forChamp_withoutApprox(i,j,3)
+
+
+    def reset_prior(self,t):
+        if t > len(self.total_simSteps):
+            raise Exception("Invalid timestep {} requested".format(t))
+
+
+
+

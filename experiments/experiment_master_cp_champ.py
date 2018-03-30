@@ -13,7 +13,7 @@ from src import arena
 from src.mcts import mcts_arena_wrapper, mcts_sourcealgo, mcts_agent_wrapper
 from src.utils import cloner, generate_init
 from src.estimation import update_state, ABU_estimator_noapproximation
-import src.champ as champ
+import src.champ as _champ
 
 import configuration as config
 from src.utils import banner
@@ -22,28 +22,21 @@ import logging
 logging.config.dictConfig(config.LOGGING_CONFIG)
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument("--settingsfile", type=str, help="File specifying initial conditions for each experiment to be performed.")
+parser.add_argument("--settingsfolder", type=str, help="File specifying initial conditions for each experiment to be performed.")
 parser.add_argument("--mcts_setting",type=str,help="Setting about using heuristic for MCTS")
-parser.add_argument("ch_length_min",type=int,help="CHAMP's minimum length of the segment parameter")
-parser.add_argument("ch_length_mean",type=int,help="CHAMP's mean length of the segment")
-parser.add_argument("ch_length_sigma",type=int,help="CHAMP's variance in length of the segment")
-parser.add_argument("ch_maxparticles",type=int,help="CHAMP's maximum number of particles")
-parser.add_argument("ch_resample_particles",type=int,help="Number of resampling in CHAMP's particles")
+parser.add_argument("--ch_length_min",type=int,help="CHAMP's minimum length of the segment parameter")
+parser.add_argument("--ch_length_mean",type=int,help="CHAMP's mean length of the segment")
+parser.add_argument("--ch_length_sigma",type=int,help="CHAMP's variance in length of the segment")
+parser.add_argument("--ch_maxparticles",type=int,help="CHAMP's maximum number of particles")
+parser.add_argument("--ch_resample_particles",type=int,help="Number of resampling in CHAMP's particles")
 
-
+ara = config.__dict__
 args = parser.parse_args()
 
-exptype = args.type
-expfile = args.settingsfile
+expfile = args.settingsfolder
 
-possible_types = ['cp-oracle','cp-nooracle']
 possible_mctssettings = ['heuristic','absolute']
 
-#sanity checks
-if exptype is None:
-    raise Exception("No valid experiment type given")
-elif exptype not in possible_types:
-    raise Exception("Given type doesn't match any one of the possible types")
 
 if expfile is None:
     raise Exception("No experiment conditions file given")
@@ -65,8 +58,8 @@ if args.ch_resample_particles is None:
 
 experimentID = int(time.time())
 
-logger = logging.getLogger(args.type+str(experimentID))
-logger.info("-----Experiment type {} ------ ".format(args.type))
+logger = logging.getLogger(str(experimentID))
+logger.info("-----Experiment with CHAMP ------ ")
 logger.info("-----------------------------Experiment ID {} begins--------------------------".format(experimentID))
 
 no_experiments = config.N_EXPERIMENTS
@@ -107,7 +100,7 @@ try:
         r = result(i)
         logger.info(banner.horizontal('Experiment {}'.format(i)))
         #Conducting individual experiments now.
-        main_arena, agents = generate_init.generate_from_savedexperiment('data/e2',i,n_agents)
+        main_arena, agents = generate_init.generate_from_savedexperiment(args.settingsfolder,i,n_agents)
         r.ini_number_items = main_arena.no_items
 
         #Setting up ABU.
@@ -117,11 +110,9 @@ try:
         fitters = [abu.estimate_segmentForChamp_type0_withoutApprox, abu.estimate_segmentForChamp_type1_withoutApprox,
                    abu.estimate_segmentForChamp_type2_withoutApprox,
                    abu.estimate_segmentForChamp_type3_withoutApprox]
-        champ_config = champ.Config(fitters, length_min=args.ch_length_min, length_mean=args.ch_length_mean, length_sigma=args.ch_length_sigma, max_particles=args.ch_maxparticles,
+        champ_config = _champ.Config(fitters, length_min=args.ch_length_min, length_mean=args.ch_length_mean, length_sigma=args.ch_length_sigma, max_particles=args.ch_maxparticles,
                                     resamp_particles=args.ch_maxparticles)
-        champ = champ.Champ(champ_config)
-
-
+        champ = _champ.Champ(champ_config)
 
         #Setting up the required lists. - reusable because of the iters.
         history = []
@@ -158,12 +149,10 @@ try:
             currstep_agentStates = [ag.__getstate__() for ag in main_arena.agents[:-1]]
             currstep_agentActions = [None for ag in main_arena.agents[:-1]] #initialization
 
-
             for m,ag in enumerate(main_arena.agents[:-1]):
                 actionprobs = ag.behave(False)
                 action_and_consequence = ag.behave_act(actionprobs)
                 currstep_agentActions[m] = action_and_consequence
-                champ.observe(j,action_and_consequence)
 
                 if ag is main_arena.agents[0]:
                     abu.all_agents_imitate(action_and_consequence)
@@ -172,26 +161,23 @@ try:
                     abu.get_likelihoodValues_allTypes()
 
 
-                    res_curr=champ.backtrack(j)
-                    if len(res_curr.cpindices)==0 or (len(res_curr.cpindices) == 1 and res_curr.cpindices[0]=0):
-                        #no changepoint detected yet
-                        pass
-                    else:
-                        #detected a changepoint. Pick the most recent one, and ask ABU to give the update from that point.
+                    champ.observe(j,action_and_consequence)
 
-                    if args.type == 'cp-nooracle':
-                        abu.calculate_modelEvidence(j)
-                        _,_ = abu.estimate_allTypes(j)
-                        estimates, _ = abu.estimate_allTypes_withoutApproximation(j)
-                    else:
-                        if j<changepoint_time:
-                            abu.calculate_modelEvidence(j)
-                            _,_ = abu.estimate_allTypes(j)
-                            estimates, _ = abu.estimate_allTypes_withoutApproximation(j)
+                    if((j%config.N_CHAMP_SKIPSTEPS==0)&(j!=0)):
+                        res_curr=champ.backtrack(j-1)
+                        if len(res_curr['cpindices'])==0 or (len(res_curr['cpindices']) == 1 and res_curr['cpindices'][0]==0):
+                            #no changepoint detected yet
+                            logger.info("CHAMP backtracked at {} but no changepoint detected".format(j))
+                            pass
                         else:
-                            abu.calculate_modelEvidence(j-changepoint_time)
-                            _,_ = abu.estimate_allTypes(j-changepoint_time)
-                            estimates, _ = abu.estimate_allTypes_withoutApproximation(j-changepoint_time)
+                            #detected a changepoint. Pick the most recent one, and ask ABU to give the update from that point.
+                            cp_time = res_curr['cpindices'][0]
+                            logger.info("CHAMP backtracked at {} with changepoint detected previously at {}".format(j,cp_time))
+                            abu.reset(cp_time,j-1)
+
+                    abu.calculate_modelEvidence(j)
+                    _,_ = abu.estimate_allTypes(j)
+                    estimates, _ = abu.estimate_allTypes_withoutApproximation(j,False)
 
                 ag.execute_action(action_and_consequence)
 
@@ -200,7 +186,6 @@ try:
 
             currstep_history = update_state.history_step(currstep_arenaState,currstep_agentStates,currstep_agentActions)
             history.append(currstep_history)
-
 
             estimated_type = np.argmax(abu.model_evidence[-1])
             estimated_param = estimates[estimated_type][0]
@@ -254,7 +239,11 @@ try:
         logger.info("End of expriment {}".format(i))
         final_results.append(r)
     config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} with args {} finished succesfully".format(experimentID,args))
-    resultname = str(experimentID)+'_'+args.type+'_'+args.mcts_setting
+    resultname = str(experimentID)+'_'+'cp_champ'+'_'+args.mcts_setting
+    config_forsaving ={}
+    config_forsaving.update(config.__dict__)
+    config_forsaving.update(args.__dict__)
+    final_results.append(config_forsaving)
 
     with open(resultname,'wb') as handle:
         pickle.dump(final_results,handle)

@@ -21,7 +21,7 @@ N_AGENTS = 3
 #Initialization to use
 FROM_MEMORY = 1
 FROM_NEW = 0
-INIT_TYPE = FROM_MEMORY
+INIT_TYPE = FROM_NEW
 # INIT_TYPE = 'random'
 
 
@@ -38,8 +38,10 @@ VISUALIZE_SIM = False
 
 
 #MCTS Related
-N_ROLLOUTS = 3
-ROLLOUT_DEPTH = 3
+N_ROLLOUTS = 5
+MAX_ROLLOUT_DEPTH = 3
+MAX_HEURISTIC_ROLLOUT_DEPTH = 3
+
 
 
 #Twilio details
@@ -49,8 +51,13 @@ from_number = "+15126438645"
 to_number = "+15125022558"
 
 #Experimental details
-N_EXPERIMENTS = 2
+N_EXPERIMENTS = 20
 N_MAXITERS_IN_EXPERIMENTS = 150
+
+
+#Champ BACKTRACKING
+N_CHAMP_SKIPSTEPS = 5
+
 
 #logging config
 LOGGING_CONFIG = {

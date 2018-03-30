@@ -143,7 +143,7 @@ class arena():
         agent_actions = []
         agent_probs = []
         #retrieve what the agent wants to do
-        for agent,idx in enumerate(self.agents):
+        for idx,agent in enumerate(self.agents):
             #Check what the agent wants to do
             action_probs = agent.behave(False)
 

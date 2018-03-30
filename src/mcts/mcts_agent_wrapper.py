@@ -57,7 +57,7 @@ class mcts_agent(config.AGENT_CURR):
 
 
 
-    def behave(self,history,trackingAgentIds,trackingAgentParameterEstimates):
+    def behave(self,history,trackingAgentIds,trackingAgentParameterEstimates,rollout_depth):
         """
         Over-ridden.
 
@@ -100,9 +100,9 @@ class mcts_agent(config.AGENT_CURR):
         #state.
         corrected_states = update_state.get_updatedStateForMultipleAgents(history, trackingAgentIds,
                                                                           trackingAgentParameterEstimates, False)
-        return self.behave_rollout(corrected_states, trackingAgentIds)
+        return self.behave_rollout(corrected_states, trackingAgentIds,rollout_depth)
 
-    def behave_rollout(self, corrected_states, trackingAgentIds):
+    def behave_rollout(self, corrected_states, trackingAgentIds,rollout_depth):
         init_arena_for_rollout, init_agents_for_rollout = self.generate_environment(corrected_states,trackingAgentIds)
         mctsAgent_forArena = cloner.clone_Agent(self.__getstate__(), init_arena_for_rollout)
         init_arena_for_rollout.add_MCTSagent(mctsAgent_forArena)
@@ -111,11 +111,11 @@ class mcts_agent(config.AGENT_CURR):
         logger.info("Starting Rollouts:")
         #TODO parallelize
         for i in range(config.N_ROLLOUTS):
-            logger.info("Rollout {} with max steps {}".format(i,config.ROLLOUT_DEPTH))
+            logger.info("Rollout {} with max steps {}".format(i, config.MAX_ROLLOUT_DEPTH))
             arena_for_rollout, agents_for_rollout = self.generate_environment(corrected_states,trackingAgentIds)
             mctsAgent_forArena = cloner.clone_Agent(self.__getstate__(),arena_for_rollout)
             arena_for_rollout.add_MCTSagent(mctsAgent_forArena)
-            mcts_planner.rollout(arena_for_rollout,mcts_planner.rootVertex_index)
+            mcts_planner.rollout(arena_for_rollout, mcts_planner.rootVertex_index,rollout_depth)
 
         action_name = mcts_planner.get_bestActionGreedy()
         action_name = action_name[-1]

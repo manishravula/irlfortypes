@@ -266,9 +266,10 @@ class mcts():
 
         return
 
-    def rollout(self, env, root_index):
+    def rollout(self, env, root_index, rolloutdepth=config.MAX_ROLLOUT_DEPTH):
 
         """
+        :param rolloutdepth:
         :param env:  The environment where the MCTS agent is called to act. We make
                           a copy of this object (courtesy of the .copy() method that the
                           object must provide), and use it to serve as a playground/gym
@@ -330,7 +331,7 @@ class mcts():
         #Add both the node and the edge to the graph.
         curr_turnwhose = not curr_turnwhose
         newstate_vertex = self.addVertex(new_state, curr_turnwhose,
-                                         len(curr_env.getActions_legalFromCurrentState(curr_turnwhose)),
+                                         curr_env.getNumberOfActions_legalFromCurrentState(curr_turnwhose),
                                          expandable_nodeIndex)
         newstateIndex = self.graph.vertex_index[newstate_vertex]
         e = self.graph.add_edge(expandable_nodeIndex, newstateIndex)
@@ -357,7 +358,7 @@ class mcts():
             #the expansion node is not terminal
             turn_whose = self.graph.vp.turn_whose[curr_stateIndex]
             rolloutidx =0
-            while not curr_env.isterminal and rolloutidx < config.ROLLOUT_DEPTH:
+            while not curr_env.isterminal and rolloutidx < rolloutdepth:
                 if turn_whose == AIAGENT:
                     random_action = curr_env.getAction_randomLegalFromCurrentState(turn_whose)
                     r,next_state = curr_env.respond(random_action)

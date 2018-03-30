@@ -226,6 +226,7 @@ class ABU():
             for agent_parameterconf in type_list:
                 agent_parameterconf.calc_likelihood(action_and_consequence)
                 ag = agent_parameterconf
+        self.total_simSteps+=1
 
     def calculate_differenceInProbability(self):
         mse_list = []

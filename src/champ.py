@@ -86,6 +86,8 @@ class Champ:
                 max_MAP = MAP
                 max_particle = p
                 max_param = theta
+                max_particle.theta = theta
+                max_particle.MAP = MAP
         self.prev_MAP.put(max_MAP)
         self.prev_param.append(theta)
         self.prev_particle.append(max_particle)
@@ -100,16 +102,21 @@ class Champ:
 
         model_indices = []
         params = []
+        thetas = []
         changepoints = []
+        MAPs = []
+        NMAPs = []
         while(index >= 0 and self.prev_particle[index] != None):
             prev_particle = self.prev_particle[index]
             logger.info("prev changepoint at: " + str(prev_particle.pos) + " and type is: " + str(prev_particle.model_index))
             changepoints.append(prev_particle.pos)
             model_indices.append(prev_particle.model_index)
+            thetas.append(prev_particle.theta)
             params.append(self.prev_param[index])
+            MAPs.append(prev_particle.MAP)
             index = prev_particle.pos - 1
 
-        return (model_indices, params, changepoints)
+        return {'models':model_indices, 'paramestims':params, 'theta':thetas, 'cpindices':changepoints,'map':MAPs}
 
 class Particle:
     def __init__(self, pos, prev_MAP, model_index):
