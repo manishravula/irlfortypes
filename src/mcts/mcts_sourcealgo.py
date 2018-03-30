@@ -65,12 +65,14 @@ from graph_tool.all import *
 from copy import deepcopy
 from MCTS.environment import environment
 from experiments import configuration as config
+import logging
 
 global C
 C = np.sqrt(2)
 external_player = 0
 internal_agent = 1
 
+logger = logging.getLogger(__name__)
 """
 New design of the MCTS
 
@@ -358,6 +360,7 @@ class mcts():
             #the expansion node is not terminal
             turn_whose = self.graph.vp.turn_whose[curr_stateIndex]
             rolloutidx =0
+            logger.info("Simulation in rollout with rolloutdepth {}".format(rolloutdepth))
             while not curr_env.isterminal and rolloutidx < rolloutdepth:
                 if turn_whose == AIAGENT:
                     random_action = curr_env.getAction_randomLegalFromCurrentState(turn_whose)
@@ -369,7 +372,7 @@ class mcts():
                     rewardList_sim.append(r)
                     turn_whose = AIAGENT
                 rolloutidx+=1
-
+            logger.info("Simulation in rollout finished with rolloutdepth {}".format(rolloutidx))
             totalReward_simulation = 0
             sim_length = len(rewardList_sim)
             #todo: make this more efficient. Don't need so many multiplications
