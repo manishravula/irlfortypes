@@ -201,7 +201,7 @@ try:
 
             mcts_state = mctsagent.__getstate__()
 
-            if args.mcts_setting is 'heuristic':
+            if args.mcts_setting == 'heuristic':
                 if config.N_MAXITERS_IN_EXPERIMENTS-j>config.MAX_HEURISTIC_ROLLOUT_DEPTH:
                     rolloutdepth = config.MAX_HEURISTIC_ROLLOUT_DEPTH
                 else:

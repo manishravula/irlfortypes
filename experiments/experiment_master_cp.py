@@ -22,7 +22,7 @@ logging.config.dictConfig(config.LOGGING_CONFIG)
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--type", type=str,
-help="The type of experiment being performed. \n nocp-correstim\n,nocp-wrongestim\n,cp-oracle\n,cp-nooracle\n,cp-champ\n")
+help="The type of experiment being performed. cp-oracle\n,cp-nooracle\n")
 parser.add_argument("--settingsfolder", type=str, help="File specifying initial conditions for each experiment to be performed.")
 parser.add_argument("--mcts_setting",type=str,help="Setting about using heuristic for MCTS")
 parser.add_argument("--ch_length_min",type=int,help="CHAMP's minimum length of the segment parameter")
@@ -204,7 +204,7 @@ try:
 
             mcts_state = mctsagent.__getstate__()
 
-            if args.mcts_setting is 'heuristic':
+            if args.mcts_setting == 'heuristic':
                 if config.N_MAXITERS_IN_EXPERIMENTS-j>config.MAX_HEURISTIC_ROLLOUT_DEPTH:
                     rolloutdepth = config.MAX_HEURISTIC_ROLLOUT_DEPTH
                 else:
