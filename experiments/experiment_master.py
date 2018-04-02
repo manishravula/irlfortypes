@@ -1,17 +1,15 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import logging
-import time
 import copy
-import seaborn as sns
 import pickle
+import time
+
+import numpy as np
+import seaborn as sns
 
 sns.set()
 import logging.config
 
-from src import arena
-from src.mcts import mcts_arena_wrapper, mcts_sourcealgo, mcts_agent_wrapper
-from src.utils import cloner, generate_init
+from src.mcts import mcts_agent_wrapper
+from src.utils import generate_init
 from src.estimation import update_state, ABU_estimator_noapproximation
 
 import configuration as config
@@ -168,16 +166,16 @@ try:
                     if args.type == 'cp-nooracle':
                         abu.calculate_modelEvidence(j)
                         _,_ = abu.estimate_allTypes(j)
-                        estimates, _ = abu.estimate_allTypes_withoutApproximation(j)
+                        estimates, _ = abu.estimate_allTypes_withoutApproximation(j, False)
                     else:
                         if j<changepoint_time:
                             abu.calculate_modelEvidence(j)
                             _,_ = abu.estimate_allTypes(j)
-                            estimates, _ = abu.estimate_allTypes_withoutApproximation(j)
+                            estimates, _ = abu.estimate_allTypes_withoutApproximation(j, False)
                         else:
                             abu.calculate_modelEvidence(j-changepoint_time)
                             _,_ = abu.estimate_allTypes(j-changepoint_time)
-                            estimates, _ = abu.estimate_allTypes_withoutApproximation(j-changepoint_time)
+                            estimates, _ = abu.estimate_allTypes_withoutApproximation(j - changepoint_time)
 
                 ag.execute_action(action_and_consequence)
 

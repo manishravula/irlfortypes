@@ -1,17 +1,15 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import logging
-import time
 import copy
-import seaborn as sns
 import pickle
+import time
+
+import numpy as np
+import seaborn as sns
 
 sns.set()
 import logging.config
 
-from src import arena
-from src.mcts import mcts_arena_wrapper, mcts_sourcealgo, mcts_agent_wrapper
-from src.utils import cloner, generate_init
+from src.mcts import mcts_agent_wrapper
+from src.utils import generate_init
 from src.estimation import update_state, ABU_estimator_noapproximation
 
 import configuration as config
@@ -111,12 +109,14 @@ try:
         #Conducting individual experiments now.
         main_arena, agents = generate_init.generate_from_savedexperiment(expfile,i,n_agents)
         r.ini_number_items = main_arena.no_items
+        r.precp_type = copy.deepcopy(agents[0].type)
 
         #Setting up ABU.
         abu = ABU_estimator_noapproximation.ABU(agents[0],main_arena,abu_param_dict)
 
         #Setting up the required lists. - reusable because of the iters.
         history = []
+        est = []
 
         #Setting up MCTS agent.
         _dummy_agent_for_config = main_arena.agents.pop()
@@ -140,15 +140,12 @@ try:
             #Changing type
             if j==changepoint_time:
                 main_arena.agents[0].type = changepoint_postType
-                main_arena.agents[0].curr_destination = None #resetting state
-                main_arena.agents[0].memory = None #resetting state
                 if args.type == 'cp-nooracle':
                     pass
                 else:
-                    new_abu = ABU_estimator_noapproximation.ABU(agents[0],main_arena,abu_param_dict)
-                    abu = new_abu
                     history = [] #resetting history.
                 logger.info("Agent 0/1's type changed from to {}".format(changepoint_postType))
+                r.postcp_time = changepoint_postType
 
             abu.all_agents_behave()
             currstep_arenaState = main_arena.__getstate__()
@@ -166,19 +163,15 @@ try:
                     abu.all_agents_calc_likelihood(action_and_consequence)
                     _ = abu.fit_likelihoodPolynomial_allTypes(action_and_consequence)
                     abu.get_likelihoodValues_allTypes()
-                    if args.type == 'cp-nooracle':
-                        abu.calculate_modelEvidence(j)
-                        _,_ = abu.estimate_allTypes(j)
-                        estimates, _ = abu.estimate_allTypes_withoutApproximation(j,False)
-                    else:
-                        if j<changepoint_time:
-                            abu.calculate_modelEvidence(j)
-                            _,_ = abu.estimate_allTypes(j)
-                            estimates, _ = abu.estimate_allTypes_withoutApproximation(j,False)
-                        else:
-                            abu.calculate_modelEvidence(j-changepoint_time)
-                            _,_ = abu.estimate_allTypes(j-changepoint_time)
-                            estimates, _ = abu.estimate_allTypes_withoutApproximation(j - changepoint_time,False)
+
+                    if args.type == 'cp-oracle' and j == changepoint_time:
+                        # resetting
+                        abu.posteriors_curr = abu.reset_get_fresh_prior()
+                    abu.calculate_modelEvidence(j)
+                    _, _ = abu.estimate_allTypes(j)
+                    estimates, _ = abu.estimate_allTypes_withoutApproximation(j, False)
+
+                    est.append(estimates)
 
                 ag.execute_action(action_and_consequence)
 
@@ -229,6 +222,7 @@ try:
                 if j>changepoint_tmin and j<changepoint_tmax and not changepoint_set:
                     changepoint_time = j+1
                     changepoint_set = True
+
 
             main_arena.check_for_termination()
             j+=1

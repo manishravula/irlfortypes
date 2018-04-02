@@ -1,17 +1,15 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import logging
-import time
 import copy
-import seaborn as sns
 import pickle
+import time
+
+import numpy as np
+import seaborn as sns
 
 sns.set()
 import logging.config
 
-from src import arena
-from src.mcts import mcts_arena_wrapper, mcts_sourcealgo, mcts_agent_wrapper
-from src.utils import cloner, generate_init
+from src.mcts import mcts_agent_wrapper
+from src.utils import generate_init
 from src.estimation import update_state, ABU_estimator_noapproximation
 import src.champ as _champ
 
@@ -102,6 +100,7 @@ try:
         #Conducting individual experiments now.
         main_arena, agents = generate_init.generate_from_savedexperiment(args.settingsfolder,i,n_agents)
         r.ini_number_items = main_arena.no_items
+        r.precp_type = copy.deepcopy(agents[0].type)
 
         #Setting up ABU.
         abu = ABU_estimator_noapproximation.ABU(agents[0],main_arena,abu_param_dict)
@@ -116,6 +115,7 @@ try:
 
         #Setting up the required lists. - reusable because of the iters.
         history = []
+        est = []
 
         #Setting up MCTS agent.
         _dummy_agent_for_config = main_arena.agents.pop()
@@ -143,6 +143,7 @@ try:
             if j==changepoint_time:
                 main_arena.agents[0].type = changepoint_postType
                 logger.info("Agent 0/1's type changed from to {}".format(changepoint_postType))
+                r.postcp_time = changepoint_postType
 
             abu.all_agents_behave()
             currstep_arenaState = main_arena.__getstate__()
@@ -174,10 +175,13 @@ try:
                             cp_time = res_curr['cpindices'][0]
                             logger.info("CHAMP backtracked at {} with changepoint detected previously at {}".format(j,cp_time))
                             abu.reset(cp_time,j-1)
+                            history = []
 
                     abu.calculate_modelEvidence(j)
                     _,_ = abu.estimate_allTypes(j)
                     estimates, _ = abu.estimate_allTypes_withoutApproximation(j,False)
+
+                    est.append(estimates)
 
                 ag.execute_action(action_and_consequence)
 

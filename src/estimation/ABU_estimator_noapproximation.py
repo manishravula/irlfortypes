@@ -1,8 +1,11 @@
-import numpy as np
-from src.utils import rejection_sampler as rs
 import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
+
+import numpy as np
 import seaborn as sns
+
+from src.utils import rejection_sampler as rs
+
 sns.set()
 import logging
 from .ABU_estimator import ABU as abu
@@ -18,13 +21,13 @@ class ABU(abu):
     def __init__(self,mimicking_agent,arena_obj,kwargs):
         logger.info('Calling parent ABU via inheritance. This is ABU_noapproximation')
         abu.__init__(self,mimicking_agent,arena_obj,kwargs)
-        self.initial_prior_points = np.ones(self.resolution, 'float') / (len(self.x_points))
+        self.initial_prior_points = np.ones((len(self.types), self.resolution), 'float') / (self.resolution)
         self.likelihood_dense_typesList = []
         self.prior_dense_typesList = []
         self.posterior_dense_typesList = []
         self.posteriorEstimates_maximum_withoutApproximation = []
         self.posteriorEstimates_sample_withoutApproximation = []
-        self.posteriors_curr = [self.initial_prior_points]*4
+        self.posteriors_curr = np.copy(self.initial_prior_points)
 
     def get_likelihoodArray(self,tp):
         agents_set = self.lh_agents[tp]
@@ -40,8 +43,6 @@ class ABU(abu):
             ll_array.append(ll_values)
         ll_array = np.array(ll_array)
         self.likelihood_dense_typesList.append(ll_array)
-
-
 
 
     def estimate_parameter_withoutApproximation(self,likelihood_densePoints,Prior_desnsePoints,tp):
@@ -86,13 +87,13 @@ class ABU(abu):
         for tp in self.types:
             likelihood_points = self.likelihood_dense_typesList[i][tp]
             if i==0:
-                prior_points = self.initial_prior_points
+                prior_points = self.initial_prior_points[tp]
             else:
                 prior_points = self.posteriors_curr[tp]
             update_posteriorPoints, estim_sample,estim_maximum = self.estimate_parameter_withoutApproximation(likelihood_points,prior_points,tp)
             posterior_list.append(update_posteriorPoints)
             estimates_list.append([estim_sample,estim_maximum])
-        self.posteirors_curr = posterior_list
+        self.posteriors_curr = posterior_list
 
         if remember:
             self.posterior_dense_typesList.append(posterior_list)
@@ -109,7 +110,7 @@ class ABU(abu):
         :return: None
         """
         logger.info("ABU reset called to reset at {} till {}".format(i,jmax))
-        self.posteriors_curr = self.initial_prior_points * len(self.types)
+        self.posteriors_curr = self.reset_get_fresh_prior()
         if jmax<i:
             raise Exception("Called with the wrong reset window i {} jmax {}".format(i,jmax))
         if jmax>len(self.likelihood_dense_typesList):
@@ -121,8 +122,8 @@ class ABU(abu):
 
         return es
 
-
-
+    def reset_get_fresh_prior(self):
+        return ((np.ones((len(self.types), self.resolution), dtype='float')) / self.resolution)
 
     def estimate_singleType_segment_forChamp_withoutApprox(self,i,j,tp):
         logger.debug("No approxmiation based CHAMP single type estimator called for type {}".format(tp))
