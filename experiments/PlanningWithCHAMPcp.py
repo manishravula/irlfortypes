@@ -1,15 +1,17 @@
-import copy
-import pickle
-import time
-
 import numpy as np
+import matplotlib.pyplot as plt
+import logging
+import time
+import copy
 import seaborn as sns
+import pickle
 
 sns.set()
 import logging.config
 
-from src.mcts import mcts_agent_wrapper
-from src.utils import generate_init
+from src import arena
+from src.mcts import mcts_arena_wrapper, mcts_sourcealgo, mcts_agent_wrapper
+from src.utils import cloner, generate_init
 from src.estimation import update_state, ABU_estimator_noapproximation
 
 import configuration as config
@@ -17,56 +19,12 @@ from src.utils import banner
 import logging
 
 logging.config.dictConfig(config.LOGGING_CONFIG)
-import argparse
-parser = argparse.ArgumentParser()
-parser.add_argument("--type", type=str,
-help="The type of experiment being performed. \n nocp-correstim\n,nocp-wrongestim\n,cp-oracle\n,cp-nooracle\n,cp-champ\n")
-parser.add_argument("--settingsfile", type=str, help="File specifying initial conditions for each experiment to be performed.")
-parser.add_argument("--mcts_setting",type=str,help="Setting about using heuristic for MCTS")
-parser.add_argument("ch_length_min",type=int,help="CHAMP's minimum length of the segment parameter")
-parser.add_argument("ch_length_mean",type=int,help="CHAMP's mean length of the segment")
-parser.add_argument("ch_length_sigma",type=int,help="CHAMP's variance in length of the segment")
-parser.add_argument("ch_maxparticles",type=int,help="CHAMP's maximum number of particles")
-parser.add_argument("ch_resample_particles",type=int,help="Number of resampling in CHAMP's particles")
-
-
-args = parser.parse_args()
-
-exptype = args.type
-expfile = args.settingsfile
-
-possible_types = ['cp-oracle','cp-nooracle']
-possible_mctssettings = ['heuristic','absolute']
-
-#sanity checks
-if exptype is None:
-    raise Exception("No valid experiment type given")
-elif exptype not in possible_types:
-    raise Exception("Given type doesn't match any one of the possible types")
-
-if expfile is None:
-    raise Exception("No experiment conditions file given")
-
-if args.mcts_setting not in possible_mctssettings:
-    raise Exception("Wrong MCTS settings described")
-
-#default values
-if args.ch_length_min is None:
-    args.ch_length_min = 5
-if args.ch_length_mean is None:
-    args.ch_length_mean = 20
-if args.ch_length_sigma is None:
-    args.ch_length_sigma = 10
-if args.ch_maxparticles is None:
-    args.ch_maxparticles = 1000
-if args.ch_resample_particles is None:
-    args.ch_resample_particles = 1000
+logger = logging.getLogger('withOracle')
 
 experimentID = int(time.time())
 
-logger = logging.getLogger(args.type+str(experimentID))
-logger.info("-----Experiment type {} ------ ".format(args.type))
-logger.info("-----------------------------Experiment ID {} begins--------------------------".format(experimentID))
+logger.info("-----Experiment with oracle support in ChangePoints ------ ")
+logger.info("-----------------------------Experiment {} begins--------------------------".format(experimentID))
 
 no_experiments = config.N_EXPERIMENTS
 logger.info("Configuration of the experiment: no_experiments: {}".format(no_experiments))
@@ -92,9 +50,6 @@ abu_param_dict = {
               'visualize':config.VISUALIZE_ESTIMATION,
               'saveplots':config.VISUALIZE_ESTIMATION_SAVE}
 final_results = []
-changepoint_tmin = 40
-changepoint_tmax = 70
-changepoint_set = False
 
 class result(object):
     def __init__(self,ID):
@@ -122,13 +77,13 @@ try:
 
         main_arena.agents.append(mctsagent)
 
-        changepoint_time = 10000
+        changepoint_time = int(100*np.random.random()+50)
         newtp = np.random.randint(0,3,1)[0]
         while newtp == main_arena.agents[0].type:
             newtp = np.random.randint(0,3,1)[0]
         changepoint_postType = newtp
 
-        # logger.info("Preset changepoint is at {}".format(changepoint_time))
+        logger.info("Preset changepoint is at {}".format(changepoint_time))
 
         j=0
         #Beginning loop
@@ -139,12 +94,9 @@ try:
                 main_arena.agents[0].type = changepoint_postType
                 main_arena.agents[0].curr_destination = None #resetting state
                 main_arena.agents[0].memory = None #resetting state
-                if args.type == 'cp-nooracle':
-                    pass
-                else:
-                    new_abu = ABU_estimator_noapproximation.ABU(agents[0],main_arena,abu_param_dict)
-                    abu = new_abu
-                    history = [] #resetting history.
+                new_abu = ABU_estimator_noapproximation.ABU(agents[0],main_arena,abu_param_dict)
+                abu = new_abu
+                history = [] #resetting history.
                 logger.info("Agent 0/1's type changed from to {}".format(changepoint_postType))
 
             abu.all_agents_behave()
@@ -163,19 +115,14 @@ try:
                     abu.all_agents_calc_likelihood(action_and_consequence)
                     _ = abu.fit_likelihoodPolynomial_allTypes(action_and_consequence)
                     abu.get_likelihoodValues_allTypes()
-                    if args.type == 'cp-nooracle':
+                    if j<changepoint_time:
                         abu.calculate_modelEvidence(j)
                         _,_ = abu.estimate_allTypes(j)
                         estimates, _ = abu.estimate_parameter_allTypes_withoutApproximation(j, False)
                     else:
-                        if j<changepoint_time:
-                            abu.calculate_modelEvidence(j)
-                            _,_ = abu.estimate_allTypes(j)
-                            estimates, _ = abu.estimate_parameter_allTypes_withoutApproximation(j, False)
-                        else:
-                            abu.calculate_modelEvidence(j-changepoint_time)
-                            _,_ = abu.estimate_allTypes(j-changepoint_time)
-                            estimates, _ = abu.estimate_parameter_allTypes_withoutApproximation(j - changepoint_time)
+                        abu.calculate_modelEvidence(j-changepoint_time)
+                        _,_ = abu.estimate_allTypes(j-changepoint_time)
+                        estimate, _ = abu.estimate_parameter_allTypes_withoutApproximation(j - changepoint_time)
 
                 ag.execute_action(action_and_consequence)
 
@@ -200,16 +147,7 @@ try:
             trackingAgentParameterEstimates[0].update(tainfo)
 
             mcts_state = mctsagent.__getstate__()
-
-            if args.mcts_setting is 'heuristic':
-                if config.N_MAXITERS_IN_EXPERIMENTS-j>config.MAX_HEURISTIC_ROLLOUT_DEPTH:
-                    rolloutdepth = config.MAX_HEURISTIC_ROLLOUT_DEPTH
-                else:
-                    rolloutdepth = config.N_MAXITERS_IN_EXPERIMENTS - j
-                action_and_consequence = mctsagent.behave(history,trackingAgentIds,trackingAgentParameterEstimates,rolloutdepth)
-            else:
-                action_and_consequence = mctsagent.behave(history,trackingAgentIds,trackingAgentParameterEstimates,config.MAX_ROLLOUT_DEPTH)
-
+            action_and_consequence = mctsagent.behave(history,trackingAgentIds,trackingAgentParameterEstimates)
 
             #Now that we have the true state of the last agent we need to rewrite over the dummy values.
             history[-1].agent_states.pop()
@@ -218,32 +156,24 @@ try:
             history[-1].agent_actions.append(action_and_consequence)
 
             mctsagent.execute_action(action_and_consequence)
-            n_items = len(main_arena.items)
-            main_arena.update_foodconsumption()
-            n_items_new = len(main_arena.items)
-            if n_items_new!=n_items:
-                logger.info("Item consumed")
-                if j>changepoint_tmin and j<changepoint_tmax and not changepoint_set:
-                    changepoint_time = j+1
-                    changepoint_set = True
 
+            main_arena.update_foodconsumption()
             main_arena.check_for_termination()
             j+=1
 
         r.left_over_items = len(main_arena.items)
         r.game_length = j
-        r.tags = args
         for key,value in zip(r.__dict__.keys(),r.__dict__.values()):
             logging.info('result {}, {}'.format(key,value))
 
         logger.info("End of expriment {}".format(i))
         final_results.append(r)
-    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} with args {} finished succesfully".format(experimentID,args))
-    resultname = str(experimentID)+'_'+args.type+'_'+args.mcts_setting
+    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} for Planning with Oracle help finished succesfully".format(experimentID))
+    resultname = str(experimentID)+'_resultsWithOracle'
 
     with open(resultname,'wb') as handle:
         pickle.dump(final_results,handle)
 
 except Exception as e:
     logging.exception("Experiment failed")
-    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiment with args {} exception {} ! Check logs!".format(args,e))
+    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiment with oracle exception {} ! Check logs!".format(e))

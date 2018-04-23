@@ -41,6 +41,7 @@ n_agents_tracking = 1
 logger.info("Configurations of the experiment: n_agents_tracking: {}".format(n_agents_tracking))
 
 
+
 abu_param_dict = {
               'radius_range': [.1,1],
               'angle_range':[.1,1],
@@ -101,7 +102,7 @@ try:
                     abu.get_likelihoodValues_allTypes()
                     abu.calculate_modelEvidence(j)
                     _,_ = abu.estimate_allTypes(j)
-                    estimates, _ = abu.estimate_allTypes_withoutApproximation(j)
+                    estimates, _ = abu.estimate_parameter_allTypes_withoutApproximation(j, False)
                 ag.execute_action(action_and_consequence)
 
             currstep_agentStates.append(currstep_agentStates[-2]) #like a dummy so that the mcts caller won't be upset.
@@ -124,8 +125,11 @@ try:
             trackingAgentParameterEstimates = [copy.deepcopy(history[0].agent_states[0])]
             trackingAgentParameterEstimates[0].update(tainfo)
 
-            #REVERSING TO GIVE RANDOM ESTIMATES
-            trackingAgentParameterEstimates.reverse()
+            #Random estimates
+            np.random.random = r
+            for agentEstimate in trackingAgentParameterEstimates:
+                random_tainfo = generate_init.gen_random_state(main_arena)
+                agentEstimate.update(random_tainfo)
 
             mcts_state = mctsagent.__getstate__()
             action_and_consequence = mctsagent.behave(history,trackingAgentIds,trackingAgentParameterEstimates)

@@ -71,6 +71,7 @@ time_array = []
 mse_list = []
 changepoint_time = []
 changepoint_occured = False
+resarray=[]
 
 
 while not are.isterminal and j < 70:
@@ -95,7 +96,7 @@ while not are.isterminal and j < 70:
     abu.calculate_modelEvidence(j)
 
     estimates, posterior = abu.estimate_allTypes(j)
-    estimates_withoutApproximation, posterior_withoutApproximation = abu.estimate_allTypes_withoutApproximation(j)
+    estimates_withoutApproximation, posterior_withoutApproximation = abu.estimate_parameter_allTypes_withoutApproximation(j, False)
     estimates_array.append(estimates)
     estimates_array_noApprox.append(estimates_withoutApproximation)
 
@@ -141,16 +142,13 @@ while not are.isterminal and j < 70:
 
 
 
-if changepoint_occured:
     res = champ.backtrack(j - 1)
     logger.info('Results from CHAMP: {}'.format(res))
     logger.info("Main reported changepoint at {} from type {} to {}".format(changepoint_time,curr_type,a1.type))
-else:
-    logger.info('No changepoint occured, terminating program')
     changepoint_time=0 #for not disturbing the plots
+    resarray.append(res)
 
-
-
+raise Exception()
 
 
 entropy_stuff = True

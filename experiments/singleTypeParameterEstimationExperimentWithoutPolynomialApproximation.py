@@ -89,7 +89,7 @@ while not are.isterminal and j < 70:
         abu.calculate_modelEvidence(i)
 
         estimates, posterior = abu.estimate_allTypes(i)
-        estimates_withoutApproximation, posterior_withoutApproximation = abu.estimate_allTypes_withoutApproximation(i)
+        estimates_withoutApproximation, posterior_withoutApproximation = abu.estimate_parameter_allTypes_withoutApproximation(i)
         abu.posterior_polyCoeff_typesList.append(posterior)
         estimates_array.append(estimates)
         estimates_array_noApprox.append(estimates_withoutApproximation)
@@ -140,7 +140,7 @@ while not are.isterminal and j < 70:
 
 
 
-entropy_stuff = True
+entropy_stuff = False
 if entropy_stuff:
     entropy_set = []
     for likelihood_set in abu.likelihood_polyCoeff_typesList:
@@ -162,7 +162,7 @@ if entropy_stuff:
     plt.close()
 
 # MODEL EVIDENCE STUFF
-mev_stuff = True
+mev_stuff = False
 if mev_stuff:
     abu.model_evidence = np.array(abu.model_evidence)
     for tp in abu.types:
@@ -177,7 +177,7 @@ if mev_stuff:
     plt.close()
 
 # ESTIMATES_STUFF:
-est_stuff = True
+est_stuff = False
 if est_stuff:
     est_array = np.array(estimates_array)
     est_array_approx = np.array(estimates_array_noApprox)
@@ -198,7 +198,7 @@ if est_stuff:
     plt.close()
 
 # LOGL across time for estimates:
-logl_stuff = True
+logl_stuff = False
 logl_list = []
 if logl_stuff:
     for likelilist, estimatelist in zip(abu.likelihood_polyCoeff_typesList, estimates_array):
@@ -217,7 +217,7 @@ if logl_stuff:
     plt.close()
 
 #Likelihood vs param value for individual type; progression across time.
-anim_stuff = True
+anim_stuff = False
 n_iterations = copy.deepcopy(i)
 if anim_stuff:
     def animatePosterior_individualType(tp):
@@ -242,7 +242,7 @@ if anim_stuff:
 
 
 
-anim_stuff = True
+anim_stuff = False
 n_iterations = copy.deepcopy(i)
 if anim_stuff:
     def animateLikelihood_individualType(tp):

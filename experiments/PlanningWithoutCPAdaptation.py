@@ -99,7 +99,7 @@ try:
                     abu.get_likelihoodValues_allTypes()
                     abu.calculate_modelEvidence(j)
                     _,_ = abu.estimate_allTypes(j)
-                    estimates, _ = abu.estimate_allTypes_withoutApproximation(j)
+                    estimates, _ = abu.estimate_parameter_allTypes_withoutApproximation(j, False)
                 ag.execute_action(action_and_consequence)
 
             currstep_agentStates.append(currstep_agentStates[-2]) #like a dummy so that the mcts caller won't be upset.
@@ -123,7 +123,15 @@ try:
             trackingAgentParameterEstimates[0].update(tainfo)
 
             mcts_state = mctsagent.__getstate__()
-            action_and_consequence = mctsagent.behave(history,trackingAgentIds,trackingAgentParameterEstimates)
+
+            #Chosing the right rollout depth.
+            left_over_iters = n_max_iters_in_experiment - j
+            if (left_over_iters<config.MAX_ROLLOUT_DEPTH):
+                rollout_depth = left_over_iters
+            else:
+                rollout_depth = config.MAX_ROLLOUT_DEPTH
+
+            action_and_consequence = mctsagent.behave(history,trackingAgentIds,trackingAgentParameterEstimates,rollout_depth)
 
             #Now that we have the true state of the last agent we need to rewrite over the dummy values.
             history[-1].agent_states.pop()

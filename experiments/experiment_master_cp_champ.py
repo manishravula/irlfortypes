@@ -4,7 +4,8 @@ import time
 
 import numpy as np
 import seaborn as sns
-
+import pickle
+import glob
 sns.set()
 import logging.config
 
@@ -60,7 +61,11 @@ logger = logging.getLogger(str(experimentID))
 logger.info("-----Experiment with CHAMP ------ ")
 logger.info("-----------------------------Experiment ID {} begins--------------------------".format(experimentID))
 
-no_experiments = config.N_EXPERIMENTS
+
+#Find number of data files.
+n_files = len(glob.glob(expfile+'*'))
+
+no_experiments = n_files
 logger.info("Configuration of the experiment: no_experiments: {}".format(no_experiments))
 
 n_max_iters_in_experiment = config.N_MAXITERS_IN_EXPERIMENTS
@@ -179,7 +184,7 @@ try:
 
                     abu.calculate_modelEvidence(j)
                     _,_ = abu.estimate_allTypes(j)
-                    estimates, _ = abu.estimate_allTypes_withoutApproximation(j,False)
+                    estimates, _ = abu.estimate_parameter_allTypes_withoutApproximation(j, False)
 
                     est.append(estimates)
 

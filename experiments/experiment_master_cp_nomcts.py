@@ -4,7 +4,8 @@ import time
 
 import numpy as np
 import seaborn as sns
-
+import pickle
+import glob
 sns.set()
 import logging.config
 
@@ -16,24 +17,26 @@ import configuration as config
 from src.utils import banner
 import logging
 
+import matplotlib.pyplot as plt
+
 logging.config.dictConfig(config.LOGGING_CONFIG)
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--type", type=str,
-help="The type of experiment being performed. \n nocp-correstim\n,nocp-wrongestim\n,cp-oracle\n,cp-nooracle\n,cp-champ\n")
-parser.add_argument("--settingsfile", type=str, help="File specifying initial conditions for each experiment to be performed.")
+help="The type of experiment being performed. cp-oracle\n,cp-nooracle\n")
+parser.add_argument("--settingsfolder", type=str, help="File specifying initial conditions for each experiment to be performed.")
 parser.add_argument("--mcts_setting",type=str,help="Setting about using heuristic for MCTS")
-parser.add_argument("ch_length_min",type=int,help="CHAMP's minimum length of the segment parameter")
-parser.add_argument("ch_length_mean",type=int,help="CHAMP's mean length of the segment")
-parser.add_argument("ch_length_sigma",type=int,help="CHAMP's variance in length of the segment")
-parser.add_argument("ch_maxparticles",type=int,help="CHAMP's maximum number of particles")
-parser.add_argument("ch_resample_particles",type=int,help="Number of resampling in CHAMP's particles")
+parser.add_argument("--ch_length_min",type=int,help="CHAMP's minimum length of the segment parameter")
+parser.add_argument("--ch_length_mean",type=int,help="CHAMP's mean length of the segment")
+parser.add_argument("--ch_length_sigma",type=int,help="CHAMP's variance in length of the segment")
+parser.add_argument("--ch_maxparticles",type=int,help="CHAMP's maximum number of particles")
+parser.add_argument("--ch_resample_particles",type=int,help="Number of resampling in CHAMP's particles")
 
 
 args = parser.parse_args()
 
 exptype = args.type
-expfile = args.settingsfile
+expfile = args.settingsfolder
 
 possible_types = ['cp-oracle','cp-nooracle']
 possible_mctssettings = ['heuristic','absolute']
@@ -42,7 +45,8 @@ possible_mctssettings = ['heuristic','absolute']
 if exptype is None:
     raise Exception("No valid experiment type given")
 elif exptype not in possible_types:
-    raise Exception("Given type doesn't match any one of the possible types")
+    raise Exception("Given type {} doesn't match any one of the possible types".format(exptype))
+
 
 if expfile is None:
     raise Exception("No experiment conditions file given")
@@ -68,7 +72,11 @@ logger = logging.getLogger(args.type+str(experimentID))
 logger.info("-----Experiment type {} ------ ".format(args.type))
 logger.info("-----------------------------Experiment ID {} begins--------------------------".format(experimentID))
 
-no_experiments = config.N_EXPERIMENTS
+
+#Find number of data files.
+n_files = len(glob.glob(expfile+'*'))
+
+no_experiments = n_files
 logger.info("Configuration of the experiment: no_experiments: {}".format(no_experiments))
 
 n_max_iters_in_experiment = config.N_MAXITERS_IN_EXPERIMENTS
@@ -106,14 +114,21 @@ try:
         r = result(i)
         logger.info(banner.horizontal('Experiment {}'.format(i)))
         #Conducting individual experiments now.
-        main_arena, agents = generate_init.generate_all(10,25,n_agents)
+        main_arena, agents = generate_init.generate_from_savedexperiment(expfile,i,n_agents)
         r.ini_number_items = main_arena.no_items
+        r.precp_type = copy.deepcopy(agents[0].type)
 
         #Setting up ABU.
         abu = ABU_estimator_noapproximation.ABU(agents[0],main_arena,abu_param_dict)
 
         #Setting up the required lists. - reusable because of the iters.
         history = []
+        est = []
+        mevd = []
+        tpost_list = []
+        ppost_list = []
+        esta_list = []
+
 
         #Setting up MCTS agent.
         _dummy_agent_for_config = main_arena.agents.pop()
@@ -137,15 +152,12 @@ try:
             #Changing type
             if j==changepoint_time:
                 main_arena.agents[0].type = changepoint_postType
-                main_arena.agents[0].curr_destination = None #resetting state
-                main_arena.agents[0].memory = None #resetting state
                 if args.type == 'cp-nooracle':
                     pass
                 else:
-                    new_abu = ABU_estimator_noapproximation.ABU(agents[0],main_arena,abu_param_dict)
-                    abu = new_abu
                     history = [] #resetting history.
                 logger.info("Agent 0/1's type changed from to {}".format(changepoint_postType))
+                r.postcp_type = changepoint_postType
 
             abu.all_agents_behave()
             currstep_arenaState = main_arena.__getstate__()
@@ -163,19 +175,34 @@ try:
                     abu.all_agents_calc_likelihood(action_and_consequence)
                     _ = abu.fit_likelihoodPolynomial_allTypes(action_and_consequence)
                     abu.get_likelihoodValues_allTypes()
-                    if args.type == 'cp-nooracle':
-                        abu.calculate_modelEvidence(j)
-                        _,_ = abu.estimate_allTypes(j)
-                        estimates, _ = abu.estimate_parameter_allTypes_withoutApproximation(j, False)
-                    else:
-                        if j<changepoint_time:
-                            abu.calculate_modelEvidence(j)
-                            _,_ = abu.estimate_allTypes(j)
-                            estimates, _ = abu.estimate_parameter_allTypes_withoutApproximation(j, False)
-                        else:
-                            abu.calculate_modelEvidence(j-changepoint_time)
-                            _,_ = abu.estimate_allTypes(j-changepoint_time)
-                            estimates, _ = abu.estimate_parameter_allTypes_withoutApproximation(j - changepoint_time)
+
+                    if args.type == 'cp-oracle' and j == changepoint_time:
+                        # resetting
+                        abu.reset(0,1,True)
+
+                    # abu.calculate_modelEvidence(j)
+                    # _, _ = abu.estimate_allTypes(j)
+                    # estimates _ = abu.estimate_parameter_allTypes_withoutApproximation(j, True)
+                    #
+                    # mev = abu.calc_modelEvidence_noApproximation(j,estimates)
+                    # estimated_type = abu.estimate_type_withoutApproximation(j,estimates)
+                    #
+                    # estimated_param = estimates[estimated_type][0]
+                    inference_result,[tpost,ppost] = abu.infer_typeAndParameter()
+                    estimated_params = [inference_result.param_res_list[edx].estim_sample for edx in range(4)]
+                    estimated_type = inference_result.type
+                    estimated_param = estimated_params[estimated_type]
+
+                    mev = inference_result.mevd
+                    est.append([estimated_type,estimated_param])
+                    mevd.append(mev)
+
+                    ####
+                    #DEBUG BREAKS
+                    tpost_list.append(tpost)
+                    ppost_list.append(ppost)
+                    esta_list.append(estimated_params)
+                    ####
 
                 ag.execute_action(action_and_consequence)
 
@@ -187,38 +214,37 @@ try:
 
 
 
-            estimated_type = np.argmax(abu.model_evidence[-1])
-            estimated_param = estimates[estimated_type][0]
 
-            trackingAgentIds = [0]
-            #TODO: Change the last number to grid_matrix_size
-            tainfo = {'viewRadius_param':estimated_param,'type':estimated_type,'view_radius':estimated_param*main_arena.grid_matrix.shape[0]}
+            # trackingAgentIds = [0]
+            # TODO: Change the last number to grid_matrix_size
+            #TODO: What about type?
+            # tainfo = {'viewRadius_param':estimated_param,'type':estimated_type,'view_radius':estimated_param*main_arena.grid_matrix.shape[0]}
             # trackingAgentParameterEstimates = copy.deepcopy(history[0][1][0][0])
 
             #Dummy chaning the state of only one agent(0).
-            trackingAgentParameterEstimates = [copy.deepcopy(history[0].agent_states[0])]
-            trackingAgentParameterEstimates[0].update(tainfo)
-
-            mcts_state = mctsagent.__getstate__()
-
-            if args.mcts_setting is 'heuristic':
-                if config.N_MAXITERS_IN_EXPERIMENTS-j>config.MAX_HEURISTIC_ROLLOUT_DEPTH:
-                    rolloutdepth = config.MAX_HEURISTIC_ROLLOUT_DEPTH
-                else:
-                    rolloutdepth = config.N_MAXITERS_IN_EXPERIMENTS - j
-                action_and_consequence = mctsagent.behave(history,trackingAgentIds,trackingAgentParameterEstimates,rolloutdepth)
-            else:
-                action_and_consequence = mctsagent.behave(history,trackingAgentIds,trackingAgentParameterEstimates,config.MAX_ROLLOUT_DEPTH)
+            # trackingAgentParameterEstimates = [copy.deepcopy(history[0].agent_states[0])]
+            # trackingAgentParameterEstimates[0].update(tainfo)
+            #
+            # mcts_state = mctsagent.__getstate__()
+            #
+            # if args.mcts_setting == 'heuristic':
+            #     if config.N_MAXITERS_IN_EXPERIMENTS-j>config.MAX_HEURISTIC_ROLLOUT_DEPTH:
+            #         rolloutdepth = config.MAX_HEURISTIC_ROLLOUT_DEPTH
+            #     else:
+            #         rolloutdepth = config.N_MAXITERS_IN_EXPERIMENTS - j
+            #     action_and_consequence = mctsagent.behave(history,trackingAgentIds,trackingAgentParameterEstimates,rolloutdepth)
+            # else:
+            #     action_and_consequence = mctsagent.behave(history,trackingAgentIds,trackingAgentParameterEstimates,config.MAX_ROLLOUT_DEPTH)
 
 
             #Now that we have the true state of the last agent we need to rewrite over the dummy values.
-            history[-1].agent_states.pop()
-            history[-1].agent_actions.pop()
-            history[-1].agent_states.append(mcts_state)
-            history[-1].agent_actions.append(action_and_consequence)
+            # history[-1].agent_states.pop()
+            # history[-1].agent_actions.pop()
+            # history[-1].agent_states.append(mcts_state)
+            # history[-1].agent_actions.append(action_and_consequence)
 
-            mctsagent.execute_action(action_and_consequence)
-            n_items = len(main_arena.items)
+            # mctsagent.execute_action(action_and_consequence)
+            # n_items = len(main_arena.items)
             main_arena.update_foodconsumption()
             n_items_new = len(main_arena.items)
             if n_items_new!=n_items:
@@ -226,6 +252,7 @@ try:
                 if j>changepoint_tmin and j<changepoint_tmax and not changepoint_set:
                     changepoint_time = j+1
                     changepoint_set = True
+
 
             main_arena.check_for_termination()
             j+=1
@@ -236,13 +263,45 @@ try:
         for key,value in zip(r.__dict__.keys(),r.__dict__.values()):
             logging.info('result {}, {}'.format(key,value))
 
+
         logger.info("End of expriment {}".format(i))
         final_results.append(r)
-    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} with args {} finished succesfully".format(experimentID,args))
+
+
+        #Debug plots
+
+
+        plt.figure()
+        plt.subplot(121)
+        for ai in range(4):
+            plt.plot((np.array(mevd)[:,ai]).reshape(-1),label=ai)
+
+
+        plt.axvline(changepoint_time)
+        plt.legend()
+
+        plt.subplot(122)
+        for ai in range(4):
+            # plt.plot((np.array(est)[:,ai]).reshape(-1),label=ai)
+            plt.plot(est,label=ai)
+        plt.axvline(changepoint_time)
+        plt.legend()
+        plt.show()
+
+
     resultname = str(experimentID)+'_'+args.type+'_'+args.mcts_setting
 
+    config_forsaving = {}
+    p1 = config.__dict__
+    for key in p1.keys():
+        p1[key] = str(p1[key])
+    config_forsaving.update(p1)
+    config_forsaving.update(args.__dict__)
+    final_results.append(config_forsaving)
     with open(resultname,'wb') as handle:
-        pickle.dump(final_results,handle)
+        pickle.dump(final_results,handle,protocol=pickle.HIGHEST_PROTOCOL)
+
+    config.SMSClient.messages.create(to=config.to_number,from_=config.from_number,body="Experiments ID:{} with args {} finished succesfully".format(experimentID,args))
 
 except Exception as e:
     logging.exception("Experiment failed")
